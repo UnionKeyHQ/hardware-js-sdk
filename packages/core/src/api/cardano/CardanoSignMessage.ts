@@ -48,14 +48,6 @@ export default class CardanoSignMessage extends BaseMethod<CardanoSignMessagePar
     };
   }
 
-  getAddressTypeVersionRange() {
-    return {
-      pro: {
-        min: '4.9.3',
-      },
-    };
-  }
-
   async run() {
     this.checkFeatureVersionLimit(
       () => this.params.address_type !== null && this.params.address_type !== undefined,

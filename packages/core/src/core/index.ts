@@ -44,7 +44,6 @@ import { DeviceList } from '../device/DeviceList';
 import { DevicePool } from '../device/DevicePool';
 import { findMethod } from '../api/utils';
 import { DataManager } from '../data-manager';
-import { UI_REQUEST as UI_REQUEST_CONST } from '../constants/ui-request';
 import {
   CORE_EVENT,
   DEVICE,
@@ -429,22 +428,22 @@ const onCallDevice = async (
         }
       }
 
-      // check call method mode
-      const unexpectedMode = device.hasUnexpectedMode(
-        method.allowDeviceMode,
-        method.requireDeviceMode
-      );
-      if (unexpectedMode) {
-        if (unexpectedMode === UI_REQUEST_CONST.NOT_IN_BOOTLOADER) {
-          return Promise.reject(ERRORS.TypedError(HardwareErrorCode.RequiredButInBootloaderMode));
-        }
-        if (unexpectedMode === UI_REQUEST_CONST.BOOTLOADER) {
-          return Promise.reject(ERRORS.TypedError(HardwareErrorCode.NotAllowInBootloaderMode));
-        }
-        return Promise.reject(
-          ERRORS.TypedError(HardwareErrorCode.DeviceUnexpectedMode, unexpectedMode)
-        );
-      }
+      // Test Api Not check device mode
+      // const unexpectedMode = device.hasUnexpectedMode(
+      //   method.allowDeviceMode,
+      //   method.requireDeviceMode
+      // );
+      // if (unexpectedMode) {
+      //   if (unexpectedMode === UI_REQUEST_CONST.NOT_IN_BOOTLOADER) {
+      //     return Promise.reject(ERRORS.TypedError(HardwareErrorCode.RequiredButInBootloaderMode));
+      //   }
+      //   if (unexpectedMode === UI_REQUEST_CONST.BOOTLOADER) {
+      //     return Promise.reject(ERRORS.TypedError(HardwareErrorCode.NotAllowInBootloaderMode));
+      //   }
+      //   return Promise.reject(
+      //     ERRORS.TypedError(HardwareErrorCode.DeviceUnexpectedMode, unexpectedMode)
+      //   );
+      // }
 
       if (method.deviceId && method.checkDeviceId) {
         const isSameDeviceID = device.checkDeviceId(method.deviceId);

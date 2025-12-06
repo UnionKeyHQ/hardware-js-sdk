@@ -15,7 +15,7 @@ export type AlephiumGetAddressParams = {
   path: string | number[];
   showOnOneKey?: boolean;
   includePublicKey?: boolean;
-  group: number | undefined | null;
+  group: number;
 };
 
 export declare function alephiumGetAddress(

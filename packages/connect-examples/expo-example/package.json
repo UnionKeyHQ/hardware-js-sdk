@@ -38,6 +38,7 @@
     "@tamagui/lucide-icons": "1.90.2",
     "@tamagui/toast": "1.90.2",
     "@ton/core": "^0.57.0",
+    "@uiw/react-watermark": "^1.0.1",
     "asyncstorage-down": "^4.2.0",
     "axios": "1.12.2",
     "bchaddrjs": "^0.5.2",

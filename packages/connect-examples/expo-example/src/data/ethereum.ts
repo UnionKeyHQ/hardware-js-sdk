@@ -103,6 +103,13 @@ const api: PlaygroundProps[] = [
       },
     ],
     deprecated: true,
+    expect: {
+      common: {
+        normal: {
+          unknownMessage: true,
+        },
+      },
+    },
   },
   {
     method: 'evmSignTransaction',
@@ -329,7 +336,7 @@ const api: PlaygroundProps[] = [
           path: "m/44'/60'/0'/0/0",
           transaction: {
             to: '0x7314e0f1c0e28474bdb6be3e2c3e0453255188f8',
-            value: '0x0000000000000068F116a894984e2DB1123eB395',
+            value: '0x0',
             data: '0x42842e0e0000000000000000000000007baa4e405e3fd07d361d5530e4a6180954106ee4000000000000000000000000d1464d62321c15bb73f80f9dcef7edc37acc22e40000000000000000000000000000000000000000000000000000000000000a65360c6ebe',
             chainId: 1,
             nonce: '0x0',
@@ -887,7 +894,7 @@ const api: PlaygroundProps[] = [
         value: {
           path: "m/44'/60'/0'/0/0",
           domainHash: '9e4b8f7c6d5e4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b',
-          messageHash: '8f7c5e4d3b2a1c9e8d7f6b5a4e3c2d1b9a8f7e6d5c4b3a2e1d9c8b7f6a5e4d',
+          messageHash: '8f7c5e4d3b2a1c9e8d7f6b5a4e3c2d1b9a8f7e6d5c4b3a2e1d9c8b7f6a5e4d4d',
           data: {
             types: {
               SafeTx: [
@@ -977,6 +984,18 @@ const api: PlaygroundProps[] = [
           signature:
             '11dc86c631ef5d9388c5e245501d571b864af1a717cbbb3ca1f6dacbf330742957242aa52b36bbe7bb46dce6ff0ead0548cc5a5ce76d0aaed166fd40cb3fc6e51c',
           chainId: 1,
+        },
+        expect: {
+          common: {
+            normal: {
+              requestPin: true,
+            },
+          },
+          mini: {
+            normal: {
+              requestButton: true,
+            },
+          },
         },
       },
     ],

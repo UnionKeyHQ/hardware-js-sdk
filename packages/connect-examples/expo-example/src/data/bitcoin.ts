@@ -237,6 +237,13 @@ const api: PlaygroundProps[] = [
           coin: 'TEST',
         },
       },
+      {
+        title: 'Mock Babylon Staking（Seed3 专用）',
+        value: {
+          psbt: '70736274ff0100fd7f0102000000059b7e2b54e4d24e4c003f76c87e08efe7b05a12a1eeccee492a035322ec4e03cf0000000000fdffffffa078bbb428d8e2aa30c8c6e624f95a7d5eac2a989e6955a86c284e1cac1218b80000000000fdffffffbecc3c860dd99b902be9c1dfbc4f2c0e431668880a1216a619a9503f8cffabf20000000000fdffffff5f1787d5d4edce60e926b13ec8e3c2894d757bcb0145ace5539d5fbdcd58c9900200000000fdffffff85f5c8b72fbe754a6435ce117ef4ef66ffd36bc7f80185f5764044d3e9cac4bf0200000000fdffffff03888a0100000000002251206449c9fb89c3c2692205041fe231934a250ff43a8c1f319893e56f6a6bc89fdc0000000000000000496a476262643400f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21c61411d36685bb4b293ab968ad430d591a1a88c3d191139cbc30a914b3423c70096751e000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148970a4a03000001012b9174000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148972116f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e5600008001000080000000800000000000000000011720f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b20001012bd968000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148972116f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e5600008001000080000000800000000000000000011720f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b20001012bd968000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148972116f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e5600008001000080000000800000000000000000011720f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b20001012bbe40000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148972116f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e5600008001000080000000800000000000000000011720f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b20001012bef23000000000000225120c3f45119b701bc0384b45e064a4abbea7949c8c492e278f0f594a1fd83f148972116f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e5600008001000080000000800000000000000000011720f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b2000000010520f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b22107f4b1f1ca7515d009aee696ec84ee76e901139c6ad80269ebe7e6b6e8f42ae7b21900fc885a5e560000800100008000000080000000000000000000',
+          coin: 'TEST',
+        },
+      },
     ],
   },
   {
@@ -413,6 +420,74 @@ const api: PlaygroundProps[] = [
           messageHex: '0x6578616d706c65206d657373616765',
           signature:
             '0x1fdef26d2134034ec4c00874597be03591a2b16bc3e2cc86f06e4c4dc4df1f00a22eea8efca6446f145e12c5a8064b4f46be57e7ddb42759550eefe4f5d3c7c487',
+        },
+        expect: {
+          common: {
+            normal: {
+              requestButton: true,
+            },
+          },
+          touch: {
+            normal: {
+              requestPin: true,
+            },
+          },
+          pro: {
+            normal: {
+              requestPin: true,
+            },
+          },
+          classic: {
+            normal: {
+              requestPin: true,
+            },
+          },
+          classic1s: {
+            normal: {
+              requestPin: true,
+            },
+          },
+        },
+      },
+    ],
+  },
+  {
+    method: 'btcGetOwnershipId',
+    description: 'btcGetOwnershipId',
+    presupposes: [
+      {
+        title: 'btcGetOwnershipId',
+        value: {
+          path: "m/44'/0'/0'/0/0",
+          coin: 'btc',
+        },
+      },
+    ],
+  },
+  {
+    method: 'btcGetOwnershipProof',
+    description: 'btcGetOwnershipProof',
+    presupposes: [
+      {
+        title: 'btcGetOwnershipProof',
+        value: {
+          path: "m/44'/0'/0'/0/0",
+          coin: 'btc',
+        },
+      },
+    ],
+  },
+  {
+    method: 'btcAuthorizeCoinJoin',
+    description: 'btcAuthorizeCoinJoin',
+    presupposes: [
+      {
+        title: 'btcAuthorizeCoinJoin',
+        value: {
+          path: "m/44'/0'/0'/0/0",
+          coin: 'btc',
+          coordinator: '0x123456',
+          max_total_fee: 1000,
         },
       },
     ],

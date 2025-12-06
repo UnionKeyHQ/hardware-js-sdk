@@ -3,13 +3,12 @@ import { type PlaygroundProps } from '../components/Playground';
 const api: PlaygroundProps[] = [
   {
     method: 'alephiumGetAddress',
-
+    description: 'Get address',
     presupposes: [
       {
         title: 'Get address',
         value: {
           path: "m/44'/1234'/0'/0/0",
-          includePublicKey: true,
           showOnOneKey: false,
           group: 0,
         },
@@ -20,13 +19,11 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/1234'/0'/0/0",
-              includePublicKey: true,
               showOnOneKey: false,
               group: 0,
             },
             {
               path: "m/44'/1234'/0'/0/1",
-              includePublicKey: true,
               showOnOneKey: false,
               group: 0,
             },
@@ -42,7 +39,7 @@ const api: PlaygroundProps[] = [
   },
   {
     method: 'alephiumSignMessage',
-
+    description: 'Sign Message',
     presupposes: [
       {
         title: 'Sign Alephium',
@@ -80,7 +77,7 @@ const api: PlaygroundProps[] = [
   },
   {
     method: 'alephiumSignTransaction',
-
+    description: 'Sign Transaction',
     presupposes: [
       {
         title: 'Native Transfer',

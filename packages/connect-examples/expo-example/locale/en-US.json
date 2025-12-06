@@ -34,6 +34,7 @@
   "action__ok": "OK",
 
   "action__start_test": "Start Test",
+  "action__start_error_test": "Testing failed cases",
   "action__stop_test": "Stop Test",
 
   "tip__update_ready": "There are new versions that can be updated",
@@ -119,7 +120,6 @@
 
   "label__device_bootloader_statue": "Bootloader",
   "label__device_firmware_status": "Firmware",
-
   "label__device_se_info": "Device SE Information",
   "label__device_info_update_time": "Update Time",
   "label__device_info_refresh": "Refreshing Device Information",

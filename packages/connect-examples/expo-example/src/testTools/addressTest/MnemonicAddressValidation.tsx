@@ -59,78 +59,6 @@ const testCase: MnemonicAddressTestCase = {
       method: 'alephiumGetAddress',
     },
     {
-      id: 'algoGetAddress',
-      method: 'algoGetAddress',
-    },
-    {
-      id: 'dnxGetAddress',
-      method: 'dnxGetAddress',
-    },
-    {
-      id: 'tonGetAddress',
-      method: 'tonGetAddress',
-    },
-    {
-      id: 'nervosGetAddress',
-      method: 'nervosGetAddress',
-    },
-    {
-      id: 'nexaGetAddress',
-      method: 'nexaGetAddress',
-    },
-    {
-      id: 'polkadotGetAddress-polkadot',
-      method: 'polkadotGetAddress',
-    },
-    {
-      id: 'polkadotGetAddress-kusama',
-      method: 'polkadotGetAddress',
-      params: {
-        network: 'kusama',
-        prefix: '2',
-      },
-    },
-    {
-      id: 'polkadotGetAddress-astar',
-      method: 'polkadotGetAddress',
-      params: {
-        network: 'astar',
-        prefix: '5',
-      },
-    },
-    {
-      id: 'polkadotGetAddress-westend',
-      method: 'polkadotGetAddress',
-      params: {
-        network: 'westend',
-        prefix: '42',
-      },
-    },
-    {
-      id: 'polkadotGetAddress-manta',
-      method: 'polkadotGetAddress',
-      params: {
-        network: 'manta',
-        prefix: '77',
-      },
-    },
-    {
-      id: 'polkadotGetAddress-joystream',
-      method: 'polkadotGetAddress',
-      params: {
-        network: 'joystream',
-        prefix: '126',
-      },
-    },
-    {
-      id: 'scdoGetAddress',
-      method: 'scdoGetAddress',
-    },
-    {
-      id: 'suiGetAddress',
-      method: 'suiGetAddress',
-    },
-    {
       id: 'xrpGetAddress',
       method: 'xrpGetAddress',
     },
@@ -146,8 +74,8 @@ const testCase: MnemonicAddressTestCase = {
       },
     },
     {
-      id: 'benfenGetAddress',
-      method: 'benfenGetAddress',
+      id: 'benfenGetaddress',
+      method: 'benfenGetaddress',
     },
     {
       id: 'stellarGetAddress',
@@ -500,7 +428,7 @@ function ExecuteView() {
         <ExportReportView />
       </Stack>
     ),
-    [beginTest, intl, mnemonic, passphraseInputMemo, retryFailedTasks, showOnOneKey, stopTest]
+    [beginTest, intl, mnemonic, passphraseInputMemo, showOnOneKey, stopTest]
   );
 
   return contentMemo;

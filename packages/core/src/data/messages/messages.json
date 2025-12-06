@@ -6839,6 +6839,14 @@
     "LockDevice": {
       "fields": {}
     },
+    "SetBusy": {
+      "fields": {
+        "expiry_ms": {
+          "type": "uint32",
+          "id": 1
+        }
+      }
+    },
     "EndSession": {
       "fields": {}
     },
@@ -7011,6 +7019,23 @@
     "Entropy": {
       "fields": {
         "entropy": {
+          "rule": "required",
+          "type": "bytes",
+          "id": 1
+        }
+      }
+    },
+    "GetFirmwareHash": {
+      "fields": {
+        "challenge": {
+          "type": "bytes",
+          "id": 1
+        }
+      }
+    },
+    "FirmwareHash": {
+      "fields": {
+        "hash": {
           "rule": "required",
           "type": "bytes",
           "id": 1
@@ -7276,6 +7301,24 @@
         }
       }
     },
+    "GetNonce": {
+      "options": {
+        "(experimental_message)": true
+      },
+      "fields": {}
+    },
+    "Nonce": {
+      "options": {
+        "(experimental_message)": true
+      },
+      "fields": {
+        "nonce": {
+          "rule": "required",
+          "type": "bytes",
+          "id": 1
+        }
+      }
+    },
     "DeviceBackToBoot": {
       "fields": {}
     },
@@ -7455,6 +7498,15 @@
         "pre_firmware": {
           "type": "string",
           "id": 6
+        }
+      }
+    },
+    "WriteSEPrivateKey": {
+      "fields": {
+        "private_key": {
+          "rule": "required",
+          "type": "bytes",
+          "id": 1
         }
       }
     },
@@ -7800,6 +7852,30 @@
         "unlocked_attach_pin": {
           "type": "bool",
           "id": 3
+        }
+      }
+    },
+    "UnlockPath": {
+      "fields": {
+        "address_n": {
+          "rule": "repeated",
+          "type": "uint32",
+          "id": 1,
+          "options": {
+            "packed": false
+          }
+        },
+        "mac": {
+          "type": "bytes",
+          "id": 2
+        }
+      }
+    },
+    "UnlockedPathRequest": {
+      "fields": {
+        "mac": {
+          "type": "bytes",
+          "id": 1
         }
       }
     },
@@ -12050,6 +12126,8 @@
         "MessageType_ButtonRequest": 26,
         "MessageType_ButtonAck": 27,
         "MessageType_ApplyFlags": 28,
+        "MessageType_GetNonce": 31,
+        "MessageType_Nonce": 33,
         "MessageType_BackupDevice": 34,
         "MessageType_EntropyRequest": 35,
         "MessageType_EntropyAck": 36,
@@ -12066,6 +12144,10 @@
         "MessageType_PreauthorizedRequest": 85,
         "MessageType_CancelAuthorization": 86,
         "MessageType_RebootToBootloader": 87,
+        "MessageType_GetFirmwareHash": 88,
+        "MessageType_FirmwareHash": 89,
+        "MessageType_UnlockPath": 93,
+        "MessageType_UnlockedPathRequest": 94,
         "MessageType_SetU2FCounter": 63,
         "MessageType_GetNextU2FCounter": 80,
         "MessageType_NextU2FCounter": 81,
@@ -12476,6 +12558,7 @@
         "MessageType_FileInfoList": 10024,
         "MessageType_OnekeyGetFeatures": 10025,
         "MessageType_OnekeyFeatures": 10026,
+        "MessageType_WriteSEPrivateKey": 10027,
         "MessageType_GetPassphraseState": 10028,
         "MessageType_PassphraseState": 10029,
         "MessageType_UnLockDevice": 10030,

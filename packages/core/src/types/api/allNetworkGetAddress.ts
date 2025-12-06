@@ -52,7 +52,6 @@ export type AllNetworkAddressParams = {
 
   includePublicKey?: boolean;
   group?: string;
-  useTweak?: boolean;
 };
 
 type AllNetworkAddressPayload =
@@ -95,7 +94,7 @@ type AllNetworkAddressPayload =
 export type AllNetworkAddress = AllNetworkAddressParams & {
   success: boolean;
   payload?:
-    | (AllNetworkAddressPayload & { rootFingerprint: number })
+    | AllNetworkAddressPayload
     | {
         error: string;
         code: number;
