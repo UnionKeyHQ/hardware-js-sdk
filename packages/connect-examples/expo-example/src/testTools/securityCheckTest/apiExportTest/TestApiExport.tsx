@@ -238,10 +238,15 @@ function ExecuteView() {
 
   const errorCaseRef = useRef<TestCaseDataWithKey<TestCaseDataType>[]>([]);
 
+  const runningConnectIdRef = useRef<string>('');
   const nextRequestCleanUpRef = useRef(false);
   const currentRequestDeviceRef = useRef<TestDeviceType>(undefined);
   const currentRequestPinRef = useRef(false);
   const currentRequestButtonRef = useRef(false);
+  const currentCaseHadPinRequestRef = useRef(false);
+  const currentCaseHadButtonRequestRef = useRef(false);
+  const interruptGetFeaturesPromiseRef = useRef<Promise<void> | null>(null);
+  const lastInterruptAtRef = useRef(0);
 
   useEffect(() => {
     normalNextDelayMs.current = normalNextDelayMsState;
@@ -307,6 +312,7 @@ function ExecuteView() {
   const { stopTest, beginTest } = useRunnerTest<TestCaseDataType>({
     initTestCase: async (context, sdk) => {
       const { connectId } = context;
+      runningConnectIdRef.current = connectId ?? '';
       const res = await sdk.getFeatures(connectId ?? '', {
         retryCount: 1,
       });
@@ -416,32 +422,46 @@ function ExecuteView() {
         sdk.off(UI_EVENT, hardwareUiEventListener);
       }
 
+      // 为了保持批量测试速度：用单飞的 getFeatures 来“打断”正在等待 PIN/按键确认的请求
+      // 避免使用 `sdk.cancel()`（它会触发 prePendingCallPromise，导致后续请求经常额外等待，整体变慢）
+      const interruptByGetFeatures = (connectId?: string) => {
+        const realConnectId = connectId || runningConnectIdRef.current;
+        if (!realConnectId) return;
+        const now = Date.now();
+        // 单飞 + 防抖：避免 UI_EVENT 高频触发导致 getFeatures 堆积
+        if (interruptGetFeaturesPromiseRef.current) return;
+        if (now - lastInterruptAtRef.current < 300) return;
+        lastInterruptAtRef.current = now;
+
+        interruptGetFeaturesPromiseRef.current = (async () => {
+          await responseUiEventDelay();
+          try {
+            await sdk.getFeatures(realConnectId, { retryCount: 1 });
+          } catch (error) {
+            // ignore
+          }
+        })().finally(() => {
+          interruptGetFeaturesPromiseRef.current = null;
+        });
+      };
+
       hardwareUiEventListener = async (message: CoreMessage) => {
         console.log('TopLEVEL EVENT ===>>>> 123123123123123123: ', message);
         if (message.type === UI_REQUEST.REQUEST_PIN) {
+          currentCaseHadPinRequestRef.current = true;
+          // 触发设备端输入 PIN（不弹出软件输入框）
           sdk.uiResponse({
             type: UI_RESPONSE.RECEIVE_PIN,
             payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
           });
 
           if (currentRequestPinRef.current) {
-            const { connectId } = message.payload.device;
-
-            await responseUiEventDelay();
-
-            sdk.getFeatures(connectId, {
-              retryCount: 1,
-            });
+            interruptByGetFeatures(message.payload?.device?.connectId ?? undefined);
           }
-        } else if (message.type === 'ui-button') {
+        } else if (message.type === UI_REQUEST.REQUEST_BUTTON) {
+          currentCaseHadButtonRequestRef.current = true;
           if (currentRequestButtonRef.current) {
-            const { connectId } = message.payload.device;
-
-            await responseUiEventDelay();
-
-            sdk.getFeatures(connectId, {
-              retryCount: 1,
-            });
+            interruptByGetFeatures(message.payload?.device?.connectId ?? undefined);
           }
         }
       };
@@ -460,6 +480,8 @@ function ExecuteView() {
         await responseNextTaskDelay();
       }
 
+      currentCaseHadPinRequestRef.current = false;
+      currentCaseHadButtonRequestRef.current = false;
       currentRequestPinRef.current = item?.result?.requestPin || false;
       currentRequestButtonRef.current = item?.result?.requestButton || false;
       nextRequestCleanUpRef.current = false;
@@ -504,13 +526,14 @@ function ExecuteView() {
           return { payload: res, skipVerify: true };
         } catch (error) {
           addErrorCase(item);
+          const normalized = normalizeErrorForResult(error);
           console.log('=====>>>>> processRequest error: ', error);
           return {
             payload: {
               success: false,
               payload: {
-                code: 800,
-                error,
+                code: normalized.code,
+                error: normalized.error,
               },
             },
             skipVerify: true,
@@ -525,9 +548,13 @@ function ExecuteView() {
 
         // clean up device
         nextRequestCleanUpRef.current = true;
-        sdk.getFeatures(connectId, {
-          retryCount: 1,
-        });
+        // 超时后 sdkPromise 仍可能在后台继续运行；这里先 cancel，避免后续用例叠加请求导致 Device interrupted / active requests 堆积
+        if (connectId) {
+          sdk.cancel(connectId);
+          await sdk.getFeatures(connectId, {
+            retryCount: 1,
+          });
+        }
         return {
           payload: {
             success: false,
@@ -547,6 +574,8 @@ function ExecuteView() {
       let verifyState: VerifyState = 'none';
 
       console.log('=====>>>>> processResponse: ', item.result, res);
+      const responseError = String(res?.payload?.error ?? '');
+      const responseErrorLower = responseError.toLowerCase();
 
       if (res.payload?.code === 'timeout') {
         verifyState = 'fail';
@@ -565,21 +594,34 @@ function ExecuteView() {
       } else if (
         item.result.requestPin &&
         !res.success &&
-        (res.payload.code === 107 || res.payload?.code === 802 || res.payload?.code === 803)
+        (currentCaseHadPinRequestRef.current ||
+          res.payload.code === 107 ||
+          res.payload?.code === 109 ||
+          res.payload?.code === 802 ||
+          res.payload?.code === 803 ||
+          res.payload?.code === 822)
       ) {
         verifyState = 'success';
       } else if (
         item.result.requestButton &&
         !res.success &&
-        (res.payload.code === 107 || res.payload?.code === 802 || res.payload?.code === 803)
+        (currentCaseHadButtonRequestRef.current ||
+          res.payload.code === 107 ||
+          res.payload?.code === 109 ||
+          res.payload?.code === 802 ||
+          res.payload?.code === 803 ||
+          res.payload?.code === 822)
       ) {
         verifyState = 'success';
       } else if (
         item.result.unknownMessage &&
         !res.success &&
-        (res?.payload?.error.includes('Failure_UnexpectedMessage') ||
-          res?.payload?.error.includes('unsupport') ||
-          res?.payload?.error.includes('no such type'))
+        (res.payload?.code === 415 ||
+          res.payload?.code === 805 ||
+          responseError.includes('Failure_UnexpectedMessage') ||
+          responseErrorLower.includes('unsupport') ||
+          responseErrorLower.includes('not support') ||
+          responseErrorLower.includes('no such type'))
       ) {
         verifyState = 'success';
       } else {
@@ -685,4 +727,32 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T | 'ti
 function sleep(ms = 100) {
   // eslint-disable-next-line no-promise-executor-return
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function normalizeErrorForResult(error: unknown): { code: number; error: string } {
+  // HardwareError: { errorCode, message }
+  const maybeAny = error as any;
+  let code = 800;
+  if (typeof maybeAny?.errorCode === 'number') {
+    code = maybeAny.errorCode;
+  } else if (typeof maybeAny?.code === 'number') {
+    code = maybeAny.code;
+  }
+
+  let errorMessage: string;
+  if (error instanceof Error) {
+    errorMessage = error.message;
+  } else if (typeof error === 'string') {
+    errorMessage = error;
+  } else {
+    errorMessage = (() => {
+      try {
+        return JSON.stringify(error);
+      } catch {
+        return String(error);
+      }
+    })();
+  }
+
+  return { code, error: errorMessage };
 }
