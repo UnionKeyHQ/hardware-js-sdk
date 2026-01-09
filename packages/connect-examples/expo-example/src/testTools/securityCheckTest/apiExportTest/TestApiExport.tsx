@@ -240,7 +240,7 @@ function ExecuteView() {
 
   const runningConnectIdRef = useRef<string>('');
   const nextRequestCleanUpRef = useRef(false);
-  const currentRequestDeviceRef = useRef<TestDeviceType>(undefined);
+  const currentRequestDeviceRef = useRef<TestDeviceType>(null);
   const currentRequestPinRef = useRef(false);
   const currentRequestButtonRef = useRef(false);
   const currentCaseHadPinRequestRef = useRef(false);
@@ -262,6 +262,7 @@ function ExecuteView() {
     if (
       currentRequestDeviceRef.current === 'classic' ||
       currentRequestDeviceRef.current === 'classic1s' ||
+      currentRequestDeviceRef.current === 'classicpure' ||
       currentRequestDeviceRef.current === 'mini'
     ) {
       delayMs = 500;
@@ -281,6 +282,7 @@ function ExecuteView() {
       currentTestClass === 'normal' &&
       (currentRequestDeviceRef.current === 'classic' ||
         currentRequestDeviceRef.current === 'classic1s' ||
+        currentRequestDeviceRef.current === 'classicpure' ||
         currentRequestDeviceRef.current === 'mini')
     ) {
       delayMs = parseInt(normalNextDelayMs.current);
@@ -293,6 +295,7 @@ function ExecuteView() {
       currentTestClass === 'bootloader' &&
       (currentRequestDeviceRef.current === 'classic' ||
         currentRequestDeviceRef.current === 'classic1s' ||
+        currentRequestDeviceRef.current === 'classicpure' ||
         currentRequestDeviceRef.current === 'mini')
     ) {
       delayMs = parseInt(bootNextDelayMs.current);

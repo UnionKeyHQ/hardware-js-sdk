@@ -323,6 +323,11 @@ const api: PlaygroundProps[] = [
               requestPin: true,
             },
           },
+          classic1s: {
+            normal: {
+              requestButton: true,
+            },
+          },
           mini: {
             normal: {
               requestButton: true,

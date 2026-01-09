@@ -439,12 +439,12 @@ const api: PlaygroundProps[] = [
           },
           classic: {
             normal: {
-              requestPin: true,
+              requestButton: true,
             },
           },
           classic1s: {
             normal: {
-              requestPin: true,
+              requestButton: true,
             },
           },
         },
