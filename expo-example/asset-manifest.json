@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.js": "/static/js/main.25723d21.js",
+    "static/js/942.b6a4c63d.chunk.js": "/static/js/942.b6a4c63d.chunk.js",
+    "static/js/528.96090416.chunk.js": "/static/js/528.96090416.chunk.js",
+    "static/js/241.a71e95e6.chunk.js": "/static/js/241.a71e95e6.chunk.js",
+    "static/js/175.c225e935.chunk.js": "/static/js/175.c225e935.chunk.js",
+    "static/js/255.f30793eb.chunk.js": "/static/js/255.f30793eb.chunk.js",
+    "static/js/23.ff3c6772.chunk.js": "/static/js/23.ff3c6772.chunk.js",
+    "static/js/127.646b64f8.chunk.js": "/static/js/127.646b64f8.chunk.js",
+    "static/js/428.c7af512f.chunk.js": "/static/js/428.c7af512f.chunk.js",
+    "static/js/168.ec828757.chunk.js": "/static/js/168.ec828757.chunk.js",
+    "static/js/409.e9d6eee3.chunk.js": "/static/js/409.e9d6eee3.chunk.js",
+    "static/js/260.a4428617.chunk.js": "/static/js/260.a4428617.chunk.js",
+    "static/js/357.171afaf0.chunk.js": "/static/js/357.171afaf0.chunk.js",
+    "static/js/99.c0296ceb.chunk.js": "/static/js/99.c0296ceb.chunk.js",
+    "static/js/859.6768d795.chunk.js": "/static/js/859.6768d795.chunk.js",
+    "static/js/703.ae80275a.chunk.js": "/static/js/703.ae80275a.chunk.js",
+    "static/js/929.8a92c2b8.chunk.js": "/static/js/929.8a92c2b8.chunk.js",
+    "static/js/853.b917ce5b.chunk.js": "/static/js/853.b917ce5b.chunk.js",
+    "static/js/508.159b8ce3.chunk.js": "/static/js/508.159b8ce3.chunk.js",
+    "static/js/811.c9ecb889.chunk.js": "/static/js/811.c9ecb889.chunk.js",
+    "static/js/149.dd8a0dd7.js": "/static/js/149.dd8a0dd7.js",
+    "static/js/569.37e14dbf.chunk.js": "/static/js/569.37e14dbf.chunk.js",
+    "static/js/912.bde6b1e5.chunk.js": "/static/js/912.bde6b1e5.chunk.js",
+    "static/js/133.20e7eff0.chunk.js": "/static/js/133.20e7eff0.chunk.js",
+    "static/js/667.b408be9b.chunk.js": "/static/js/667.b408be9b.chunk.js",
+    "static/js/340.7be470d1.chunk.js": "/static/js/340.7be470d1.chunk.js",
+    "static/js/924.86e40ec3.chunk.js": "/static/js/924.86e40ec3.chunk.js",
+    "favicon.ico": "/favicon.ico",
+    "index.html": "/index.html",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon-16.png": "/favicon-16.png",
+    "manifest.json": "/manifest.json",
+    "serve.json": "/serve.json"
+  },
+  "entrypoints": [
+    "static/js/149.dd8a0dd7.js",
+    "static/js/main.25723d21.js"
+  ]
+}
