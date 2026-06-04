@@ -84,7 +84,7 @@ export const DeviceStatus: React.FC = () => {
   };
 
   const displayName =
-    deviceTypeNames[currentDevice.deviceType] || currentDevice.deviceType || 'OneKey Device';
+    deviceTypeNames[currentDevice.deviceType] || currentDevice.deviceType || 'UnionKey Device';
   const deviceLabel = currentDevice.label || currentDevice.name || '未命名设备';
 
   return (

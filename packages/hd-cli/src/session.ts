@@ -8,7 +8,7 @@
  *   Logout:  keychain delete
  */
 
-import { preloadSessionCache } from '@onekeyfe/hd-core';
+import { preloadSessionCache } from '@unionkeyfe/hd-core';
 
 import { createSecureStorage } from './storage';
 

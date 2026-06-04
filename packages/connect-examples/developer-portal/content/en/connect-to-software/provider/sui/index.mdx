@@ -1,16 +1,16 @@
 ---
 title: Sui
-description: Sui integration via OneKey's Sui Wallet Standard provider
+description: Sui integration via UnionKey's Sui Wallet Standard provider
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Sui
 
-Integrate Sui blockchain using OneKey's provider. Access via `window.$onekey.sui`.
+Integrate Sui blockchain using UnionKey's provider. Access via `window.$onekey.sui`.
 
 <Callout type="info">
-OneKey implements the Sui Wallet Standard, ensuring compatibility with all Sui dApps.
+UnionKey implements the Sui Wallet Standard, ensuring compatibility with all Sui dApps.
 </Callout>
 
 ---
@@ -27,11 +27,11 @@ OneKey implements the Sui Wallet Standard, ensuring compatibility with all Sui d
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Sui provider
+// Detect UnionKey Sui provider
 const provider = window.$onekey?.sui
 
 if (!provider) {
-  throw new Error('OneKey Sui provider not detected')
+  throw new Error('UnionKey Sui provider not detected')
 }
 ```
 
@@ -444,7 +444,7 @@ function App() {
 }
 ```
 
-OneKey is automatically detected through the Sui Wallet Standard.
+UnionKey is automatically detected through the Sui Wallet Standard.
 
 ---
 

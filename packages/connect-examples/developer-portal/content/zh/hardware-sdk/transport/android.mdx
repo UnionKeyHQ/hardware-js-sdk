@@ -5,11 +5,11 @@ title: Android：通过蓝牙连接（原生）
 # Android：通过蓝牙连接（原生）
 
 > **注意：**
-> 演示：原生 Android 示例（WebView + JSBridge + Nordic BLE）→ [native-android-example](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-android-example)
+> 演示：原生 Android 示例（WebView + JSBridge + Nordic BLE）→ [native-android-example](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-android-example)
 > 本页基于《[底层传输插件](/zh/hardware-sdk/concepts/low-level-plugin)》— 建议先阅读，了解 BLE 消息格式和协议详情。
 
 
-本指南展示如何通过底层适配器在原生 Android 宿主中集成 `@onekeyfe/hd-common-connect-sdk`。JavaScript 包在 WebView 中运行；传输调用被转发到原生（Nordic BLE）并桥接回 JS。
+本指南展示如何通过底层适配器在原生 Android 宿主中集成 `@unionkeyfe/hd-common-connect-sdk`。JavaScript 包在 WebView 中运行；传输调用被转发到原生（Nordic BLE）并桥接回 JS。
 
 ## 关键：BLE 连接流程
 
@@ -26,7 +26,7 @@ Android BLE 需要特定的连接顺序。**跳过步骤会导致静默失败。
 
 ### 为什么要先配对？
 
-OneKey 设备需要安全的 BLE 配对。不配对会导致：
+UnionKey 设备需要安全的 BLE 配对。不配对会导致：
 - `startNotifications()` 可能静默失败
 - 设备有响应但 SDK 报告"设备未找到"
 - 间歇性连接断开
@@ -95,7 +95,7 @@ suspend fun startNotificationsWithRetry(gatt: BluetoothGatt, maxRetries: Int) {
   - `no.nordicsemi.android.kotlin.ble:client:1.1.0`
   - 原因：`BleScannerSettings` 中的 `includeStoredBondedDevices` 需要 > 1.0.9
 
-OneKey BLE UUID：参见 [底层传输插件 - 快速参考](/zh/hardware-sdk/concepts/low-level-plugin#快速参考)
+UnionKey BLE UUID：参见 [底层传输插件 - 快速参考](/zh/hardware-sdk/concepts/low-level-plugin#快速参考)
 
 ## 步骤 1. Gradle 和 Manifest
 
@@ -183,18 +183,18 @@ class MainActivity : AppCompatActivity() {
 ## 步骤 4. BLE 扫描（包括存储的已绑定设备）
 
 ```kotlin
-private val ONEKEY_SERVICE_UUID: UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb")
+private val UNIONKEY_SERVICE_UUID: UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb")
 private val bleScanner by lazy { BleScanner(this) }
 private val aggregator = BleScanResultAggregator()
 
-data class OneKeyDeviceInfo(val id: String, val name: String)
+data class UnionKeyDeviceInfo(val id: String, val name: String)
 
-private fun startScan(onResult: (List<OneKeyDeviceInfo>) -> Unit) {
+private fun startScan(onResult: (List<UnionKeyDeviceInfo>) -> Unit) {
   if (!ensureBluetoothPermissions()) return
 
   val settings = BleScannerSettings(
     scanMode = BleScanMode.LOW_LATENCY,
-    filter = BleScanFilter(serviceUUIDs = listOf(FilteredServiceUuid(ONEKEY_SERVICE_UUID))),
+    filter = BleScanFilter(serviceUUIDs = listOf(FilteredServiceUuid(UNIONKEY_SERVICE_UUID))),
     includeStoredBondedDevices = true,               // 需要 Nordic BLE >= 1.1.0
   )
 
@@ -204,7 +204,7 @@ private fun startScan(onResult: (List<OneKeyDeviceInfo>) -> Unit) {
     .onEach { results ->
       val devices = results.mapNotNull { r -> r.device }
         .distinctBy { it.address }
-        .map { OneKeyDeviceInfo(id = it.address, name = it.name ?: "") }
+        .map { UnionKeyDeviceInfo(id = it.address, name = it.name ?: "") }
       onResult(devices)
     }
     .launchIn(lifecycleScope)
@@ -238,8 +238,8 @@ webview.registerHandler("connect", BridgeHandler { data, cb ->
     val gatt = ClientBleGatt.getInstance(this@MainActivity, mac)
     connection = gatt
 
-    writeCh = gatt.getCharacteristic(ONEKEY_SERVICE_UUID, UUID.fromString("00000002-0000-1000-8000-00805f9b34fb"))
-    notifyCh = gatt.getCharacteristic(ONEKEY_SERVICE_UUID, UUID.fromString("00000003-0000-1000-8000-00805f9b34fb"))
+    writeCh = gatt.getCharacteristic(UNIONKEY_SERVICE_UUID, UUID.fromString("00000002-0000-1000-8000-00805f9b34fb"))
+    notifyCh = gatt.getCharacteristic(UNIONKEY_SERVICE_UUID, UUID.fromString("00000003-0000-1000-8000-00805f9b34fb"))
 
     notifyCh?.getNotifications()?.onEach { packet ->
       // 将十六进制转发给 JS 接收器
@@ -281,7 +281,7 @@ webview.registerHandler("disconnect", BridgeHandler { _, cb ->
 
 在您的 JS 包中处理 `UI_EVENT` 并使用 `HardwareSDK.uiResponse` 响应。参见 [事件配置](/zh/hardware-sdk/core-api-guide#events-ui) 了解事件连接，以及 WebUSB 指南了解最小的、生产就绪的对话框。
 
-- 设备上的 PIN：`payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE'`
+- 设备上的 PIN：`payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE'`
 - 设备上的 Passphrase：`{ passphraseOnDevice: true, value: '' }`
 
 ## 步骤 9. 检查清单

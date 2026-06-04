@@ -6,7 +6,7 @@ import { sha256 } from '@noble/hashes/sha256';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 function publicKeyToAddress(publicKey: Uint8Array): string {
   const pub = bytesToHex(publicKey).toUpperCase();

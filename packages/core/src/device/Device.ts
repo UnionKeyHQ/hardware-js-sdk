@@ -1,6 +1,6 @@
 import EventEmitter from 'events';
 import semver from 'semver';
-import { Enum_Capability } from '@onekeyfe/hd-transport';
+import { Enum_Capability } from '@unionkeyfe/hd-transport';
 import {
   EDeviceType,
   ERRORS,
@@ -9,7 +9,7 @@ import {
   HardwareError,
   HardwareErrorCode,
   createDeferred,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import {
   LoggerNames,
@@ -49,8 +49,8 @@ import type {
   PassphraseRequestPayload,
 } from '../events';
 import type { PassphrasePromptResponse } from './DeviceCommands';
-import type { Deferred } from '@onekeyfe/hd-shared';
-import type { OneKeyDeviceInfo as DeviceDescriptor } from '@onekeyfe/hd-transport';
+import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { OneKeyDeviceInfo as DeviceDescriptor } from '@unionkeyfe/hd-transport';
 import type DeviceConnector from './DeviceConnector';
 
 export type InitOptions = {

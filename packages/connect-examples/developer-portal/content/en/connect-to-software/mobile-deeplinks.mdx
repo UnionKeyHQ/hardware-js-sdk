@@ -1,15 +1,15 @@
 ---
 title: Mobile & Deeplinks
-description: Integrate OneKey wallet in mobile web apps and WebViews using deeplinks
+description: Integrate UnionKey wallet in mobile web apps and WebViews using deeplinks
 ---
 
 # Mobile & Deeplinks
 
-Integrate OneKey wallet in mobile web apps and WebViews using deeplinks and universal links.
+Integrate UnionKey wallet in mobile web apps and WebViews using deeplinks and universal links.
 
 ## Overview
 
-When building mobile web apps or integrating within WebViews, you can use OneKey's deeplink system to connect to the wallet app directly.
+When building mobile web apps or integrating within WebViews, you can use UnionKey's deeplink system to connect to the wallet app directly.
 
 ## Deeplink Formats
 
@@ -22,7 +22,7 @@ onekey-wallet://wc?uri={encodeURIComponent(wcUri)}
 ### Universal Link (Recommended)
 
 ```
-https://app.onekey.so/wc/connect/wc?uri={encodeURIComponent(wcUri)}
+https://app.unionkey.io/wc/connect/wc?uri={encodeURIComponent(wcUri)}
 ```
 
 > **Tip:** Universal links are recommended as they work more reliably across different mobile platforms and browsers.
@@ -37,7 +37,7 @@ const wcUri = 'wc:a281...' // Your WalletConnect URI
 const customSchemeLink = `onekey-wallet://wc?uri=${encodeURIComponent(wcUri)}`
 
 // Option 2: Universal link (recommended)
-const universalLink = `https://app.onekey.so/wc/connect/wc?uri=${encodeURIComponent(wcUri)}`
+const universalLink = `https://app.unionkey.io/wc/connect/wc?uri=${encodeURIComponent(wcUri)}`
 
 // Open the link
 window.location.href = universalLink
@@ -47,12 +47,12 @@ window.location.href = universalLink
 
 ### iOS
 
-- Universal links work best when the OneKey app is installed
+- Universal links work best when the UnionKey app is installed
 - If the app is not installed, the universal link will redirect to the App Store
 
 ### Android
 
-- Custom scheme links require the OneKey app to be installed
+- Custom scheme links require the UnionKey app to be installed
 - Universal links fall back gracefully to web if the app is not present
 
 ## Best Practices

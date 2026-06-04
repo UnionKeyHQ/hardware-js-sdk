@@ -12,7 +12,7 @@ title: cardanoSignTransaction
 
 ### Cardano：签名交易 <a href="#cardano-sign-transaction" id="cardano-sign-transaction"></a>
 
-对指定交易进行签名。用户需要在 OneKey 上确认所有交易详情。
+对指定交易进行签名。用户需要在 UnionKey 上确认所有交易详情。
 
 ```javascript
 const response = await HardwareSDK.cardanoSignTransaction(connectId, deviceId, params);
@@ -64,7 +64,7 @@ CardanoSignTransaction 类型
 
 #### 质押池注册证书说明 <a href="#stake-pool-registration-certificate-specifics" id="stake-pool-registration-certificate-specifics"></a>
 
-OneKey 支持以矿池所有者身份签署质押池注册证书。交易可能包含外部输入（例如属于矿池运营者），OneKey 无法验证它们是否确实是外部的，因此如果我们允许使用支出密钥签署交易，则存在从用户不打算支出的输入中损失资金的风险。此外，如果交易中有任何提款，也存在意外签署提款的风险。为了降低这些风险，我们为质押池注册交易引入了特殊的验证规则，这些规则也在 OneKey 上进行验证。验证规则如下：
+UnionKey 支持以矿池所有者身份签署质押池注册证书。交易可能包含外部输入（例如属于矿池运营者），UnionKey 无法验证它们是否确实是外部的，因此如果我们允许使用支出密钥签署交易，则存在从用户不打算支出的输入中损失资金的风险。此外，如果交易中有任何提款，也存在意外签署提款的风险。为了降低这些风险，我们为质押池注册交易引入了特殊的验证规则，这些规则也在 UnionKey 上进行验证。验证规则如下：
 
 1. 交易不能包含任何其他证书，甚至不能包含另一个质押池注册
 2. 交易不能包含任何提款
@@ -73,12 +73,12 @@ OneKey 支持以矿池所有者身份签署质押池注册证书。交易可能�
 
 #### 治理注册（Catalyst 和其他） <a href="#governance-registration-catalyst-and-other" id="governance-registration-catalyst-and-other"></a>
 
-OneKey 支持签署包含治理注册的辅助数据的交易。治理注册曾经遵循 [CIP-15](https://cips.cardano.org/cips/cip15/)，现已被 [CIP-36](https://cips.cardano.org/cips/cip36/) 取代。目前，OneKey 支持 CIP-15 和 CIP-36 格式，可以在 `format` 字段中指定预期标准（默认为 CIP-15）。它们的区别如下：
+UnionKey 支持签署包含治理注册的辅助数据的交易。治理注册曾经遵循 [CIP-15](https://cips.cardano.org/cips/cip15/)，现已被 [CIP-36](https://cips.cardano.org/cips/cip36/) 取代。目前，UnionKey 支持 CIP-15 和 CIP-36 格式，可以在 `format` 字段中指定预期标准（默认为 CIP-15）。它们的区别如下：
 
-* CIP-36 允许将投票权委托给多个具有不同投票权的投票公钥（CardanoGovernanceRegistrationDelegation），作为仅提供单个投票公钥的替代方案。请注意，OneKey 固件在单个治理注册中最多支持 32 个委托。
-* CIP-36 注册包含 votingPurpose 字段。值 0 用于 Catalyst 投票，值 1 用于其他目的。如果未提供值，OneKey 默认序列化 0（如果使用 CIP-36 格式）。
+* CIP-36 允许将投票权委托给多个具有不同投票权的投票公钥（CardanoGovernanceRegistrationDelegation），作为仅提供单个投票公钥的替代方案。请注意，UnionKey 固件在单个治理注册中最多支持 32 个委托。
+* CIP-36 注册包含 votingPurpose 字段。值 0 用于 Catalyst 投票，值 1 用于其他目的。如果未提供值，UnionKey 默认序列化 0（如果使用 CIP-36 格式）。
 
-OneKey 目前不支持 1694 派生路径。
+UnionKey 目前不支持 1694 派生路径。
 
 ### 示例 <a href="#transaction-examples" id="transaction-examples"></a>
 
@@ -211,7 +211,7 @@ HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
                 rewardAccount: 'stake1uya87zwnmax0v6nnn8ptqkl6ydx4522kpsc3l3wmf3yswygwx45el', // bech32 编码的质押池奖励账户
                 owners: [
                     {
-                        stakingKeyPath: "m/1852'/1815'/0'/2/0", // 这是将在 OneKey 上签署交易的所有者密钥的路径
+                        stakingKeyPath: "m/1852'/1815'/0'/2/0", // 这是将在 UnionKey 上签署交易的所有者密钥的路径
                     },
                     {
                         stakingKeyHash: '3a7f09d3df4cf66a7399c2b05bfa234d5a29560c311fc5db4c490711', // 其他所有者
@@ -294,7 +294,7 @@ HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
 
 #### 返回结果 <a href="#result" id="result"></a>
 
-由于内存限制，OneKey 的 Cardano 实现引入了交易流式传输，OneKey 不再将整个序列化交易作为 `CardanoSignTransaction` 调用的结果返回。相反，返回交易哈希、交易见证和辅助数据补充，序列化交易需要由客户端组装。
+由于内存限制，UnionKey 的 Cardano 实现引入了交易流式传输，UnionKey 不再将整个序列化交易作为 `CardanoSignTransaction` 调用的结果返回。相反，返回交易哈希、交易见证和辅助数据补充，序列化交易需要由客户端组装。
 
 CardanoSignedTxData 类型
 

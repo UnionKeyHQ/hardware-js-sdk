@@ -5,7 +5,7 @@ The module under `packages/connect-examples/react-native-demo/air-gap` demonstra
 ## Feature overview
 
 1. **Import device context** – `AirGapScanner` captures the wallet’s `crypto-multi-accounts` export, converts the captured frames into a UR object with `airGapUrUtils.qrcodeToUr()`, and parses the payload through `getAirGapSdk().parseMultiAccounts()` to persist the device fingerprint, derivation paths, and xpubs.
-2. **Build outbound requests** – `OneKeyRequestDeviceQR` and the chain SDK wrappers (`getAirGapSdk().eth`, `.btc`, `.sol`) assemble UR payloads for address verification, sign requests, and PSBT construction based on the stored device metadata.
+2. **Build outbound requests** – `UnionKeyRequestDeviceQR` and the chain SDK wrappers (`getAirGapSdk().eth`, `.btc`, `.sol`) assemble UR payloads for address verification, sign requests, and PSBT construction based on the stored device metadata.
 3. **Process hardware responses** – When the hardware wallet plays back QR frames, `AirGapScanner` feeds them into `airGapUrUtils.createAnimatedURDecoder()`. Completed UR objects are decoded via `parseAirGapUr(...)`, and `DecodedResultCard` renders the structured result (for example `eth-sign-request`, `eth-signature`, or `crypto-psbt`).
 
 ## QR scanning pipeline
@@ -36,11 +36,11 @@ The module under `packages/connect-examples/react-native-demo/air-gap` demonstra
 
 - `airGapUrUtils`: conversions between raw QR frames, UR objects, and JSON representations (`qrcodeToUr`, `urToQrcode`, animated encoder/decoder factories).
 - `getAirGapSdk()`: lazily instantiates the Keystone SDK with chain-specific extensions (`AirGapEthSDK`, `AirGapBtcSDK`, `AirGapSolSDK`).
-- `OneKeyRequestDeviceQR`: wraps outbound requests so they conform to the `onekey-app-call-device` message structure understood by the hardware.
+- `UnionKeyRequestDeviceQR`: wraps outbound requests so they conform to the `onekey-app-call-device` message structure understood by the hardware.
 
 ## Third-party wallet integration notes
 
-When integrating OneKey Air-Gap with an existing wallet app, watch out for these issues discovered during real-world integrations:
+When integrating UnionKey Air-Gap with an existing wallet app, watch out for these issues discovered during real-world integrations:
 
 ### UR type routing (critical)
 
@@ -58,12 +58,12 @@ Most wallets use a whitelist to route UR data to the correct decoder. The BC-UR 
 
 ### `onekey-app-call-device` is private
 
-The `onekey-app-call-device` UR type is an internal protocol for OneKey device management (batch account export, address verification). **Third-party wallets should NOT implement this** — it may change at any time. Use standard Keystone SDK methods (`parseMultiAccounts`, `parseHDKey`) to handle device responses instead.
+The `onekey-app-call-device` UR type is an internal protocol for UnionKey device management (batch account export, address verification). **Third-party wallets should NOT implement this** — it may change at any time. Use standard Keystone SDK methods (`parseMultiAccounts`, `parseHDKey`) to handle device responses instead.
 
 ### Fragment size differences
 
-- OneKey demo uses `maxFragmentLength: 100` (balanced density)
-- OneKey firmware uses `max_fragment_len: 200`
+- UnionKey demo uses `maxFragmentLength: 100` (balanced density)
+- UnionKey firmware uses `max_fragment_len: 200`
 - Other wallets may use different values (e.g., 150–200)
 
 The BC-UR decoder handles any fragment size, so these differences don't cause failures. However, larger fragments produce denser QR codes that may be harder for some cameras to scan. Consider the target device's camera quality when choosing fragment sizes.

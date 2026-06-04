@@ -5,15 +5,15 @@ import { Check, X } from 'lucide-react'
 
 const devices = [
   {
-    name: 'OneKey Classic 1s',
+    name: 'UnionKey Classic 1s',
     image: '/icons/devices/classic1s.png',
     bluetooth: true,
     usb: true,
     airGap: false,
-    description: { en: 'OneKey Classic 1s', zh: '经典款 Classic 1s' }
+    description: { en: 'UnionKey Classic 1s', zh: '经典款 Classic 1s' }
   },
   {
-    name: 'OneKey Classic 1s Pure',
+    name: 'UnionKey Classic 1s Pure',
     image: '/icons/devices/classicPure.png',
     bluetooth: true,
     usb: true,
@@ -21,7 +21,7 @@ const devices = [
     description: { en: 'Battery-free edition', zh: 'Classic 1s Pure 无电池版本' }
   },
   {
-    name: 'OneKey Mini',
+    name: 'UnionKey Mini',
     image: '/icons/devices/mini.png',
     bluetooth: false,
     usb: true,
@@ -29,7 +29,7 @@ const devices = [
     description: { en: 'Compact USB-only wallet', zh: '紧凑型 USB 钱包' }
   },
   {
-    name: 'OneKey Touch',
+    name: 'UnionKey Touch',
     image: '/icons/devices/touch.png',
     bluetooth: true,
     usb: true,
@@ -37,7 +37,7 @@ const devices = [
     description: { en: 'Full touchscreen experience', zh: '全触屏体验' }
   },
   {
-    name: 'OneKey Pro',
+    name: 'UnionKey Pro',
     image: '/icons/devices/pro.png',
     bluetooth: true,
     usb: true,

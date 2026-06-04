@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to Sui using OneKey's Sui Wallet Standard provider
+description: Connect to Sui using UnionKey's Sui Wallet Standard provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with Sui using OneKey's provider.
+Learn how to detect, connect, and interact with Sui using UnionKey's provider.
 
 <Callout type="info">
-OneKey implements the Sui Wallet Standard, ensuring compatibility with all Sui dApps.
+UnionKey implements the Sui Wallet Standard, ensuring compatibility with all Sui dApps.
 </Callout>
 
 ---
@@ -18,11 +18,11 @@ OneKey implements the Sui Wallet Standard, ensuring compatibility with all Sui d
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Sui provider
+// Detect UnionKey Sui provider
 const provider = window.$onekey?.sui
 
 if (!provider) {
-  throw new Error('OneKey Sui provider not detected')
+  throw new Error('UnionKey Sui provider not detected')
 }
 ```
 
@@ -154,4 +154,4 @@ function App() {
 }
 ```
 
-OneKey is automatically detected through the Sui Wallet Standard.
+UnionKey is automatically detected through the Sui Wallet Standard.

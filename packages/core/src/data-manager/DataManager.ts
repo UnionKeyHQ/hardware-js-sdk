@@ -1,6 +1,6 @@
 import axios from 'axios';
 import semver from 'semver';
-import { EDeviceType, EFirmwareType } from '@onekeyfe/hd-shared';
+import { EDeviceType, EFirmwareType } from '@unionkeyfe/hd-shared';
 
 import MessagesJSON from '../data/messages/messages.json';
 import MessagesLegacyV1JSON from '../data/messages/messages_legacy_v1.json';
@@ -393,8 +393,8 @@ export default class DataManager {
     }
 
     const url = settings.preRelease
-      ? 'https://data.onekey.so/pre-config.json'
-      : 'https://data.onekey.so/config.json';
+      ? 'https://data.unionkey.io/pre-config.json'
+      : 'https://data.unionkey.io/config.json';
 
     const urlWithCache = `${url}?noCache=${getTimeStamp()}`;
     let data: RemoteConfigResponse | null = null;

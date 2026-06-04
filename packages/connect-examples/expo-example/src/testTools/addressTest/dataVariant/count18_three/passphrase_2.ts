@@ -2,7 +2,7 @@ import type { AddressTestCaseData } from '../../data/types';
 
 export default {
   name: 'three-passphrase18-密语2',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428114271',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428114271',
   passphrase: '7789$$$add@@R@H',
   passphraseState: 'mp5EXTXF5h4QB2APmiRSEBi1xAX3H5ga3B',
   data: [

@@ -159,17 +159,17 @@ export function ProPinScreen({
             const isOkKey = key === 'ok'
 
             const bg = isCloseKey
-              ? PRO_COLORS.ONEKEY_RED_1
+              ? PRO_COLORS.UNIONKEY_RED_1
               : isOkKey
                 ? canSubmit
-                  ? PRO_COLORS.ONEKEY_GREEN
-                  : PRO_COLORS.ONEKEY_BLACK_1
-                : PRO_COLORS.ONEKEY_BLACK
+                  ? PRO_COLORS.UNIONKEY_GREEN
+                  : PRO_COLORS.UNIONKEY_BLACK_1
+                : PRO_COLORS.UNIONKEY_BLACK
 
             const fg = isOkKey
               ? canSubmit
                 ? PRO_COLORS.BLACK
-                : PRO_COLORS.ONEKEY_GRAY_1
+                : PRO_COLORS.UNIONKEY_GRAY_1
               : PRO_COLORS.WHITE
 
             const label =

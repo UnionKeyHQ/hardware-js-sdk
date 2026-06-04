@@ -3,7 +3,7 @@ import { ChainMethodsSidebar } from '../../../components/ChainMethodsSidebar'
 export default {
   index: 'Overview',
   'agent-integration': {
-    title: 'OneKey Agent Wallet',
+    title: 'UnionKey Agent Wallet',
     display: 'hidden'
   },
   playground: {

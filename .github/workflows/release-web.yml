@@ -6,7 +6,7 @@ jobs:
   release-web:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_PATH: 'https://jssdk.onekey.so/${{ github.event.repository.name }}/${{ github.sha }}/'
+      PUBLIC_PATH: 'https://jssdk.unionkey.io/${{ github.event.repository.name }}/${{ github.sha }}/'
     steps:
       - uses: actions/checkout@v4
       - name: Setup Environment

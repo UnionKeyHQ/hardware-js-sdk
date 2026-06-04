@@ -1,16 +1,16 @@
 ---
 title: Algorand
-description: 通过 OneKey 的 Provider 集成 Algorand
+description: 通过 UnionKey 的 Provider 集成 Algorand
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Algorand
 
-使用 OneKey 的 Provider 集成 Algorand 区块链。通过 `window.$onekey.algo` 访问。
+使用 UnionKey 的 Provider 集成 Algorand 区块链。通过 `window.$onekey.algo` 访问。
 
 <Callout type="info">
-OneKey 的 Algorand Provider 支持传统接口和 ARC-0001 兼容接口。
+UnionKey 的 Algorand Provider 支持传统接口和 ARC-0001 兼容接口。
 </Callout>
 
 ---
@@ -27,15 +27,15 @@ OneKey 的 Algorand Provider 支持传统接口和 ARC-0001 兼容接口。
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Algorand provider
+// 检测 UnionKey Algorand provider
 const provider = window.$onekey?.algo
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Algorand provider')
+  throw new Error('未检测到 UnionKey Algorand provider')
 }
 
 // 检查兼容性
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---
@@ -334,7 +334,7 @@ interface TransactionResult {
 |------|------|------|
 | `isConnected` | `boolean` | 连接状态 |
 | `address` | `string \| null` | 已连接地址 |
-| `isOneKey` | `boolean` | OneKey 标识 |
+| `isUnionKey` | `boolean` | UnionKey 标识 |
 
 ### 事件
 

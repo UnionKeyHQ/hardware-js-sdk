@@ -8,7 +8,7 @@ title: evmSignTypedData
 
 使用指定 BIP32 路径派生的私钥对 [EIP-712](https://eips.ethereum.org/EIPS/eip-712) 类型化数据消息进行签名。
 
-用户需要在 OneKey 设备上确认所有签名详情。
+用户需要在 UnionKey 设备上确认所有签名详情。
 
 * **支持 EIP-712（v3 和 v4）**
 * **使用 `evmSignTypedData` 来签名类型化结构数据**
@@ -71,7 +71,7 @@ const eip712Data = {
         name: 'example.onekey.io',
     },
     message: {
-        "Best Wallet": "OneKey Wallet",
+        "Best Wallet": "UnionKey Wallet",
         // 注意 JavaScript 数字：MAX_SAFE_INTEGER 相当低
         "Number": `${2n ** 55n}`,
     },

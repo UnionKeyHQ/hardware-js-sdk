@@ -5,7 +5,7 @@ import { findMethod } from '../src/api/utils';
 
 jest.mock('../src/data/config', () => ({
   getSDKVersion: jest.fn(() => '1.0.0'),
-  DEFAULT_DOMAIN: 'https://jssdk.onekey.so/1.0.0/',
+  DEFAULT_DOMAIN: 'https://jssdk.unionkey.io/1.0.0/',
 }));
 
 jest.mock('../src/api/utils', () => ({
@@ -107,12 +107,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/2",
-            showOnOneKey: false,
+            showOnUnionKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/2",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               chainName: '1',
             },
           },
@@ -166,12 +166,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/2",
-            showOnOneKey: false,
+            showOnUnionKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/2",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               chainName: '1',
             },
           },
@@ -186,12 +186,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/3",
-            showOnOneKey: false,
+            showOnUnionKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/3",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               chainName: '1',
             },
           },

@@ -1,16 +1,16 @@
 ---
 title: Polkadot
-description: 通过 OneKey 的 Polkadot.js 兼容 Provider 集成 Polkadot
+description: 通过 UnionKey 的 Polkadot.js 兼容 Provider 集成 Polkadot
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Polkadot
 
-使用 OneKey 的 Provider 集成 Polkadot 和基于 Substrate 的链。通过 `window.$onekey.polkadot` 或 Polkadot.js 扩展 API 访问。
+使用 UnionKey 的 Provider 集成 Polkadot 和基于 Substrate 的链。通过 `window.$onekey.polkadot` 或 Polkadot.js 扩展 API 访问。
 
 <Callout type="info">
-OneKey 实现了 Polkadot.js 扩展接口，确保与所有 Substrate dApp 兼容。
+UnionKey 实现了 Polkadot.js 扩展接口，确保与所有 Substrate dApp 兼容。
 </Callout>
 
 ---
@@ -27,7 +27,7 @@ OneKey 实现了 Polkadot.js 扩展接口，确保与所有 Substrate dApp 兼�
 ## Provider 检测
 
 ```typescript
-// OneKey 注册为 Polkadot.js 扩展
+// UnionKey 注册为 Polkadot.js 扩展
 const provider = window.$onekey?.polkadot
 
 // 或使用标准的 web3Enable API
@@ -41,7 +41,7 @@ import { web3Enable, web3Accounts } from '@polkadot/extension-dapp'
 ### 启用扩展
 
 ```typescript
-// 直接使用 OneKey provider
+// 直接使用 UnionKey provider
 const enabled = await provider.web3Enable('My dApp')
 
 if (enabled) {
@@ -55,7 +55,7 @@ if (enabled) {
 ```typescript
 import { web3Enable, web3Accounts } from '@polkadot/extension-dapp'
 
-// 启用所有扩展（包括 OneKey）
+// 启用所有扩展（包括 UnionKey）
 const extensions = await web3Enable('My dApp')
 
 if (extensions.length === 0) {

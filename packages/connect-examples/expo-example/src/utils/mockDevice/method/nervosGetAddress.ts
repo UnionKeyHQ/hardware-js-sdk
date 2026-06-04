@@ -6,7 +6,7 @@ import { bytesToHex } from '@noble/hashes/utils';
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 import { addHexPrefix } from '../../hexstring';
 
-import type { NervosGetAddressParams, Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { NervosGetAddressParams, Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 function publicKeyToAddress(publicKey: Uint8Array): string {
   const publicKeyHex = addHexPrefix(bytesToHex(publicKey)) ?? '';

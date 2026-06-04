@@ -1,11 +1,11 @@
 ---
-description: 通过 OneKey 注入的 BTC Provider 进行 Bitcoin 集成 (window.$onekey.btc / window.unisat)
+description: 通过 UnionKey 注入的 BTC Provider 进行 Bitcoin 集成 (window.$onekey.btc / window.unisat)
 slug: /dapp/chains/btc
 ---
 
 # BTC
 
-使用 OneKey 注入的 BTC Provider 集成 Bitcoin。优先使用 `window.$onekey.btc`；需要时可回退到 `window.unisat`。
+使用 UnionKey 注入的 BTC Provider 集成 Bitcoin。优先使用 `window.$onekey.btc`；需要时可回退到 `window.unisat`。
 
 ## 快速链接
 
@@ -17,7 +17,7 @@ slug: /dapp/chains/btc
 
 ```js
 const provider = (window as any).$onekey?.btc || (window as any).unisat
-if (!provider) throw new Error('未检测到 OneKey BTC Provider')
+if (!provider) throw new Error('未检测到 UnionKey BTC Provider')
 await provider.requestAccounts()
 ```
 

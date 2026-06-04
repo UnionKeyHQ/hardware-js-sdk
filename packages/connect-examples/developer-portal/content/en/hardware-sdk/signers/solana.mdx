@@ -20,7 +20,7 @@ Solana hardware signing guide. Covers address confirmation and message/transacti
 
 ## How it works
 
-OneKey Solana signer uses `HardwareSDK` to talk to the device app. You pass a serialized `rawTx` (base64/hex); the device displays source/destination, amount, and fee summary, then returns a signature. Host attaches the signature with `@solana/web3.js` and verifies against the public key from `solGetAddress`.
+UnionKey Solana signer uses `HardwareSDK` to talk to the device app. You pass a serialized `rawTx` (base64/hex); the device displays source/destination, amount, and fee summary, then returns a signature. Host attaches the signature with `@solana/web3.js` and verifies against the public key from `solGetAddress`.
 
 - Path is fixed, fully hardened, length 4: `m/44'/501'/account'/0'`.
 - Ensure the message/tx includes a fresh recent blockhash.
@@ -28,13 +28,13 @@ OneKey Solana signer uses `HardwareSDK` to talk to the device app. You pass a se
 ## Installation
 
 ```bash
-npm i @onekeyfe/hd-core @onekeyfe/hd-common-connect-sdk
+npm i @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
 ```
 
 ## Initialization
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
 const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
@@ -47,7 +47,7 @@ const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 ```ts
 const res = await HardwareSDK.solGetAddress(connectId, deviceId, {
   path: "m/44'/501'/0'/0'",
-  showOnOneKey: true,
+  showOnUnionKey: true,
 });
 // res.payload.address, publicKey?, path
 ```
@@ -55,7 +55,7 @@ const res = await HardwareSDK.solGetAddress(connectId, deviceId, {
 **Parameters**
 
 - `path`: required; must follow `44'/501'/account'/0'`.
-- `showOnOneKey?`: optional; display and confirm on device.
+- `showOnUnionKey?`: optional; display and confirm on device.
 
 **Returns**
 
@@ -96,7 +96,7 @@ Promise<{ success, payload: { signature } }>
 ## Example
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 
 await HardwareSDK.init({ env: 'webusb', debug: false });
 
@@ -104,7 +104,7 @@ const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 
 const path = "m/44'/501'/0'/0'";
-await HardwareSDK.solGetAddress(connectId, deviceId, { path, showOnOneKey: true });
+await HardwareSDK.solGetAddress(connectId, deviceId, { path, showOnUnionKey: true });
 
 const rawTx =
   '4301355cc18d85809872bcbd63cb6ea5ac3c2814a1bacf2e50d8ec62367211917b79ecd1f1a98fa0d793d7cb92ebd9a479dc6aba0ae8570253aa87c0da32db5ed2bd401f3bbee52c2bc55761fd8486fae2e28f46499282f4267b8b90fc8c1cc97bb659b6cc927f2ec1701ef2928ddb84759ba5c557f549db';

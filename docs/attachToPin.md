@@ -1,4 +1,4 @@
-# OneKey Attach to PIN 技术详解
+# UnionKey Attach to PIN 技术详解
 
 ## 0. 核心概念说明
 
@@ -53,7 +53,7 @@ Attach to PIN = 设置简单门禁卡，刷卡即可进入特定房间
 ├─────────────────────────────────────────────┤
 │      安全存储层：SE 安全芯片 + 加密存储        │ ← 关键保护
 ├─────────────────────────────────────────────┤
-│      硬件抽象层：OneKey 固件接口              │
+│      硬件抽象层：UnionKey 固件接口              │
 ├─────────────────────────────────────────────┤
 │    密码学层：AES + PBKDF2 + ECDSA + SHA256   │ ← 底层算法
 └─────────────────────────────────────────────┘
@@ -503,7 +503,7 @@ enum AttachToPinErrorCode {
    ```typescript
    const sdk = await HardwareSDK.init({
      debug: false,
-     connectSrc: 'https://jssdk.onekey.so/',
+     connectSrc: 'https://jssdk.unionkey.io/',
      env: 'web'
    });
    ```
@@ -829,10 +829,10 @@ class Logger {
 
 | 设备型号 | 固件版本 | Attach to PIN 支持 | GetPassphraseState API | 推荐使用场景 |
 |---------|----------|-------------------|----------------------|-------------|
-| **OneKey Pro** | 4.15.0+ | ✅ 完全支持 | ✅ 原生支持 | 🌟 主要推荐 |
-| **OneKey Touch** | 4.11.0+ | ✅ 完全支持 | ✅ 原生支持 | 🌟 主要推荐 |
-| **OneKey Classic** | 所有版本 | ❌ 不支持 | ✅ 地址模拟 | ⚠️ 传统模式 |
-| **OneKey Mini** | 所有版本 | ❌ 不支持 | ✅ 地址模拟 | ⚠️ 传统模式 |
+| **UnionKey Pro** | 4.15.0+ | ✅ 完全支持 | ✅ 原生支持 | 🌟 主要推荐 |
+| **UnionKey Touch** | 4.11.0+ | ✅ 完全支持 | ✅ 原生支持 | 🌟 主要推荐 |
+| **UnionKey Classic** | 所有版本 | ❌ 不支持 | ✅ 地址模拟 | ⚠️ 传统模式 |
+| **UnionKey Mini** | 所有版本 | ❌ 不支持 | ✅ 地址模拟 | ⚠️ 传统模式 |
 
 ### 8.4 性能特征与优化
 
@@ -877,4 +877,4 @@ class Logger {
 - [SLIP39 技术详解](./slip39.md)
 - [设备架构说明](./architecture.md)
 - [传输层协议](./transport.md)
-- [SDK API 参考](https://developer.onekey.so/connect-to-hardware/hardware-sdk/api)
+- [SDK API 参考](https://developer.unionkey.io/connect-to-hardware/hardware-sdk/api)

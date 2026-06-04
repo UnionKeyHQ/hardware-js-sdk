@@ -1,4 +1,4 @@
-import type { UintType } from '@onekeyfe/hd-transport';
+import type { UintType } from '@unionkeyfe/hd-transport';
 import type { PROTO } from '../../constants';
 
 export interface CardanoAddressParameters {

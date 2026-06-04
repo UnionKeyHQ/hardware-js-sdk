@@ -33,10 +33,10 @@ export function Footer() {
         <div className="flex items-center gap-2 flex-wrap justify-center">
           <span>Since 2019 - {currentYear}</span>
           <span className="text-zinc-300 dark:text-zinc-600">|</span>
-          <span>OneKey Limited All Rights Reserved</span>
+          <span>UnionKey Limited All Rights Reserved</span>
           <span className="text-zinc-300 dark:text-zinc-600">·</span>
           <a
-            href="https://github.com/OneKeyHQ/hardware-js-sdk"
+            href="https://github.com/UnionKeyHQ/hardware-js-sdk"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[#00B812] transition-colors"
@@ -50,7 +50,7 @@ export function Footer() {
             <span key="commit" className="flex items-center gap-1.5">
               <span className="text-zinc-300 dark:text-zinc-600">·</span>
               <a
-                href={`https://github.com/OneKeyHQ/hardware-js-sdk/commit/${process.env.NEXT_PUBLIC_COMMIT_ID || ''}`}
+                href={`https://github.com/UnionKeyHQ/hardware-js-sdk/commit/${process.env.NEXT_PUBLIC_COMMIT_ID || ''}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono hover:text-[#00B812] transition-colors"

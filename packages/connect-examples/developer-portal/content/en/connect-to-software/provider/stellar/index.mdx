@@ -1,13 +1,13 @@
 ---
 title: Stellar
-description: Stellar integration via OneKey's Stellar provider
+description: Stellar integration via UnionKey's Stellar provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Stellar
 
-Integrate Stellar using OneKey's Stellar provider. Access via `window.$onekey.stellar`.
+Integrate Stellar using UnionKey's Stellar provider. Access via `window.$onekey.stellar`.
 
 <Callout type="info">
 This provider is designed to match the Stellar Wallets Kit <code>KitActions</code> shape: <code>getAddress</code>, <code>signTransaction</code>, <code>signAuthEntry</code>, <code>signMessage</code>, <code>getNetwork</code>.
@@ -23,7 +23,7 @@ This provider is designed to match the Stellar Wallets Kit <code>KitActions</cod
 
 ```ts
 const stellar = window.$onekey?.stellar
-if (!stellar?.isOneKey) throw new Error('OneKey Stellar provider not detected')
+if (!stellar?.isUnionKey) throw new Error('UnionKey Stellar provider not detected')
 
 const { address } = await stellar.getAddress()
 const network = await stellar.getNetwork()

@@ -1,7 +1,7 @@
 import semver from 'semver';
 import { isNaN } from 'lodash';
-import { EDeviceType, type EFirmwareType, ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
-import { Enum_Capability } from '@onekeyfe/hd-transport';
+import { EDeviceType, type EFirmwareType, ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { Enum_Capability } from '@unionkeyfe/hd-transport';
 
 import { toHardened } from '../api/helpers/pathUtils';
 import { DeviceModelToTypes, DeviceTypeToModels } from '../types';
@@ -283,7 +283,7 @@ export const getFirmwareUpdateField = ({
 /**
  * Returns the optional firmware version
  * Used in firmware web update
- * https://firmware.onekey.so/
+ * https://firmware.unionkey.io/
  */
 export const getFirmwareUpdateFieldArray = (
   features: Features,

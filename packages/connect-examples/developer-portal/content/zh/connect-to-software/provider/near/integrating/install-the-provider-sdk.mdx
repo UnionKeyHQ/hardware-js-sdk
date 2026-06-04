@@ -5,28 +5,28 @@ title: 安装 Provider SDK
 # 安装 Provider SDK
 
 > **注意：**
-Provider SDK 需要安装 [OneKey 浏览器扩展](https://www.onekey.so/low-level-transport-plugin)（版本 >= 2.3.2）才能使用
+Provider SDK 需要安装 [UnionKey 浏览器扩展](https://www.unionkey.io/low-level-transport-plugin)（版本 >= 2.3.2）才能使用
 
 
-我们提供了一个名为 [onekey-near-provider](https://www.npmjs.com/package/@onekeyfe/onekey-near-provider) 的 npm 包作为 SDK，同时还需要安装 [near-api-js](https://www.npmjs.com/package/near-api-js)。
+我们提供了一个名为 [onekey-near-provider](https://www.npmjs.com/package/@unionkeyfe/unionkey-near-provider) 的 npm 包作为 SDK，同时还需要安装 [near-api-js](https://www.npmjs.com/package/near-api-js)。
 
-你可以在 [Github](https://github.com/OneKeyHQ/cross-inpage-provider/tree/master/packages/providers/onekey-near-provider) 查看 SDK 源代码，完整示例代码在[这里](https://github.com/OneKeyHQ/cross-inpage-provider/tree/master/packages/example)。
+你可以在 [Github](https://github.com/UnionKeyHQ/cross-inpage-provider/tree/master/packages/providers/onekey-near-provider) 查看 SDK 源代码，完整示例代码在[这里](https://github.com/UnionKeyHQ/cross-inpage-provider/tree/master/packages/example)。
 
 ```bash
 # 使用 npm
-npm install near-api-js @onekeyfe/onekey-near-provider
+npm install near-api-js @unionkeyfe/unionkey-near-provider
 
 # 使用 yarn
-yarn add near-api-js @onekeyfe/onekey-near-provider
+yarn add near-api-js @unionkeyfe/unionkey-near-provider
 
 ```
 
 然后你可以创建 provider 实例。
 
 ```javascript
-import { OneKeyNearProvider } from '@onekeyfe/onekey-near-provider';
+import { UnionKeyNearProvider } from '@unionkeyfe/unionkey-near-provider';
 
-const provider = new OneKeyNearProvider();
+const provider = new UnionKeyNearProvider();
 
 ```
 

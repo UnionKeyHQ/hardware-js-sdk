@@ -2,7 +2,7 @@ import {
   HardwareErrorCode,
   TypedError,
   createDeviceNotSupportMethodError,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import { supportBatchPublicKey } from '../../utils/deviceFeaturesUtils';
 import { isEqualBip44CoinType } from './pathUtils';
@@ -10,7 +10,7 @@ import { splitArray } from '../../utils/arrayUtils';
 import { getDeviceType, getFirmwareType } from '../../utils';
 import { DeviceModelToTypes } from '../../types';
 
-import type { EcdsaPublicKeys, Path } from '@onekeyfe/hd-transport';
+import type { EcdsaPublicKeys, Path } from '@unionkeyfe/hd-transport';
 import type { Device } from '../../device/Device';
 
 export async function batchGetPublickeys(

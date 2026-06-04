@@ -1,4 +1,4 @@
-# OneKey Hardware SDK - Claude 文档指引
+# UnionKey Hardware SDK - Claude 文档指引
 
 ## 📚 Context7 文档支持
 
@@ -6,14 +6,14 @@
 
 ```json
 {
-  "url": "https://context7.com/onekeyhq/hardware-js-sdk",
-  "library_id": "/onekeyhq/hardware-js-sdk"
+  "url": "https://context7.com/unionkeyhq/hardware-js-sdk",
+  "library_id": "/unionkeyhq/hardware-js-sdk"
 }
 ```
 
 **使用方法**：
 - 使用 `mcp__context7__get-library-docs` 工具获取文档
-- Library ID: `/onekeyhq/hardware-js-sdk`
+- Library ID: `/unionkeyhq/hardware-js-sdk`
 - 可指定 topic 参数聚焦特定主题，如 `transport`、`signing`、`bip39` 等
 
 ## 📁 问题分流指引
@@ -43,12 +43,12 @@
 ### 🤖 AI Agent 集成 / CLI 使用
 **症状**: CLI 命令使用、Agent Skill 配置、链支持查询
 - 📖 **文档**: developer-portal 的 `agent-integration.mdx`
-- 🔧 **`@onekeyfe/cli`**（`onekey` 命令）— 全功能钱包 CLI：`auth login` 选择登录方式（mnemonic / app-transfer / hardware），`balance` / `transfer` / `swap` / `device ...` 等业务命令登录后自动沿用该模式
-- 🔧 **`@onekeyfe/hardware-cli`**（`onekey-hw` 命令）— 纯硬件钱包 CLI，AI Agent 直连设备优先选它
+- 🔧 **`@unionkeyfe/cli`**（`onekey` 命令）— 全功能钱包 CLI：`auth login` 选择登录方式（mnemonic / app-transfer / hardware），`balance` / `transfer` / `swap` / `device ...` 等业务命令登录后自动沿用该模式
+- 🔧 **`@unionkeyfe/hardware-cli`**（`onekey-hw` 命令）— 纯硬件钱包 CLI，AI Agent 直连设备优先选它
 
 如果你要**通过 `onekey` CLI 使用硬件钱包**：
 ```bash
-npm install -g @onekeyfe/cli
+npm install -g @unionkeyfe/cli
 
 # Step 1：登录时选择硬件模式（--hardware 只在 auth login 上有）
 onekey auth login --hardware
@@ -61,7 +61,7 @@ onekey device firmware
 
 如果要**只调硬件操作、不走 onekey 账户体系**（更轻、AI Agent 场景友好）：
 ```bash
-npm install -g @onekeyfe/hardware-cli
+npm install -g @unionkeyfe/hardware-cli
 onekey-hw search
 onekey-hw get-address --chain evm --use-empty-passphrase
 ```

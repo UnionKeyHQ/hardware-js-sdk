@@ -1,4 +1,4 @@
-import type { DnxAddress as HardwareDnxAddress } from '@onekeyfe/hd-transport';
+import type { DnxAddress as HardwareDnxAddress } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type DnxAddress = {

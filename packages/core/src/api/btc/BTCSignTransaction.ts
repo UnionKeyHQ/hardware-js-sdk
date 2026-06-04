@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { getOutputScriptType, isSegwitPath, validatePath } from '../helpers/pathUtils';
@@ -15,7 +15,7 @@ import type {
   RefTransaction,
   TransactionOptions,
 } from '../../types/api/btcSignTransaction';
-import type { TxInputType, TxOutputType } from '@onekeyfe/hd-transport';
+import type { TxInputType, TxOutputType } from '@unionkeyfe/hd-transport';
 
 type Params = {
   inputs: TxInputType[];

@@ -1,5 +1,5 @@
 import type { IFirmwareReleaseInfo } from '../settings';
-import type { EFirmwareType } from '@onekeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyfe/hd-shared';
 import type { Response } from '../params';
 import type { IDeviceFirmwareStatus } from '../device';
 

@@ -3,10 +3,10 @@ import { Checkbox, type CheckedState, H5, Label, Stack, Text, XStack } from 'tam
 import { Check as CheckIcon } from '@tamagui/lucide-icons';
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
-import { type Features, type OnekeyFeatures, getFirmwareType } from '@onekeyfe/hd-core';
+import { type Features, type OnekeyFeatures, getFirmwareType } from '@unionkeyfe/hd-core';
 import { Platform } from 'react-native';
 import { useIntl } from 'react-intl';
-import { EDeviceType, EFirmwareType } from '@onekeyfe/hd-shared';
+import { EDeviceType, EFirmwareType } from '@unionkeyfe/hd-shared';
 import { useAtomValue, useSetAtom } from 'jotai';
 
 import PageView from '../../components/ui/Page';

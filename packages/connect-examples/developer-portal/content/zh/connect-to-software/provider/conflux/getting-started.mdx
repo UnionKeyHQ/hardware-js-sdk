@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey 的 Fluent 兼容 Provider 连接 Conflux
+description: 使用 UnionKey 的 Fluent 兼容 Provider 连接 Conflux
 ---
 
 import { Callout } from 'nextra/components'
@@ -10,7 +10,7 @@ import { Callout } from 'nextra/components'
 了解如何检测、连接和与 Conflux 进行交互。
 
 <Callout type="info">
-OneKey 的 Conflux provider 同时兼容 ConfluxPortal 和 Fluent 钱包接口。
+UnionKey 的 Conflux provider 同时兼容 ConfluxPortal 和 Fluent 钱包接口。
 </Callout>
 
 ---
@@ -18,17 +18,17 @@ OneKey 的 Conflux provider 同时兼容 ConfluxPortal 和 Fluent 钱包接口�
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Conflux provider
+// 检测 UnionKey Conflux provider
 const provider = window.$onekey?.conflux
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Conflux provider')
+  throw new Error('未检测到 UnionKey Conflux provider')
 }
 
 // 检查兼容性标志
 console.log('isConfluxPortal:', provider.isConfluxPortal) // true
 console.log('isFluent:', provider.isFluent) // true
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---

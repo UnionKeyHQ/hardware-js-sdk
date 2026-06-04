@@ -6,7 +6,7 @@ import { resolveAfter } from '../utils/promiseUtils';
 import { LoggerNames, getLogger } from '../utils';
 
 import type { DeviceDescriptorDiff } from './DevicePool';
-import type { OneKeyDeviceInfo as DeviceDescriptor, Transport } from '@onekeyfe/hd-transport';
+import type { OneKeyDeviceInfo as DeviceDescriptor, Transport } from '@unionkeyfe/hd-transport';
 
 const Log = getLogger(LoggerNames.DeviceConnector);
 

@@ -1,6 +1,6 @@
 ---
 title: Web3Modal (AppKit)
-description: Integrate OneKey with Web3Modal / Reown AppKit
+description: Integrate UnionKey with Web3Modal / Reown AppKit
 ---
 
 import { Callout } from 'nextra/components'
@@ -73,9 +73,9 @@ export default function App() {
 
 ---
 
-## Feature OneKey
+## Feature UnionKey
 
-To prioritize OneKey in the wallet list:
+To prioritize UnionKey in the wallet list:
 
 ```tsx
 createAppKit({
@@ -83,7 +83,7 @@ createAppKit({
   networks,
   projectId,
   featuredWalletIds: [
-    // OneKey Wallet ID from WalletConnect Explorer
+    // UnionKey Wallet ID from WalletConnect Explorer
     '1aedbcfc1f31aade56ca34c38b0a1607b41cccfa3de93c946ef3b4ba2dfab11c',
   ],
   // Optional: Only show specific wallets
@@ -105,7 +105,7 @@ createAppKit({
   // ...
   themeMode: 'dark', // or 'light'
   themeVariables: {
-    '--w3m-accent': '#00B812', // OneKey green
+    '--w3m-accent': '#00B812', // UnionKey green
     '--w3m-border-radius-master': '8px',
   },
 })
@@ -160,5 +160,5 @@ function Wallet() {
 ## Resources
 
 - [Reown AppKit Documentation](https://docs.reown.com/appkit/overview)
-- [WalletConnect Wallet Guide - OneKey](https://walletguide.walletconnect.network/?search=onekey)
+- [WalletConnect Wallet Guide - UnionKey](https://walletguide.walletconnect.network/?search=onekey)
 - [Get Project ID](https://cloud.reown.com)

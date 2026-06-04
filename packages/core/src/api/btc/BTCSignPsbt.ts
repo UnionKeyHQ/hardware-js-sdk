@@ -1,4 +1,4 @@
-import { EDeviceType, HardwareErrorCode, TypedError } from '@onekeyfe/hd-shared';
+import { EDeviceType, HardwareErrorCode, TypedError } from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { BaseMethod } from '../BaseMethod';
@@ -7,7 +7,7 @@ import { formatAnyHex } from '../helpers/hexUtils';
 import { getCoinInfo } from './helpers/btcParamsUtils';
 import { getDeviceType } from '../../utils';
 
-import type { SignPsbt } from '@onekeyfe/hd-transport';
+import type { SignPsbt } from '@unionkeyfe/hd-transport';
 
 export default class BTCSignPsbt extends BaseMethod<SignPsbt> {
   init() {

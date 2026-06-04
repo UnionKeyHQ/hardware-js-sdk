@@ -1,4 +1,4 @@
-import type { PolkadotSignedTx as HardwarePolkadotSignedTx } from '@onekeyfe/hd-transport';
+import type { PolkadotSignedTx as HardwarePolkadotSignedTx } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type PolkadotSignedTx = {

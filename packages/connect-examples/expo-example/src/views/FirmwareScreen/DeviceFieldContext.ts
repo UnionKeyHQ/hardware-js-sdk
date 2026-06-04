@@ -5,7 +5,7 @@
 
 import { createContext, useContext } from 'react';
 
-import type { Features, OnekeyFeatures } from '@onekeyfe/hd-core';
+import type { Features, OnekeyFeatures } from '@unionkeyfe/hd-core';
 
 export const DeviceFieldContext = createContext<{
   features?: Features;

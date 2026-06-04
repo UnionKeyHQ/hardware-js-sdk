@@ -1,6 +1,6 @@
 import { LedgerBleConnector } from '../LedgerBleConnector';
 
-import type { DeviceDescriptor } from '@onekeyfe/hwk-adapter-core';
+import type { DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
 
 jest.mock('react-native', () => ({ Platform: { OS: 'ios' } }), { virtual: true });
 

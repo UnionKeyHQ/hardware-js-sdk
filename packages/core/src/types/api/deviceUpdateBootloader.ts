@@ -1,5 +1,5 @@
-import type { Success } from '@onekeyfe/hd-transport';
-import type { EFirmwareType } from '@onekeyfe/hd-shared';
+import type { Success } from '@unionkeyfe/hd-transport';
+import type { EFirmwareType } from '@unionkeyfe/hd-shared';
 import type { Response } from '../params';
 
 export type DeviceUpdateBootloaderParams = {

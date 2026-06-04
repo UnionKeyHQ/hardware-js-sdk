@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to Algorand using OneKey's provider
+description: Connect to Algorand using UnionKey's provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with Algorand using OneKey's provider.
+Learn how to detect, connect, and interact with Algorand using UnionKey's provider.
 
 <Callout type="info">
-OneKey's Algorand provider supports both legacy and ARC-0001 compliant interfaces.
+UnionKey's Algorand provider supports both legacy and ARC-0001 compliant interfaces.
 </Callout>
 
 ---
@@ -18,15 +18,15 @@ OneKey's Algorand provider supports both legacy and ARC-0001 compliant interface
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Algorand provider
+// Detect UnionKey Algorand provider
 const provider = window.$onekey?.algo
 
 if (!provider) {
-  throw new Error('OneKey Algorand provider not detected')
+  throw new Error('UnionKey Algorand provider not detected')
 }
 
 // Check compatibility
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---

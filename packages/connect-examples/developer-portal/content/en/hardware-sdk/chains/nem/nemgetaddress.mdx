@@ -12,7 +12,7 @@ title: nemGetAddress
 
 ## NEM: get address
 
-Display requested address derived by given BIP32 path on device and returns it to caller. User is presented with a description of the requested key and asked to confirm the export on OneKey.
+Display requested address derived by given BIP32 path on device and returns it to caller. User is presented with a description of the requested key and asked to confirm the export on UnionKey.
 
 ```typescript
 const response = await HardwareSDK.nemGetAddress(connectId, deviceId, params)
@@ -26,11 +26,11 @@ const response = await HardwareSDK.nemGetAddress(connectId, deviceId, params)
 
 * `path` - _required_ `string | Array<number>`  minimum length is 5. [more information](/en/hardware-sdk/core-api-guide#hd-path)
 * `network`- _optional_ `number` Network id. The default value is `MAINNET(104)`
-* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 
 **Exporting bundle of addresses**
 
-* `bundle` - `Array` of Objects with `path` and `showOnOneKey` fields
+* `bundle` - `Array` of Objects with `path` and `showOnUnionKey` fields
 
 #### Example
 
@@ -47,9 +47,9 @@ Return a bundle of aptos addresses without displaying them on device:
 ```typescript
 HardwareSDK.nemGetAddress(connectId, deviceId, {
     bundle: [
-        { path: "m/44'/43'/0'/0/0", showOnOneKey: false }, // account 1
-        { path: "m/44'/43'/1'/0/0", showOnOneKey: false }, // account 2
-        { path: "m/44'/43'/2'/0/0", showOnOneKey: false }  // account 3
+        { path: "m/44'/43'/0'/0/0", showOnUnionKey: false }, // account 1
+        { path: "m/44'/43'/1'/0/0", showOnUnionKey: false }, // account 2
+        { path: "m/44'/43'/2'/0/0", showOnUnionKey: false }  // account 3
     ]
 });
 ```

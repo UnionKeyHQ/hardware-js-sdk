@@ -1,8 +1,8 @@
-# OneKey SDK: EVM 集成技术详解
+# UnionKey SDK: EVM 集成技术详解
 
 ## 1. 核心概念
 
-OneKey 硬件钱包对 EVM (以太坊虚拟机) 兼容链的支持，建立在一套统一且经过安全验证的技术栈之上。
+UnionKey 硬件钱包对 EVM (以太坊虚拟机) 兼容链的支持，建立在一套统一且经过安全验证的技术栈之上。
 
 - **椭圆曲线:** `secp256k1`
 - **签名算法:** `ECDSA`
@@ -12,14 +12,14 @@ OneKey 硬件钱包对 EVM (以太坊虚拟机) 兼容链的支持，建立在�
 
 ## 2. SDK Versioning and Protocol Management
 
-OneKey SDK is designed to provide a seamless developer experience by abstracting away the complexities of different hardware firmware versions. It achieves this through an automatic protocol detection mechanism.
+UnionKey SDK is designed to provide a seamless developer experience by abstracting away the complexities of different hardware firmware versions. It achieves this through an automatic protocol detection mechanism.
 
 ### 3.1 Protocol Dialects: `legacyV1` vs `latest`
 
 The SDK internally manages two primary protocol "dialects" for communicating with the device:
 
-- **`legacyV1` (Trezor-compatible Protocol):** Used for older generations of OneKey firmware. This protocol is compatible with the message format originally defined by Trezor.
-- **`latest` (Native OneKey Protocol):** Used for modern OneKey firmware. This is a more feature-rich, native protocol that supports the latest EIPs and optimizations, such as EIP-7702.
+- **`legacyV1` (Trezor-compatible Protocol):** Used for older generations of UnionKey firmware. This protocol is compatible with the message format originally defined by Trezor.
+- **`latest` (Native UnionKey Protocol):** Used for modern UnionKey firmware. This is a more feature-rich, native protocol that supports the latest EIPs and optimizations, such as EIP-7702.
 
 ### 3.2 Automatic Protocol Switching
 
@@ -30,11 +30,11 @@ The SDK automatically determines which protocol to use at runtime.
   - If the device returns `'v1'`, the SDK invokes the signing logic with a compatibility flag (`supportTrezor: true`), instructing it to format messages for the legacy protocol.
   - Otherwise, it defaults to using the native `latest` protocol.
 
-This ensures that developers can write a single piece of code that works across all generations of OneKey hardware without needing to worry about the underlying communication differences.
+This ensures that developers can write a single piece of code that works across all generations of UnionKey hardware without needing to worry about the underlying communication differences.
 
 ## 3. 交易类型 (Transaction Types)
 
-OneKey SDK 支持多种 EVM 交易类型，能够自动检测并处理，确保最佳的网络兼容性和费用效益。
+UnionKey SDK 支持多种 EVM 交易类型，能够自动检测并处理，确保最佳的网络兼容性和费用效益。
 
 ### 2.1 Legacy (Type 0)
 
@@ -78,7 +78,7 @@ OneKey SDK 支持多种 EVM 交易类型，能够自动检测并处理，确保�
 
 ## 4. 签名方法 (Signing Methods)
 
-除了交易签名，OneKey SDK 还支持多种数据签名标准，以满足不同的 DApp 交互需求。
+除了交易签名，UnionKey SDK 还支持多种数据签名标准，以满足不同的 DApp 交互需求。
 
 ### 3.1 交易签名 (`EVMSignTransaction`)
 
@@ -96,8 +96,8 @@ OneKey SDK 支持多种 EVM 交易类型，能够自动检测并处理，确保�
 
 EIP-712 结构化数据签名在 SDK 中通过两条路径实现：
 
-- 解析签名（TypedData）：`EVMSignTypedData` 内部调用 `EthereumSignTypedData(OneKey)` 与交互请求，实现设备端结构化展示与签名。
-- 哈希盲签（TypedHash）：`EVMSignTypedData` 内部在指定场景降级为 `EthereumSignTypedHash(OneKey)`，调用方需提供 `domainHash` 与 `messageHash`。
+- 解析签名（TypedData）：`EVMSignTypedData` 内部调用 `EthereumSignTypedData(UnionKey)` 与交互请求，实现设备端结构化展示与签名。
+- 哈希盲签（TypedHash）：`EVMSignTypedData` 内部在指定场景降级为 `EthereumSignTypedHash(UnionKey)`，调用方需提供 `domainHash` 与 `messageHash`。
 
 两条路径由 SDK 自动选择，调用方统一使用 `evmSignTypedData`。
 
@@ -118,7 +118,7 @@ EIP-712 结构化数据签名在 SDK 中通过两条路径实现：
 
 - **关键逻辑:**
   - **批量处理:** 方法内部会自动将单个请求和批量（`bundle`）请求统一为数组进行处理。
-  - **参数验证:** 验证 `path` 的有效性，并处理可选参数 `showOnOneKey`（默认为 `true`，在设备上显示地址）和 `chainId`。
+  - **参数验证:** 验证 `path` 的有效性，并处理可选参数 `showOnUnionKey`（默认为 `true`，在设备上显示地址）和 `chainId`。
   - **协议切换:** 调用 `TransportManager.getMessageVersion()` 来决定使用 `legacyV1` 还是 `latest` 的 `getAddress` 实现。
   - **设备交互:** 循环处理批量请求，对每个请求都向设备发起一次 `typedCall` 调用。
 
@@ -157,7 +157,7 @@ EIP-712 结构化数据签名的统一入口。SDK 内部根据设备能力与�
 
 - Classic1s / ClassicPure：
   - 固件 ≥ 3.14.0 或设备具备 `Capability_EthereumTypedData` → 解析签名
-  - 否则 → 哈希盲签（`EthereumSignTypedHash(OneKey)`）
+  - 否则 → 哈希盲签（`EthereumSignTypedHash(UnionKey)`）
 - Classic / Mini：
   - 固件 ≥ 2.2.0 → 哈希盲签（需要 `domainHash` 和 `messageHash`）
   - 固件 < 2.2.0 → SDK 内部兼容性降级

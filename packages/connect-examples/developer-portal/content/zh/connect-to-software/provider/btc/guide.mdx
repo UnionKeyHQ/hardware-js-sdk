@@ -6,17 +6,17 @@ title: 指南
 
 ## 概述
 
-本指南帮助用户了解如何使用 OneKey Provider API 轻松构建可与 BTC 交互的 Web 应用。
+本指南帮助用户了解如何使用 UnionKey Provider API 轻松构建可与 BTC 交互的 Web 应用。
 
 ## 安装
 
-#### 1. 下载 OneKey 钱包
+#### 1. 下载 UnionKey 钱包
 
-下载 [OneKey 钱包](https://onekey.so/zh_CN/download?client=browserExtension)。安装 OneKey 浏览器扩展。
+下载 [UnionKey 钱包](https://unionkey.io/zh_CN/download?client=browserExtension)。安装 UnionKey 浏览器扩展。
 
 #### 2. API 注入说明
 
-* OneKey 浏览器扩展会将 `Provider API` 注入到访问的网站中。
+* UnionKey 浏览器扩展会将 `Provider API` 注入到访问的网站中。
 * 提供两种类型的 API：`window.unisat` 和 `window.$onekey.btc`。
 * 推荐使用 `window.$onekey.btc`。
 
@@ -30,11 +30,11 @@ title: 指南
 const provider = (window.$onekey && window.$onekey.btc) || window.unisat;
 
 if (!provider) {
-  alert("OneKey 未安装。");
+  alert("UnionKey 未安装。");
 }
 ```
 
-### 连接到 OneKey
+### 连接到 UnionKey
 
 在使用以下 API 之前，首先需要使用 `provider.requestAccounts` 方法请求用户授权访问相关 BTC 账户。
 

@@ -5,7 +5,7 @@ import { bech32 } from '@scure/base';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { CosmosGetAddressParams, Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { CosmosGetAddressParams, Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 export type ICurveName = 'secp256k1' | 'nistp256' | 'ed25519';
 

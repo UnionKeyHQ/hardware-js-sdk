@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { cutString } from '../../helpers/stringUtils';
 import { addHexPrefix, stripHexStartZeroes } from '../../helpers/hexUtils';
@@ -18,7 +18,7 @@ import type {
   EthereumTxRequestOneKey,
   MessageResponse,
   TypedCall,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 
 export const processTxRequest = async ({
   typedCall,

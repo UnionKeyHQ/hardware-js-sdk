@@ -7,7 +7,7 @@ import { DataManager } from '../../data-manager';
 import { shouldUpdateBootloaderForClassicAndMini } from './bootloaderHelper';
 
 import type { Features } from '../../types';
-import type { EFirmwareType } from '@onekeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyfe/hd-shared';
 
 export function checkNeedUpdateBootForTouch(features: Features, firmwareType: EFirmwareType) {
   const deviceType = getDeviceType(features);

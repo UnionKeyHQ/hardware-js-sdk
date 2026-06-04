@@ -3,9 +3,9 @@ import {
   getDeviceFirmwareVersion,
   getDeviceType,
   getDeviceUUID,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
-import type { Features, OnekeyFeatures } from '@onekeyfe/hd-transport';
+import type { Features, OnekeyFeatures } from '@unionkeyfe/hd-transport';
 
 export const getReleaseUrl = ({ features }: { features?: Features }) => {
   const deviceType = getDeviceType(features)?.toUpperCase() || 'UNKNOWN';
@@ -18,22 +18,22 @@ export const getReleaseUrl = ({ features }: { features?: Features }) => {
       return {
         onekey_boot_url: '',
         onekey_firmware_url: firmwareVersion
-          ? `https://github.com/OneKeyHQ/firmware-classic1s/releases/tag/v${firmwareVersion}`
+          ? `https://github.com/UnionKeyHQ/firmware-classic1s/releases/tag/v${firmwareVersion}`
           : '',
         onekey_ble_url: features?.ble_ver
-          ? `https://github.com/OneKeyHQ/bluetooth-firmware-classic/releases/tag/v${features?.ble_ver}`
+          ? `https://github.com/UnionKeyHQ/bluetooth-firmware-classic/releases/tag/v${features?.ble_ver}`
           : '',
       };
     case 'PRO':
       return {
         onekey_boot_url: bootloaderVersion
-          ? `https://github.com/OneKeyHQ/firmware-pro/releases/tag/bootloader-v${bootloaderVersion}`
+          ? `https://github.com/UnionKeyHQ/firmware-pro/releases/tag/bootloader-v${bootloaderVersion}`
           : '',
         onekey_firmware_url: firmwareVersion
-          ? `https://github.com/OneKeyHQ/firmware-pro/releases/tag/v${firmwareVersion}`
+          ? `https://github.com/UnionKeyHQ/firmware-pro/releases/tag/v${firmwareVersion}`
           : '',
         onekey_ble_url: features?.ble_ver
-          ? `https://github.com/OneKeyHQ/bluetooth-firmware-pro/releases/tag/v${features?.ble_ver}`
+          ? `https://github.com/UnionKeyHQ/bluetooth-firmware-pro/releases/tag/v${features?.ble_ver}`
           : '',
       };
     default:

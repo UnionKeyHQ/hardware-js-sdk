@@ -1,4 +1,4 @@
-# OneKey SLIP39 技术详解
+# UnionKey SLIP39 技术详解
 
 ## 0. 核心概念说明
 
@@ -55,9 +55,9 @@ SLIP39: N个分片，任意M个 → 部分丢失仍可恢复
 用途: 企业用户，复杂安全需求
 ```
 
-### 1.3 OneKey/Trezor 的实现策略
+### 1.3 UnionKey/Trezor 的实现策略
 
-| 功能 | OneKey | Trezor | 说明 |
+| 功能 | UnionKey | Trezor | 说明 |
 |------|--------|--------|------|
 | **生成 SLIP39 Basic** | ✅ | ✅ | 主要功能 |
 | **生成 SLIP39 Advanced** | ❌ | ❌ | 用户体验复杂 |
@@ -78,7 +78,7 @@ SLIP39: N个分片，任意M个 → 部分丢失仍可恢复
 ├─────────────────────────────────────────────┤
 │    备份处理层：BIP39 单词 | SLIP39 分片      │ ← 差异化处理
 ├─────────────────────────────────────────────┤
-│      硬件抽象层：OneKey/Trezor 兼容接口       │
+│      硬件抽象层：UnionKey/Trezor 兼容接口       │
 ├─────────────────────────────────────────────┤
 │  密码学层：Shamir + Feistel + PBKDF2 + ECDSA │ ← 核心算法
 └─────────────────────────────────────────────┘
@@ -86,9 +86,9 @@ SLIP39: N个分片，任意M个 → 部分丢失仍可恢复
 
 ### 2.2 核心技术栈
 
-**标准 SLIP39 vs Trezor/OneKey 实现：**
+**标准 SLIP39 vs Trezor/UnionKey 实现：**
 
-| 组件 | 标准 SLIP39 | Trezor/OneKey | 差异说明 |
+| 组件 | 标准 SLIP39 | Trezor/UnionKey | 差异说明 |
 |------|------------|---------------|----------|
 | **Shamir 分片** | ✅ | ✅ | 完全一致 |
 | **Feistel 网络** | ❌ | ✅ 4轮 | **Trezor 独创增强** |
@@ -151,7 +151,7 @@ EMS + passphrase + SLIP39参数 → Master Secret
 - 不同参数产生完全不同结果
 ```
 
-### 3.2 标准 SLIP39 vs OneKey 流程对比
+### 3.2 标准 SLIP39 vs UnionKey 流程对比
 
 **标准参数配置：**
 ```typescript
@@ -169,7 +169,7 @@ const STANDARD_SLIP39 = {
 3. 密钥推导：EMS + 简单PBKDF2(passphrase, 2500次) → Master Secret
 ```
 
-**OneKey/Trezor 增强实现：**
+**UnionKey/Trezor 增强实现：**
 ```
 1. 设备初始化：熵源 → EMS (直接存储)
 2. 分片恢复：SLIP39分片 → EMS  
@@ -178,9 +178,9 @@ const STANDARD_SLIP39 = {
 
 **关键差异：都是先有EMS，后通过不同算法计算Master Secret**
 
-**OneKey 增强配置：**
+**UnionKey 增强配置：**
 ```typescript
-const ONEKEY_ENHANCED = {
+const UNIONKEY_ENHANCED = {
   iterationExponent: 1,        // 5000 次 PBKDF2
   extendableBackupFlag: 1,     // 可扩展模式
   salt: [],                    // 空 salt
@@ -190,14 +190,14 @@ const ONEKEY_ENHANCED = {
 
 ### 3.3 关键差异对比
 
-| 差异点 | 标准 SLIP39 | OneKey/Trezor | 影响 |
+| 差异点 | 标准 SLIP39 | UnionKey/Trezor | 影响 |
 |--------|------------|---------------|------|
 | **Passphrase 处理** | 简单 PBKDF2 | Feistel 4轮加密 | 🔴 地址完全不同 |
 | **PBKDF2 强度** | 2,500 次 | 5,000 次 | 🔴 地址完全不同 |
 | **Salt 生成** | "shamir" + id | 空数组 | 🔴 地址完全不同 |
-| **安全性** | 标准 | 增强 | ✅ OneKey 更安全 |
+| **安全性** | 标准 | 增强 | ✅ UnionKey 更安全 |
 
-**为什么 OneKey 选择增强实现？**
+**为什么 UnionKey 选择增强实现？**
 1. **安全考虑**: Feistel 网络提供更强的 passphrase 保护
 2. **硬件优化**: 对称设计更适合硬件实现
 3. **生态统一**: 与 Trezor 保持完全一致
@@ -206,13 +206,13 @@ const ONEKEY_ENHANCED = {
 
 ```
 场景分析：
-标准工具生成 → OneKey 恢复 + passphrase
+标准工具生成 → UnionKey 恢复 + passphrase
 结果：地址不匹配（因为处理流程不同）
 
-OneKey 生成 → 标准工具恢复 + passphrase
+UnionKey 生成 → 标准工具恢复 + passphrase
 结果：地址不匹配（因为处理流程不同）
 
-OneKey ↔ Trezor
+UnionKey ↔ Trezor
 结果：完全兼容（相同的增强流程）
 ```
 
@@ -222,7 +222,7 @@ OneKey ↔ Trezor
 
 **🔐 全局参数（必须保持一致）：**
 
-| 参数 | 英文名 | OneKey值 | 作用 | 影响范围 |
+| 参数 | 英文名 | UnionKey值 | 作用 | 影响范围 |
 |------|--------|----------|------|----------|
 | **迭代指数** | `iterationExponent` | 1 | PBKDF2 强度 | 🔴 影响所有地址 |
 | **扩展标志** | `extendableBackupFlag` | 1 | 支持添加分片 | 🔴 影响所有地址 |
@@ -230,16 +230,16 @@ OneKey ↔ Trezor
 
 **📊 分组参数（仅影响恢复逻辑）：**
 
-| 参数 | 英文名 | OneKey值 | 作用 | 影响范围 |
+| 参数 | 英文名 | UnionKey值 | 作用 | 影响范围 |
 |------|--------|----------|------|----------|
 | **组阈值** | `groupThreshold` | 1 | 需要几个组 | 🟡 仅恢复验证 |
 | **组数量** | `groupCount` | 1 | 总组数 | 🟡 仅恢复验证 |
 | **成员阈值** | `memberThreshold` | 用户配置 | 组内分片数 | 🟡 仅恢复验证 |
 
-### 4.2 OneKey 默认配置
+### 4.2 UnionKey 默认配置
 
 ```typescript
-const ONEKEY_SLIP39_CONFIG = {
+const UNIONKEY_SLIP39_CONFIG = {
   // 🔴 影响地址的全局参数
   iterationExponent: 1,        // PBKDF2 迭代 = 2^1 * 2500 = 5000次
   extendableBackupFlag: 1,     // 可扩展备份模式
@@ -259,14 +259,14 @@ const ONEKEY_SLIP39_CONFIG = {
 | 迭代指数 | PBKDF2 轮数 | 破解难度 | 适用场景 |
 |---------|------------|---------|----------|
 | 0 | 2,500 | 较低 | 测试环境 |
-| 1 | 5,000 | 标准 | OneKey/Trezor 默认 |
+| 1 | 5,000 | 标准 | UnionKey/Trezor 默认 |
 | 2 | 10,000 | 较高 | 企业用户 |
 | 3 | 20,000 | 很高 | 超高安全需求 |
 
 **扩展标志的影响：**
 
 ```typescript
-// extendableBackupFlag = 1 (OneKey/Trezor 默认)
+// extendableBackupFlag = 1 (UnionKey/Trezor 默认)
 Salt = [] // 空数组
 
 // extendableBackupFlag = 0 (第三方工具可能使用)
@@ -276,7 +276,7 @@ Salt = "shamir" + identifier // 非空数组
 ```
 ## 5. Passphrase 处理机制详解
 
-### 5.1 OneKey/Trezor 的 Passphrase 处理流程
+### 5.1 UnionKey/Trezor 的 Passphrase 处理流程
 
 **正确的流程理解：EMS → Master Secret**
 
@@ -286,7 +286,7 @@ Salt = "shamir" + identifier // 非空数组
 const ems = Slip39.recoverSecret(shares); // 恢复固定的EMS
 
 // 第二步：使用 EMS + passphrase 计算最终 Master Secret
-// 这是OneKey固件中slip39.decrypt()函数的实现
+// 这是UnionKey固件中slip39.decrypt()函数的实现
 function calculateMasterSecret(ems: Buffer, passphrase: string): Buffer {
   const salt = getSalt(identifier, extendableBackupFlag);
 
@@ -319,7 +319,7 @@ function calculateMasterSecret(ems: Buffer, passphrase: string): Buffer {
 ```typescript
 function getSalt(identifier: number[], extendableBackupFlag: number): number[] {
   if (extendableBackupFlag) {
-    return []; // OneKey/Trezor: 空 salt
+    return []; // UnionKey/Trezor: 空 salt
   }
   const salt = stringToBytes('shamir');
   return salt.concat(identifier); // 第三方工具: 'shamir' + identifier
@@ -348,7 +348,7 @@ Master Secret = Feistel4Rounds(EMS, passphrase, salt, iterations)
 
 ```
 测试案例：
-OneKey 助记词: boring withdraw academic acid...
+UnionKey 助记词: boring withdraw academic acid...
 第三方助记词: reward husband acrobat easy...
 
 结果分析：
@@ -357,7 +357,7 @@ OneKey 助记词: boring withdraw academic acid...
 ❌ 有 passphrase 时，Master Secret 完全不同！
 
 原因：
-OneKey → extendableBackupFlag=1 → Salt=[] → Master Secret A
+UnionKey → extendableBackupFlag=1 → Salt=[] → Master Secret A
 第三方 → extendableBackupFlag=0 → Salt="shamir"+id → Master Secret B
 ```
 
@@ -377,7 +377,7 @@ identifier  "academic"  配置信息
 
 | 助记词来源 | 第3位词汇 | extendableBackupFlag | Salt 生成 |
 |-----------|----------|---------------------|-----------|
-| OneKey/Trezor | "academic" | 1 | `[]` |
+| UnionKey/Trezor | "academic" | 1 | `[]` |
 | 第三方工具 | 其他词汇 | 0 | `"shamir" + identifier` |
 
 **为什么第3位词汇如此重要？**
@@ -393,7 +393,7 @@ identifier  "academic"  配置信息
 **🎯 一行代码检测兼容性：**
 
 ```typescript
-function isOneKeyCompatible(shares: string[]): boolean {
+function isUnionKeyCompatible(shares: string[]): boolean {
   return shares.every(share => share.split(' ')[2] === 'academic');
 }
 ```
@@ -403,9 +403,9 @@ function isOneKeyCompatible(shares: string[]): boolean {
 
 **必须配置的参数：**
 ```typescript
-const ONEKEY_SLIP39_CONFIG = {
-  iterationExponent: 1,        // 与 OneKey 硬件一致
-  extendableBackupFlag: 1,     // 与 OneKey 硬件一致
+const UNIONKEY_SLIP39_CONFIG = {
+  iterationExponent: 1,        // 与 UnionKey 硬件一致
+  extendableBackupFlag: 1,     // 与 UnionKey 硬件一致
   groupThreshold: 1,           // SLIP39 Basic
   groupCount: 1               // SLIP39 Basic
 };
@@ -416,16 +416,16 @@ const ONEKEY_SLIP39_CONFIG = {
 **Q: 为什么相同的 SLIP39 助记词在不同平台生成不同地址？**
 A: 参数配置不一致，确保 `iterationExponent=1` 和 `extendableBackupFlag=1`。
 
-**Q: 如何判断助记词是否为 OneKey 标准？**
+**Q: 如何判断助记词是否为 UnionKey 标准？**
 A: 检查第3个词是否为 "academic"。
 
-**Q: 第三方工具生成的 SLIP39 能在 OneKey 使用吗？**
+**Q: 第三方工具生成的 SLIP39 能在 UnionKey 使用吗？**
 A: 可以恢复，但使用 passphrase 时可能地址不匹配。
 
 ### 7.3 最佳实践
 
 **✅ 推荐：**
-- 使用 OneKey 硬件生成 SLIP39 助记词
+- 使用 UnionKey 硬件生成 SLIP39 助记词
 - 在 SDK 中集成兼容性检测
 - 对第三方助记词给出明确警告
 
@@ -440,13 +440,13 @@ A: 可以恢复，但使用 passphrase 时可能地址不匹配。
 
 **🎯 关键发现：**
 1. **Salt 生成机制**: `Salt = extendableBackupFlag ? [] : "shamir" + identifier`
-2. **"Academic" 标识符**: 第3位词汇标识 OneKey/Trezor 标准实现
+2. **"Academic" 标识符**: 第3位词汇标识 UnionKey/Trezor 标准实现
 3. **Feistel 网络**: 4轮加密增强 passphrase 安全性
 4. **兼容性关键**: 相同的参数配置确保相同的 Salt 计算
 
 ### 8.2 兼容性矩阵
 
-| 场景 | OneKey ↔ Trezor | OneKey ↔ 第三方 | 风险等级 |
+| 场景 | UnionKey ↔ Trezor | UnionKey ↔ 第三方 | 风险等级 |
 |------|----------------|----------------|---------|
 | 无 Passphrase | ✅ 完全兼容 | ✅ 可以恢复 | 🟢 低风险 |
 | 有 Passphrase | ✅ 完全兼容 | ❌ 地址不匹配 | 🔴 高风险 |

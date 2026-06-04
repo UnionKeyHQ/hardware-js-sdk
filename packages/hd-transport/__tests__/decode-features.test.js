@@ -4,7 +4,7 @@ const ByteBuffer = require('bytebuffer');
 const { decode } = require('../src/serialization/protobuf/decode');
 const { decode: decodeProtocol } = require('../src/serialization/protocol/decode');
 
-// Reuse the messages.json already committed alongside @onekeyfe/hd-core
+// Reuse the messages.json already committed alongside @unionkeyfe/hd-core
 // (runtime data for DataManager). hd-transport's own messages.json is
 // generated locally via `./scripts/protobuf-build.sh` and gitignored —
 // pointing the test at core's committed copy avoids a ~300KB duplicate
@@ -18,7 +18,7 @@ const fixtures = [
     encodeMessage:
       '0011000000260a096f6e656b65792e736f1002180020002801900101aa010131b00101b80163c00163c020ff',
     out: {
-      vendor: 'onekey.so',
+      vendor: 'unionkey.io',
       major_version: 2,
       minor_version: 0,
       patch_version: 0,
@@ -37,7 +37,7 @@ const fixtures = [
     encodeMessage:
       '0011000000260a096f6e656b65792e736f1002180020002801900101aa010131b00102b80163c00163c02004',
     out: {
-      vendor: 'onekey.so',
+      vendor: 'unionkey.io',
       major_version: 2,
       minor_version: 0,
       patch_version: 0,

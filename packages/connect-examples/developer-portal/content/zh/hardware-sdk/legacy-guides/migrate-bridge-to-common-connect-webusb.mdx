@@ -4,7 +4,7 @@ title: 迁移到 common-connect-sdk
 
 # 迁移到 common-connect-sdk
 
-从 Bridge 迁移到 WebUSB，并切换到 `@onekeyfe/hd-common-connect-sdk`。
+从 Bridge 迁移到 WebUSB，并切换到 `@unionkeyfe/hd-common-connect-sdk`。
 
 ---
 
@@ -17,10 +17,10 @@ title: 迁移到 common-connect-sdk
 
 ## 变更概览
 
-- SDK 入口：`@onekeyfe/hd-web-sdk` → `@onekeyfe/hd-common-connect-sdk`
+- SDK 入口：`@unionkeyfe/hd-web-sdk` → `@unionkeyfe/hd-common-connect-sdk`
 - 初始化选项：使用 `env: 'webusb'`；不再需要 `connectSrc`（无 iframe）
-- 权限流程：调用 `navigator.usb.requestDevice()`（必须由用户手势触发）并使用官方过滤器 `ONEKEY_WEBUSB_FILTER`
-- 事件系统：使用 `@onekeyfe/hd-core` 的 `UI_EVENT / DEVICE` 事件处理用户交互（PIN/Passphrase 等）
+- 权限流程：调用 `navigator.usb.requestDevice()`（必须由用户手势触发）并使用官方过滤器 `UNIONKEY_WEBUSB_FILTER`
+- 事件系统：使用 `@unionkeyfe/hd-core` 的 `UI_EVENT / DEVICE` 事件处理用户交互（PIN/Passphrase 等）
 - 移除 Bridge 相关逻辑：删除 `checkBridgeStatus()` 和所有 Bridge 检查/提示
 - 业务 API 基本不变：如 `searchDevices / getFeatures / btcGetAddress`
 
@@ -29,7 +29,7 @@ title: 迁移到 common-connect-sdk
 ## 安装
 
 ```bash
-npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-core @onekeyfe/hd-shared
+npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-core @unionkeyfe/hd-shared
 ```
 
 ---
@@ -37,7 +37,7 @@ npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-core @onekeyfe/hd-shared
 ## 初始化（hd-common-connect-sdk + WebUSB）
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'webusb',
@@ -54,7 +54,7 @@ await HardwareSDK.init({
 ## 绑定 UI 和设备事件（PIN / Passphrase / 插拔）
 
 ```ts
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyfe/hd-core';
 
 function bindHardwareEvents() {
   HardwareSDK.on(UI_EVENT, async (message: any) => {
@@ -64,7 +64,7 @@ function bindHardwareEvents() {
         await HardwareSDK.uiResponse({
           type: UI_RESPONSE.RECEIVE_PIN,
           // 优先在设备上输入 PIN（更安全）
-          payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+          payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
         });
         break;
       }
@@ -102,10 +102,10 @@ bindHardwareEvents();
 ## 授权（WebUSB 选择器 + 官方过滤器）
 
 ```ts
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
 
 // 重要：必须由用户手势触发（如按钮点击），否则浏览器会阻止
-await navigator.usb.requestDevice({ filters: ONEKEY_WEBUSB_FILTER });
+await navigator.usb.requestDevice({ filters: UNIONKEY_WEBUSB_FILTER });
 ```
 
 ---
@@ -127,7 +127,7 @@ const resolvedDeviceId = features.payload.device_id ?? deviceId;
 const r = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (r.success) {
@@ -141,9 +141,9 @@ if (r.success) {
 
 ## 清理和检查清单
 
-- 依赖替换：移除 `@onekeyfe/hd-web-sdk`，使用 `@onekeyfe/hd-common-connect-sdk`
+- 依赖替换：移除 `@unionkeyfe/hd-web-sdk`，使用 `@unionkeyfe/hd-common-connect-sdk`
 - 初始化变更：
-  - 旧：`env: 'web'` + `connectSrc: 'https://jssdk.onekey.so/.../'`
+  - 旧：`env: 'web'` + `connectSrc: 'https://jssdk.unionkey.io/.../'`
   - 新：`env: 'webusb'`（无 `connectSrc`）
 - 移除 Bridge 相关逻辑：如 `checkBridgeStatus()`、Bridge 安装/重启提示
 - 绑定 `UI_EVENT / DEVICE`：确保处理 PIN/Passphrase 和设备插拔事件

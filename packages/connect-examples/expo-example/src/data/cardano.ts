@@ -20,7 +20,7 @@ const api: PlaygroundProps[] = [
           networkId: 1,
           derivationType: 1,
           address: '',
-          showOnOneKey: false,
+          showOnUnionKey: false,
           isCheck: false,
         },
       },
@@ -39,7 +39,7 @@ const api: PlaygroundProps[] = [
           networkId: 0,
           derivationType: 1,
           address: '',
-          showOnOneKey: false,
+          showOnUnionKey: false,
           isCheck: false,
         },
       },
@@ -57,7 +57,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
             {
@@ -70,7 +70,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
             {
@@ -83,7 +83,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
           ],
@@ -103,7 +103,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
             {
@@ -116,7 +116,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 2,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
             {
@@ -129,7 +129,7 @@ const api: PlaygroundProps[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnOneKey: false,
+              showOnUnionKey: false,
               isCheck: false,
             },
           ],
@@ -145,7 +145,7 @@ const api: PlaygroundProps[] = [
         title: 'Get PublicKey',
         value: {
           path: "m/1852'/1815'/0'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
           derivationType: 1,
         },
       },
@@ -155,17 +155,17 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 1,
             },
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 1,
             },
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 1,
             },
           ],
@@ -177,17 +177,17 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 2,
             },
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 1,
             },
             {
               path: "m/1852'/1815'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               derivationType: 2,
             },
           ],

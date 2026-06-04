@@ -4,7 +4,7 @@ title: Keyless Binding
 
 # Keyless Binding
 
-Keyless binding is the product boundary that lets users manage an Agent Wallet in the OneKey GUI without memorizing, exporting, or pasting private keys into an agent runtime.
+Keyless binding is the product boundary that lets users manage an Agent Wallet in the UnionKey GUI without memorizing, exporting, or pasting private keys into an agent runtime.
 
 The CLI receives an App Transfer session. It should not expose raw key material, decrypted credentials, access tokens, seed phrases, or keychain contents to the agent.
 
@@ -12,9 +12,9 @@ The CLI receives an App Transfer session. It should not expose raw key material,
 
 For the user, this should feel like a managed wallet rather than a key-management exercise:
 
-| User need | OneKey behavior |
+| User need | UnionKey behavior |
 | --- | --- |
-| Create an automation wallet | Create and manage the Agent Wallet in OneKey GUI. |
+| Create an automation wallet | Create and manage the Agent Wallet in UnionKey GUI. |
 | Use it from an AI client | Pair through App Transfer instead of pasting keys. |
 | Know which wallet is active | Let the agent read `onekey auth status` and show the address. |
 | Move funds | Require an explicit confirmation; optionally escalate to hardware control. |
@@ -24,7 +24,7 @@ For the user, this should feel like a managed wallet rather than a key-managemen
 
 | Surface | Responsibility |
 | --- | --- |
-| OneKey GUI | Create and manage the Agent Wallet and keyless account relationship |
+| UnionKey GUI | Create and manage the Agent Wallet and keyless account relationship |
 | `onekey` CLI | Hold the active session, expose schema-backed wallet commands, and use the OS credential store |
 | Agent runtime | Read schemas, call commands, summarize results, and request confirmation for writes |
 

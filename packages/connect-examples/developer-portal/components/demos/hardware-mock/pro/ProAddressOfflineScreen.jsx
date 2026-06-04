@@ -24,7 +24,7 @@ export function ProAddressOfflineScreen({
   const [view, setView] = useState(details?.qrFirst ? 'qrcode' : 'address')
 
   const network = details?.network ?? 'Bitcoin'
-  const primaryColor = details?.primaryColor ?? PRO_COLORS.ONEKEY_GREEN
+  const primaryColor = details?.primaryColor ?? PRO_COLORS.UNIONKEY_GREEN
   const iconSrc = details?.icon ? joinPath(basePath, details.icon) : null
   const title = i18n.addressTitle(network)
 
@@ -77,7 +77,7 @@ export function ProAddressOfflineScreen({
                   minHeight: 94,
                   padding: '28px 24px',
                   borderRadius: PRO_LAYOUT.cardRadius,
-                  background: PRO_COLORS.ONEKEY_GRAY_3,
+                  background: PRO_COLORS.UNIONKEY_GRAY_3,
                   color: PRO_COLORS.WHITE,
                   fontSize: 30,
                   fontWeight: 600,
@@ -107,7 +107,7 @@ export function ProAddressOfflineScreen({
                 marginTop: showDerive ? 8 : 0,
                 borderRadius: PRO_LAYOUT.cardRadius,
                 overflow: 'hidden',
-                background: PRO_COLORS.ONEKEY_GRAY_3
+                background: PRO_COLORS.UNIONKEY_GRAY_3
               }}
             >
               <div
@@ -142,7 +142,7 @@ export function ProAddressOfflineScreen({
                   width: 408,
                   marginLeft: 24,
                   marginTop: 14,
-                  background: PRO_COLORS.ONEKEY_GRAY_2
+                  background: PRO_COLORS.UNIONKEY_GRAY_2
                 }}
               />
               <div
@@ -165,7 +165,7 @@ export function ProAddressOfflineScreen({
                   {details?.address ?? ''}
                 </div>
               </div>
-              <div style={{ height: 12, background: PRO_COLORS.ONEKEY_GRAY_3 }} />
+              <div style={{ height: 12, background: PRO_COLORS.UNIONKEY_GRAY_3 }} />
             </div>
           </div>
         ) : (
@@ -186,7 +186,7 @@ export function ProAddressOfflineScreen({
           width: PRO_LAYOUT.buttonHalfWidth,
           height: PRO_LAYOUT.buttonHeight,
           borderRadius: PRO_LAYOUT.buttonRadius,
-          background: PRO_COLORS.ONEKEY_GRAY_3,
+          background: PRO_COLORS.UNIONKEY_GRAY_3,
           border: 0,
           fontSize: 30,
           fontWeight: 600,

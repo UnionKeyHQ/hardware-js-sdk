@@ -1,5 +1,5 @@
 import { memo, useCallback, useContext, useEffect, useState } from 'react';
-import { UI_EVENT, UI_REQUEST } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST } from '@unionkeyfe/hd-core';
 import { Dialog, Stack, Text, Unspaced } from 'tamagui';
 import { X } from '@tamagui/lucide-icons';
 import { useIntl } from 'react-intl';
@@ -10,7 +10,7 @@ import { Button } from '../../components/ui/Button';
 import { useHardwareInputPinDialog } from '../../provider/HardwareInputPinProvider';
 import { useMedia } from '../../provider/MediaProvider';
 
-import type { CoreMessage, IFirmwareUpdateTipMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage, IFirmwareUpdateTipMessage } from '@unionkeyfe/hd-core';
 
 let registerListener = false;
 function FirmwareUpdateEventView({

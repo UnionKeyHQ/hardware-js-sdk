@@ -17,12 +17,12 @@ import HardwareSdk, {
   initCore,
   parseConnectSettings,
   setLoggerPostMessage,
-} from '@onekeyfe/hd-core';
-import { ERRORS, HardwareErrorCode, createDeferred } from '@onekeyfe/hd-shared';
-import ReactNativeTransport from '@onekeyfe/hd-transport-react-native';
+} from '@unionkeyfe/hd-core';
+import { ERRORS, HardwareErrorCode, createDeferred } from '@unionkeyfe/hd-shared';
+import ReactNativeTransport from '@unionkeyfe/hd-transport-react-native';
 
-import type { Deferred } from '@onekeyfe/hd-shared';
-import type { ConnectSettings, Core, CoreMessage, UiResponseEvent } from '@onekeyfe/hd-core';
+import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { ConnectSettings, Core, CoreMessage, UiResponseEvent } from '@unionkeyfe/hd-core';
 
 const eventEmitter = new EventEmitter();
 const Log = getLogger(LoggerNames.HdBleSdk);

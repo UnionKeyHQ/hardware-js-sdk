@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash';
-import { EDeviceType, EFirmwareType } from '@onekeyfe/hd-shared';
-import { Enum_Capability } from '@onekeyfe/hd-transport';
+import { EDeviceType, EFirmwareType } from '@unionkeyfe/hd-shared';
+import { Enum_Capability } from '@unionkeyfe/hd-transport';
 
 import { DeviceModelToTypes } from '../types';
 import { existCapability } from './capabilitieUtils';

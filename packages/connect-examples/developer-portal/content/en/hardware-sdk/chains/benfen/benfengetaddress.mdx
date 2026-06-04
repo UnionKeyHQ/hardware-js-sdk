@@ -6,7 +6,7 @@ title: benfenGetAddress
 
 ### Benfen: get address
 
-Display requested address derived by given BIP32 path on device and returns it to caller. User is asked to confirm the export on OneKey.
+Display requested address derived by given BIP32 path on device and returns it to caller. User is asked to confirm the export on UnionKey.
 
 **Use requirement**
 
@@ -22,7 +22,7 @@ const result = await HardwareSDK.benfenGetAddress(connectId, deviceId, params);
 **Optional common params**
 
 * `path` - _required_ `string | Array<number>` minimum length is `3`. read more
-* `showOnOneKey` - _optional_ `boolean` whether to display address on device
+* `showOnUnionKey` - _optional_ `boolean` whether to display address on device
 
 #### Returns
 
@@ -37,7 +37,7 @@ Example:
 ```typescript
 const params = {
   path: "m/44'/728'/0'/0'/0'",
-  showOnOneKey: false
+  showOnUnionKey: false
 };
 
 // Single address
@@ -48,11 +48,11 @@ const batchParams = {
   bundle: [
     {
       path: "m/44'/728'/0'/0'/0'",
-      showOnOneKey: false
+      showOnUnionKey: false
     },
     {
       path: "m/44'/728'/1'/0'/0'",
-      showOnOneKey: false
+      showOnUnionKey: false
     }
   ]
 };

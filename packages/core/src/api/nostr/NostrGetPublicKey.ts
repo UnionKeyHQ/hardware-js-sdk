@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { NostrGetPublicKey as GetPublicKey } from '@onekeyfe/hd-transport';
+import type { NostrGetPublicKey as GetPublicKey } from '@unionkeyfe/hd-transport';
 import type { BTCGetAddressParams } from '../../types/api/btcGetAddress';
 import type { NostrPublicKey } from '../../types/api/nostrGetPublicKey';
 

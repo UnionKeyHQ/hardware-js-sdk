@@ -6,7 +6,7 @@ import { getCoinInfo } from './helpers/btcParamsUtils';
 import { getBitcoinForkVersionRange } from './helpers/versionLimit';
 
 import type { BTCAddress, BTCGetAddressParams } from '../../types/api/btcGetAddress';
-import type { GetAddress } from '@onekeyfe/hd-transport';
+import type { GetAddress } from '@unionkeyfe/hd-transport';
 
 export default class BTCGetAddress extends BaseMethod<GetAddress[]> {
   hasBundle = false;

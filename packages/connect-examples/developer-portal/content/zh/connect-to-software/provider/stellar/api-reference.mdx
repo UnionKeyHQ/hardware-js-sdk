@@ -1,6 +1,6 @@
 ---
 title: API 参考
-description: OneKey Stellar provider 完整 API 参考
+description: UnionKey Stellar provider 完整 API 参考
 ---
 
 # API 参考
@@ -25,7 +25,7 @@ description: OneKey Stellar provider 完整 API 参考
 
 | 属性 | 类型 | 描述 |
 |------|------|------|
-| `isOneKey` | `boolean` | OneKey 标识 |
+| `isUnionKey` | `boolean` | UnionKey 标识 |
 
 ---
 
@@ -78,8 +78,8 @@ export type StellarSignMessageResponse = {
 ## 基础类型（仅供参考）
 
 ```ts
-export type OneKeyStellarProvider = {
-  isOneKey: boolean
+export type UnionKeyStellarProvider = {
+  isUnionKey: boolean
 
   // 与 Stellar Wallets Kit（KitActions）保持一致
   getAddress: (params?: StellarGetAddressParams) => Promise<StellarGetAddressResponse>

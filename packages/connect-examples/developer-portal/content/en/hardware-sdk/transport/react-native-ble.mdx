@@ -5,18 +5,18 @@ title: React Native BLE (hd-ble-sdk)
 # React Native BLE (hd-ble-sdk)
 
 > **Note:**
-Demo: React Native / Expo example → [react-native-demo](https://github.com/OneKeyHQ/hardware-js-sdk/tree/develop/packages/connect-examples/react-native-demo)
+Demo: React Native / Expo example → [react-native-demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/develop/packages/connect-examples/react-native-demo)
 
 
-This guide shows how to use the pure React Native BLE stack with `@onekeyfe/hd-ble-sdk` and `@onekeyfe/hd-transport-react-native`. No WebView or low-level adapter is required. The chain API usage stays the same as in Quick Start.
+This guide shows how to use the pure React Native BLE stack with `@unionkeyfe/hd-ble-sdk` and `@unionkeyfe/hd-transport-react-native`. No WebView or low-level adapter is required. The chain API usage stays the same as in Quick Start.
 
 ## Install
 
 We recommend installing the RN-native dependencies at the app layer so that autolinking includes the native modules in your Dev Client build:
 
 ```bash
-npm i @onekeyfe/hd-ble-sdk @onekeyfe/hd-transport-react-native \
-      @onekeyfe/react-native-ble-utils react-native-ble-plx \
+npm i @unionkeyfe/hd-ble-sdk @unionkeyfe/hd-transport-react-native \
+      @unionkeyfe/react-native-ble-utils react-native-ble-plx \
       buffer process react-native-get-random-values react-native-url-polyfill
 ```
 
@@ -32,9 +32,9 @@ global.Buffer = global.Buffer || require('buffer').Buffer;
 global.process = global.process || require('process');
 
 // Register RN transport side-effects before SDK init
-import '@onekeyfe/hd-transport-react-native';
+import '@unionkeyfe/hd-transport-react-native';
 
-import HardwareSDK from '@onekeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
 ```
 
 ## Android setup
@@ -112,7 +112,7 @@ export async function setupBle() {
   });
 
   // Subscribe to UI events (PIN / Passphrase / confirmations)
-  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core'
+  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
   // HardwareSDK.on(UI_EVENT, (msg) => { /* open dialogs and reply via HardwareSDK.uiResponse(...) */ });
 }
 ```
@@ -140,7 +140,7 @@ Persist `connectId` and `deviceId` (most chain APIs require both).
 const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (res.success) {
@@ -154,7 +154,7 @@ if (res.success) {
 
 - Always subscribe early to `UI_EVENT` so PIN/Passphrase/confirmations do not stall requests. See [Config Event](/en/hardware-sdk/core-api-guide#events-ui).
 - Keep BLE permissions in sync with the OS version. Test on physical devices.
-- For additional examples, check: [react-native-demo](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo)
+- For additional examples, check: [react-native-demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo)
 
 ## Continue
 

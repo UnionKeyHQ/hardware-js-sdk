@@ -11,12 +11,12 @@ title: scdoGetAddress
 
 #### SCDO: get address
 
-Display requested address derived by given BIP32 path on device and returns it to caller. User is presented with a description of the requested key and asked to confirm the export on OneKey.
+Display requested address derived by given BIP32 path on device and returns it to caller. User is presented with a description of the requested key and asked to confirm the export on UnionKey.
 
 ```typescript
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnOneKey: true
+    showOnUnionKey: true
 });
 ```
 
@@ -27,11 +27,11 @@ Optional common params
 **Exporting single address**
 
 * `path` - _required_ `string | Array<number>` minimum length is 3. read more
-* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 
 **Exporting bundle of addresses**
 
-* `bundle` - `Array` of Objects with `path` and `showOnOneKey` fields
+* `bundle` - `Array` of Objects with `path` and `showOnUnionKey` fields
 
 **Example**
 
@@ -39,7 +39,7 @@ Optional common params
 // Get single address
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnOneKey: false
+    showOnUnionKey: false
 });
 
 // Get multiple addresses
@@ -47,11 +47,11 @@ const bundleResponse = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     bundle: [
         {
             path: "m/44'/541'/0'/0/0",
-            showOnOneKey: false
+            showOnUnionKey: false
         },
         {
             path: "m/44'/541'/1'/0/0", 
-            showOnOneKey: false
+            showOnUnionKey: false
         }
     ]
 });

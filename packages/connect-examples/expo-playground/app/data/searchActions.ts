@@ -185,7 +185,7 @@ export const buildSearchActions = (
       subtitle: t('search.descriptions.githubRepo'),
       section: t('search.sections.external'),
       keywords: t('search.keywords.github'),
-      perform: () => openExternalLink('https://github.com/OneKeyHQ/hardware-js-sdk'),
+      perform: () => openExternalLink('https://github.com/UnionKeyHQ/hardware-js-sdk'),
       priority: ACTION_PRIORITIES['github-repo'] || 1,
     },
     {
@@ -194,7 +194,7 @@ export const buildSearchActions = (
       subtitle: t('search.descriptions.onekeyWebsite'),
       section: t('search.sections.external'),
       keywords: t('search.keywords.website'),
-      perform: () => openExternalLink('https://onekey.so/'),
+      perform: () => openExternalLink('https://unionkey.io/'),
       priority: ACTION_PRIORITIES['onekey-website'] || 1,
     },
     {
@@ -203,7 +203,7 @@ export const buildSearchActions = (
       subtitle: t('search.descriptions.hardwareConnect'),
       section: t('search.sections.external'),
       keywords: t('search.keywords.connect'),
-      perform: () => openExternalLink('https://developer.onekey.so/connect-to-hardware/page-1'),
+      perform: () => openExternalLink('https://developer.unionkey.io/connect-to-hardware/page-1'),
       priority: ACTION_PRIORITIES['hardware-connect-docs'] || 1,
     }
   );

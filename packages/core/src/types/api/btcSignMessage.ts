@@ -1,4 +1,4 @@
-import type { MessageSignature } from '@onekeyfe/hd-transport';
+import type { MessageSignature } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type BTCSignMessageParams = {

@@ -1,4 +1,4 @@
-import type { StarcoinPublicKey as HardwareStarcoinPublicKey } from '@onekeyfe/hd-transport';
+import type { StarcoinPublicKey as HardwareStarcoinPublicKey } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type StarcoinPublicKey = {

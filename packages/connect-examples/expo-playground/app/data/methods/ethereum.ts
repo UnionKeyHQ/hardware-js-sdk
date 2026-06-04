@@ -38,23 +38,23 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/44'/60'/0'/0/0",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/1",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/2",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/3",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/4",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
             ],
           },
@@ -99,15 +99,15 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/44'/60'/0'/0/0",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/1",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/60'/0'/0/2",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
             ],
           },
@@ -822,7 +822,7 @@ const api: UnifiedMethodConfig[] = [
               },
               primaryType: 'Message',
               domain: {
-                name: 'example.onekey.so',
+                name: 'example.unionkey.io',
               },
               message: {
                 Wallet: 'Onekey Touch',

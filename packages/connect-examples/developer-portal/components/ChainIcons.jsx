@@ -157,7 +157,7 @@ export function DeviceIcon({ device, size = 40, className = '' }) {
   return (
     <Image
       src={iconPath}
-      alt={`OneKey ${device}`}
+      alt={`UnionKey ${device}`}
       width={size}
       height={size}
       className={className}
@@ -166,13 +166,13 @@ export function DeviceIcon({ device, size = 40, className = '' }) {
   )
 }
 
-// OneKey logo
-export function OneKeyIcon({ size = 24, className = '' }) {
+// UnionKey logo
+export function UnionKeyIcon({ size = 24, className = '' }) {
   const basePath = getBasePath()
   return (
     <Image
       src={`${basePath}/icons/onekey.png`}
-      alt="OneKey"
+      alt="UnionKey"
       width={size}
       height={size}
       className={className}

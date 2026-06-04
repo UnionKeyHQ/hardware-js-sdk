@@ -23,7 +23,7 @@ Rules and best practices for handling passphrases (hidden wallets).
 | Touch | Yes (touch keyboard) | Yes |
 | Pro | Yes (touch keyboard) | Yes |
 
-All OneKey devices support passphrase and session caching (`passphraseState`).
+All UnionKey devices support passphrase and session caching (`passphraseState`).
 
 ## Interaction flow
 
@@ -163,7 +163,7 @@ sequenceDiagram
 ```
 
 ```ts
-import { preloadSessionCache } from '@onekeyfe/hd-core';
+import { preloadSessionCache } from '@unionkeyfe/hd-core';
 
 // On startup: restore session from persistent storage
 const { deviceId, passphraseState, sessionId } = loadFromStorage();
@@ -176,7 +176,7 @@ await HardwareSDK.evmGetAddress(connectId, deviceId, {
 });
 ```
 
-> **Important: device locking invalidates sessions.** All OneKey devices clear passphrase sessions when locked (whether by auto-lock timeout, manual lock, or USB disconnection). Once locked, the cached `session_id` becomes invalid and the user must re-enter their passphrase after unlocking (PIN). Session reuse only works when the device remains unlocked between invocations.
+> **Important: device locking invalidates sessions.** All UnionKey devices clear passphrase sessions when locked (whether by auto-lock timeout, manual lock, or USB disconnection). Once locked, the cached `session_id` becomes invalid and the user must re-enter their passphrase after unlocking (PIN). Session reuse only works when the device remains unlocked between invocations.
 
 ### Unlock-first pattern (recommended for CLI)
 

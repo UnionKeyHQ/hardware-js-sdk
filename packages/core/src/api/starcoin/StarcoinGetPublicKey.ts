@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { StarcoinGetPublicKey as HardwareStarcoinGetPublicKey } from '@onekeyfe/hd-transport';
+import type { StarcoinGetPublicKey as HardwareStarcoinGetPublicKey } from '@unionkeyfe/hd-transport';
 import type {
   StarcoinGetPublicKeyParams,
   StarcoinPublicKey,

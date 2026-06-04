@@ -1,11 +1,11 @@
 ---
-description: 通过 OneKey Provider 进行 Solana 集成 — 检测、连接、发送交易和签名消息
+description: 通过 UnionKey Provider 进行 Solana 集成 — 检测、连接、发送交易和签名消息
 slug: /dapp/chains/solana
 ---
 
 # Solana
 
-在 Web 应用中使用 OneKey 的 Solana Provider。
+在 Web 应用中使用 UnionKey 的 Solana Provider。
 
 ## 快速链接
 
@@ -19,7 +19,7 @@ slug: /dapp/chains/solana
 ```js
 // 检测
 const provider = window?.$onekey?.solana || window?.solana
-if (!provider?.isOneKey) throw new Error('未检测到 OneKey Solana Provider')
+if (!provider?.isUnionKey) throw new Error('未检测到 UnionKey Solana Provider')
 
 // 连接
 const { publicKey } = await provider.connect()

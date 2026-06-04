@@ -4,7 +4,7 @@ title: Migrate from Near Web Wallet
 
 # Migrate from Near Web Wallet
 
-Although, we strongly recommend using formal API to interact your applicactions with OneKey Wallet, we still provide some legacy API that is very similar to [Near Web Wallet](https://wallet.near.org/), make it easier for you migrating existing codes from Near Web Wallet.
+Although, we strongly recommend using formal API to interact your applicactions with UnionKey Wallet, we still provide some legacy API that is very similar to [Near Web Wallet](https://wallet.near.org/), make it easier for you migrating existing codes from Near Web Wallet.
 
 ```javascript
 import * as nearAPI from "near-api-js";
@@ -20,7 +20,7 @@ const config = {
 const near = new nearAPI.Near(config);
 const connection = near.connection;
 
-const provider = new OneKeyNearProvider({
+const provider = new UnionKeyNearProvider({
   connection,
   networkId: 'mainnet', // `mainnet` or `testnet`
   // reloading page after signIn or signTransaction that likes web wallet callback url working

@@ -1,19 +1,19 @@
-# OneKey Hardware SDK Integration Example
+# UnionKey Hardware SDK Integration Example
 
 ## Overview
 
-A complete web application example demonstrating OneKey Hardware SDK integration with modern web technologies. This example serves as a practical reference for developers integrating OneKey hardware wallets into their applications.
+A complete web application example demonstrating UnionKey Hardware SDK integration with modern web technologies. This example serves as a practical reference for developers integrating UnionKey hardware wallets into their applications.
 
 ## 🌐 Live Demo & Repository
 
-- **Live Demo**: [https://connect.onekey.so/expo-playground](https://connect.onekey.so/expo-playground)
-- **Source Code**: [GitHub Repository](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/expo-playground)
+- **Live Demo**: [https://connect.unionkey.io/expo-playground](https://connect.unionkey.io/expo-playground)
+- **Source Code**: [GitHub Repository](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/expo-playground)
 
 ## 🚀 What You Can Learn
 
 ### 1. **Connection Methods**
 - **WebUSB**: Direct browser-to-device connection
-- **JSBridge**: Connection via OneKey Bridge desktop app
+- **JSBridge**: Connection via UnionKey Bridge desktop app
 - **Hardware Emulator**: Docker-based device simulation for testing
 
 ### 2. **Blockchain Integration**
@@ -36,10 +36,10 @@ The example includes hardware emulator support for development without physical 
 # 1. Clone emulator repository
 git clone https://github.com/Johnwanzi/onekey-docker.git
 
-# 2. Start OneKey Pro emulator
+# 2. Start UnionKey Pro emulator
 bash build-emu.sh pro-emu
 
-# 3. Start OneKey Classic 1s emulator  
+# 3. Start UnionKey Classic 1s emulator
 bash build-emu.sh 1s-emu
 
 # 4. Access via browser
@@ -53,7 +53,7 @@ bash build-emu.sh 1s-emu
 
 ## 💻 Main Use Cases
 
-1. **Learning SDK Integration**: Understand how to properly initialize and use the OneKey SDK
+1. **Learning SDK Integration**: Understand how to properly initialize and use the UnionKey SDK
 2. **Testing API Methods**: Interactive testing of all hardware wallet functions
 3. **Development Reference**: See best practices for error handling, state management, and UX
 4. **Emulator Testing**: Develop and test without physical hardware devices
@@ -61,13 +61,13 @@ bash build-emu.sh 1s-emu
 ## 🛠️ Basic SDK Usage
 
 ```typescript
-import { CoreApi } from '@onekeyfe/hd-core';
+import { CoreApi } from '@unionkeyfe/hd-core';
 
 // Initialize SDK
 const sdk = new CoreApi({
   env: 'web',
   debug: true,
-  connectSrc: 'https://connect.onekey.so/'
+  connectSrc: 'https://connect.unionkey.io/'
 });
 
 // Switch connection method
@@ -79,7 +79,7 @@ const devices = await sdk.searchDevices();
 // Get address example
 const result = await sdk.evmGetAddress({
   path: "m/44'/60'/0'/0/0",
-  showOnOneKey: true
+  showOnUnionKey: true
 });
 ```
 
@@ -87,9 +87,9 @@ const result = await sdk.evmGetAddress({
 
 ```bash
 # Clone and setup
-git clone https://github.com/OneKeyHQ/hardware-js-sdk.git
+git clone https://github.com/UnionKeyHQ/hardware-js-sdk.git
 cd hardware-js-sdk/packages/connect-examples/expo-playground
-yarn 
+yarn
 yarn start
 ```
 
@@ -97,6 +97,6 @@ Open `http://localhost:3010` to explore the example.
 
 ## 🔗 Resources
 
-- **Main SDK**: [OneKey Hardware SDK](https://github.com/OneKeyHQ/hardware-js-sdk)
-- **OneKey Bridge**: [Download Bridge App](https://help.onekey.so/hc/zh-cn/articles/9740566472335)
-- **API Documentation**: [Hardware API Reference](https://connect.onekey.so/docs) 
+- **Main SDK**: [UnionKey Hardware SDK](https://github.com/UnionKeyHQ/hardware-js-sdk)
+- **UnionKey Bridge**: [Download Bridge App](https://help.unionkey.io/hc/zh-cn/articles/9740566472335)
+- **API Documentation**: [Hardware API Reference](https://connect.unionkey.io/docs)

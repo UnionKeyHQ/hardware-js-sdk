@@ -4,7 +4,7 @@ export default {
   name: 'one-passphrase18-密语1',
   passphrase: 'abcdf12345',
   passphraseState: 'mw4kcXbdNjkf6Zu7nU3oHpajXXCc9wkZNR',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490322',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490322',
   data: [
     {
       method: 'btcGetAddress',

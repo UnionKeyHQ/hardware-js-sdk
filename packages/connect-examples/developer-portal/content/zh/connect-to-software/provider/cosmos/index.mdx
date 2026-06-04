@@ -1,16 +1,16 @@
 ---
 title: Cosmos
-description: 通过 OneKey 的 Keplr 兼容 Provider 集成 Cosmos
+description: 通过 UnionKey 的 Keplr 兼容 Provider 集成 Cosmos
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Cosmos
 
-使用 OneKey 的 Keplr 兼容 Provider 集成 Cosmos 生态系统链。通过 `window.$onekey.cosmos` 访问。
+使用 UnionKey 的 Keplr 兼容 Provider 集成 Cosmos 生态系统链。通过 `window.$onekey.cosmos` 访问。
 
 <Callout type="info">
-OneKey 的 Cosmos Provider 完全兼容 Keplr 钱包接口，迁移无缝衔接。
+UnionKey 的 Cosmos Provider 完全兼容 Keplr 钱包接口，迁移无缝衔接。
 </Callout>
 
 ---
@@ -27,15 +27,15 @@ OneKey 的 Cosmos Provider 完全兼容 Keplr 钱包接口，迁移无缝衔接�
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Cosmos provider
+// 检测 UnionKey Cosmos provider
 const provider = window.$onekey?.cosmos
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Cosmos provider')
+  throw new Error('未检测到 UnionKey Cosmos provider')
 }
 
-// 检查是否为 OneKey
-console.log('Provider:', provider.isOneKey ? 'OneKey' : '未知')
+// 检查是否为 UnionKey
+console.log('Provider:', provider.isUnionKey ? 'UnionKey' : '未知')
 ```
 
 ---
@@ -317,12 +317,12 @@ try {
 
 ## 从 Keplr 迁移
 
-OneKey 的 Cosmos provider 兼容 Keplr。只需更改 provider 检测代码：
+UnionKey 的 Cosmos provider 兼容 Keplr。只需更改 provider 检测代码：
 
 ```typescript
 // 之前 (仅 Keplr)
 const provider = window.keplr
 
-// 之后 (OneKey 优先，Keplr 回退)
+// 之后 (UnionKey 优先，Keplr 回退)
 const provider = window.$onekey?.cosmos || window.keplr
 ```

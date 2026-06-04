@@ -1,14 +1,14 @@
 /**
- * @onekeyfe/hardware-cli
+ * @unionkeyfe/hardware-cli
  *
  * OneKey hardware wallet CLI for AI agent integration.
  * Provides device management, multi-chain signing, firmware updates,
  * and security management capabilities.
  *
  * Usage:
- *   npx @onekeyfe/hardware-cli search
- *   npx @onekeyfe/hardware-cli get-address --chain evm
- *   npx @onekeyfe/hardware-cli sign-transaction --chain evm --tx '{...}'
+ *   npx @unionkeyfe/hardware-cli search
+ *   npx @unionkeyfe/hardware-cli get-address --chain evm
+ *   npx @unionkeyfe/hardware-cli sign-transaction --chain evm --tx '{...}'
  *
  * All output is structured JSON for AI agent consumption.
  *

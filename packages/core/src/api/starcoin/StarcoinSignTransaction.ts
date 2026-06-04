@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { StarcoinSignTx } from '@onekeyfe/hd-transport';
+import type { StarcoinSignTx } from '@unionkeyfe/hd-transport';
 
 export default class StarcoinSignTransaction extends BaseMethod<StarcoinSignTx> {
   init() {

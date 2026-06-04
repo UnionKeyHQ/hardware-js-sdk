@@ -6,7 +6,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
 import type { NervosSignTransactionParams, NervosSignedTx } from '../../types';
-import type { NervosSignTx as HardwareNervosSignTx, TypedCall } from '@onekeyfe/hd-transport';
+import type { NervosSignTx as HardwareNervosSignTx, TypedCall } from '@unionkeyfe/hd-transport';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 
 type NervosSignTx = Omit<HardwareNervosSignTx, 'data_initial_chunk' | 'data_length'> & {

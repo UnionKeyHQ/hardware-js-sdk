@@ -245,7 +245,7 @@ function createSearchDevicesSteps(locale) {
       selector: '[data-tour="example-code"]',
       placement: 'left',
       tips: isEn ? 'Searching Devices' : '搜索设备',
-      desc: isEn ? 'SDK is scanning for connected OneKey hardware devices.' : 'SDK 正在扫描已连接的 OneKey 硬件设备。'
+      desc: isEn ? 'SDK is scanning for connected UnionKey hardware devices.' : 'SDK 正在扫描已连接的 UnionKey 硬件设备。'
     }),
     eventStep({
       id: 'wait-result',
@@ -290,12 +290,12 @@ function createFlowSteps(locale, startEvent) {
   const command = startEvent?.command ?? null
   const params = startEvent?.params ?? null
   const deviceType = normalizeDeviceType(startEvent?.deviceType)
-  const showOnOneKey = Boolean(params?.showOnOneKey)
+  const showOnUnionKey = Boolean(params?.showOnUnionKey)
   if (command === 'searchDevices') return createSearchDevicesSteps(locale)
 
   if (command === 'btcGetAddress' || command === 'btcSignMessage') {
-    if (deviceType === 'classic1s') return createClassic1sInteractiveSteps(locale, { command, showOnOneKey })
-    return createProInteractiveSteps(locale, { command, showOnOneKey })
+    if (deviceType === 'classic1s') return createClassic1sInteractiveSteps(locale, { command, showOnUnionKey })
+    return createProInteractiveSteps(locale, { command, showOnUnionKey })
   }
 
   return [

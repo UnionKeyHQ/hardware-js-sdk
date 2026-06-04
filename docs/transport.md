@@ -1,17 +1,17 @@
-# OneKey Hardware Wallet Transport Layer
+# UnionKey Hardware Wallet Transport Layer
 
 ## Overview
 
-OneKey Hardware SDK采用分层架构设计，实现跨平台硬件钱包通信。
+UnionKey Hardware SDK采用分层架构设计，实现跨平台硬件钱包通信。
 
 ## Architecture
 
 ```
 Application Layer (DApps)
     ↓
-SDK Interface (@onekeyfe/hd-core)
+SDK Interface (@unionkeyfe/hd-core)
     ↓
-Transport Abstraction (@onekeyfe/hd-transport)
+Transport Abstraction (@unionkeyfe/hd-transport)
     ↓
 Platform Adapters (WebUSB/BLE/HTTP)
     ↓
@@ -25,11 +25,11 @@ Hardware Devices
 ```typescript
 // packages/hd-transport/src/types/transport.ts
 export type Transport = {
-  enumerate(): Promise<Array<OneKeyDeviceInfo>>;
+  enumerate(): Promise<Array<UnionKeyDeviceInfo>>;
   acquire(input: AcquireInput): Promise<string>;
   release(session: string, onclose: boolean): Promise<void>;
   configure(signedData: JSON | string): Promise<void>;
-  call(session: string, name: string, data: Record<string, any>): Promise<MessageFromOneKey>;
+  call(session: string, name: string, data: Record<string, any>): Promise<MessageFromUnionKey>;
   // ... other methods
 };
 ```
@@ -259,7 +259,7 @@ export function receiveOne(messages: Root, data: string) {
 
 ## Summary
 
-OneKey传输层通过分层架构、协议设计和错误恢复机制，成功解决了跨平台硬件钱包通信的复杂性：
+UnionKey传输层通过分层架构、协议设计和错误恢复机制，成功解决了跨平台硬件钱包通信的复杂性：
 
 **核心特性:**
 - **协议设计**: 统一的消息格式和分包机制
@@ -270,5 +270,5 @@ OneKey传输层通过分层架构、协议设计和错误恢复机制，成功�
 **性能指标:**
 - **延迟**: 典型操作亚秒级响应
 - **可靠性**: 高成功率和自动错误恢复
-- **兼容性**: 支持所有OneKey设备型号和固件版本
+- **兼容性**: 支持所有UnionKey设备型号和固件版本
 - **稳定性**: 成熟的协议栈和传输机制

@@ -1,7 +1,7 @@
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { RecoveryDevice } from '@onekeyfe/hd-transport';
+import type { RecoveryDevice } from '@unionkeyfe/hd-transport';
 
 export default class DeviceRecovery extends BaseMethod<RecoveryDevice> {
   init() {

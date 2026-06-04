@@ -4,19 +4,19 @@ title: 签署数据
 
 # 签署数据
 
-由于 OneKey 为每位用户提供了加密密钥，网站可以利用这些签名实现多种用途。以下是一些特定用例的指南：
+由于 UnionKey 为每位用户提供了加密密钥，网站可以利用这些签名实现多种用途。以下是一些特定用例的指南：
 
 * [网站身份验证](https://medium.com/hackernoon/writing-for-blockchain-wallet-signature-request-messages-6ede721160d5)
 
-### 使用 OneKey 签署数据
+### 使用 UnionKey 签署数据
 
 如需查看可运行的签名示例，[可以访问此仓库](https://github.com/danfinlay/js-eth-personal-sign-examples)。
 
-如需了解这些方法的 JavaScript 实现，可以在 npm 包 [eth-sig-util](https://github.com/onekeyhq/eth-sig-util) 中找到。
+如需了解这些方法的 JavaScript 实现，可以在 npm 包 [eth-sig-util](https://github.com/unionkeyhq/eth-sig-util) 中找到。
 
 ### 简要历史
 
-OneKey 目前提供六种签名方法，您可能想了解这些方法的发展历程。研究这些方法的历史，对于理解去中心化标准的演进过程很有帮助。我们目前的六种方法是：
+UnionKey 目前提供六种签名方法，您可能想了解这些方法的发展历程。研究这些方法的历史，对于理解去中心化标准的演进过程很有帮助。我们目前的六种方法是：
 
 * `eth_sign`（**已弃用**，不安全）
 * `personal_sign`
@@ -25,7 +25,7 @@ OneKey 目前提供六种签名方法，您可能想了解这些方法的发展�
 * `signTypedData_v3`
 * `signTypedData_v4`
 
-随着时间的推移，可能还会出现更多方法。OneKey 最初启动时，Provider API 并非设计用于暴露给不受信任的网站，因此某些安全考虑当时没有得到足够重视。
+随着时间的推移，可能还会出现更多方法。UnionKey 最初启动时，Provider API 并非设计用于暴露给不受信任的网站，因此某些安全考虑当时没有得到足够重视。
 
 特别是 `eth_sign` 方法是一种开放式签名方法，允许签署任意哈希，这意味着它可以用于签署交易或任何其他数据，存在严重的钓鱼风险。
 
@@ -100,7 +100,7 @@ EIP-712 的特殊之处，也是这个去中心化标准生态系统的特殊之
 
 `message`：结构完全开放，由您自行决定。每个字段都是可选的。
 
-下面是使用 OneKey 签署 typed data 的示例。参考 [这里](https://github.com/danfinlay/js-eth-personal-sign-examples)
+下面是使用 UnionKey 签署 typed data 的示例。参考 [这里](https://github.com/danfinlay/js-eth-personal-sign-examples)
 
 #### 示例
 

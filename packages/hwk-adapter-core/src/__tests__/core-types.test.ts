@@ -4,7 +4,7 @@ import { HardwareErrorCode } from '../index';
  * Guards the numeric values of HardwareErrorCode. External consumers may
  * persist or switch on these numbers, so changing them is a breaking API
  * contract change. Also enforces the namespace invariant: every HWK code
- * is >= 10000, disjoint from legacy `@onekeyfe/shared` which tops out at 902.
+ * is >= 10000, disjoint from legacy `@unionkeyfe/shared` which tops out at 902.
  */
 describe('HardwareErrorCode contract', () => {
   it('every code is 5-digit (>= 10000)', () => {

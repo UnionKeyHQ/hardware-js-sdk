@@ -7,7 +7,7 @@ import { supportBatchPublicKey } from '../../utils/deviceFeaturesUtils';
 import { batchGetPublickeys } from '../helpers/batchGetPublickeys';
 
 import type { BenfenAddress, BenfenGetAddressParams } from '../../types';
-import type { BenfenGetAddress as HardwareBenfenGetAddress } from '@onekeyfe/hd-transport';
+import type { BenfenGetAddress as HardwareBenfenGetAddress } from '@unionkeyfe/hd-transport';
 
 export default class BenfenGetAddress extends BaseMethod<HardwareBenfenGetAddress[]> {
   hasBundle = false;

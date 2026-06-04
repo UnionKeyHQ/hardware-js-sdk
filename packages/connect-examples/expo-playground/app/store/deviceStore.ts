@@ -5,7 +5,7 @@ import { DeviceInfo } from '../types/hardware';
 import type { UnifiedLogEntry } from '../components/common/UnifiedLogger';
 
 import { isClassicModelDevice, isTouchModelDevice } from '../utils/deviceTypeUtils';
-import type { IDeviceType, Features } from '@onekeyfe/hd-core';
+import type { IDeviceType, Features } from '@unionkeyfe/hd-core';
 import {
   UiEvent,
   getDeviceFirmwareVersion,
@@ -13,7 +13,7 @@ import {
   getDeviceBootloaderVersion,
   getDeviceLabel,
   getDeviceUUID,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 // 设备动作状态
 export interface DeviceActionState {

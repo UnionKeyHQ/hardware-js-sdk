@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey 的 TON Connect 兼容 Provider 连接 TON
+description: 使用 UnionKey 的 TON Connect 兼容 Provider 连接 TON
 ---
 
 import { Callout } from 'nextra/components'
@@ -10,7 +10,7 @@ import { Callout } from 'nextra/components'
 了解如何检测、连接和与 TON 进行交互。
 
 <Callout type="info">
-OneKey 实现了 TON Connect 2.0 协议，确保与所有 TON dApp 兼容。
+UnionKey 实现了 TON Connect 2.0 协议，确保与所有 TON dApp 兼容。
 </Callout>
 
 ---
@@ -18,11 +18,11 @@ OneKey 实现了 TON Connect 2.0 协议，确保与所有 TON dApp 兼容。
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey TON provider
+// 检测 UnionKey TON provider
 const provider = window.$onekey?.tonconnect
 
 if (!provider) {
-  throw new Error('未检测到 OneKey TON provider')
+  throw new Error('未检测到 UnionKey TON provider')
 }
 
 // 检查设备和钱包信息
@@ -159,5 +159,5 @@ function App() {
 }
 ```
 
-OneKey 会被 TON Connect SDK 自动检测。
+UnionKey 会被 TON Connect SDK 自动检测。
 

@@ -31,8 +31,8 @@ const AutomationTestScreen = lazy(() => import('./src/views/AutomationTest'));
 const linking: LinkingOptions<ParamListBase> = {
   prefixes: [
     // 为不同的部署环境设置 URL 前缀
-    'https://hardware-example.onekeytest.com/',
-    'https://example.onekeytest.com/',
+    'https://hardware-example.unionkey.io/',
+    'https://example.unionkey.io/',
     'http://localhost:19006/',
     ExpoLinking.createURL('/'),
   ],

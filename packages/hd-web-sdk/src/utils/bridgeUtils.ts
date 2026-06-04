@@ -1,12 +1,12 @@
-import { JsBridgeIframe, setPostMessageListenerFlag } from '@onekeyfe/cross-inpage-provider-core';
-import { LogBlockEvent, LoggerNames, getLogger } from '@onekeyfe/hd-core';
-import { ERRORS } from '@onekeyfe/hd-shared';
+import { JsBridgeIframe, setPostMessageListenerFlag } from '@unionkeyfe/cross-inpage-provider-core';
+import { LogBlockEvent, LoggerNames, getLogger } from '@unionkeyfe/hd-core';
+import { ERRORS } from '@unionkeyfe/hd-shared';
 import { get } from 'lodash';
 
 import JSBridgeConfig from '../iframe/bridge-config';
 
-import type { CoreMessage } from '@onekeyfe/hd-core';
-import type { IJsBridgeIframeConfig } from '@onekeyfe/cross-inpage-provider-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
+import type { IJsBridgeIframeConfig } from '@unionkeyfe/cross-inpage-provider-core';
 
 // eslint-disable-next-line import/no-mutable-exports
 let frameBridge: JsBridgeIframe;

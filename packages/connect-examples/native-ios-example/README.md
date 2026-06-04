@@ -1,6 +1,6 @@
 # Hardware lowlevel communicate
 
-Sample project for OneKey hardware wallet's low-level communication.
+Sample project for UnionKey hardware wallet's low-level communication.
 
 # Getting Started
 

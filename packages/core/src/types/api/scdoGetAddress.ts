@@ -1,4 +1,4 @@
-import type { ScdoAddress as HardwareScdoAddress } from '@onekeyfe/hd-transport';
+import type { ScdoAddress as HardwareScdoAddress } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type ScdoAddress = {

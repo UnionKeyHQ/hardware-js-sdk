@@ -1,16 +1,16 @@
 ---
 title: Polkadot
-description: Polkadot integration via OneKey's Polkadot.js-compatible provider
+description: Polkadot integration via UnionKey's Polkadot.js-compatible provider
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Polkadot
 
-Integrate Polkadot and Substrate-based chains using OneKey's provider. Access via `window.$onekey.polkadot` or the Polkadot.js extension API.
+Integrate Polkadot and Substrate-based chains using UnionKey's provider. Access via `window.$onekey.polkadot` or the Polkadot.js extension API.
 
 <Callout type="info">
-OneKey implements the Polkadot.js extension interface, ensuring compatibility with all Substrate dApps.
+UnionKey implements the Polkadot.js extension interface, ensuring compatibility with all Substrate dApps.
 </Callout>
 
 ---
@@ -27,7 +27,7 @@ OneKey implements the Polkadot.js extension interface, ensuring compatibility wi
 ## Provider Detection
 
 ```typescript
-// OneKey registers as a Polkadot.js extension
+// UnionKey registers as a Polkadot.js extension
 const provider = window.$onekey?.polkadot
 
 // Or use the standard web3Enable API
@@ -41,7 +41,7 @@ import { web3Enable, web3Accounts } from '@polkadot/extension-dapp'
 ### Enable Extension
 
 ```typescript
-// Using OneKey provider directly
+// Using UnionKey provider directly
 const enabled = await provider.web3Enable('My dApp')
 
 if (enabled) {
@@ -55,7 +55,7 @@ if (enabled) {
 ```typescript
 import { web3Enable, web3Accounts } from '@polkadot/extension-dapp'
 
-// Enable all extensions (including OneKey)
+// Enable all extensions (including UnionKey)
 const extensions = await web3Enable('My dApp')
 
 if (extensions.length === 0) {

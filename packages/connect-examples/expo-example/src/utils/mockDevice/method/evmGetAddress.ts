@@ -4,7 +4,7 @@ import { getPublicKey } from '@noble/secp256k1';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 // EIP-55
 function toChecksumAddress(address: string) {

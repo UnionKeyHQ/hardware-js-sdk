@@ -1,13 +1,13 @@
 ---
 title: dApp 集成
-description: 将你的 dApp 与 OneKey 钱包集成
+description: 将你的 dApp 与 UnionKey 钱包集成
 ---
 
 import { Callout } from 'nextra/components'
 
 # dApp 集成
 
-连接你的 dApp 到 OneKey 钱包，支持 EVM 和 20+ 条非 EVM 链。
+连接你的 dApp 到 UnionKey 钱包，支持 EVM 和 20+ 条非 EVM 链。
 
 ## 选择集成方式
 
@@ -64,12 +64,12 @@ export default function App() {
 ### Provider API（无依赖）
 
 ```typescript
-// 使用 EIP-6963 检测 OneKey
+// 使用 EIP-6963 检测 UnionKey
 const providers = []
 window.addEventListener('eip6963:announceProvider', (e) => providers.push(e.detail))
 window.dispatchEvent(new Event('eip6963:requestProvider'))
 
-// 查找并连接 OneKey
+// 查找并连接 UnionKey
 const onekey = providers.find(p => p.info.rdns === 'so.onekey.app.wallet')
 const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' })
 ```
@@ -78,7 +78,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ---
 
-## OneKey 检测
+## UnionKey 检测
 
 | 属性 | 值 |
 |------|-----|
@@ -99,7 +99,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ## 资源
 
-- **更新日志：** [cross-inpage-provider releases](https://github.com/OneKeyHQ/cross-inpage-provider/releases)
-- **源代码：** [cross-inpage-provider](https://github.com/OneKeyHQ/cross-inpage-provider)
-- **问题反馈：** [GitHub Issues](https://github.com/OneKeyHQ/cross-inpage-provider/issues)
-- **在线演示：** [Provider 示例](https://github.com/OneKeyHQ/cross-inpage-provider/tree/master/packages/example)
+- **更新日志：** [cross-inpage-provider releases](https://github.com/UnionKeyHQ/cross-inpage-provider/releases)
+- **源代码：** [cross-inpage-provider](https://github.com/UnionKeyHQ/cross-inpage-provider)
+- **问题反馈：** [GitHub Issues](https://github.com/UnionKeyHQ/cross-inpage-provider/issues)
+- **在线演示：** [Provider 示例](https://github.com/UnionKeyHQ/cross-inpage-provider/tree/master/packages/example)

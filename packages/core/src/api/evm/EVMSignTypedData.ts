@@ -1,8 +1,8 @@
 import semver from 'semver';
 import { get } from 'lodash';
 import BigNumber from 'bignumber.js';
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
-import { Enum_Capability } from '@onekeyfe/hd-transport';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { Enum_Capability } from '@unionkeyfe/hd-transport';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -29,7 +29,7 @@ import type {
   MessageKey,
   MessageResponse,
   TypedCall,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 
 export type EVMSignTypedDataParams = {
   addressN: number[];

@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { addHexPrefix, isHexString } from './hexUtils';
 

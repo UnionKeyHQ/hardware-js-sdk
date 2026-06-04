@@ -3,7 +3,7 @@ import {
   CreateHardwareErrorByBridgeError,
   HardwareError,
   HardwareErrorCode,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 import secureJSON from 'secure-json-parse';
 
 import type { AxiosError, AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
@@ -98,7 +98,7 @@ axios.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (config.url?.startsWith('http://localhost:21320')) {
     if (!config.headers.get('Origin')) {
       // add Origin field for request headers
-      config.headers.set('Origin', 'https://jssdk.onekey.so');
+      config.headers.set('Origin', 'https://jssdk.unionkey.io');
     }
   }
   return config;

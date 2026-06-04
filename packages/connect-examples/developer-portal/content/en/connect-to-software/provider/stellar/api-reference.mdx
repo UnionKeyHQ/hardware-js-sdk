@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: OneKey Stellar provider API reference
+description: UnionKey Stellar provider API reference
 ---
 
 # API Reference
@@ -25,7 +25,7 @@ Complete reference for methods and basic types on `window.$onekey.stellar`.
 
 | Property | Type | Description |
 |------|------|------|
-| `isOneKey` | `boolean` | OneKey identifier |
+| `isUnionKey` | `boolean` | UnionKey identifier |
 
 ---
 
@@ -78,8 +78,8 @@ export type StellarSignMessageResponse = {
 ## Basic Type (for reference)
 
 ```ts
-export type OneKeyStellarProvider = {
-  isOneKey: boolean
+export type UnionKeyStellarProvider = {
+  isUnionKey: boolean
 
   // Align with Stellar Wallets Kit (KitActions)
   getAddress: (params?: StellarGetAddressParams) => Promise<StellarGetAddressResponse>

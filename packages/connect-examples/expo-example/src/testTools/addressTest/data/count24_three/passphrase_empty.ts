@@ -4,7 +4,7 @@ import type { AddressTestCaseData } from '../types';
 
 export default {
   name: 'three-passphrase24-empty',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428736557',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428736557',
   passphrase: '',
   passphraseState: 'mv8SRcYZ8vcfWnx1KjtHeEYpiuXweaHm9y',
   data: [

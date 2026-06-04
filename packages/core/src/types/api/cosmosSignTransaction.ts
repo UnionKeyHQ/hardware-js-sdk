@@ -1,4 +1,4 @@
-import type { CosmosSignedTx as HardwareCosmosSignedTx } from '@onekeyfe/hd-transport';
+import type { CosmosSignedTx as HardwareCosmosSignedTx } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type CosmosSignedTx = {

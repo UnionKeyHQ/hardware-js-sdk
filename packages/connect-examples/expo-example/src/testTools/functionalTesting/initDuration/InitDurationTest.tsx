@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { Stack, Text, XStack, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
 import { get } from 'lodash';
@@ -12,7 +12,7 @@ import TestRunnerOptionButtons from '../../../components/BaseTestRunner/TestRunn
 import { useHardwareInputPinDialog } from '../../../provider/HardwareInputPinProvider';
 import { CommonInput } from '../../../components/CommonInput';
 
-import type { CoreMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
 import type { TestCaseDataWithKey } from '../../../components/BaseTestRunner/types';
 import type { InitDurationTestCase, ResultViewProps, TestCaseDataType } from './types';
 

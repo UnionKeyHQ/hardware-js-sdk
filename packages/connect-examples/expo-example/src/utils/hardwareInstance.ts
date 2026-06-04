@@ -5,7 +5,7 @@ import { importLowLevelSDK, importSdk } from './importSdk';
 import { CONNECT_SRC } from '../constants/connect';
 import { getItem } from './storeUtil';
 
-import type { ConnectSettings, CoreApi, LowLevelCoreApi } from '@onekeyfe/hd-core';
+import type { ConnectSettings, CoreApi, LowLevelCoreApi } from '@unionkeyfe/hd-core';
 import type { ConnectionType } from '../atoms/deviceConnectAtoms';
 
 // eslint-disable-next-line import/no-mutable-exports

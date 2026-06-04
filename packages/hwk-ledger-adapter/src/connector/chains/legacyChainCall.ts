@@ -1,4 +1,4 @@
-import { EConnectorInteraction } from '@onekeyfe/hwk-adapter-core';
+import { EConnectorInteraction } from '@unionkeyfe/hwk-adapter-core';
 
 import { isWrongAppError } from '../../errors';
 import { AppManager } from '../../app/AppManager';

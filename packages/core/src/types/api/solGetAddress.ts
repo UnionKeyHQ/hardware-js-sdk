@@ -1,4 +1,4 @@
-import type { SolanaAddress as HardwareSolanaAddress } from '@onekeyfe/hd-transport';
+import type { SolanaAddress as HardwareSolanaAddress } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type SolanaAddress = {

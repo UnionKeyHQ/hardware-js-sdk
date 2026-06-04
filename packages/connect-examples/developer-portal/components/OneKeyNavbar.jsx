@@ -2,12 +2,12 @@ import cn from 'clsx'
 import NextLink from 'next/link'
 import { Anchor } from 'nextra/components'
 import { DiscordIcon, GitHubIcon } from 'nextra/icons'
-import { OneKeyClientNavbar } from './OneKeyNavbar.client'
+import { UnionKeyClientNavbar } from './UnionKeyNavbar.client'
 
 const defaultGitHubIcon = <GitHubIcon height="24" aria-label="Project repository" />
 const defaultChatIcon = <DiscordIcon width="24" />
 
-export function OneKeyNavbar({
+export function UnionKeyNavbar({
   children,
   logo,
   logoLink = true,
@@ -53,14 +53,14 @@ export function OneKeyNavbar({
       <div className="nextra-navbar-blur x:absolute x:-z-1 x:size-full nextra-border x:border-b x:backdrop-blur-md x:bg-nextra-bg/70" />
       <nav className={navWrapperClass} style={{ height: 'var(--nextra-navbar-height)' }}>
         {logoContent}
-        <OneKeyClientNavbar className={alignClass}>
+        <UnionKeyClientNavbar className={alignClass}>
           {projectAction}
           {chatAction}
           {children}
-        </OneKeyClientNavbar>
+        </UnionKeyClientNavbar>
       </nav>
     </header>
   )
 }
 
-export default OneKeyNavbar
+export default UnionKeyNavbar

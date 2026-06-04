@@ -10,7 +10,7 @@ import { hexToBytes } from '../helpers/hexUtils';
 import { batchGetPublickeys } from '../helpers/batchGetPublickeys';
 
 import type { AptosAddress, AptosGetAddressParams } from '../../types';
-import type { AptosGetAddress as HardwareAptosGetAddress } from '@onekeyfe/hd-transport';
+import type { AptosGetAddress as HardwareAptosGetAddress } from '@unionkeyfe/hd-transport';
 
 export default class AptosGetAddress extends BaseMethod<HardwareAptosGetAddress[]> {
   hasBundle = false;

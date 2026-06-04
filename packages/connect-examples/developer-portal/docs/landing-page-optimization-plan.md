@@ -1,4 +1,4 @@
-# OneKey Developer Portal Landing Page 改动方案
+# UnionKey Developer Portal Landing Page 改动方案
 
 ## 1. 推荐设计方案
 
@@ -6,8 +6,8 @@
 
 理由：
 - 主转化目标是“引导文档、快速接入”，需要强调可信、工程化与安全感；A 方案在叙事结构、版式与视觉层次上最契合。
-- 与 OneKey 现有官网/产品调性一致：偏专业、严肃、可信，而非极客炫酷或极简奢侈。
-- 可以自然承接品牌绿（OneKey 视觉识别）与硬件资产图。
+- 与 UnionKey 现有官网/产品调性一致：偏专业、严肃、可信，而非极客炫酷或极简奢侈。
+- 可以自然承接品牌绿（UnionKey 视觉识别）与硬件资产图。
 
 ## 2. 可用的品牌与数据资产（已从仓库提取）
 
@@ -37,7 +37,7 @@
   - 相关字段：`title__1_wallet_100_plus_chains_30000_plus_coins`，`content__access_100_plus_blockchains_from_one_dashboard`，`content__supports_bitcoin_ethereum_usdt_solana_xrp_and_30000_plus_other_coins`
 - **支持 80+ 区块链（硬件 SDK 能力）**
   - 路径：`/Users/caikaisheng/Documents/GitHub/hardware-js-sdk/docs/chain.md`
-  - 相关字段：`OneKey硬件钱包通过统一的密码学原语支持80+区块链`
+  - 相关字段：`UnionKey硬件钱包通过统一的密码学原语支持80+区块链`
 - **每年拦截超过 100 万起诈骗**（安全可信背书，可用于信任模块）
   - 路径：`/Users/caikaisheng/Documents/GitHub/portal/packages/shared/locales/zh_CN/onekey-pro-new.json`
   - 相关字段：`content__blocks_over_1m_scams_every_year`
@@ -129,14 +129,14 @@
 - **FAQ**
   - `必须使用硬件吗？` / `Web 与移动端接入差异？` / `上线前需要注意什么？`
 - **Final CTA**
-  - 标题：`现在就开始接入 OneKey`
+  - 标题：`现在就开始接入 UnionKey`
   - 说明：`从快速开始到生产落地，我们提供可验证的文档与示例`
   - CTA：`快速开始` / `请求架构支持`
 
 ### 3.5 具体组件结构（建议 Props 与内容）
 - **`HeaderNav.jsx`**
   - Props：`locale`, `ctaHref`
-  - 结构：Logo（沿用 OneKeyLogo）+ 导航（Docs/SDK/Support）+ CTA 按钮
+  - 结构：Logo（沿用 UnionKeyLogo）+ 导航（Docs/SDK/Support）+ CTA 按钮
   - 说明：支持 `locale` 下的文案切换，CTA 指向 `/${locale}/hardware-sdk/getting-started`
 
 - **`Hero.jsx`**

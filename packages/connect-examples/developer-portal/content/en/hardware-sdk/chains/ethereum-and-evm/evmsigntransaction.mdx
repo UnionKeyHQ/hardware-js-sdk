@@ -9,7 +9,7 @@ title: evmSignTransaction
 * Use `evmSignTransaction` for signing transactions
 * Supports both EIP-1559 and Legacy transactions. (But make sure that the RPC node you are using supports the type you are using)
 
-Asks device to sign given transaction using the private key derived by given BIP32 path. User is asked to confirm all transaction details on OneKey.
+Asks device to sign given transaction using the private key derived by given BIP32 path. User is asked to confirm all transaction details on UnionKey.
 
 ```typescript
 const result = await HardwareSDK.evmSignTransaction(connectId, deviceId, params);

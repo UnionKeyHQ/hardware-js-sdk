@@ -4,7 +4,7 @@ import {
   HardwareErrorCode,
   HardwareErrorCodeMessage,
   createDeferred,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import { IFRAME } from '../../events';
 import AllNetworkGetAddressBase from './AllNetworkGetAddressBase';

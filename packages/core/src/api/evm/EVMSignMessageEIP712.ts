@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { EthereumSignMessageEIP712 } from '@onekeyfe/hd-transport';
+import type { EthereumSignMessageEIP712 } from '@unionkeyfe/hd-transport';
 
 /**
  * @deprecated Use EVMSignTypedData instead.

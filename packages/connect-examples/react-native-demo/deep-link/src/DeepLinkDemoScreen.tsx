@@ -57,7 +57,7 @@ export const DeepLinkDemoScreen = () => {
   };
 
   const openUniversalLink = () => {
-    const universalLink = `https://app.onekey.so/wc/connect/wc?uri=${encodeURIComponent(
+    const universalLink = `https://app.unionkey.io/wc/connect/wc?uri=${encodeURIComponent(
       SAMPLE_WALLETCONNECT_URI
     )}`;
     Linking.openURL(universalLink).catch(error => {
@@ -93,7 +93,7 @@ export const DeepLinkDemoScreen = () => {
 
       <TouchableOpacity style={styles.button} onPress={openUniversalLink}>
         <Text style={styles.buttonLabel}>Open Universal Link</Text>
-        <Text style={styles.buttonHint}>https://app.onekey.so/wc/connect/wc</Text>
+        <Text style={styles.buttonHint}>https://app.unionkey.io/wc/connect/wc</Text>
       </TouchableOpacity>
 
       <View style={{ height: 16 }} />

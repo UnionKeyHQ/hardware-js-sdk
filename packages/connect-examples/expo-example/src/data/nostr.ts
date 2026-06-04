@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get Nostr Public Key',
         value: {
           path: "m/44'/1237'/0'/0/0",
-          showOnOneKey: true,
+          showOnUnionKey: true,
         },
       },
       {
@@ -18,19 +18,19 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/1237'/0'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/1237'/1'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/1237'/2'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/1237'/3'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
           ],
         },
@@ -82,7 +82,7 @@ const api: PlaygroundProps[] = [
           path: "m/44'/1237'/0'/0/0",
           pubkey: '2118c65161c7d68b4bdbe1374f658532670057ab1bb0c99937d0ff7cff45cb5e',
           plaintext: 'Hello world',
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       },
     ],
@@ -97,7 +97,7 @@ const api: PlaygroundProps[] = [
           path: "m/44'/1237'/0'/0/0",
           pubkey: '2118c65161c7d68b4bdbe1374f658532670057ab1bb0c99937d0ff7cff45cb5e',
           ciphertext: 'VpWFJ7JDFv16jL7pBZ1shw==?iv=$1tPpwGD3Ic1RTVXJx1ZG7Q==',
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       },
     ],

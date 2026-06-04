@@ -1,6 +1,6 @@
 /**
  * HWK HardwareErrorCode — independent namespace from the legacy
- * `@onekeyfe/shared` HardwareErrorCode (which occupies 0-902).
+ * `@unionkeyfe/shared` HardwareErrorCode (which occupies 0-902).
  *
  * All HWK codes are 5-digit (>= 10000) so the two tables never collide
  * even if either side grows. Each sub-category gets a 100-slot block.

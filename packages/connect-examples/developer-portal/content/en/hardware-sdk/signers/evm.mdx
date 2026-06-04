@@ -22,7 +22,7 @@ End-to-end EVM signing guide. Covers address confirmation, EIP‑1559/Legacy tra
 
 ## How it works
 
-- `HardwareSDK` talks to the OneKey device app; APIs return `Promise<{ success, payload }>`.
+- `HardwareSDK` talks to the UnionKey device app; APIs return `Promise<{ success, payload }>`.
 - User interaction is driven by `UI_REQUEST` events (PIN, passphrase, confirm address/tx/message/typed data/app open).
 - The device shows path/account, recipient, amount, chainId, fee summary; long `data` is often summarized as a hash.
 - Host serializes and verifies with `ethers`/`viem`, then broadcasts via RPC.
@@ -30,16 +30,16 @@ End-to-end EVM signing guide. Covers address confirmation, EIP‑1559/Legacy tra
 ## Installation
 
 ```bash
-npm i @onekeyfe/hd-core @onekeyfe/hd-common-connect-sdk
+npm i @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
 ```
 
 ## Initialization
 
 - Keep firmware up to date; Web requires HTTPS + user gestures; BLE needs proper permission.
-- Before signing, call `evmGetAddress(showOnOneKey: true)` once to confirm path/account on device.
+- Before signing, call `evmGetAddress(showOnUnionKey: true)` once to confirm path/account on device.
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
 const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
@@ -52,7 +52,7 @@ const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 ```ts
 const res = await HardwareSDK.evmGetAddress(connectId, deviceId, {
   path: "m/44'/60'/0'/0/0",
-  showOnOneKey: true,
+  showOnUnionKey: true,
   chainId: 1,
 });
 // res.payload.address, publicKey?, chainCode?
@@ -61,7 +61,7 @@ const res = await HardwareSDK.evmGetAddress(connectId, deviceId, {
 **Parameters**
 
 - `path` (string | number[]): required; BIP44 path.
-- `showOnOneKey?` (boolean): optional; display and confirm on device.
+- `showOnUnionKey?` (boolean): optional; display and confirm on device.
 - `chainId?` (number): optional; chainId shown on device.
 
 **Returns**
@@ -181,7 +181,7 @@ Promise<{ success, payload: { signature } }>
 ### EIP-1559 transaction
 
 ```ts
-import HardwareSDK, { UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import HardwareSDK, { UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { serialize, TransactionTypes } from '@ethersproject/transactions';
 
 await HardwareSDK.init({ env: 'webusb', debug: false });
@@ -194,7 +194,7 @@ HardwareSDK.on(UI_REQUEST.REQUEST_PIN, () => {
 });
 
 const accountPath = "m/44'/60'/0'/0/0";
-await HardwareSDK.evmGetAddress(connectId, deviceId, { path: accountPath, showOnOneKey: true });
+await HardwareSDK.evmGetAddress(connectId, deviceId, { path: accountPath, showOnUnionKey: true });
 
 const tx = {
   to: '0xd0d6d6c5fe4a677d343cc433536bb717bae167dd',
@@ -246,7 +246,7 @@ const sig = await HardwareSDK.evmSignTransaction(connectId, deviceId, {
 ### Message (personal_sign / EIP-191)
 
 ```ts
-const message = 'Hello OneKey';
+const message = 'Hello UnionKey';
 const messageHex = Buffer.from(message).toString('hex');
 
 const res = await HardwareSDK.evmSignMessage(connectId, deviceId, {
@@ -306,7 +306,7 @@ const res = await HardwareSDK.evmSignTypedData(connectId, deviceId, {
 - Gas: 1559 requires `maxFeePerGas + maxPriorityFeePerGas`; Legacy uses `gasPrice` only.
 - Message/Typed Data: show clear summaries/hashes in UI to avoid phishing; recover signer with `ethers.verifyMessage` / `ethers.verifyTypedData`.
 - Common issues:
-  - Path mismatch: default `m/44'/60'/0'/0/0`, increment account/address as needed; confirm once with `showOnOneKey`.
+  - Path mismatch: default `m/44'/60'/0'/0/0`, increment account/address as needed; confirm once with `showOnUnionKey`.
 - ChainId mismatch: must match the target network.
 - Large `data` may be rejected; simplify if necessary.
 - Repeated passphrase prompts: combine `keepSession` with passphrase state and serialize calls per device.

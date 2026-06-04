@@ -1,11 +1,11 @@
 ---
-description: 通过 OneKey 集成 WebLN — enable、getInfo、makeInvoice、sendPayment、签名/验证消息
+description: 通过 UnionKey 集成 WebLN — enable、getInfo、makeInvoice、sendPayment、签名/验证消息
 slug: /dapp/chains/webln
 ---
 
 # WebLN
 
-使用 OneKey 的 WebLN Provider 与支持闪电网络的应用交互。
+使用 UnionKey 的 WebLN Provider 与支持闪电网络的应用交互。
 
 ## 快速链接
 
@@ -17,7 +17,7 @@ slug: /dapp/chains/webln
 
 ```js
 const provider = window?.$onekey?.webln || window?.webln
-if (!provider) throw new Error('未检测到 OneKey WebLN Provider')
+if (!provider) throw new Error('未检测到 UnionKey WebLN Provider')
 
 await provider.enable()
 const info = await provider.getInfo()

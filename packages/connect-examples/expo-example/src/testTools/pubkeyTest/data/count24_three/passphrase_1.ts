@@ -4,7 +4,7 @@ import type { PubkeyTestCaseData } from '../types';
 
 export default {
   name: 'three-passphrase24-密语1',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428802119',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/428802119',
   passphrase: '0987654321QWERtyuioplkjhgfdsamnbvcxz@!###$$$%%%^&*',
   passphraseState: 'msnViVktp8SWFH4hjf5EYmXzTAiD6J89AB',
   data: [

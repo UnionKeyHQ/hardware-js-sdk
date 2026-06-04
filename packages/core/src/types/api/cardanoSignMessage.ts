@@ -1,5 +1,5 @@
 import type { PROTO } from '../../constants';
-import type { CardanoMessageSignature } from '@onekeyfe/hd-transport';
+import type { CardanoMessageSignature } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type CardanoSignMessageParams = {

@@ -1,13 +1,13 @@
 ---
 title: 快速开始
-description: 检测并使用 OneKey Stellar Provider
+description: 检测并使用 UnionKey Stellar Provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # 快速开始
 
-了解如何检测 OneKey Stellar Provider，并请求 Stellar 地址。
+了解如何检测 UnionKey Stellar Provider，并请求 Stellar 地址。
 
 <Callout type="warning">
 Stellar 的签名通常依赖正确的 network passphrase（例如 Public / Testnet）。签名时请确保传入与目标网络一致的参数。
@@ -20,8 +20,8 @@ Stellar 的签名通常依赖正确的 network passphrase（例如 Public / Test
 ```ts
 const stellar = window.$onekey?.stellar
 
-if (!stellar?.isOneKey) {
-  throw new Error('未检测到 OneKey Stellar Provider')
+if (!stellar?.isUnionKey) {
+  throw new Error('未检测到 UnionKey Stellar Provider')
 }
 ```
 

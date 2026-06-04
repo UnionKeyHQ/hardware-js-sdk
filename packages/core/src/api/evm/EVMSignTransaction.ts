@@ -1,4 +1,4 @@
-import { ERRORS } from '@onekeyfe/hd-shared';
+import { ERRORS } from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';

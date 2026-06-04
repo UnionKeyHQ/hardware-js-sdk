@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { RebootToBootloader } from '@onekeyfe/hd-transport';
+import type { RebootToBootloader } from '@unionkeyfe/hd-transport';
 
 // Reboot BootLoader
 export default class DeviceRebootToBootloader extends BaseMethod<RebootToBootloader> {

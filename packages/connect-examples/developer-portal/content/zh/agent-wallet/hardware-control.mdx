@@ -4,13 +4,13 @@ title: 硬件控制
 
 # 硬件控制
 
-硬件控制让 Agent Wallet 工作流可以把敏感操作升级到 OneKey 硬件钱包。这是 OneKey 和只依赖软件托管或 TEE 签名的 agent wallet 的核心差异。
+硬件控制让 Agent Wallet 工作流可以把敏感操作升级到 UnionKey 硬件钱包。这是 UnionKey 和只依赖软件托管或 TEE 签名的 agent wallet 的核心差异。
 
 ## 什么时候升级到硬件
 
 | 场景 | 硬件期望 |
 | --- | --- |
-| 大额转账 | 用户在 OneKey 设备上复核接收方、金额、链和费用。 |
+| 大额转账 | 用户在 UnionKey 设备上复核接收方、金额、链和费用。 |
 | 合约交互 | Agent 先运行 simulation；支持时设备展示 clear-signing 信息。 |
 | Swap 执行 | Agent 先 quote/build；只有用户确认执行后才进入设备确认。 |
 | 隐藏钱包 | 显式声明 passphrase mode，Agent 不猜当前是否为隐藏钱包。 |
@@ -52,7 +52,7 @@ onekey auth login --hardware --passphrase-mode on-device
 | --- | --- |
 | `loginMethod` | `hardware` |
 | `walletKind` | `hw` |
-| `device` | 已连接的 OneKey 设备信息 |
+| `device` | 已连接的 UnionKey 设备信息 |
 | `passphraseMode` | `none`、`on_host` 或 `on_device` |
 
 登录完成后，后续命令会自动使用当前活动会话。

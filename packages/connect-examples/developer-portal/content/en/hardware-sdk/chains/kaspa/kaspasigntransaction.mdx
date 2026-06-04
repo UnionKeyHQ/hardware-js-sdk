@@ -12,7 +12,7 @@ title: kaspaSignTransaction
 
 ## Kaspa: Sign transaction
 
-Asks device to sign given transaction using the private key derived by given BIP32 path. User is asked to confirm all transaction details on OneKey.
+Asks device to sign given transaction using the private key derived by given BIP32 path. User is asked to confirm all transaction details on UnionKey.
 
 ```typescript
 const result = await HardwareSDK.kaspaSignTransaction(connectId, deviceId, params);
@@ -23,8 +23,8 @@ const result = await HardwareSDK.kaspaSignTransaction(connectId, deviceId, param
 [**Optional common params**](/en/hardware-sdk/core-api-guide#common-params)
 
 * `version` - _required_ `number` transaction version.
-* `inputs` - _required_ `Array` of [KaspaSignInputParams](https://github.com/OneKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L9C1-L19C3).
-* `outputs` - _required_ `Array` of [KaspaSignOutputParams](https://github.com/OneKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L21C1-L26C1).
+* `inputs` - _required_ `Array` of [KaspaSignInputParams](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L9C1-L19C3).
+* `outputs` - _required_ `Array` of [KaspaSignOutputParams](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L21C1-L26C1).
 * `lockTime` - _required_ `number`&#x20;
 * `sigHashType` - _required_ `number`&#x20;
   * ```

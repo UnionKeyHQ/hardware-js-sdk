@@ -13,7 +13,7 @@ title: nostrEncryptMessage
 
 ## Nostr: Encrypt Message
 
-Asks device to encrypt message using the private key derived by given BIP32 path. User is asked to confirm all transaction details on OneKey.
+Asks device to encrypt message using the private key derived by given BIP32 path. User is asked to confirm all transaction details on UnionKey.
 
 ```typescript
 const result = await HardwareSDK.nostrEncryptMessage(connectId, deviceId, params);
@@ -26,7 +26,7 @@ const result = await HardwareSDK.nostrEncryptMessage(connectId, deviceId, params
 * `path` - _required_ `string | Array<number>` minimum length is `3`. [read more](/en/hardware-sdk/core-api-guide#hd-path)
 * `pubkey` - _required_ `string` public key .
 * `plaintext` - _required_ `string` messages that need to be encrypted.
-* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true` .
+* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true` .
 
 ### Examples
 
@@ -38,7 +38,7 @@ const response = await HardwareSDK.nostrEncryptMessage(
      path: "m/44'/1237'/0'/0/0",
      pubkey: '2118c65161c7d68b4bdbe1374f658532670057ab1bb0c99937d0ff7cff45cb5e',
      plaintext: 'Hello world',
-     showOnOneKey: true,
+     showOnUnionKey: true,
   }
 );
 ```

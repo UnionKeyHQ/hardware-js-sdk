@@ -17,22 +17,22 @@ import HardwareSdk, {
   initCore,
   parseConnectSettings,
   setLoggerPostMessage,
-} from '@onekeyfe/hd-core';
-import { ERRORS, HardwareErrorCode, createDeferred } from '@onekeyfe/hd-shared';
-import HttpTransport from '@onekeyfe/hd-transport-http';
-import { ElectronBleTransport, WebUsbTransport } from '@onekeyfe/hd-transport-web-device';
-import LowlevelTransport from '@onekeyfe/hd-transport-lowlevel';
-import EmulatorTransport from '@onekeyfe/hd-transport-emulator';
+} from '@unionkeyfe/hd-core';
+import { ERRORS, HardwareErrorCode, createDeferred } from '@unionkeyfe/hd-shared';
+import HttpTransport from '@unionkeyfe/hd-transport-http';
+import { ElectronBleTransport, WebUsbTransport } from '@unionkeyfe/hd-transport-web-device';
+import LowlevelTransport from '@unionkeyfe/hd-transport-lowlevel';
+import EmulatorTransport from '@unionkeyfe/hd-transport-emulator';
 
-import type { Deferred } from '@onekeyfe/hd-shared';
+import type { Deferred } from '@unionkeyfe/hd-shared';
 import type {
   ConnectSettings,
   Core,
   CoreMessage,
   LowLevelCoreApi,
   UiResponseEvent,
-} from '@onekeyfe/hd-core';
-import type { LowlevelTransportSharedPlugin } from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-core';
+import type { LowlevelTransportSharedPlugin } from '@unionkeyfe/hd-transport';
 
 const eventEmitter = new EventEmitter();
 const Log = getLogger(LoggerNames.HdCommonConnectSdk);
@@ -44,7 +44,7 @@ const getTransport = async (env: ConnectSettings['env']) => {
   if (env === 'node-usb') {
     // Dynamic import — usb is a native Node.js module (libusb C++ bindings)
     // that cannot be resolved by browser/React Native bundlers
-    const { default: NodeUsbTransport } = await import('@onekeyfe/hd-transport-usb');
+    const { default: NodeUsbTransport } = await import('@unionkeyfe/hd-transport-usb');
     return NodeUsbTransport;
   }
   if (env === 'emulator') return EmulatorTransport;

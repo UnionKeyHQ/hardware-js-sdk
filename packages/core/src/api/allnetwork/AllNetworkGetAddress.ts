@@ -1,4 +1,4 @@
-import { HardwareErrorCode, HardwareErrorCodeMessage } from '@onekeyfe/hd-shared';
+import { HardwareErrorCode, HardwareErrorCodeMessage } from '@unionkeyfe/hd-shared';
 
 import { createUiMessage } from '../../events';
 import { UI_REQUEST } from '../../constants/ui-request';

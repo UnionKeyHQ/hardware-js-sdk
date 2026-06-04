@@ -12,7 +12,7 @@ title: 底层传输插件
 
 ## 快速参考
 
-### OneKey BLE UUID
+### UnionKey BLE UUID
 
 | 用途 | UUID |
 |------|------|
@@ -208,7 +208,7 @@ buffer.push(...chunk)
 ## 初始化示例
 
 ```typescript
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
 
 const plugin = {
   enumerate: () => Promise.resolve([{ id: 'foo', name: 'bar' }]),
@@ -217,7 +217,7 @@ const plugin = {
   connect: (uuid) => { /* BLE Android: 先配对! */ },
   disconnect: (uuid) => { /* 清理连接 */ },
   init: () => { /* 初始化 BLE 栈 */ },
-  version: 'OneKey-1.0'
+  version: 'UnionKey-1.0'
 }
 
 HardwareSDK.init({ env: 'lowlevel', debug: true }, undefined, plugin)

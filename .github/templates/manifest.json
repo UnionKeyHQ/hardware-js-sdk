@@ -1,7 +1,7 @@
 {
-  "name": "OneKey Hardware SDK Examples",
-  "short_name": "OneKey Examples",
-  "description": "OneKey Hardware SDK Examples and Demos",
+  "name": "UnionKey Hardware SDK Examples",
+  "short_name": "UnionKey Examples",
+  "description": "UnionKey Hardware SDK Examples and Demos",
   "start_url": "/expo-example/api-payload",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -145,7 +145,7 @@ export const sanitizeDocAIMessageText = input => {
       wrapBarePackageNames(
         input
           .replace(/＠/g, '@')
-          .replace(/@0nekeyfe\//gi, '@onekeyfe/')
+          .replace(/@0nekeyfe\//gi, '@unionkeyfe/')
       )
     )
   );

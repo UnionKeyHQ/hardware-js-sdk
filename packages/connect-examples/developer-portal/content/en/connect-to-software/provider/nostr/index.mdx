@@ -1,11 +1,11 @@
 ---
-description: Nostr integration via OneKey provider — getPublicKey, signEvent, signSchnorr, and more
+description: Nostr integration via UnionKey provider — getPublicKey, signEvent, signSchnorr, and more
 slug: /dapp/chains/nostr
 ---
 
 # Nostr
 
-Integrate Nostr capabilities using OneKey’s provider.
+Integrate Nostr capabilities using UnionKey’s provider.
 
 ## Quick links
 
@@ -17,7 +17,7 @@ Integrate Nostr capabilities using OneKey’s provider.
 
 ```js
 const provider = window?.$onekey?.nostr || window?.nostr
-if (!provider) throw new Error('OneKey Nostr provider not detected')
+if (!provider) throw new Error('UnionKey Nostr provider not detected')
 
 const pubkey = await provider.getPublicKey()
 // Example: sign an event (fill your own event fields)

@@ -1,10 +1,10 @@
 import semver from 'semver';
-import { EDeviceType, ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { EDeviceType, ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { getDeviceFirmwareVersion, getDeviceType } from '../../../utils';
 
 import type { Device } from '../../../device/Device';
-import type { MessageResponse, TypedCall } from '@onekeyfe/hd-transport';
+import type { MessageResponse, TypedCall } from '@unionkeyfe/hd-transport';
 
 export const signTypedHash = async ({
   typedCall,

@@ -3,30 +3,30 @@ import '../styles/globals.css'
 
 export const metadata = {
   title: {
-    default: 'OneKey Developers',
-    template: '%s - OneKey Developers'
+    default: 'UnionKey Developers',
+    template: '%s - UnionKey Developers'
   },
-  description: 'Official developer documentation for OneKey hardware and software integration. Build secure Web3 experiences with OneKey hardware wallets.',
+  description: 'Official developer documentation for UnionKey hardware and software integration. Build secure Web3 experiences with UnionKey hardware wallets.',
   icons: {
     icon: '/icons/onekey.png',
     apple: '/icons/onekey.png',
   },
   openGraph: {
-    title: 'OneKey Developers',
-    description: 'Official developer documentation for OneKey hardware and software integration. Build secure Web3 experiences with OneKey hardware wallets.',
-    siteName: 'OneKey Developers',
+    title: 'UnionKey Developers',
+    description: 'Official developer documentation for UnionKey hardware and software integration. Build secure Web3 experiences with UnionKey hardware wallets.',
+    siteName: 'UnionKey Developers',
     type: 'website',
     images: [{ url: '/og.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OneKey Developers',
-    description: 'Official developer documentation for OneKey hardware and software integration.',
-    creator: '@OneKeyHQ',
-    site: '@OneKeyHQ',
+    title: 'UnionKey Developers',
+    description: 'Official developer documentation for UnionKey hardware and software integration.',
+    creator: '@UnionKeyHQ',
+    site: '@UnionKeyHQ',
     images: ['/og.jpg'],
   },
-  metadataBase: new URL('https://developer.onekey.so'),
+  metadataBase: new URL('https://developer.unionkey.io'),
 }
 
 export const viewport = {

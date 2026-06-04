@@ -1,4 +1,4 @@
-import { HardwareErrorCode, stripHex } from '@onekeyfe/hwk-adapter-core';
+import { HardwareErrorCode, stripHex } from '@unionkeyfe/hwk-adapter-core';
 import { Psbt } from 'bitcoinjs-lib';
 
 import { collapseSignerInteraction, normalizePath } from './utils';

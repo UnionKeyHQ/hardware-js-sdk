@@ -5,7 +5,7 @@ description: 将 NEAR 协议集成到你的 dApp 中 — 检测 Provider、连�
 
 # NEAR
 
-使用 OneKey 的 NEAR provider 将 NEAR 协议集成到你的 dApp 中。OneKey 提供完全兼容的 NEAR 钱包接口，可与现有的 NEAR dApp 无缝配合。
+使用 UnionKey 的 NEAR provider 将 NEAR 协议集成到你的 dApp 中。UnionKey 提供完全兼容的 NEAR 钱包接口，可与现有的 NEAR dApp 无缝配合。
 
 ## 功能特性
 
@@ -18,18 +18,18 @@ description: 将 NEAR 协议集成到你的 dApp 中 — 检测 Provider、连�
 ## 安装
 
 ```bash
-npm install @onekeyfe/onekey-near-provider
+npm install @unionkeyfe/unionkey-near-provider
 # 或
-yarn add @onekeyfe/onekey-near-provider
+yarn add @unionkeyfe/unionkey-near-provider
 ```
 
 ## 快速开始
 
 ```typescript
-import { OneKeyNearProvider } from '@onekeyfe/onekey-near-provider'
+import { UnionKeyNearProvider } from '@unionkeyfe/unionkey-near-provider'
 
 // 创建 provider 实例
-const provider = new OneKeyNearProvider()
+const provider = new UnionKeyNearProvider()
 
 // 请求账户访问
 const accounts = await provider.request({ method: 'near_accounts' })
@@ -47,7 +47,7 @@ console.log('当前网络:', network)
 - [安装 Provider SDK](integrating/install-the-provider-sdk) - 安装说明
 
 ### 集成指南
-- [检测 Provider](integrating/detecting-the-provider) - 检查 OneKey 是否已安装
+- [检测 Provider](integrating/detecting-the-provider) - 检查 UnionKey 是否已安装
 - [建立连接](integrating/establishing-a-connection) - 连接用户账户
 - [访问账户](integrating/accessing-accounts) - 获取账户信息
 - [检测 Provider 网络](integrating/detecting-provider-network) - 检查当前网络
@@ -79,4 +79,4 @@ console.log('当前网络:', network)
 ## 相关资源
 
 - [NEAR 文档](https://docs.near.org/)
-- [OneKey GitHub](https://github.com/OneKeyHQ)
+- [UnionKey GitHub](https://github.com/UnionKeyHQ)

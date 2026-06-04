@@ -59,7 +59,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     WebUSB
                                     <br/>
-                                    包：@onekeyfe/hd-common-connect-sdk
+                                    包：@unionkeyfe/hd-common-connect-sdk
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     React Native BLE
                                     <br/>
-                                    包：@onekeyfe/hd-ble-sdk
+                                    包：@unionkeyfe/hd-ble-sdk
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     底层传输插件 (Native)
                                     <br/>
-                                    包：@onekeyfe/hd-transport-lowlevel
+                                    包：@unionkeyfe/hd-transport-lowlevel
                                     <br/>
                                     场景：原生 / Flutter
                                 </div>
@@ -132,7 +132,7 @@
                                     <br/>
                                     离线扫码签名
                                     <br/>
-                                    仅 OneKey Pro
+                                    仅 UnionKey Pro
                                 </div>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                         <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 958px; height: 1px; padding-top: 310px; margin-left: 1px;">
                             <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
                                 <div style="display: inline-block; font-size: 14px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; word-wrap: normal; ">
-                                    硬件设备 / OneKey Hardware
+                                    硬件设备 / UnionKey Hardware
                                     <br/>
                                     接口：USB / BLE
                                 </div>
@@ -161,7 +161,7 @@
                         </div>
                     </foreignObject>
                     <text x="480" y="314" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="14px" text-anchor="middle" font-weight="bold">
-                        硬件设备 / OneKey Hardware...
+                        硬件设备 / UnionKey Hardware...
                     </text>
                 </switch>
             </g>

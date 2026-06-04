@@ -9,7 +9,7 @@ title: evmSignTransaction
 * 使用 `evmSignTransaction` 来签名交易
 * 支持 EIP-1559 和 Legacy 交易。（但请确保你使用的 RPC 节点支持你所使用的类型）
 
-使用指定 BIP32 路径派生的私钥对交易进行签名。用户需要在 OneKey 上确认所有交易详情。
+使用指定 BIP32 路径派生的私钥对交易进行签名。用户需要在 UnionKey 上确认所有交易详情。
 
 ```typescript
 const result = await HardwareSDK.evmSignTransaction(connectId, deviceId, params);

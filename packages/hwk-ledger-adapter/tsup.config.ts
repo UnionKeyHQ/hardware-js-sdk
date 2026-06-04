@@ -14,7 +14,7 @@ export default defineConfig({
     '@ledgerhq/device-transport-kit-node-hid',
     '@ledgerhq/device-transport-kit-react-native-ble',
     '@ledgerhq/device-transport-kit-web-hid',
-    '@onekeyfe/hwk-adapter-core',
+    '@unionkeyfe/hwk-adapter-core',
     'react-native',
     'react-native-ble-plx',
     'rxjs',

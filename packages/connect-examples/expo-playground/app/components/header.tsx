@@ -50,7 +50,7 @@ export function SiteHeader() {
             {/* 外部链接 */}
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://developer.onekey.so/"
+                href="https://developer.unionkey.io/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gap-2"
@@ -62,7 +62,7 @@ export function SiteHeader() {
 
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey"
+                href="https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gap-2"

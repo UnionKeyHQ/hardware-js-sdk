@@ -5,10 +5,10 @@ slug: /hardware/transport/webusb
 # WebUSB Connection Guide
 
 > **Note:**
-Demo: Playground (supports emulator) → [hardware-example.onekey.so](https://hardware-example.onekey.so/)
+Demo: Playground (supports emulator) → [hardware-example.unionkey.io](https://hardware-example.unionkey.io/)
 
 
-Use this step‑by‑step guide to wire WebUSB in the browser with `@onekeyfe/hd-common-connect-sdk`. Once connected, you can call any chain API (BTC/EVM/etc.) as in Quick Start.
+Use this step‑by‑step guide to wire WebUSB in the browser with `@unionkeyfe/hd-common-connect-sdk`. Once connected, you can call any chain API (BTC/EVM/etc.) as in Quick Start.
 
 Focus: WebUSB only.
 
@@ -16,20 +16,20 @@ Focus: WebUSB only.
 
 - Serve your app over HTTPS (WebUSB is blocked on insecure origins)
 - A browser that supports WebUSB (Chrome/Edge desktop)
-- A connected and unlocked OneKey device
+- A connected and unlocked UnionKey device
 
 ## Step 2. Install
 
 ```bash
-npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-shared @onekeyfe/hd-core
+npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-shared @unionkeyfe/hd-core
 ```
 ## Step 3. Initialize and bind events
 
 Initialize the SDK during app startup and bind UI/device events so PIN/Passphrase and confirmations work end-to-end.
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@onekeyfe/hd-core';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyfe/hd-core';
 
 export async function setupWebUsb() {
   await HardwareSDK.init({
@@ -50,7 +50,7 @@ function bindHardwareEvents() {
         if (pinResult.mode === 'device') {
           await HardwareSDK.uiResponse({
             type: UI_RESPONSE.RECEIVE_PIN,
-            payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+            payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
           });
         } else {
           await HardwareSDK.uiResponse({
@@ -93,7 +93,7 @@ function bindHardwareEvents() {
 
 ### Notes
 - Subscribe early to `UI_EVENT` so requests don't stall while waiting for PIN/Passphrase. See [Config Event](/en/hardware-sdk/core-api-guide#events-ui).
-- PIN: prefer on-device entry (`@@ONEKEY_INPUT_PIN_IN_DEVICE`). If you provide software input, use the blind keypad mapping (`7,8,9,4,5,6,1,2,3`).
+- PIN: prefer on-device entry (`@@UNIONKEY_INPUT_PIN_IN_DEVICE`). If you provide software input, use the blind keypad mapping (`7,8,9,4,5,6,1,2,3`).
 - Passphrase: support on-device input or software input, and optionally `save` for session caching.
 - Device events help you update UI if cables are unplugged.
 
@@ -102,16 +102,16 @@ function bindHardwareEvents() {
 
 Important: Must be triggered by a user gesture (e.g., clicking a button) due to Chrome security restrictions; automatic device discovery is not allowed before permission.
 
-Use the ONEKEY_WEBUSB_FILTER filters so the chooser only shows supported devices.
+Use the UNIONKEY_WEBUSB_FILTER filters so the chooser only shows supported devices.
 
 ```tsx
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
 
 export function AuthorizeUsbButton() {
   return (
     <button
       onClick={async () => {
-        await navigator.usb.requestDevice({ filters: ONEKEY_WEBUSB_FILTER });
+        await navigator.usb.requestDevice({ filters: UNIONKEY_WEBUSB_FILTER });
         // After authorization, enumerate via the SDK
       }}
     >
@@ -148,7 +148,7 @@ const resolvedDeviceId = features.payload.device_id;
 const res = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (res.success) {

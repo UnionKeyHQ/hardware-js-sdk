@@ -4,13 +4,13 @@ title: Establishing a Connection
 
 # Establishing a Connection
 
-Once an application has [detected the provider](/en/connect-to-software/provider/solana/detecting-the-provider), it can then request to connect to OneKey. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Users must approve a connection request before the app can make additional requests such as [signing a message](/en/connect-to-software/provider/solana/signing-a-message) or [sending a transaction](/en/connect-to-software/provider/solana/sending-a-transaction).
+Once an application has [detected the provider](/en/connect-to-software/provider/solana/detecting-the-provider), it can then request to connect to UnionKey. This connection request will prompt the user for permission to share their public key, indicating that they are willing to interact further. Users must approve a connection request before the app can make additional requests such as [signing a message](/en/connect-to-software/provider/solana/signing-a-message) or [sending a transaction](/en/connect-to-software/provider/solana/sending-a-transaction).
 
 Once permission is established for the first time, the web application's domain will be whitelisted for future connection requests. After a connection is established, it is possible to terminate the connection from both the application and the user side.
 
 ## Connecting
 
-The **recommended** and **easiest** way to connect to OneKey is by calling `window.$onekey.solana.connect()`. However, the provider also exposes a `request` JSON RPC interface.
+The **recommended** and **easiest** way to connect to UnionKey is by calling `window.$unionkey.iolana.connect()`. However, the provider also exposes a `request` JSON RPC interface.
 
 
 ### Connect
@@ -40,7 +40,7 @@ try {
 
 
 
-The `connect()` call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) that resolves when the user accepts the connection request, and reject (throw when awaited) when the user declines the request or closes the pop-up. See [Errors](/en/connect-to-software/provider/solana/signing-a-message#errors) for a breakdown of error messages OneKey may emit.
+The `connect()` call will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise) that resolves when the user accepts the connection request, and reject (throw when awaited) when the user declines the request or closes the pop-up. See [Errors](/en/connect-to-software/provider/solana/signing-a-message#errors) for a breakdown of error messages UnionKey may emit.
 
 When the user accepts the request to connect, the provider will also emit a `connect` event.
 
@@ -48,7 +48,7 @@ When the user accepts the request to connect, the provider will also emit a `con
 provider.on("connect", () => console.log("connected!"));
 ```
 
-Once the web application is connected to OneKey, it will be able to read the connected account's public key and prompt the user for additional transactions. It also exposes a convenience `isConnected` boolean.
+Once the web application is connected to UnionKey, it will be able to read the connected account's public key and prompt the user for additional transactions. It also exposes a convenience `isConnected` boolean.
 
 ```javascript
 console.log(provider.publicKey.toString()); 
@@ -58,7 +58,7 @@ console.log(provider.isConnected);
 
 ### Eagerly Connecting
 
-After a web application connects to OneKey for the first time, it becomes trusted. Once trusted, it's possible for the application to automatically connect to OneKey on subsequent visits or page refreshes, without prompting the user for permission. This is referred to as "eagerly connecting".
+After a web application connects to UnionKey for the first time, it becomes trusted. Once trusted, it's possible for the application to automatically connect to UnionKey on subsequent visits or page refreshes, without prompting the user for permission. This is referred to as "eagerly connecting".
 
 To implement this, applications should pass an `onlyIfTrusted` option into the `connect()` call.
 
@@ -71,20 +71,20 @@ provider.connect({ onlyIfTrusted: true });
 
 ### Request
 ```javascript
-window.$onekey.solana.request({ method: "connect", params: { onlyIfTrusted: true }});
+window.$unionkey.iolana.request({ method: "connect", params: { onlyIfTrusted: true }});
 ```
 
 
 
-If this flag is present, OneKey will only eagerly connect and emit a `connect` event if the application is trusted. If the application is not trusted, OneKey will throw a `4001` error and remain disconnected until the user is prompted to connect without an `onlyIfTrusted` flag. In either case, OneKey will not open a pop-up window, making this convenient to use on all page loads.
+If this flag is present, UnionKey will only eagerly connect and emit a `connect` event if the application is trusted. If the application is not trusted, UnionKey will throw a `4001` error and remain disconnected until the user is prompted to connect without an `onlyIfTrusted` flag. In either case, UnionKey will not open a pop-up window, making this convenient to use on all page loads.
 
-The following is an example of how a React application can eagerly connect to OneKey.
+The following is an example of how a React application can eagerly connect to UnionKey.
 
 ```javascript
 import { useEffect } from "react";
 
 useEffect(() => {
-    // Will either automatically connect to OneKey, or do nothing.
+    // Will either automatically connect to UnionKey, or do nothing.
     provider.connect({ onlyIfTrusted: true })
         .then(({ publicKey }) => {
             // Handle successful eager connection
@@ -97,7 +97,7 @@ useEffect(() => {
 
 For a live demo, please refer to the `handleConnect` portion of our sandbox.
 
-If a wallet disconnects from a trusted app and then attempts to reconnect at a later time, OneKey will still eagerly connect. Once an app is trusted, OneKey will only require the user to approve a connection request if the user revokes the app from within their Trusted Apps settings.
+If a wallet disconnects from a trusted app and then attempts to reconnect at a later time, UnionKey will still eagerly connect. Once an app is trusted, UnionKey will only require the user to approve a connection request if the user revokes the app from within their Trusted Apps settings.
 
 ## Disconnecting
 
@@ -139,9 +139,9 @@ useEffect(() => {
 
 ## Changing Accounts
 
-OneKey allows users to seamlessly manage multiple accounts (i.e. [Keypairs](https://solana-labs.github.io/solana-web3.js/classes/Keypair.html)) from within a single extension or mobile app. Whenever a user switches accounts, OneKey will emit an `accountChanged` event.
+UnionKey allows users to seamlessly manage multiple accounts (i.e. [Keypairs](https://solana-labs.github.io/solana-web3.js/classes/Keypair.html)) from within a single extension or mobile app. Whenever a user switches accounts, UnionKey will emit an `accountChanged` event.
 
-If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and OneKey will pass the [PublicKey](https://solana-labs.github.io/solana-web3.js/classes/PublicKey.html) of the new account:
+If a user changes accounts while already connected to an application, and the new account had already whitelisted that application, then the user will stay connected and UnionKey will pass the [PublicKey](https://solana-labs.github.io/solana-web3.js/classes/PublicKey.html) of the new account:
 
 ```javascript
 provider.on('accountChanged', (publicKey) => {
@@ -152,7 +152,7 @@ provider.on('accountChanged', (publicKey) => {
 });
 ```
 
-If OneKey does not pass the public key of the new account, an application can either do nothing or attempt to reconnect:
+If UnionKey does not pass the public key of the new account, an application can either do nothing or attempt to reconnect:
 
 ```javascript
 provider.on('accountChanged', (publicKey) => {
@@ -160,7 +160,7 @@ provider.on('accountChanged', (publicKey) => {
       // Set new public key and continue as usual
       console.log(`Switched to account ${publicKey.toBase58()}`);
     } else {
-      // Attempt to reconnect to OneKey
+      // Attempt to reconnect to UnionKey
       provider.connect().catch((error) => {
         // Handle connection failure
       });

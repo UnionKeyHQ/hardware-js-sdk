@@ -6,7 +6,7 @@ title: 指南
 
 ## 概述
 
-本指南帮助用户了解如何使用 OneKey 闪电网络 Provider API 构建比特币闪电网络应用。
+本指南帮助用户了解如何使用 UnionKey 闪电网络 Provider API 构建比特币闪电网络应用。
 
 ### 构建 Web 应用的**使用场景**
 
@@ -15,13 +15,13 @@ title: 指南
 
 ## 安装
 
-#### 1. 下载 OneKey 钱包
+#### 1. 下载 UnionKey 钱包
 
-下载 [OneKey 钱包](https://onekey.so/zh_CN/download?client=browserExtension)。安装 OneKey 浏览器扩展。
+下载 [UnionKey 钱包](https://unionkey.io/zh_CN/download?client=browserExtension)。安装 UnionKey 浏览器扩展。
 
 #### 2. API 注入说明
 
-* OneKey 浏览器扩展会将 `Provider API` 注入到访问的网站中。
+* UnionKey 浏览器扩展会将 `Provider API` 注入到访问的网站中。
 * 提供两种类型的 API：`window.webln` 和 `window.$onekey.webln`。
 * 推荐使用 `window.$onekey.webln`。
 
@@ -39,7 +39,7 @@ if (!provider) {
 }
 ```
 
-### 连接到 OneKey
+### 连接到 UnionKey
 
 在使用以下 API 之前，首先需要使用 `provider.enable` 方法请求用户授权访问相关账户。
 

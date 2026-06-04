@@ -1,8 +1,8 @@
 import { useCallback, useContext, useMemo, useRef } from 'react';
-import { UI_EVENT, getDeviceType } from '@onekeyfe/hd-core';
+import { UI_EVENT, getDeviceType } from '@unionkeyfe/hd-core';
 import { isEmpty } from 'lodash';
 import { useSetAtom, useStore } from 'jotai';
-import { EDeviceType } from '@onekeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyfe/hd-shared';
 
 import HardwareSDKContext from '../../provider/HardwareSDKContext';
 import { useDevice } from '../../provider/DeviceProvider';
@@ -17,8 +17,8 @@ import {
 
 import type { createTestRunnerAtoms } from './Context/TestRunnerVerifyProvider';
 import type { TestCaseDataWithKey, VerifyState } from './types';
-import type { OnekeyFeatures } from '@onekeyfe/hd-transport';
-import type { CoreApi, Features, Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { OnekeyFeatures } from '@unionkeyfe/hd-transport';
+import type { CoreApi, Features, Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 // 自定义状态管理器类型
 type CustomStateManager = ReturnType<typeof createTestRunnerAtoms>;

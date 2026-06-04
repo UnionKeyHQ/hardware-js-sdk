@@ -1,11 +1,11 @@
 ---
-description: Solana integration via OneKey provider — detect, connect, send transactions, and sign messages
+description: Solana integration via UnionKey provider — detect, connect, send transactions, and sign messages
 slug: /dapp/chains/solana
 ---
 
 # Solana
 
-Use OneKey’s Solana provider in web apps.
+Use UnionKey’s Solana provider in web apps.
 
 ## Quick links
 
@@ -19,7 +19,7 @@ Use OneKey’s Solana provider in web apps.
 ```js
 // Detect
 const provider = window?.$onekey?.solana || window?.solana
-if (!provider?.isOneKey) throw new Error('OneKey Solana provider not detected')
+if (!provider?.isUnionKey) throw new Error('UnionKey Solana provider not detected')
 
 // Connect
 const { publicKey } = await provider.connect()

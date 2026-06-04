@@ -4,11 +4,11 @@
  */
 
 import { useMemo } from 'react';
-import { getDeviceType as getDeviceTypeFromSDK } from '@onekeyfe/hd-core';
+import { getDeviceType as getDeviceTypeFromSDK } from '@unionkeyfe/hd-core';
 
 import { useDevice } from '../../provider/DeviceProvider';
 
-import type { EDeviceType } from '@onekeyfe/hd-shared';
+import type { EDeviceType } from '@unionkeyfe/hd-shared';
 
 export interface DeviceCompatibilityCheckOptions {
   path?: string;

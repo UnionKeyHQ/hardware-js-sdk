@@ -1,4 +1,4 @@
-import type { ConnectionType, DeviceDescriptor } from '@onekeyfe/hwk-adapter-core';
+import type { ConnectionType, DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
 
 /**
  * Ledger DMK transport identifiers that represent BLE devices.

@@ -6,7 +6,7 @@ export default {
   name: 'three-passphrase12-密语2',
   passphrase: '12345y67890ABc4',
   passphraseState: 'mkeNhHFDxRQue8scCqLUgwwomia6FgnR3C',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/427983033',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/427983033',
   data: [
     {
       method: 'cardanoGetPublicKey',

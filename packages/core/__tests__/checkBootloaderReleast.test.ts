@@ -5,7 +5,7 @@ import type { IVersionArray } from '../src';
 // Add mock for config module
 jest.mock('../src/data/config', () => ({
   getSDKVersion: () => '1.0.0',
-  DEFAULT_DOMAIN: 'https://jssdk.onekey.so/1.0.0/',
+  DEFAULT_DOMAIN: 'https://jssdk.unionkey.io/1.0.0/',
 }));
 
 const fixtures = [

@@ -1,16 +1,16 @@
 ---
 title: TRON
-description: TRON integration via OneKey's TronLink-compatible provider
+description: TRON integration via UnionKey's TronLink-compatible provider
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # TRON
 
-Integrate TRON blockchain using OneKey's TronLink-compatible provider. Access via `window.$onekey.tron` or `window.tronWeb`.
+Integrate TRON blockchain using UnionKey's TronLink-compatible provider. Access via `window.$onekey.tron` or `window.tronWeb`.
 
 <Callout type="info">
-OneKey's TRON provider is fully compatible with TronLink, including TronWeb and SunWeb instances.
+UnionKey's TRON provider is fully compatible with TronLink, including TronWeb and SunWeb instances.
 </Callout>
 
 ---
@@ -27,14 +27,14 @@ OneKey's TRON provider is fully compatible with TronLink, including TronWeb and 
 ## Provider Detection
 
 ```typescript
-// OneKey injects both the provider and TronWeb instances
+// UnionKey injects both the provider and TronWeb instances
 const provider = window.$onekey?.tron
 
 // TronWeb is available globally after connection
 const tronWeb = window.tronWeb
 
 if (!provider) {
-  throw new Error('OneKey TRON provider not detected')
+  throw new Error('UnionKey TRON provider not detected')
 }
 
 // Check if it's TronLink compatible
@@ -344,13 +344,13 @@ try {
 
 ## Migration from TronLink
 
-OneKey is TronLink-compatible. Update your detection logic:
+UnionKey is TronLink-compatible. Update your detection logic:
 
 ```typescript
 // Before (TronLink only)
 const tronWeb = window.tronWeb
 
-// After (OneKey with TronLink fallback)
+// After (UnionKey with TronLink fallback)
 const provider = window.$onekey?.tron || window.tronLink
 const tronWeb = window.tronWeb // Both inject this
 ```

@@ -1,7 +1,7 @@
-import { LedgerConnectorBase } from '@onekeyfe/hwk-ledger-adapter';
+import { LedgerConnectorBase } from '@unionkeyfe/hwk-ledger-adapter';
 
-import type { LedgerDeviceManager } from '@onekeyfe/hwk-ledger-adapter';
-import type { DeviceDescriptor, IConnector } from '@onekeyfe/hwk-adapter-core';
+import type { LedgerDeviceManager } from '@unionkeyfe/hwk-ledger-adapter';
+import type { DeviceDescriptor, IConnector } from '@unionkeyfe/hwk-adapter-core';
 import type { DeviceManagementKit, TransportFactory } from '@ledgerhq/device-management-kit';
 
 type WebHidRawDevice = {

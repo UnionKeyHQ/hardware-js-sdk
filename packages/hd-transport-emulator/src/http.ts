@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { HardwareError, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { HardwareError, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 import secureJSON from 'secure-json-parse';
 
 import type { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
@@ -77,7 +77,7 @@ axios.interceptors.request.use((config: InternalAxiosRequestConfig) => {
     if (!config.headers.get('Origin')) {
       console.log('set node request origin');
       // add Origin field for request headers
-      config.headers.set('Origin', 'https://jssdk.onekey.so');
+      config.headers.set('Origin', 'https://jssdk.unionkey.io');
     }
   }
   return config;

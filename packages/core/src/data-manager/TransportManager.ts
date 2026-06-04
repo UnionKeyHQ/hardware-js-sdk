@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import DataManager from './DataManager';
 import { LoggerNames, getLogger } from '../utils';
@@ -7,7 +7,7 @@ import { DevicePool } from '../device/DevicePool';
 import { getSupportMessageVersion } from '../utils/deviceFeaturesUtils';
 
 import type { MessageVersion } from './DataManager';
-import type { LowlevelTransportSharedPlugin, Transport } from '@onekeyfe/hd-transport';
+import type { LowlevelTransportSharedPlugin, Transport } from '@unionkeyfe/hd-transport';
 import type { Features } from '../types';
 
 const Log = getLogger(LoggerNames.Transport);

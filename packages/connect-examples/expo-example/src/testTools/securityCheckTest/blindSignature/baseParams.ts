@@ -330,7 +330,7 @@ export const baseParams = {
   },
   tonSignProof: {
     path: `m/44'/${COINTYPE_MARK}'/0'`,
-    appdomain: 'onekey.so',
+    appdomain: 'unionkey.io',
     comment: '48656c6c6f204f6e654b6579',
     expireAt: Date.now() + 1000 * 60 * 60 * 24,
     walletVersion: 3,

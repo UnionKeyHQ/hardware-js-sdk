@@ -1,6 +1,6 @@
 import { LedgerBleConnector } from './LedgerBleConnector';
 
-import type { IConnector } from '@onekeyfe/hwk-adapter-core';
+import type { IConnector } from '@unionkeyfe/hwk-adapter-core';
 import type { DeviceManagementKit } from '@ledgerhq/device-management-kit';
 import type { LedgerBleConnectorOptions } from './LedgerBleConnector';
 

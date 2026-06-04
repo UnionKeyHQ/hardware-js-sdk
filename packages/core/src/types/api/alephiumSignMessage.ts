@@ -1,4 +1,4 @@
-import type { AlephiumMessageSignature } from '@onekeyfe/hd-transport';
+import type { AlephiumMessageSignature } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type AlephiumSignMessageParams = {

@@ -22,22 +22,22 @@ const heroSecurity01 = '/landing-page/security-01.png'
 
 const getFooterData = (isZh, locale) => {
   const portalColumn = {
-    title: isZh ? 'OneKey 开发者门户' : 'OneKey Developer portal',
+    title: isZh ? 'UnionKey 开发者门户' : 'UnionKey Developer portal',
     items: [
       { label: isZh ? '首页' : 'Home', href: `/${locale}` },
-      { label: 'Playground', href: 'https://hardware-example.onekey.so/' },
-      { label: 'Hardware-js-sdk', href: 'https://github.com/OneKeyHQ/hardware-js-sdk/' },
-      { label: 'Cross-inpage-provider', href: 'https://github.com/OneKeyHQ/cross-inpage-provider' },
-      { label: 'App-monorepo', href: 'https://github.com/OneKeyHQ/app-monorepo' },
+      { label: 'Playground', href: 'https://hardware-example.unionkey.io/' },
+      { label: 'Hardware-js-sdk', href: 'https://github.com/UnionKeyHQ/hardware-js-sdk/' },
+      { label: 'Cross-inpage-provider', href: 'https://github.com/UnionKeyHQ/cross-inpage-provider' },
+      { label: 'App-monorepo', href: 'https://github.com/UnionKeyHQ/app-monorepo' },
     ],
   }
 
   const legalColumn = {
     title: isZh ? '法律' : 'Legal',
     items: [
-      { label: isZh ? '用户协议' : 'User Agreement', href: 'https://help.onekey.so/hc/articles/11461297' },
-      { label: isZh ? '隐私政策' : 'Privacy Policy', href: 'https://help.onekey.so/hc/articles/11461298' },
-      { label: isZh ? '官方成员验证' : 'Team Verification', href: 'https://onekey.so/team-verification' },
+      { label: isZh ? '用户协议' : 'User Agreement', href: 'https://help.unionkey.io/hc/articles/11461297' },
+      { label: isZh ? '隐私政策' : 'Privacy Policy', href: 'https://help.unionkey.io/hc/articles/11461298' },
+      { label: isZh ? '官方成员验证' : 'Team Verification', href: 'https://unionkey.io/team-verification' },
     ],
   }
 
@@ -86,13 +86,13 @@ export function LandingPage({ locale = 'en' }) {
 
   const copy = isZh
     ? {
-        heroTitle: 'OneKey 开发者门户',
-        heroSubtitle: '用 OneKey 硬件构建安全的 Web3 体验。',
+        heroTitle: 'UnionKey 开发者门户',
+        heroSubtitle: '用 UnionKey 硬件构建安全的 Web3 体验。',
         ctaPrimary: '开始构建',
         ctaSecondary: '更新日志',
         viewDocs: '查看文档',
         hardwareTitle: '硬件接入',
-        hardwareSubtitle: '通过 USB 或 BLE 连接 OneKey 设备。',
+        hardwareSubtitle: '通过 USB 或 BLE 连接 UnionKey 设备。',
         dappTitle: 'dApp 接入',
         dappSubtitle: 'SDK 与 API 用于钱包连接与签名。',
         offlineTitle: '离线签名',
@@ -102,13 +102,13 @@ export function LandingPage({ locale = 'en' }) {
         supportPrimary: '提交需求',
       }
     : {
-        heroTitle: 'OneKey Developer Portal',
+        heroTitle: 'UnionKey Developer Portal',
         heroSubtitle: 'Integrate secure, hardware-backed signing into your dApp, wallet, or blockchain stack.',
         ctaPrimary: 'Get Started',
         ctaSecondary: 'View Changelog',
         viewDocs: 'View docs',
         hardwareTitle: 'Hardware Integration',
-        hardwareSubtitle: 'Connect to OneKey devices over USB or BLE transports.',
+        hardwareSubtitle: 'Connect to UnionKey devices over USB or BLE transports.',
         dappTitle: 'dApp Integration',
         dappSubtitle: 'SDKs and APIs for wallet connectivity and signing.',
         offlineTitle: 'Offline Signing',
@@ -141,10 +141,10 @@ export function LandingPage({ locale = 'en' }) {
     },
     /*
     {
-      title: isZh ? 'OneKey Agent Wallet' : 'OneKey Agent Wallet',
+      title: isZh ? 'UnionKey Agent Wallet' : 'UnionKey Agent Wallet',
       description: isZh
-        ? '在 OneKey GUI 中管理 Agent 钱包，绑定 keyless 账号，并将高风险操作交给硬件确认。'
-        : 'Manage agent wallets in the OneKey GUI, bind keyless accounts, and escalate high-risk actions to hardware confirmation.',
+        ? '在 UnionKey GUI 中管理 Agent 钱包，绑定 keyless 账号，并将高风险操作交给硬件确认。'
+        : 'Manage agent wallets in the UnionKey GUI, bind keyless accounts, and escalate high-risk actions to hardware confirmation.',
       icon: Bot,
       href: `/${locale}/agent-wallet`,
       cta: copy.viewDocs,
@@ -320,7 +320,7 @@ export function LandingPage({ locale = 'en' }) {
               </div>
               <div className="flex flex-wrap gap-[16px]">
                 <a
-                  href="https://help.onekey.so/hc/requests/new"
+                  href="https://help.unionkey.io/hc/requests/new"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-[8px] rounded-[50px] px-[20px] py-[10px] text-[16px] font-medium text-[#101111] no-underline"
@@ -333,7 +333,7 @@ export function LandingPage({ locale = 'en' }) {
                   {copy.supportPrimary}
                 </a>
                 <a
-                  href="https://github.com/OneKeyHQ/hardware-js-sdk/issues"
+                  href="https://github.com/UnionKeyHQ/hardware-js-sdk/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-[8px] rounded-[50px] border border-white px-[20px] py-[10px] text-[16px] font-medium text-white no-underline"
@@ -344,7 +344,7 @@ export function LandingPage({ locale = 'en' }) {
             </div>
             <img
               src="/landing-page/device.png"
-              alt="OneKey device"
+              alt="UnionKey device"
               className="pointer-events-none hidden size-[400px] object-contain lg:absolute lg:right-[40px] lg:top-[-80px] lg:block"
             />
           </div>
@@ -357,7 +357,7 @@ export function LandingPage({ locale = 'en' }) {
             <div className="flex flex-col gap-[16px]">
               <img
                 src="/landing-page/onekey-brand.svg"
-                alt="OneKey"
+                alt="UnionKey"
                 className="h-[57px] w-[233px]"
               />
               <div className="relative">
@@ -400,7 +400,7 @@ export function LandingPage({ locale = 'en' }) {
                   <img src="/landing-page/social/twitter.svg" alt="" className="size-[24px]" />
                 </a>
                 <a
-                  href="https://github.com/OneKeyHQ"
+                  href="https://github.com/UnionKeyHQ"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -419,7 +419,7 @@ export function LandingPage({ locale = 'en' }) {
               <div className="flex flex-col gap-[16px]">
                 <div className="flex items-center gap-[16px]">
                   <a
-                    href="https://github.com/OneKeyHQ"
+                    href="https://github.com/UnionKeyHQ"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -436,7 +436,7 @@ export function LandingPage({ locale = 'en' }) {
                   />
                 </div>
                 <p className="text-[12px] leading-[15px] text-white/60">
-                  Since 2019 - {new Date().getFullYear()} | OneKey Limited All Rights Reserved
+                  Since 2019 - {new Date().getFullYear()} | UnionKey Limited All Rights Reserved
                 </p>
                 <p className="mt-2 font-mono text-[11px] leading-[14px] text-white/40">
                   SDK v{process.env.NEXT_PUBLIC_SDK_VERSION || 'dev'}
@@ -445,7 +445,7 @@ export function LandingPage({ locale = 'en' }) {
                       {' '}
                       ·{' '}
                       <a
-                        href={`https://github.com/OneKeyHQ/hardware-js-sdk/commit/${process.env.NEXT_PUBLIC_COMMIT_ID || ''}`}
+                        href={`https://github.com/UnionKeyHQ/hardware-js-sdk/commit/${process.env.NEXT_PUBLIC_COMMIT_ID || ''}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="transition-colors hover:text-white/60"
@@ -525,7 +525,7 @@ export function LandingPage({ locale = 'en' }) {
               <X className="size-[20px] text-gray-600" />
             </button>
             <iframe
-              title="Subscribe to OneKey notifications"
+              title="Subscribe to UnionKey notifications"
               width="100%"
               height="640"
               src="https://42580da6.sibforms.com/serve/MUIEAI9xKoDAfTUz53hH6tfFw33F9jhgZ4pvLBMCebFgxpaWbthSByPZWMaeONkK5X2ffORCqwK1J-ZPnWiv0QO7xOKU7GNASRGHZkksxcx-GnE0kkPbJ-GFDvZ5MC1vPT1lybkIKZZxZI5eXofyZQqeXNaaGT6-nQJ1hNb5FG0tvGLpgNK3oBe9Wvx3lpghzTTkwiYcWH25Xt1o"

@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { NexaGetAddress as HardwareNexaGetAddress } from '@onekeyfe/hd-transport';
+import type { NexaGetAddress as HardwareNexaGetAddress } from '@unionkeyfe/hd-transport';
 import type { NexaGetAddressParams } from '../../types';
 
 export default class NexaGetAddress extends BaseMethod<HardwareNexaGetAddress[]> {

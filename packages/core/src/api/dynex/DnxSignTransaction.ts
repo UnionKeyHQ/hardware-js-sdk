@@ -6,7 +6,7 @@ import { stripHexPrefix } from '../helpers/hexUtils';
 
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 import type { DnxSignature } from '../../types';
-import type { DnxSignTx, TypedCall } from '@onekeyfe/hd-transport';
+import type { DnxSignTx, TypedCall } from '@unionkeyfe/hd-transport';
 
 export default class DnxSignTransaction extends BaseMethod<DnxSignTx> {
   hasBundle = false;

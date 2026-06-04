@@ -1,16 +1,16 @@
 ---
 title: Cardano
-description: Cardano integration via OneKey's CIP-30 compatible provider
+description: Cardano integration via UnionKey's CIP-30 compatible provider
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Cardano
 
-Integrate Cardano blockchain using OneKey's CIP-30 compatible provider. Access via `window.cardano.onekey` or `window.cardano.nami`.
+Integrate Cardano blockchain using UnionKey's CIP-30 compatible provider. Access via `window.cardano.onekey` or `window.cardano.nami`.
 
 <Callout type="info">
-OneKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with all Cardano dApps. It also provides Nami wallet compatibility.
+UnionKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with all Cardano dApps. It also provides Nami wallet compatibility.
 </Callout>
 
 ---
@@ -27,17 +27,17 @@ OneKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with a
 ## Provider Detection
 
 ```typescript
-// OneKey provides both onekey and nami interfaces
+// UnionKey provides both onekey and nami interfaces
 const onekey = window.cardano?.onekey
 const nami = window.cardano?.nami
 
 // Check availability
 if (!onekey) {
-  throw new Error('OneKey Cardano provider not detected')
+  throw new Error('UnionKey Cardano provider not detected')
 }
 
 // Get wallet info
-console.log('Name:', onekey.name) // 'OneKey'
+console.log('Name:', onekey.name) // 'UnionKey'
 console.log('API Version:', onekey.apiVersion) // '0.1.0'
 console.log('Icon:', onekey.icon)
 ```
@@ -294,7 +294,7 @@ api.experimental.on('accountChange', (addresses) => {
 
 | Property/Method | Description |
 |-----------------|-------------|
-| `name` | Wallet name ('OneKey') |
+| `name` | Wallet name ('UnionKey') |
 | `icon` | Wallet icon URL |
 | `apiVersion` | API version |
 | `isEnabled()` | Check if enabled |
@@ -386,13 +386,13 @@ npm install lucid-cardano
 ```typescript
 import { Lucid } from 'lucid-cardano'
 
-// Initialize Lucid with OneKey
+// Initialize Lucid with UnionKey
 const lucid = await Lucid.new(
   new Blockfrost('https://cardano-mainnet.blockfrost.io/api', 'your-api-key'),
   'Mainnet'
 )
 
-// Connect OneKey
+// Connect UnionKey
 const api = await window.cardano.onekey.enable()
 lucid.selectWallet(api)
 
@@ -421,7 +421,7 @@ npm install @meshsdk/core
 ```typescript
 import { BrowserWallet, Transaction } from '@meshsdk/core'
 
-// Connect to OneKey
+// Connect to UnionKey
 const wallet = await BrowserWallet.enable('onekey')
 
 // Get wallet info
@@ -441,14 +441,14 @@ const txHash = await wallet.submitTx(signedTx)
 
 ## Nami Compatibility
 
-OneKey provides Nami wallet compatibility:
+UnionKey provides Nami wallet compatibility:
 
 ```typescript
 // Access via Nami interface
 const nami = window.cardano.nami
 const api = await nami.enable()
 
-// Same API as OneKey
+// Same API as UnionKey
 const balance = await api.getBalance()
 ```
 

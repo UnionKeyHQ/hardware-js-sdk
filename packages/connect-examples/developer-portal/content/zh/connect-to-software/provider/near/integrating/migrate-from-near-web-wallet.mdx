@@ -4,7 +4,7 @@ title: 从 Near Web Wallet 迁移
 
 # 从 Near Web Wallet 迁移
 
-虽然我们强烈建议使用正式 API 来让你的应用与 OneKey 钱包交互，但我们仍然提供了一些与 [Near Web Wallet](https://wallet.near.org/) 非常相似的旧版 API，使你更容易从 Near Web Wallet 迁移现有代码。
+虽然我们强烈建议使用正式 API 来让你的应用与 UnionKey 钱包交互，但我们仍然提供了一些与 [Near Web Wallet](https://wallet.near.org/) 非常相似的旧版 API，使你更容易从 Near Web Wallet 迁移现有代码。
 
 ```javascript
 import * as nearAPI from "near-api-js";
@@ -20,7 +20,7 @@ const config = {
 const near = new nearAPI.Near(config);
 const connection = near.connection;
 
-const provider = new OneKeyNearProvider({
+const provider = new UnionKeyNearProvider({
   connection,
   networkId: 'mainnet', // `mainnet` 或 `testnet`
   // 登录或签署交易后重新加载页面，类似于 web wallet 回调 URL 的工作方式

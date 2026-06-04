@@ -1,25 +1,25 @@
-# `@onekeyfe/hd-ble-sdk`
+# `@unionkeyfe/hd-ble-sdk`
 
-`@onekeyfe/hd-ble-sdk` is a library provided for mobild client. Its dependency on `@onekeyfe/hd-transport-react-native`. We recommend using this libarary in ReactNative applications.
+`@unionkeyfe/hd-ble-sdk` is a library provided for mobild client. Its dependency on `@unionkeyfe/hd-transport-react-native`. We recommend using this libarary in ReactNative applications.
 
 ## Installation
 
 Install library as npm module:
 
 ```javascript
-npm install @onekeyfe/hd-ble-sdk
+npm install @unionkeyfe/hd-ble-sdk
 ```
 
 or
 
 ```javascript
-yarn add @onekeyfe/hd-ble-sdk
+yarn add @unionkeyfe/hd-ble-sdk
 ```
 
 ## Initialization
 
 ```javascript
-import HardwareSDK from '@onekeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
 
 function init() {
   HardwareSDK.init({
@@ -30,7 +30,7 @@ function init() {
 
 ## Docs
 
-Documentation is available [hardware-js-sdk](https://developer.onekey.so/connect-to-hardware/hardware-sdk/start)
+Documentation is available [hardware-js-sdk](https://developer.unionkey.io/connect-to-hardware/hardware-sdk/start)
 
 ## Examples
 // TODO: add example url

@@ -4,13 +4,13 @@ title: Hardware Control
 
 # Hardware Control
 
-Hardware control lets an Agent Wallet workflow escalate sensitive operations to a OneKey hardware wallet. This is OneKey's core difference from agent wallets that only rely on software custody or TEE signing.
+Hardware control lets an Agent Wallet workflow escalate sensitive operations to a UnionKey hardware wallet. This is UnionKey's core difference from agent wallets that only rely on software custody or TEE signing.
 
 ## When To Escalate
 
 | Flow | Hardware expectation |
 | --- | --- |
-| High-value transfer | User reviews recipient, amount, chain, and fee on the OneKey device. |
+| High-value transfer | User reviews recipient, amount, chain, and fee on the UnionKey device. |
 | Contract interaction | Agent runs simulation first, then the device displays clear-signing details when supported. |
 | Swap execution | Agent quotes and builds first; device confirmation happens only after the user approves execution. |
 | Hidden wallet | Passphrase mode is explicit so the agent does not guess whether a hidden wallet is active. |
@@ -52,7 +52,7 @@ Hardware-backed sessions are reported by `onekey auth status` as:
 | --- | --- |
 | `loginMethod` | `hardware` |
 | `walletKind` | `hw` |
-| `device` | Connected OneKey device info |
+| `device` | Connected UnionKey device info |
 | `passphraseMode` | `none`, `on_host`, or `on_device` |
 
 After login, follow-up commands use the active session automatically.

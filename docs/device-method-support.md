@@ -1,4 +1,4 @@
-# OneKey 硬件设备方法支持列表
+# UnionKey 硬件设备方法支持列表
 
 > 更新日期: 2026-02-28
 > 说明：测试用例层面不再通过 skip 隐藏结果，统一按真实返回做 expected 覆盖。
@@ -8,12 +8,12 @@
 
 | 设备 | 代号 | 说明 |
 |-----|------|-----|
-| OneKey Classic | `classic` | 第一代硬件钱包 |
-| OneKey Classic 1S | `classic1s` | Classic 升级版 |
-| OneKey Classic Pure | `classicPure` | 与 Classic 1S 同固件 |
-| OneKey Touch | `touch` | 触屏版 |
-| OneKey Pro | `pro` | 专业版 |
-| OneKey Mini | `mini` | 迷你版 |
+| UnionKey Classic | `classic` | 第一代硬件钱包 |
+| UnionKey Classic 1S | `classic1s` | Classic 升级版 |
+| UnionKey Classic Pure | `classicPure` | 与 Classic 1S 同固件 |
+| UnionKey Touch | `touch` | 触屏版 |
+| UnionKey Pro | `pro` | 专业版 |
+| UnionKey Mini | `mini` | 迷你版 |
 
 ---
 

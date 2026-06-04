@@ -6,7 +6,7 @@ import {
   getDeviceType,
 } from '../../utils';
 
-import type { EFirmwareType } from '@onekeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyfe/hd-shared';
 
 export const getFirmwareReleaseInfo = (features: Features, firmwareType: EFirmwareType) => {
   const firmwareStatus = DataManager.getFirmwareStatus(features, firmwareType);

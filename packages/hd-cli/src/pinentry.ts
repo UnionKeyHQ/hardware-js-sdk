@@ -89,7 +89,7 @@ export function promptPassphraseViaPinentry(): Promise<PinentryResult> {
     }
 
     const commands = [
-      'SETDESC OneKey Hardware Wallet',
+      'SETDESC UnionKey Hardware Wallet',
       'SETPROMPT Enter passphrase',
       'GETPIN',
       'BYE',

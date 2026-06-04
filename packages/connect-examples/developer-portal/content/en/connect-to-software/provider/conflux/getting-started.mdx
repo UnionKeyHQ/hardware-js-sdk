@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to Conflux using OneKey's Fluent-compatible provider
+description: Connect to Conflux using UnionKey's Fluent-compatible provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with Conflux using OneKey's provider.
+Learn how to detect, connect, and interact with Conflux using UnionKey's provider.
 
 <Callout type="info">
-OneKey's Conflux provider is compatible with both ConfluxPortal and Fluent wallet interfaces.
+UnionKey's Conflux provider is compatible with both ConfluxPortal and Fluent wallet interfaces.
 </Callout>
 
 ---
@@ -18,17 +18,17 @@ OneKey's Conflux provider is compatible with both ConfluxPortal and Fluent walle
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Conflux provider
+// Detect UnionKey Conflux provider
 const provider = window.$onekey?.conflux
 
 if (!provider) {
-  throw new Error('OneKey Conflux provider not detected')
+  throw new Error('UnionKey Conflux provider not detected')
 }
 
 // Check compatibility flags
 console.log('isConfluxPortal:', provider.isConfluxPortal) // true
 console.log('isFluent:', provider.isFluent) // true
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---

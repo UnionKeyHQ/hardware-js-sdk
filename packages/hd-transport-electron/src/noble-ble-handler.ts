@@ -15,8 +15,8 @@ import {
   isHeaderChunk,
   isOnekeyDevice,
   wait,
-} from '@onekeyfe/hd-shared';
-import { COMMON_HEADER_SIZE } from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-shared';
+import { COMMON_HEADER_SIZE } from '@unionkeyfe/hd-transport';
 import pRetry from 'p-retry';
 
 import { safeLog } from './types/noble-extended';
@@ -903,7 +903,7 @@ function getDevice(deviceId: string): DeviceInfo | null {
   return {
     commType: 'electron-ble',
     id: deviceId,
-    name: 'OneKey Device',
+    name: 'UnionKey Device',
     state: 'disconnected',
   };
 }

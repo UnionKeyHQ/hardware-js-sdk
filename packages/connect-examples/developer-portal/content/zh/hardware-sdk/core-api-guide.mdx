@@ -73,7 +73,7 @@ console.log(res.payload.address);
 标准流程：**初始化** → **搜索设备** → **获取设备信息** → **订阅事件** → **执行操作** → **清理资源**
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
 
 // 1. 初始化 SDK（应用入口执行一次即可）
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
@@ -263,7 +263,7 @@ SDK 提供三种事件通道：
 **事件处理示例**
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
 
 const handleUiEvent = (msg: any) => {
   switch (msg.type) {
@@ -334,7 +334,7 @@ HardwareSDK.uiResponse({
 | Runtime/Bridge (800–821) | PIN/动作被取消、Bridge 权限/超时、盲签关闭 | 重试或提示安装/启动 Bridge，确保签名模式 |
 | Web device (901–902) | WebUSB/蓝牙未授权或弹窗失败 | 提示重新授权；确保 HTTPS + 用户手势 |
 
-更多细节：参考 [`HardwareError.ts`](https://github.com/OneKeyHQ/hardware-js-sdk/blob/onekey/packages/shared/src/HardwareError.ts) 获取完整错误定义与 payload 结构。
+更多细节：参考 [`HardwareError.ts`](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/shared/src/HardwareError.ts) 获取完整错误定义与 payload 结构。
 
 **处理建议**：建立错误码到用户提示的映射表，在 UI 提供重试、检查设备、升级固件等操作按钮。
 

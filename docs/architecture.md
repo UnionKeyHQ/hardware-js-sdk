@@ -1,39 +1,39 @@
-# OneKey Hardware SDK - 架构概览
+# UnionKey Hardware SDK - 架构概览
 
 ## 📁 核心架构
 
-OneKey Hardware SDK 采用三层架构设计：
+UnionKey Hardware SDK 采用三层架构设计：
 
 ```
 应用层 (DApps)
     ↓
-SDK接口层 (@onekeyfe/core) 
+SDK接口层 (@unionkeyfe/core)
     ↓
-传输抽象层 (@onekeyfe/hd-transport)
+传输抽象层 (@unionkeyfe/hd-transport)
     ↓
 平台适配层 (WebUSB/BLE/HTTP)
     ↓
-硬件设备层 (OneKey设备)
+硬件设备层 (UnionKey设备)
 ```
 
 ## 🏗️ 核心包结构
 
 ### API层
-- **`@onekeyfe/hd-core`** - 核心API和业务逻辑
-- **`@onekeyfe/hd-transport`** - 传输层抽象
+- **`@unionkeyfe/hd-core`** - 核心API和业务逻辑
+- **`@unionkeyfe/hd-transport`** - 传输层抽象
 
 ### 传输层
-- **`@onekeyfe/hd-transport-webusb`** - WebUSB传输（浏览器）
-- **`@onekeyfe/hd-transport-usb`** - Node.js USB传输（CLI/服务端，基于 libusb）
-- **`@onekeyfe/hd-transport-http`** - HTTP Bridge传输
-- **`@onekeyfe/hd-transport-lowlevel`** - 低层传输（BLE 插件模式）
+- **`@unionkeyfe/hd-transport-webusb`** - WebUSB传输（浏览器）
+- **`@unionkeyfe/hd-transport-usb`** - Node.js USB传输（CLI/服务端，基于 libusb）
+- **`@unionkeyfe/hd-transport-http`** - HTTP Bridge传输
+- **`@unionkeyfe/hd-transport-lowlevel`** - 低层传输（BLE 插件模式）
 
 ### 平台SDK
-- **`@onekeyfe/hd-web-sdk`** - Web平台SDK
-- **`@onekeyfe/hd-ble-sdk`** - 移动端BLE SDK
+- **`@unionkeyfe/hd-web-sdk`** - Web平台SDK
+- **`@unionkeyfe/hd-ble-sdk`** - 移动端BLE SDK
 
 ### 示例应用
-- **`@onekeyfe/connect-examples`** - 集成示例
+- **`@unionkeyfe/connect-examples`** - 集成示例
   - `expo-example` - Web集成示例
   - `expo-playground` - 开发测试平台
 
@@ -79,7 +79,7 @@ abstract class BaseMethod<Request, Response> {
     await this.checkDevice();
     return await this.run();
   }
-  
+
   abstract run(): Promise<Response>;
 }
 ```
@@ -99,17 +99,17 @@ switch(env) {
 
 ```
 应用层
-├── @onekeyfe/hd-web-sdk
-├── @onekeyfe/hd-ble-sdk
+├── @unionkeyfe/hd-web-sdk
+├── @unionkeyfe/hd-ble-sdk
     │
-    ├── @onekeyfe/hd-core ←── 核心层
-    │   └── @onekeyfe/hd-transport
+    ├── @unionkeyfe/hd-core ←── 核心层
+    │   └── @unionkeyfe/hd-transport
     │
     └── 传输层实现
-        ├── @onekeyfe/hd-transport-webusb      (浏览器)
-        ├── @onekeyfe/hd-transport-usb          (Node.js CLI)
-        ├── @onekeyfe/hd-transport-lowlevel     (BLE 插件)
-        └── @onekeyfe/hd-transport-http         (Bridge)
+        ├── @unionkeyfe/hd-transport-webusb      (浏览器)
+        ├── @unionkeyfe/hd-transport-usb          (Node.js CLI)
+        ├── @unionkeyfe/hd-transport-lowlevel     (BLE 插件)
+        └── @unionkeyfe/hd-transport-http         (Bridge)
 ```
 
 ## 🔧 开发工具
@@ -128,5 +128,5 @@ yarn install
 yarn build
 
 # 启动示例
-yarn workspace @onekeyfe/connect-examples start
+yarn workspace @unionkeyfe/connect-examples start
 ```

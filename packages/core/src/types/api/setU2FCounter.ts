@@ -1,4 +1,4 @@
-import type { SetU2FCounter, Success } from '@onekeyfe/hd-transport';
+import type { SetU2FCounter, Success } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export declare function setU2FCounter(

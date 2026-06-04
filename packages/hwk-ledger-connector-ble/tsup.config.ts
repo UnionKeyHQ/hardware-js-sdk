@@ -7,8 +7,8 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   external: [
-    '@onekeyfe/hwk-adapter-core',
-    '@onekeyfe/hwk-ledger-adapter',
+    '@unionkeyfe/hwk-adapter-core',
+    '@unionkeyfe/hwk-ledger-adapter',
     '@ledgerhq/device-management-kit',
     '@ledgerhq/device-signer-kit-ethereum',
     '@ledgerhq/device-signer-kit-bitcoin',

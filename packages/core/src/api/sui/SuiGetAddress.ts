@@ -7,7 +7,7 @@ import { publicKeyToAddress } from './normalize';
 import { batchGetPublickeys } from '../helpers/batchGetPublickeys';
 
 import type { SuiAddress, SuiGetAddressParams } from '../../types';
-import type { SuiGetAddress as HardwareSuiGetAddress } from '@onekeyfe/hd-transport';
+import type { SuiGetAddress as HardwareSuiGetAddress } from '@unionkeyfe/hd-transport';
 
 export default class SuiGetAddress extends BaseMethod<HardwareSuiGetAddress[]> {
   hasBundle = false;

@@ -114,7 +114,7 @@ module.exports = {
   publish: [
     {
       provider: 'github',
-      owner: 'OneKeyHQ',
+      owner: 'UnionKeyHQ',
       repo: 'hardware-js-sdk',
       private: false,
       vPrefixedTagName: true,

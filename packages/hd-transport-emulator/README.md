@@ -1,18 +1,18 @@
-# OneKey Hardware Emulator Transport
+# UnionKey Hardware Emulator Transport
 
-This package provides HTTP-based transport for connecting to OneKey hardware emulator.
+This package provides HTTP-based transport for connecting to UnionKey hardware emulator.
 
 ## Features
 
 - HTTP-based communication with emulator server
-- Compatible with OneKey Connect SDK
+- Compatible with UnionKey Connect SDK
 - Support for switchTransport functionality
 - Default emulator server URL: `http://localhost:21333`
 
 ## Installation
 
 ```bash
-npm install @onekeyfe/hd-transport-emulator
+npm install @unionkeyfe/hd-transport-emulator
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @onekeyfe/hd-transport-emulator
 ### Basic Usage
 
 ```javascript
-import EmulatorTransport from '@onekeyfe/hd-transport-emulator';
+import EmulatorTransport from '@unionkeyfe/hd-transport-emulator';
 
 // Create transport instance
 const transport = new EmulatorTransport();
@@ -34,10 +34,10 @@ await transport.init(logger);
 await transport.configure(signedData);
 ```
 
-### With OneKey Connect SDK
+### With UnionKey Connect SDK
 
 ```javascript
-import HardwareSDK from '@onekeyfe/hd-web-sdk';
+import HardwareSDK from '@unionkeyfe/hd-web-sdk';
 
 // Initialize with emulator environment
 await HardwareSDK.init({
@@ -68,7 +68,7 @@ new EmulatorTransport(url?: string)
 
 ### Methods
 
-All methods implement the standard OneKey Transport interface:
+All methods implement the standard UnionKey Transport interface:
 
 - `init(logger)`: Initialize transport
 - `configure(signedData)`: Configure protobuf messages
@@ -80,7 +80,7 @@ All methods implement the standard OneKey Transport interface:
 
 ## Emulator Server
 
-Make sure your OneKey emulator server is running on the configured URL (default: `http://localhost:21333`) before using this transport.
+Make sure your UnionKey emulator server is running on the configured URL (default: `http://localhost:21333`) before using this transport.
 
 ## Development
 

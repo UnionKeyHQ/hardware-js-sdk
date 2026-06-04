@@ -1,13 +1,13 @@
 ---
 title: Ethereum / EVM
-description: Ethereum & EVM integration with OneKey's injected EIP-1193 provider
+description: Ethereum & EVM integration with UnionKey's injected EIP-1193 provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Ethereum / EVM
 
-Use the injected EIP-1193 provider to build EVM dApps with OneKey. All EVM-compatible chains (Ethereum, Polygon, BSC, Arbitrum, Optimism, Base, etc.) share the same provider.
+Use the injected EIP-1193 provider to build EVM dApps with UnionKey. All EVM-compatible chains (Ethereum, Polygon, BSC, Arbitrum, Optimism, Base, etc.) share the same provider.
 
 ---
 
@@ -25,7 +25,7 @@ window.addEventListener('eip6963:announceProvider', (e: any) => {
 })
 window.dispatchEvent(new Event('eip6963:requestProvider'))
 
-// Find OneKey by rdns
+// Find UnionKey by rdns
 const onekey = providers.find(p => p.info.rdns === 'so.onekey.app.wallet')
 const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' })
 ```
@@ -34,7 +34,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ```typescript
 const provider = window.$onekey?.ethereum
-if (!provider) throw new Error('OneKey not detected')
+if (!provider) throw new Error('UnionKey not detected')
 
 const accounts = await provider.request({ method: 'eth_requestAccounts' })
 ```

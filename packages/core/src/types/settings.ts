@@ -1,4 +1,4 @@
-import type { EFirmwareType } from '@onekeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyfe/hd-shared';
 import type { IDeviceType } from './device';
 
 export type transportEnv =

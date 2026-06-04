@@ -1,4 +1,4 @@
-import type { EDeviceType, EFirmwareType } from '@onekeyfe/hd-shared';
+import type { EDeviceType, EFirmwareType } from '@unionkeyfe/hd-shared';
 import type { Response } from '../params';
 import type { FirmwareRelease } from './checkAllFirmwareRelease';
 

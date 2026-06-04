@@ -1,10 +1,10 @@
 import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import { getDeviceType } from '@onekeyfe/hd-core';
+import { getDeviceType } from '@unionkeyfe/hd-core';
 
 import { selectDeviceAtom } from '../../atoms/deviceAtoms';
 
-import type { CoreApi } from '@onekeyfe/hd-core';
+import type { CoreApi } from '@unionkeyfe/hd-core';
 
 type Device = {
   connectId: string;
@@ -115,7 +115,7 @@ export const checkAccountAddressAtom = atom(
       // @ts-ignore
       const res = await sdk?.[`${account.type}GetAddress`](deviceConnectId, undefined, {
         path: account.path,
-        showOnOneKey: false,
+        showOnUnionKey: false,
         passphraseState: wallet.passphraseState,
         useEmptyPassphrase: wallet.mainWallet,
       });
@@ -165,7 +165,7 @@ export const addWalletAtom = atom(
 
     const res1 = await sdk.evmGetAddress(deviceConnectId, deviceId, {
       path: "m/44'/60'/0'/0/0",
-      showOnOneKey: false,
+      showOnUnionKey: false,
       useEmptyPassphrase: mainWallet,
       passphraseState,
     });
@@ -180,7 +180,7 @@ export const addWalletAtom = atom(
 
     const res2 = await sdk.btcGetAddress(deviceConnectId, deviceId, {
       path: "m/44'/0'/0'/0/0",
-      showOnOneKey: false,
+      showOnUnionKey: false,
       useEmptyPassphrase: mainWallet,
       passphraseState,
     });

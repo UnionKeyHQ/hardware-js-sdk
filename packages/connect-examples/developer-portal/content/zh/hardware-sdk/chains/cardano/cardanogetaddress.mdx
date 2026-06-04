@@ -12,7 +12,7 @@ title: cardanoGetAddress
 
 ## Cardano：获取地址
 
-显示指定 BIP32-Ed25519 路径派生的地址，并返回给调用者。用户需要在 OneKey 上确认导出。
+显示指定 BIP32-Ed25519 路径派生的地址，并返回给调用者。用户需要在 UnionKey 上确认导出。
 
 ```typescript
 const response = await HardwareSDK.cardanoGetAddress(connectId, deviceId, params)
@@ -28,7 +28,7 @@ const response = await HardwareSDK.cardanoGetAddress(connectId, deviceId, params
 * `protocolMagic` - _必需_ `Integer` 主网为 764824073，Preprod 测试网为 1，Preview 测试网为 2
 * `networkId` - _必需_ `Integer` 主网为 1，测试网为 0
 * `address` - _可选_ `string` 用于验证的地址（请阅读下方 `处理按钮请求` 部分）
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 * `derivationType` - _可选_ `CardanoDerivationType` 枚举。决定使用的派生类型。默认设置为 ICARUS=1
 * `isCheck` - _可选_ `boolean` 仅检查基础地址
 
@@ -220,7 +220,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 764824073,
             networkId: 1,
-            showOnOneKey: false,
+            showOnUnionKey: false,
         },
         // 带有质押密钥哈希的基础地址，账户 1，地址 1
         {
@@ -231,7 +231,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 764824073,
             networkId: 1,
-            showOnOneKey: false,
+            showOnUnionKey: false,
         },
         // Byron 地址，账户 2，地址 3，测试网
         {
@@ -241,7 +241,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 1,
             networkId: 0,
-            showOnOneKey: false,
+            showOnUnionKey: false,
         },
     ],
 });

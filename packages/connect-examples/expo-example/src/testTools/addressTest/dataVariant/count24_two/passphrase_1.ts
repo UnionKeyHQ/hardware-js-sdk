@@ -4,7 +4,7 @@ export default {
   name: 'two-passphrase24-密语1',
   passphrase: 'temp10086',
   passphraseState: 'mgGpxhbSthC4jMPvS88CYL28dXH5sb46nc',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490457',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490457',
   data: [
     {
       method: 'btcGetAddress',

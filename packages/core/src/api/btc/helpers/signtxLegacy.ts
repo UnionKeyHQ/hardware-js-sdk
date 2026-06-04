@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import type {
   TxAckResponse,
@@ -7,7 +7,7 @@ import type {
   TxRequest,
   TxRequestSerializedType,
   TypedCall,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 import type {
   RefTransaction,
   SignedTransaction,

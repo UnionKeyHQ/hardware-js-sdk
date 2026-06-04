@@ -4,7 +4,7 @@ export default {
   name: 'two-passphrase12-密语2',
   passphrase: '~~##^$$~^`',
   passphraseState: 'mrMdgz2K5pePtQEJvu2VvMkfDh7vS9oAnP',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429392047',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429392047',
   data: [
     {
       method: 'btcGetAddress',

@@ -1,5 +1,5 @@
 import { useCallback, useContext, useMemo, useRef, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { Picker } from '@react-native-picker/picker';
 import { Stack, Text, View, XStack, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
@@ -16,7 +16,7 @@ import { getDeviceInfo } from '../../utils/deviceUtils';
 import { useHardwareInputPinDialog } from '../../provider/HardwareInputPinProvider';
 
 import type { TestChain } from './utils';
-import type { CoreMessage, Features } from '@onekeyfe/hd-core';
+import type { CoreMessage, Features } from '@unionkeyfe/hd-core';
 
 function generatePassphrase(list: any[] | undefined) {
   return `$A& b${(list?.length ?? 0) + 1}`;

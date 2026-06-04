@@ -5,7 +5,7 @@ import { ledgerMaster } from '@polkadot/util-crypto/hd/ledger/master';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { PolkadotGetAddressParams } from '@onekeyfe/hd-core';
+import type { PolkadotGetAddressParams } from '@unionkeyfe/hd-core';
 
 /**
  * 抽离的核心逻辑：从 seed 生成 Polkadot 地址

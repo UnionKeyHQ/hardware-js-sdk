@@ -4,7 +4,7 @@ title: Identifiers
 
 # Identifiers
 
-OneKey hardware APIs return several identifier-looking fields across
+UnionKey hardware APIs return several identifier-looking fields across
 `searchDevices`, `getFeatures`, `getPassphraseState`, and chain method
 responses. This page is the single reference for what each one means, when
 it changes, and how its shape varies by transport.
@@ -199,7 +199,7 @@ returns:
   "deviceType": "classic1s",                       // transport-level
   "deviceId":   "399A2470958EDB3D9F3826C2",        // seed state; changes on reset
   "path":       "399A2470958EDB3D9F3826C2",        // transport internal; varies by transport
-  "name":       "OneKey Classic 1S"                // display label
+  "name":       "UnionKey Classic 1S"                // display label
 }
 ```
 
@@ -212,7 +212,7 @@ A subsequent `getFeatures(connectId)` adds:
   "session_id":      "80cb8aef933870e4…",          // ephemeral; resets on lock
   "passphrase_protection": true,
   "unlocked":        true,
-  "label":           "OneKey Classic 1S"
+  "label":           "UnionKey Classic 1S"
 }
 ```
 

@@ -1,11 +1,11 @@
-# `@onekeyfe/hd-transport`
+# `@unionkeyfe/hd-transport`
 
-`@onekeyfe/hd-transport` is a library for low-level communication with OneKey Hardware.
+`@unionkeyfe/hd-transport` is a library for low-level communication with UnionKey Hardware.
 
 ## What is the purpose
 
-- translate JSON payloads to binary messages using protobuf definitions comprehensible to OneKey devices
-- chunking and reading chunked messages according to the [OneKey protocol](./protocol.md)
+- translate JSON payloads to binary messages using protobuf definitions comprehensible to UnionKey devices
+- chunking and reading chunked messages according to the [UnionKey protocol](./protocol.md)
 - exposing single API for various transport methods:
   - Http Transport
   - React Native Transport
@@ -26,4 +26,4 @@ yarn update:protobuf to generate new ./messages.json and ./src/types/messages.ts
 
 ## Docs
 
-Documentation is available [hardware-js-sdk](https://developer.onekey.so/connect-to-hardware/hardware-sdk/start)
+Documentation is available [hardware-js-sdk](https://developer.unionkey.io/connect-to-hardware/hardware-sdk/start)

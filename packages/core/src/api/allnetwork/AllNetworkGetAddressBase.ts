@@ -4,7 +4,7 @@ import {
   HardwareError,
   HardwareErrorCode,
   HardwareErrorCodeMessage,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import { serializedPath, toHardened } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';

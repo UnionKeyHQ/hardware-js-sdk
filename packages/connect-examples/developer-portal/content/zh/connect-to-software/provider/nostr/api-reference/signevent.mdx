@@ -60,7 +60,7 @@ export type Event = {
 const event = {
   created_at: 1700000000,
   kind: 1,
-  content: "OneKey",
+  content: "UnionKey",
   tags: [],
 };
 const provider = (window.$onekey && window.$onekey.nostr) || window.nostr;
@@ -70,5 +70,5 @@ const signedEvent = await provider.signEvent(event);
 
 ### 演示
 
-<iframe src="https://codepen.io/OneKeyHQ/pen/YzBOVgV" width="100%" height="400" frameBorder="0" allowFullScreen></iframe>
+<iframe src="https://codepen.io/UnionKeyHQ/pen/YzBOVgV" width="100%" height="400" frameBorder="0" allowFullScreen></iframe>
 

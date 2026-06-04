@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { ScdoSignMessage as HardwareScdoSignMessage } from '@onekeyfe/hd-transport';
+import type { ScdoSignMessage as HardwareScdoSignMessage } from '@unionkeyfe/hd-transport';
 
 export default class ScdoSignMessage extends BaseMethod<HardwareScdoSignMessage> {
   init() {

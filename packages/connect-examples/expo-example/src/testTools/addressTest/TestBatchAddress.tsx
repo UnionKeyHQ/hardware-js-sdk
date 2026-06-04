@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { Picker } from '@react-native-picker/picker';
 import { Stack, Text, View } from 'tamagui';
 import { useIntl } from 'react-intl';
@@ -14,7 +14,7 @@ import TestRunnerOptionButtons from '../../components/BaseTestRunner/TestRunnerO
 import { useHardwareInputPinDialog } from '../../provider/HardwareInputPinProvider';
 
 import type { TestCaseDataWithKey } from '../../components/BaseTestRunner/types';
-import type { CoreMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
 import type { AddressBatchTestCase } from './types';
 
 type TestCaseDataType = AddressBatchTestCase['data'][0];

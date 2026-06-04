@@ -12,7 +12,7 @@ title: cardanoSignTransaction
 
 ### Cardano: Sign transaction <a href="#cardano-sign-transaction" id="cardano-sign-transaction"></a>
 
-Asks device to sign given transaction. User is asked to confirm all transaction details on OneKey.
+Asks device to sign given transaction. User is asked to confirm all transaction details on UnionKey.
 
 ```javascript
 const response = await HardwareSDK.cardanoSignTransaction(connectId, deviceId, params);
@@ -64,7 +64,7 @@ The transaction
 
 #### Stake pool registration certificate specifics <a href="#stake-pool-registration-certificate-specifics" id="stake-pool-registration-certificate-specifics"></a>
 
-OneKey supports signing of stake pool registration certificates as a pool owner. The transaction may contain external inputs (e.g. belonging to the pool operator) and OneKey is not able to verify whether they are actually external or not, so if we allowed signing the transaction with a spending key, there is the risk of losing funds from an input that the user did not intend to spend from. Moreover there is the risk of inadvertedly signing a withdrawal in the transaction if there's any. To mitigate those risks, we introduced special validation rules for stake pool registration transactions which are validated on OneKey as well. The validation rules are the following:
+UnionKey supports signing of stake pool registration certificates as a pool owner. The transaction may contain external inputs (e.g. belonging to the pool operator) and UnionKey is not able to verify whether they are actually external or not, so if we allowed signing the transaction with a spending key, there is the risk of losing funds from an input that the user did not intend to spend from. Moreover there is the risk of inadvertedly signing a withdrawal in the transaction if there's any. To mitigate those risks, we introduced special validation rules for stake pool registration transactions which are validated on UnionKey as well. The validation rules are the following:
 
 1. The transaction must not contain any other certificates, not even another stake pool registration
 2. The transaction must not contain any withdrawals
@@ -73,12 +73,12 @@ OneKey supports signing of stake pool registration certificates as a pool owner.
 
 #### Governance registration (Catalyst and other) <a href="#governance-registration-catalyst-and-other" id="governance-registration-catalyst-and-other"></a>
 
-OneKey supports signing transactions with auxiliary data containing a governance registration. Governance registrations used to follow [CIP-15](https://cips.cardano.org/cips/cip15/), which has been superseded by [CIP-36](https://cips.cardano.org/cips/cip36/). Currently, OneKey supports both CIP-15 and CIP-36 formats, the intended standard can be specified in the `format` field (with CIP-15 being the default). They differ in the following:
+UnionKey supports signing transactions with auxiliary data containing a governance registration. Governance registrations used to follow [CIP-15](https://cips.cardano.org/cips/cip15/), which has been superseded by [CIP-36](https://cips.cardano.org/cips/cip36/). Currently, UnionKey supports both CIP-15 and CIP-36 formats, the intended standard can be specified in the `format` field (with CIP-15 being the default). They differ in the following:
 
-* CIP-36 allows delegating the voting power to several voting public keys with different voting power (CardanoGovernanceRegistrationDelegation) as an alternative to providing only a single voting public key. Note that OneKey Firmware supports at most 32 delegations in a single governance registration.
-* CIP-36 registrations contain the votingPurpose field. The value 0 is intended for Catalyst voting and the value 1 is intended for other purposes. If no value is provided, OneKey serializes 0 by default (if the CIP-36 format is used).
+* CIP-36 allows delegating the voting power to several voting public keys with different voting power (CardanoGovernanceRegistrationDelegation) as an alternative to providing only a single voting public key. Note that UnionKey Firmware supports at most 32 delegations in a single governance registration.
+* CIP-36 registrations contain the votingPurpose field. The value 0 is intended for Catalyst voting and the value 1 is intended for other purposes. If no value is provided, UnionKey serializes 0 by default (if the CIP-36 format is used).
 
-OneKey does not support the 1694 derivation paths at the moment.
+UnionKey does not support the 1694 derivation paths at the moment.
 
 ### Examples <a href="#transaction-examples" id="transaction-examples"></a>
 
@@ -211,7 +211,7 @@ HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
                 rewardAccount: 'stake1uya87zwnmax0v6nnn8ptqkl6ydx4522kpsc3l3wmf3yswygwx45el', // bech32-encoded stake pool reward account
                 owners: [
                     {
-                        stakingKeyPath: "m/1852'/1815'/0'/2/0", // this is the path to the owner's key that will be signing the tx on OneKey
+                        stakingKeyPath: "m/1852'/1815'/0'/2/0", // this is the path to the owner's key that will be signing the tx on UnionKey
                     },
                     {
                         stakingKeyHash: '3a7f09d3df4cf66a7399c2b05bfa234d5a29560c311fc5db4c490711', // other owner
@@ -294,7 +294,7 @@ HardwareSDK.cardanoSignTransaction(connectId, deviceId, {
 
 #### Result <a href="#result" id="result"></a>
 
-Since transaction streaming has been introduced to the Cardano implementation on OneKey because of memory constraints, OneKey no longer returns the whole serialized transaction as a result of the `CardanoSignTransaction` call. Instead the transaction hash, transaction witnesses and auxiliary data supplement are returned and the serialized transaction needs to be assembled by the client.
+Since transaction streaming has been introduced to the Cardano implementation on UnionKey because of memory constraints, UnionKey no longer returns the whole serialized transaction as a result of the `CardanoSignTransaction` call. Instead the transaction hash, transaction witnesses and auxiliary data supplement are returned and the serialized transaction needs to be assembled by the client.
 
 CardanoSignedTxData type
 

@@ -4,7 +4,7 @@ const path = require('path');
 
 const rootDir = path.join(__dirname, '../../../../');
 
-const sourceDir = path.join(rootDir, 'node_modules/@onekeyfe/hd-web-sdk/build/');
+const sourceDir = path.join(rootDir, 'node_modules/@unionkeyfe/hd-web-sdk/build/');
 const targetDir = path.join(rootDir, 'packages/connect-examples/electron-example/public/js-sdk/');
 
 async function copyFiles() {

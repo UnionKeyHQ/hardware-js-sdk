@@ -5,11 +5,11 @@ title: "Android: Connect via Bluetooth (Native)"
 # Android: Connect via Bluetooth (Native)
 
 > **Note:**
-> Demo: Native Android example (WebView + JSBridge + Nordic BLE) → [native-android-example](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-android-example)
+> Demo: Native Android example (WebView + JSBridge + Nordic BLE) → [native-android-example](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-android-example)
 > This guide builds on the [Low-Level Transport Plugin](/en/hardware-sdk/concepts/low-level-plugin) — read that first for BLE message format and protocol details.
 
 
-This guide shows how to integrate `@onekeyfe/hd-common-connect-sdk` in a native Android host via a low-level adapter. The JavaScript bundle runs in a WebView; transport calls are forwarded to native (Nordic BLE) and bridged back to JS.
+This guide shows how to integrate `@unionkeyfe/hd-common-connect-sdk` in a native Android host via a low-level adapter. The JavaScript bundle runs in a WebView; transport calls are forwarded to native (Nordic BLE) and bridged back to JS.
 
 ## Critical: BLE Connection Flow
 
@@ -26,7 +26,7 @@ Android BLE requires a specific connection sequence. **Skipping steps will cause
 
 ### Why Bonding First?
 
-OneKey devices require a secure BLE bond. Without bonding:
+UnionKey devices require a secure BLE bond. Without bonding:
 - `startNotifications()` may fail silently
 - Device responds but SDK reports "Device not found"
 - Intermittent connection drops
@@ -95,7 +95,7 @@ Key libraries:
   - `no.nordicsemi.android.kotlin.ble:client:1.1.0`
   - Reason: `includeStoredBondedDevices` in `BleScannerSettings` requires > 1.0.9
 
-OneKey BLE UUIDs: See [Low-Level Transport Plugin - Quick Reference](/en/hardware-sdk/concepts/low-level-plugin#quick-reference)
+UnionKey BLE UUIDs: See [Low-Level Transport Plugin - Quick Reference](/en/hardware-sdk/concepts/low-level-plugin#quick-reference)
 
 ## Step 1. Gradle and Manifest
 
@@ -183,18 +183,18 @@ class MainActivity : AppCompatActivity() {
 ## Step 4. BLE scan (include stored bonded devices)
 
 ```kotlin
-private val ONEKEY_SERVICE_UUID: UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb")
+private val UNIONKEY_SERVICE_UUID: UUID = UUID.fromString("00000001-0000-1000-8000-00805f9b34fb")
 private val bleScanner by lazy { BleScanner(this) }
 private val aggregator = BleScanResultAggregator()
 
-data class OneKeyDeviceInfo(val id: String, val name: String)
+data class UnionKeyDeviceInfo(val id: String, val name: String)
 
-private fun startScan(onResult: (List<OneKeyDeviceInfo>) -> Unit) {
+private fun startScan(onResult: (List<UnionKeyDeviceInfo>) -> Unit) {
   if (!ensureBluetoothPermissions()) return
 
   val settings = BleScannerSettings(
     scanMode = BleScanMode.LOW_LATENCY,
-    filter = BleScanFilter(serviceUUIDs = listOf(FilteredServiceUuid(ONEKEY_SERVICE_UUID))),
+    filter = BleScanFilter(serviceUUIDs = listOf(FilteredServiceUuid(UNIONKEY_SERVICE_UUID))),
     includeStoredBondedDevices = true,               // requires Nordic BLE >= 1.1.0
   )
 
@@ -204,7 +204,7 @@ private fun startScan(onResult: (List<OneKeyDeviceInfo>) -> Unit) {
     .onEach { results ->
       val devices = results.mapNotNull { r -> r.device }
         .distinctBy { it.address }
-        .map { OneKeyDeviceInfo(id = it.address, name = it.name ?: "") }
+        .map { UnionKeyDeviceInfo(id = it.address, name = it.name ?: "") }
       onResult(devices)
     }
     .launchIn(lifecycleScope)
@@ -238,8 +238,8 @@ webview.registerHandler("connect", BridgeHandler { data, cb ->
     val gatt = ClientBleGatt.getInstance(this@MainActivity, mac)
     connection = gatt
 
-    writeCh = gatt.getCharacteristic(ONEKEY_SERVICE_UUID, UUID.fromString("00000002-0000-1000-8000-00805f9b34fb"))
-    notifyCh = gatt.getCharacteristic(ONEKEY_SERVICE_UUID, UUID.fromString("00000003-0000-1000-8000-00805f9b34fb"))
+    writeCh = gatt.getCharacteristic(UNIONKEY_SERVICE_UUID, UUID.fromString("00000002-0000-1000-8000-00805f9b34fb"))
+    notifyCh = gatt.getCharacteristic(UNIONKEY_SERVICE_UUID, UUID.fromString("00000003-0000-1000-8000-00805f9b34fb"))
 
     notifyCh?.getNotifications()?.onEach { packet ->
       // Forward hex to JS receiver
@@ -281,7 +281,7 @@ If you customize the adapter, the core idea remains: initialize with `env: 'lowl
 
 Handle `UI_EVENT` in your JS bundle and respond with `HardwareSDK.uiResponse`. See [Config Event](/en/hardware-sdk/core-api-guide#events-ui) for event wiring and the WebUSB guide for minimal, production-ready dialogs.
 
-- PIN on device: `payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE'`
+- PIN on device: `payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE'`
 - Passphrase on device: `{ passphraseOnDevice: true, value: '' }`
 
 ## Step 9. Checklist

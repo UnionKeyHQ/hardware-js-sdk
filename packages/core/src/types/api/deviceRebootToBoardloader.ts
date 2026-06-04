@@ -1,4 +1,4 @@
-import type { RebootToBoardloader, Success } from '@onekeyfe/hd-transport';
+import type { RebootToBoardloader, Success } from '@unionkeyfe/hd-transport';
 import type { Response } from '../params';
 
 export type RebootToBoardloaderParams = RebootToBoardloader;

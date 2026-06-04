@@ -1,11 +1,11 @@
-# `@onekeyfe/hd-transport-react-native`
+# `@unionkeyfe/hd-transport-react-native`
 
-`@onekeyfe/hd-transport-react-native` is a library that implements transport communication by [react-native-ble-plx](https://github.com/dotintent/react-native-ble-plx).
+`@unionkeyfe/hd-transport-react-native` is a library that implements transport communication by [react-native-ble-plx](https://github.com/dotintent/react-native-ble-plx).
 
 ## What is the purpose
 
-- translate JSON payloads to binary messages using protobuf definitions comprehensible to OneKey devices
-- chunking and reading chunked messages according to the [OneKey protocol](./protocol.md)
+- translate JSON payloads to binary messages using protobuf definitions comprehensible to UnionKey devices
+- chunking and reading chunked messages according to the [UnionKey protocol](./protocol.md)
 - exposing single API for various transport methods:
   - Http Transport
   - React Native Transport
@@ -26,4 +26,4 @@ yar update:protobuf to generate new ./messages.json and ./src/types/messages.ts
 
 ## Docs
 
-Documentation is available [hardware-js-sdk](https://developer.onekey.so/connect-to-hardware/hardware-sdk/start)
+Documentation is available [hardware-js-sdk](https://developer.unionkey.io/connect-to-hardware/hardware-sdk/start)

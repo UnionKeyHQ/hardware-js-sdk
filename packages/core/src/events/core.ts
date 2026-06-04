@@ -1,4 +1,4 @@
-import { HardwareError } from '@onekeyfe/hd-shared';
+import { HardwareError } from '@unionkeyfe/hd-shared';
 
 import type { Unsuccessful } from '../types/params';
 import type {

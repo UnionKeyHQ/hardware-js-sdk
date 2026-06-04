@@ -16,7 +16,7 @@ export function ProLockScreen({ basePath, locale, device, disabled = false, onTa
   const i18n = useMemo(() => getProI18n(locale), [locale])
   const wallpaper = joinPath(basePath, '/hardware-pro/res/wallpaper-1.jpg')
 
-  const title = device?.deviceName ?? device?.model ?? 'OneKey Pro'
+  const title = device?.deviceName ?? device?.model ?? 'UnionKey Pro'
   const subtitle = device?.bleName ?? ''
 
   return (

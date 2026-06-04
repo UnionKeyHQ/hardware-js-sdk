@@ -4,7 +4,7 @@ title: Passphrase（核心指南）
 
 # Passphrase（核心指南）
 
-处理 OneKey 设备 Passphrase（隐藏钱包）的基本规则与最佳实践。
+处理 UnionKey 设备 Passphrase（隐藏钱包）的基本规则与最佳实践。
 
 ## 关键要点
 
@@ -23,7 +23,7 @@ title: Passphrase（核心指南）
 | Touch | 是（触屏键盘） | 是 |
 | Pro | 是（触屏键盘） | 是 |
 
-所有 OneKey 设备均支持 Passphrase 和会话缓存（`passphraseState`）。
+所有 UnionKey 设备均支持 Passphrase 和会话缓存（`passphraseState`）。
 
 ## 交互流程
 
@@ -141,7 +141,7 @@ await HardwareSDK.btcGetAddress(connectId, deviceId, {
 对于短生命周期的进程（CLI 工具、自动化脚本），可以使用 `preloadSessionCache` 持久化并恢复会话。
 
 ```ts
-import { preloadSessionCache } from '@onekeyfe/hd-core';
+import { preloadSessionCache } from '@unionkeyfe/hd-core';
 
 // 启动时：从持久化存储恢复会话
 const { deviceId, passphraseState, sessionId } = loadFromStorage();
@@ -154,7 +154,7 @@ await HardwareSDK.evmGetAddress(connectId, deviceId, {
 });
 ```
 
-> **重要：设备锁定会使会话失效。** 所有 OneKey 设备在锁定时（无论是自动锁屏、手动锁定还是 USB 断开）都会清除 passphrase 会话。锁定后缓存的 `session_id` 失效，用户必须在解锁（输入 PIN）后重新输入 passphrase。会话复用仅在设备保持解锁状态时有效。
+> **重要：设备锁定会使会话失效。** 所有 UnionKey 设备在锁定时（无论是自动锁屏、手动锁定还是 USB 断开）都会清除 passphrase 会话。锁定后缓存的 `session_id` 失效，用户必须在解锁（输入 PIN）后重新输入 passphrase。会话复用仅在设备保持解锁状态时有效。
 
 ### 先解锁模式（CLI 推荐）
 

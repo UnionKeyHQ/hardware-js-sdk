@@ -1,4 +1,4 @@
-import { serializeError } from '@onekeyfe/hd-shared';
+import { serializeError } from '@unionkeyfe/hd-shared';
 
 import type { IFRAME } from './iframe';
 import type { CommonParams, ConnectSettings, CoreApi } from '../types';

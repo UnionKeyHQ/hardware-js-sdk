@@ -1,11 +1,11 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { CosmosSignTx as HardwareCosmosSignTx } from '@onekeyfe/hd-transport';
+import type { CosmosSignTx as HardwareCosmosSignTx } from '@unionkeyfe/hd-transport';
 import type { CosmosSignTransactionParams } from '../../types';
 
 export default class CosmosSignTransaction extends BaseMethod<HardwareCosmosSignTx> {

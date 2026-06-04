@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { NEMGetAddress as HardwareNEMGetAddress } from '@onekeyfe/hd-transport';
+import type { NEMGetAddress as HardwareNEMGetAddress } from '@unionkeyfe/hd-transport';
 import type { NEMAddress, NEMGetAddressParams } from '../../types';
 
 const MAINNET = 0x68; // 104

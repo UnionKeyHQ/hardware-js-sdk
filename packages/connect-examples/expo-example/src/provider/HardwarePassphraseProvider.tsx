@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 import { EnterPhase } from '../components/EnterPhase';
 

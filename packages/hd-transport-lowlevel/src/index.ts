@@ -1,8 +1,8 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
-import transport, { LogBlockCommand } from '@onekeyfe/hd-transport';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import transport, { LogBlockCommand } from '@unionkeyfe/hd-transport';
 
 import type EventEmitter from 'events';
-import type { LowlevelTransportSharedPlugin } from '@onekeyfe/hd-transport';
+import type { LowlevelTransportSharedPlugin } from '@unionkeyfe/hd-transport';
 import type { LowLevelAcquireInput } from './types';
 
 const { check, buildBuffers, receiveOne, parseConfigure } = transport;

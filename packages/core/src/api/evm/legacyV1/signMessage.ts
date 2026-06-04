@@ -2,7 +2,7 @@ import type {
   EthereumMessageSignature,
   EthereumSignMessageOneKey,
   TypedCall,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 
 export default async function ({
   typedCall,

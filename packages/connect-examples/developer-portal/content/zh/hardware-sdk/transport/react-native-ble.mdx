@@ -5,18 +5,18 @@ title: React Native BLE (hd-ble-sdk)
 # React Native BLE (hd-ble-sdk)
 
 > **注意：**
-> 演示：React Native / Expo 示例 → [react-native-demo](https://github.com/OneKeyHQ/hardware-js-sdk/tree/develop/packages/connect-examples/react-native-demo)
+> 演示：React Native / Expo 示例 → [react-native-demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/develop/packages/connect-examples/react-native-demo)
 
 
-本指南展示如何使用纯 React Native BLE 堆栈与 `@onekeyfe/hd-ble-sdk` 和 `@onekeyfe/hd-transport-react-native`。无需 WebView 或底层适配器。链 API 的使用方式与快速开始中相同。
+本指南展示如何使用纯 React Native BLE 堆栈与 `@unionkeyfe/hd-ble-sdk` 和 `@unionkeyfe/hd-transport-react-native`。无需 WebView 或底层适配器。链 API 的使用方式与快速开始中相同。
 
 ## 安装
 
 我们建议在应用层安装 RN 原生依赖，以便自动链接将原生模块包含在您的 Dev Client 构建中：
 
 ```bash
-npm i @onekeyfe/hd-ble-sdk @onekeyfe/hd-transport-react-native \
-      @onekeyfe/react-native-ble-utils react-native-ble-plx \
+npm i @unionkeyfe/hd-ble-sdk @unionkeyfe/hd-transport-react-native \
+      @unionkeyfe/react-native-ble-utils react-native-ble-plx \
       buffer process react-native-get-random-values react-native-url-polyfill
 ```
 
@@ -32,9 +32,9 @@ global.Buffer = global.Buffer || require('buffer').Buffer;
 global.process = global.process || require('process');
 
 // 在 SDK 初始化之前注册 RN transport 副作用
-import '@onekeyfe/hd-transport-react-native';
+import '@unionkeyfe/hd-transport-react-native';
 
-import HardwareSDK from '@onekeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
 ```
 
 ## Android 设置
@@ -112,7 +112,7 @@ export async function setupBle() {
   });
 
   // 订阅 UI 事件（PIN / 密码短语 / 确认）
-  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core'
+  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
   // HardwareSDK.on(UI_EVENT, (msg) => { /* 打开对话框并通过 HardwareSDK.uiResponse(...) 回复 */ });
 }
 ```
@@ -140,7 +140,7 @@ const deviceId = features.payload.device_id;
 const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (res.success) {
@@ -154,7 +154,7 @@ if (res.success) {
 
 - 始终尽早订阅 `UI_EVENT`，以免 PIN/密码短语/确认阻塞请求。参见 [配置事件](/zh/hardware-sdk/core-api-guide#events-ui)。
 - 保持 BLE 权限与操作系统版本同步。在物理设备上测试。
-- 更多示例请查看：[react-native-demo](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo)
+- 更多示例请查看：[react-native-demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo)
 
 ## 继续
 

@@ -16,7 +16,7 @@
 | --------------------------------------- | ---- | ----------------------------------------------------- |
 | `NEXT_PUBLIC_DOCS_AI_API_URL`           | 是   | AI 服务地址（支持完整 URL，或以 `/` 开头的相对路径）  |
 | `NEXT_PUBLIC_DOCS_AI_ENABLED`           | 否   | 是否启用弹窗，默认启用；设为 `false` 或 `0` 时关闭    |
-| `NEXT_PUBLIC_DOCS_AI_LIBRARY_ID`        | 否   | 传给后端的文档库 ID，默认 `/onekeyhq/hardware-js-sdk` |
+| `NEXT_PUBLIC_DOCS_AI_LIBRARY_ID`        | 否   | 传给后端的文档库 ID，默认 `/unionkeyhq/hardware-js-sdk` |
 | `NEXT_PUBLIC_DOCS_AI_AUTH_HEADER_NAME`  | 否   | 额外鉴权 Header 名（前端可见，仅适合公开凭证）        |
 | `NEXT_PUBLIC_DOCS_AI_AUTH_HEADER_VALUE` | 否   | 额外鉴权 Header 值                                    |
 
@@ -71,7 +71,7 @@ yarn dev:docs:ai-gateway
 在另一个终端执行（当前环境建议用 webpack 模式）：
 
 ```bash
-NEXT_PUBLIC_DOCS_AI_API_URL=http://localhost:8787/api/chat NEXT_PUBLIC_DOCS_AI_LIBRARY_ID=/onekeyhq/hardware-js-sdk yarn dev:docs:webpack
+NEXT_PUBLIC_DOCS_AI_API_URL=http://localhost:8787/api/chat NEXT_PUBLIC_DOCS_AI_LIBRARY_ID=/unionkeyhq/hardware-js-sdk yarn dev:docs:webpack
 ```
 
 启动后访问：`http://localhost:3001/en/`
@@ -79,7 +79,7 @@ NEXT_PUBLIC_DOCS_AI_API_URL=http://localhost:8787/api/chat NEXT_PUBLIC_DOCS_AI_L
 ## 5. 线上/自建网关示例
 
 ```bash
-NEXT_PUBLIC_DOCS_AI_API_URL=https://your-ai-gateway.example.com/api/chat NEXT_PUBLIC_DOCS_AI_LIBRARY_ID=/onekeyhq/hardware-js-sdk yarn dev
+NEXT_PUBLIC_DOCS_AI_API_URL=https://your-ai-gateway.example.com/api/chat NEXT_PUBLIC_DOCS_AI_LIBRARY_ID=/unionkeyhq/hardware-js-sdk yarn dev
 ```
 
 ## 6. 代码位置

@@ -1,8 +1,8 @@
 import { Layout } from 'nextra-theme-docs'
 import { getPageMap } from 'nextra/page-map'
-import { OneKeyWordmark } from '../../components/OneKeyLogo'
+import { UnionKeyWordmark } from '../../components/UnionKeyLogo'
 import { NavbarMenuActiveMarker } from '../../components/NavbarMenuActiveMarker'
-import OneKeyNavbar from '../../components/OneKeyNavbar'
+import UnionKeyNavbar from '../../components/UnionKeyNavbar'
 import Footer from '../../components/Footer'
 import DocAIChatWidget from '../../components/DocAIChatWidget.client'
 
@@ -19,13 +19,13 @@ export default async function LocaleLayout({ children, params }) {
   const pageMap = await getPageMap(`/${lang}`)
 
   const navbar = (
-    <OneKeyNavbar
-      logo={<OneKeyWordmark />}
+    <UnionKeyNavbar
+      logo={<UnionKeyWordmark />}
       logoLink={`/${lang}`}
-      projectLink="https://github.com/OneKeyHQ/hardware-js-sdk"
+      projectLink="https://github.com/UnionKeyHQ/hardware-js-sdk"
     >
       <NavbarMenuActiveMarker lang={lang} />
-    </OneKeyNavbar>
+    </UnionKeyNavbar>
   )
 
   return (
@@ -38,7 +38,7 @@ export default async function LocaleLayout({ children, params }) {
       <Layout
         navbar={navbar}
         pageMap={pageMap}
-        docsRepositoryBase="https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/developer-portal"
+        docsRepositoryBase="https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/developer-portal"
         i18n={[
           { locale: 'en', name: 'English' },
           { locale: 'zh', name: '简体中文' }

@@ -1,4 +1,4 @@
-import type { TronMessageSignature } from '@onekeyfe/hd-transport';
+import type { TronMessageSignature } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type TronSignMessageParams = {

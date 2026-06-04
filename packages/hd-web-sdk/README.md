@@ -1,34 +1,34 @@
-# `@onekeyfe/hd-web-sdk`
+# `@unionkeyfe/hd-web-sdk`
 
-`@onekeyfe/hd-web-sdk` is a browser implementation of hardware-sdk that creates an iframe and communicates with transport through the iframe to avoid cross-domain issues.
+`@unionkeyfe/hd-web-sdk` is a browser implementation of hardware-sdk that creates an iframe and communicates with transport through the iframe to avoid cross-domain issues.
 
 ## Installation
 
 Install library as npm module:
 
 ```javascript
-npm install @onekeyfe/hd-web-sdk
+npm install @unionkeyfe/hd-web-sdk
 ```
 
 or
 
 ```javascript
-yarn add @onekeyfe/hd-web-sdk
+yarn add @unionkeyfe/hd-web-sdk
 ```
 
 ## Initialization
 
 ```javascript
-import { HardwareSDK } from '@onekeyfe/hd-web-sdk';
+import { HardwareSDK } from '@unionkeyfe/hd-web-sdk';
 
 function init() {
   HardwareSDK.init({
     debug: false,
-    connectSrc: 'https://jssdk.onekey.so/'
+    connectSrc: 'https://jssdk.unionkey.io/'
   });
 }
 ```
 
 ## Docs
 
-Documentation is available [hardware-js-sdk](https://developer.onekey.so/connect-to-hardware/hardware-sdk/start)
+Documentation is available [hardware-js-sdk](https://developer.unionkey.io/connect-to-hardware/hardware-sdk/start)

@@ -1,10 +1,10 @@
 ---
-description: Connect to OneKey from React apps using wagmi and the injected EIP‑1193 provider
+description: Connect to UnionKey from React apps using wagmi and the injected EIP‑1193 provider
 ---
 
 # React + wagmi
 
-This guide shows a minimal, EIP‑1193‑based way to connect OneKey from React apps using wagmi. Core idea: prefer OneKey’s dedicated injection (`window.$onekey.ethereum`), then fall back to multi‑provider list or generic `window.ethereum`.
+This guide shows a minimal, EIP‑1193‑based way to connect UnionKey from React apps using wagmi. Core idea: prefer UnionKey’s dedicated injection (`window.$onekey.ethereum`), then fall back to multi‑provider list or generic `window.ethereum`.
 
 ## Install
 
@@ -12,11 +12,11 @@ This guide shows a minimal, EIP‑1193‑based way to connect OneKey from React 
 npm i wagmi viem
 ```
 
-wagmi v2 is built on viem. This guide uses the Injected connector to work with injected wallets (OneKey / other EIP‑1193 providers).
+wagmi v2 is built on viem. This guide uses the Injected connector to work with injected wallets (UnionKey / other EIP‑1193 providers).
 
-## Create a OneKey‑first injected connector
+## Create a UnionKey‑first injected connector
 
-Prefer OneKey’s dedicated injection to avoid ambiguity when multiple wallets are installed.
+Prefer UnionKey’s dedicated injection to avoid ambiguity when multiple wallets are installed.
 
 ```ts
 // onekeyConnector.ts
@@ -24,14 +24,14 @@ import { createConfig, http } from 'wagmi'
 import { mainnet, polygon, arbitrum, base, optimism } from 'wagmi/chains'
 import { injected } from 'wagmi/connectors'
 
-function getOneKeyFirstProvider(): any {
-  // 1) Prefer OneKey’s dedicated injection
+function getUnionKeyFirstProvider(): any {
+  // 1) Prefer UnionKey’s dedicated injection
   const onekey = (window as any)?.$onekey?.ethereum
   if (onekey) return onekey
 
-  // 2) Fallback: find OneKey from multi-provider list
+  // 2) Fallback: find UnionKey from multi-provider list
   const list = (window as any)?.ethereum?.providers
-  const okFromList = list?.find((p: any) => p?.isOneKey || p?.onekey || (typeof p?.isOneKey === 'function' && p.isOneKey()))
+  const okFromList = list?.find((p: any) => p?.isUnionKey || p?.onekey || (typeof p?.isUnionKey === 'function' && p.isUnionKey()))
   if (okFromList) return okFromList
 
   // 3) Final fallback: single injected provider
@@ -45,8 +45,8 @@ export const config = createConfig({
       target() {
         return {
           id: 'onekey',
-          name: 'OneKey',
-          provider: getOneKeyFirstProvider,
+          name: 'UnionKey',
+          provider: getUnionKeyFirstProvider,
         }
       },
       shimDisconnect: true,
@@ -64,7 +64,7 @@ export const config = createConfig({
 
 Notes
 - Prefer `window.$onekey.ethereum` to keep behavior deterministic in multi‑wallet environments.
-- If OneKey is not installed, the connector falls back to other injected providers.
+- If UnionKey is not installed, the connector falls back to other injected providers.
 - Trigger `eth_requestAccounts` on a user gesture and handle `4001` (user rejected), as in the legacy docs.
 
 ## App setup
@@ -129,7 +129,7 @@ export default function App() {
 import { createWalletClient, custom } from 'viem'
 
 const provider = (window as any)?.$onekey?.ethereum
-  || (window as any)?.ethereum?.providers?.find((p: any) => p?.isOneKey || p?.onekey)
+  || (window as any)?.ethereum?.providers?.find((p: any) => p?.isUnionKey || p?.onekey)
   || (window as any)?.ethereum
 
 const client = createWalletClient({ transport: custom(provider) })
@@ -152,10 +152,10 @@ const txHash = await provider.request({
 
 ## Mobile & Deeplinks
 
-Use OneKey deeplinks for mobile web/WebViews:
+Use UnionKey deeplinks for mobile web/WebViews:
 
 - Custom scheme: `onekey-wallet://wc?uri={encodeURIComponent(wcUri)}`
-- Universal link: `https://app.onekey.so/wc/connect/wc?uri={encodeURIComponent(wcUri)}`
+- Universal link: `https://app.unionkey.io/wc/connect/wc?uri={encodeURIComponent(wcUri)}`
 
 ## Troubleshooting
 
@@ -163,7 +163,7 @@ Use OneKey deeplinks for mobile web/WebViews:
 
 ## Optional: EIP‑6963 (multi‑wallet discovery)
 
-If desired, use EIP‑6963 to discover installed wallets first and prefer OneKey when available. Example:
+If desired, use EIP‑6963 to discover installed wallets first and prefer UnionKey when available. Example:
 
 ```ts
 let onekeyProvider: any = null
@@ -172,7 +172,7 @@ const providers: any[] = []
 function onAnnounceProvider(event: any) {
   const { info, provider } = event.detail || {}
   providers.push({ info, provider })
-  if (info?.name === 'OneKey' || info?.rdns?.includes?.('onekey')) {
+  if (info?.name === 'UnionKey' || info?.rdns?.includes?.('onekey')) {
     onekeyProvider = provider
   }
 }
@@ -180,5 +180,5 @@ function onAnnounceProvider(event: any) {
 window.addEventListener('eip6963:announceProvider', onAnnounceProvider)
 window.dispatchEvent(new Event('eip6963:requestProvider'))
 
-// Prefer `onekeyProvider` at app init; otherwise fall back to getOneKeyFirstProvider()
+// Prefer `onekeyProvider` at app init; otherwise fall back to getUnionKeyFirstProvider()
 ```

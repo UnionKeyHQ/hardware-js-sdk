@@ -6,7 +6,7 @@ export default {
   name: 'two-passphrase24-密语2',
   passphrase: '^~$5@237~##94$$@',
   passphraseState: 'mnGZUpnZziAxyG449oZh3yzytw1igfS4N5',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490457',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429490457',
   data: [
     {
       method: 'cardanoGetAddress',

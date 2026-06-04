@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { SolanaGetAddress } from '@onekeyfe/hd-transport';
+import type { SolanaGetAddress } from '@unionkeyfe/hd-transport';
 import type { SolanaAddress, SolanaGetAddressParams } from '../../types';
 
 export default class SolGetAddress extends BaseMethod<SolanaGetAddress[]> {

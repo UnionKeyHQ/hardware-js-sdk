@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { BenfenSignMessage as HardwareBenfenSignMessage } from '@onekeyfe/hd-transport';
+import type { BenfenSignMessage as HardwareBenfenSignMessage } from '@unionkeyfe/hd-transport';
 
 export default class BenfenSignMessage extends BaseMethod<HardwareBenfenSignMessage> {
   init() {

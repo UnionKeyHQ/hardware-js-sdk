@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-export function OneKeyLogo({ size = 32, className = '' }) {
+export function UnionKeyLogo({ size = 32, className = '' }) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH
     ? process.env.NEXT_PUBLIC_BASE_PATH.replace(/\/$/, '')
     : ''
@@ -11,7 +11,7 @@ export function OneKeyLogo({ size = 32, className = '' }) {
   return (
     <Image
       src={iconSrc}
-      alt="OneKey"
+      alt="UnionKey"
       width={size}
       height={size}
       className={`rounded-lg ${className}`}
@@ -20,10 +20,10 @@ export function OneKeyLogo({ size = 32, className = '' }) {
   )
 }
 
-export function OneKeyWordmark({ className = '' }) {
+export function UnionKeyWordmark({ className = '' }) {
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      <OneKeyLogo size={32} />
+      <UnionKeyLogo size={32} />
       <span className="font-bold text-xl tracking-tight flex items-baseline">
         {/* Force colors with inline styles to override any theme styling */}
         <span
@@ -35,7 +35,7 @@ export function OneKeyWordmark({ className = '' }) {
             WebkitTextFillColor: 'unset'
           }}
         >
-          OneKey
+          UnionKey
         </span>
         <span
           className="onekey-logo-subtitle ml-1.5 font-normal"

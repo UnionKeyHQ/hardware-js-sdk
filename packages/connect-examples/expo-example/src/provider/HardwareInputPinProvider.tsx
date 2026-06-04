@@ -1,9 +1,9 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { UI_RESPONSE, supportInputPinOnSoftware } from '@onekeyfe/hd-core';
+import { UI_RESPONSE, supportInputPinOnSoftware } from '@unionkeyfe/hd-core';
 
 import { ReceivePin } from '../components/ReceivePin';
 
-import type { Features } from '@onekeyfe/hd-core';
+import type { Features } from '@unionkeyfe/hd-core';
 import type { ReactNode } from 'react';
 
 interface DialogState {

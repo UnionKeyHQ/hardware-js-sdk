@@ -5,7 +5,7 @@ import type { EthereumSignTypedDataMessage, EthereumSignTypedDataTypes } from '.
 // Mock the config module to avoid package.json resolution issues
 jest.mock('../src/data/config', () => ({
   getSDKVersion: jest.fn(() => '1.0.0'),
-  DEFAULT_DOMAIN: 'https://jssdk.onekey.so/1.0.0/',
+  DEFAULT_DOMAIN: 'https://jssdk.unionkey.io/1.0.0/',
 }));
 
 jest.mock('../src/data-manager/TransportManager', () => ({

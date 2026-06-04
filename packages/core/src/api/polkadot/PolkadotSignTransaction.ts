@@ -5,7 +5,7 @@ import { formatAnyHex } from '../helpers/hexUtils';
 import { getPolkadotVersionRange, parseNetwork } from './networks';
 
 import type { PolkadotSignTransactionParams } from '../../types';
-import type { PolkadotSignTx as HardwarePolkadotSignTx } from '@onekeyfe/hd-transport';
+import type { PolkadotSignTx as HardwarePolkadotSignTx } from '@unionkeyfe/hd-transport';
 
 export default class PolkadotSignTransaction extends BaseMethod<HardwarePolkadotSignTx> {
   hasBundle = false;

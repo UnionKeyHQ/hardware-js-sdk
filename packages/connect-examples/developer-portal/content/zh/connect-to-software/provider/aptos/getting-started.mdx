@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey 的 Petra 兼容 Provider 连接 Aptos
+description: 使用 UnionKey 的 Petra 兼容 Provider 连接 Aptos
 ---
 
 import { Callout } from 'nextra/components'
@@ -10,7 +10,7 @@ import { Callout } from 'nextra/components'
 了解如何检测、连接和与 Aptos 进行交互。
 
 <Callout type="info">
-OneKey 的 Aptos provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standard。
+UnionKey 的 Aptos provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standard。
 </Callout>
 
 ---
@@ -18,15 +18,15 @@ OneKey 的 Aptos provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standa
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Aptos provider
+// 检测 UnionKey Aptos provider
 const provider = window.$onekey?.aptos
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Aptos provider')
+  throw new Error('未检测到 UnionKey Aptos provider')
 }
 
 // 检查 provider 信息
-console.log('Provider:', provider.isOneKey ? 'OneKey' : '未知')
+console.log('Provider:', provider.isUnionKey ? 'UnionKey' : '未知')
 ```
 
 ---
@@ -119,13 +119,13 @@ provider.onNetworkChange((network) => {
 
 ## 从 Petra 迁移
 
-OneKey 的 Aptos provider 与 Petra 兼容。更新您的 provider 检测方式：
+UnionKey 的 Aptos provider 与 Petra 兼容。更新您的 provider 检测方式：
 
 ```typescript
 // 之前 (仅 Petra)
 const provider = window.petra
 
-// 之后 (OneKey 优先，Petra 作为备选)
+// 之后 (UnionKey 优先，Petra 作为备选)
 const provider = window.$onekey?.aptos || window.petra
 ```
 
@@ -151,5 +151,5 @@ function App() {
 }
 ```
 
-OneKey 会被 Aptos Wallet Adapter 自动检测。
+UnionKey 会被 Aptos Wallet Adapter 自动检测。
 

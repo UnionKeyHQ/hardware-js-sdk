@@ -4,7 +4,7 @@ import type {
   TonWalletVersion,
   TonWorkChain,
   UintType,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type TonSignDataParams = {

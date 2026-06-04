@@ -12,7 +12,7 @@ title: cosmosGetAddress
 
 ## Cosmos：获取地址
 
-显示指定 BIP32 路径派生的地址，并返回给调用者。用户需要在 OneKey 上确认导出。
+显示指定 BIP32 路径派生的地址，并返回给调用者。用户需要在 UnionKey 上确认导出。
 
 ```typescript
 const response = await HardwareSDK.cosmosGetAddress(connectId, deviceId, params)
@@ -26,11 +26,11 @@ const response = await HardwareSDK.cosmosGetAddress(connectId, deviceId, params)
 
 * `path` - _必需_ `string | Array<number>` 最小长度为 5。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
 * `hrp` - _可选_ `string` 地址前缀
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 
 **导出批量地址**
 
-* `bundle` - 包含 `path` 和 `showOnOneKey` 字段的对象 `Array`
+* `bundle` - 包含 `path` 和 `showOnUnionKey` 字段的对象 `Array`
 
 #### 示例
 
@@ -47,9 +47,9 @@ HardwareSDK.cosmosGetAddress(connectId, deviceId, {
 ```typescript
 HardwareSDK.cosmosGetAddress(connectId, deviceId, {
     bundle: [
-        { path: "m/44'/118'/0'/0/0", showOnOneKey: false }, // 账户 1
-        { path: "m/44'/118'/1'/0/0", showOnOneKey: false }, // 账户 2
-        { path: "m/44'/118'/2'/0/0", showOnOneKey: false }  // 账户 3
+        { path: "m/44'/118'/0'/0/0", showOnUnionKey: false }, // 账户 1
+        { path: "m/44'/118'/1'/0/0", showOnUnionKey: false }, // 账户 2
+        { path: "m/44'/118'/2'/0/0", showOnUnionKey: false }  // 账户 3
     ]
 });
 ```

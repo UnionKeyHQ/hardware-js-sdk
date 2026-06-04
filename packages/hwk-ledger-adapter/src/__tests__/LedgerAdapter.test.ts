@@ -5,7 +5,7 @@ import {
   UI_RESPONSE,
   deriveDeviceFingerprint,
   serializeConnectorError,
-} from '@onekeyfe/hwk-adapter-core';
+} from '@unionkeyfe/hwk-adapter-core';
 
 import { LedgerAdapter } from '../adapter/LedgerAdapter';
 
@@ -15,7 +15,7 @@ import type {
   ConnectorEventType,
   ConnectorSession,
   IConnector,
-} from '@onekeyfe/hwk-adapter-core';
+} from '@unionkeyfe/hwk-adapter-core';
 
 function createMockConnector(): IConnector & {
   _handlers: Map<string, Set<(...args: unknown[]) => void>>;

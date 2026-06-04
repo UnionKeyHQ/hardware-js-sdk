@@ -2,7 +2,7 @@ import TonWeb from 'tonweb';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 /**
  * 抽离的核心逻辑：从 seed 生成 TON 地址

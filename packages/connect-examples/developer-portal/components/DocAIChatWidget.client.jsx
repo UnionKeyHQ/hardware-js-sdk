@@ -14,7 +14,7 @@ import {
   XIcon,
 } from 'lucide-react';
 import MarkdownMessage, { sanitizeDocAIMessageText } from './DocAIMarkdownMessage';
-import { OneKeyIcon } from './ChainIcons';
+import { UnionKeyIcon } from './ChainIcons';
 import { DOCS_AI_OPEN_EVENT, DOCS_AI_TAB } from './docAIAssistEvents';
 import styles from './DocAIChatWidget.module.css';
 
@@ -24,8 +24,8 @@ import styles from './DocAIChatWidget.module.css';
  * Priority:
  *   1. NEXT_PUBLIC_DOCS_AI_API_URL env var — explicit override (local dev, staging)
  *   2. Hostname-based mapping:
- *        *.onekey.so       →  https://rag.onekeycn.com/api/chat
- *        anything else     →  https://rag.onekeytest.com/api/chat
+ *        *.unionkey.io       →  https://rag.unionkeycn.com/api/chat
+ *        anything else     →  https://rag.unionkey.io/api/chat
  *
  * Local dev example — add to developer-portal/.env.local:
  *   NEXT_PUBLIC_DOCS_AI_API_URL=http://localhost:8787/api/chat
@@ -39,16 +39,16 @@ const resolveApiUrl = () => {
   const { hostname } = window.location;
 
   // Production: use the matching RAG service for the deployment domain
-  if (hostname === 'onekey.so' || hostname.endsWith('.onekey.so')) {
-    return 'https://rag.onekeycn.com/api/chat';
+  if (hostname === 'unionkey.io' || hostname.endsWith('.unionkey.io')) {
+    return 'https://rag.unionkeycn.com/api/chat';
   }
 
   // Test env, localhost, and all other origins → test RAG service
-  return 'https://rag.onekeytest.com/api/chat';
+  return 'https://rag.unionkey.io/api/chat';
 };
 
 const resolveLibraryId = () =>
-  process.env.NEXT_PUBLIC_DOCS_AI_LIBRARY_ID?.trim() || '/onekeyhq/hardware-js-sdk';
+  process.env.NEXT_PUBLIC_DOCS_AI_LIBRARY_ID?.trim() || '/unionkeyhq/hardware-js-sdk';
 
 const createRequestId = () =>
   typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
@@ -83,7 +83,7 @@ const normalizeSourceUrl = value => {
  * corresponding live docs page URL.
  *
  * Example:
- *   https://github.com/onekeyhq/hardware-js-sdk/blob/onekey/packages/
+ *   https://github.com/unionkeyhq/hardware-js-sdk/blob/onekey/packages/
  *     connect-examples/developer-portal/content/en/hardware-sdk/foo.mdx
  *   → {docsOrigin}/en/hardware-sdk/foo
  */
@@ -206,7 +206,7 @@ const getWidgetCopy = isZh => {
       askFromSearch: '转到 Ask AI',
       askUnavailable: 'Ask AI 暂未配置服务端地址，请先设置 NEXT_PUBLIC_DOCS_AI_API_URL。',
       assistantLabel: 'AI 助手',
-      askDescription: '我会基于 OneKey Hardware SDK 文档回答并给出来源。',
+      askDescription: '我会基于 UnionKey Hardware SDK 文档回答并给出来源。',
       exampleQuestionsTitle: 'EXAMPLE QUESTIONS',
       askAiBridgeLabel: '向 AI 提问',
       contextOnly: '我先找到了这些相关文档来源，你可以继续追问更具体的问题。',
@@ -220,23 +220,23 @@ const getWidgetCopy = isZh => {
       retry: '重试',
       error: '请求失败，请重试。',
       sourcesTitle: '资料来源',
-      poweredBy: 'Powered by OneKey',
+      poweredBy: 'Powered by UnionKey',
       suggestions: [
         {
           text: 'WebUSB 连接',
-          prompt: '如何在浏览器中通过 WebUSB 连接 OneKey 硬件设备？请给出从安装 SDK、初始化、设备授权到首次调用的完整代码示例。',
+          prompt: '如何在浏览器中通过 WebUSB 连接 UnionKey 硬件设备？请给出从安装 SDK、初始化、设备授权到首次调用的完整代码示例。',
         },
         {
           text: 'React Native 蓝牙连接',
-          prompt: '如何在 React Native 项目中使用 @onekeyfe/hd-ble-sdk 通过蓝牙 BLE 连接 OneKey 硬件设备？请包含安装、权限配置和完整初始化示例。',
+          prompt: '如何在 React Native 项目中使用 @unionkeyfe/hd-ble-sdk 通过蓝牙 BLE 连接 UnionKey 硬件设备？请包含安装、权限配置和完整初始化示例。',
         },
         {
           text: 'EVM 交易签名',
-          prompt: '请给出使用 OneKey Hardware SDK 签名一笔 EVM 交易的完整流程和代码示例，包括 PIN/Passphrase 处理。',
+          prompt: '请给出使用 UnionKey Hardware SDK 签名一笔 EVM 交易的完整流程和代码示例，包括 PIN/Passphrase 处理。',
         },
         {
           text: 'AI Agent 集成',
-          prompt: '如何让 AI Agent（如 Claude Code）通过 CLI 与 OneKey 硬件钱包交互？请介绍安装、支持的链和安全模型。',
+          prompt: '如何让 AI Agent（如 Claude Code）通过 CLI 与 UnionKey 硬件钱包交互？请介绍安装、支持的链和安全模型。',
         },
       ],
     };
@@ -254,7 +254,7 @@ const getWidgetCopy = isZh => {
     askFromSearch: 'Ask AI with this query',
     askUnavailable: 'Ask AI is not configured. Set NEXT_PUBLIC_DOCS_AI_API_URL first.',
     assistantLabel: 'AI assistant',
-    askDescription: 'I answer with OneKey Hardware SDK docs and source citations.',
+    askDescription: 'I answer with UnionKey Hardware SDK docs and source citations.',
     exampleQuestionsTitle: 'EXAMPLE QUESTIONS',
     askAiBridgeLabel: 'Ask AI',
     contextOnly: 'I found the most relevant documentation sources below. Ask a more specific follow-up for a grounded answer.',
@@ -268,23 +268,23 @@ const getWidgetCopy = isZh => {
     retry: 'Retry',
     error: 'Request failed. Please retry.',
     sourcesTitle: 'Sources',
-    poweredBy: 'Powered by OneKey',
+    poweredBy: 'Powered by UnionKey',
     suggestions: [
       {
         text: 'WebUSB connection',
-        prompt: 'How do I connect to a OneKey hardware device via WebUSB in the browser? Give me a complete code example from SDK install, initialization, device authorization to the first API call.',
+        prompt: 'How do I connect to a UnionKey hardware device via WebUSB in the browser? Give me a complete code example from SDK install, initialization, device authorization to the first API call.',
       },
       {
         text: 'React Native BLE',
-        prompt: 'How do I establish a BLE connection to a OneKey hardware device in a React Native app using @onekeyfe/hd-ble-sdk? Include installation, permission setup, and a full initialization example.',
+        prompt: 'How do I establish a BLE connection to a UnionKey hardware device in a React Native app using @unionkeyfe/hd-ble-sdk? Include installation, permission setup, and a full initialization example.',
       },
       {
         text: 'EVM transaction signing',
-        prompt: 'Show me the complete flow and code example for signing an EVM transaction using the OneKey Hardware SDK, including PIN/Passphrase handling.',
+        prompt: 'Show me the complete flow and code example for signing an EVM transaction using the UnionKey Hardware SDK, including PIN/Passphrase handling.',
       },
       {
         text: 'AI Agent integration',
-        prompt: 'How can AI agents like Claude Code interact with OneKey hardware wallets via the CLI? Explain the installation, supported chains, and security model.',
+        prompt: 'How can AI agents like Claude Code interact with UnionKey hardware wallets via the CLI? Explain the installation, supported chains, and security model.',
       },
     ],
   };
@@ -952,7 +952,7 @@ function ChatWidgetRuntime({ apiUrl, lang }) {
                 onClick={handleOpenAskFromSearch}
               >
                 <span className={styles.askAiBridgeIconWrap}>
-                  <OneKeyIcon size={16} className={styles.askAiBridgeIconSvg} />
+                  <UnionKeyIcon size={16} className={styles.askAiBridgeIconSvg} />
                 </span>
                 <span className={styles.askAiBridgeText}>{copy.askAiBridgeLabel}</span>
                 {activeSearchIndex === -1 ? <kbd className={styles.askAiBridgeKbd}>↵</kbd> : null}
@@ -1002,13 +1002,13 @@ function ChatWidgetRuntime({ apiUrl, lang }) {
                 <div className={styles.empty} data-docs-ai="empty">
                   <div className={styles.assistantHead}>
                     <span className={styles.emptyStateIcon}>
-                      <OneKeyIcon size={22} className={styles.avatarLogo} />
+                      <UnionKeyIcon size={22} className={styles.avatarLogo} />
                     </span>
                     <span className={styles.assistantLabelText}>{copy.assistantLabel}</span>
                   </div>
                   <p className={styles.greeting}>
                     {isZh ? '向我询问任何关于\u00a0' : 'Ask me anything about\u00a0'}
-                    <span className={styles.brandChip}>OneKey</span>
+                    <span className={styles.brandChip}>UnionKey</span>
                     {isZh ? '\u00a0的问题。' : '.'}
                   </p>
                   <p className={styles.askDesc}>{copy.askDescription}</p>
@@ -1070,7 +1070,7 @@ function ChatWidgetRuntime({ apiUrl, lang }) {
                     {isAssistant ? (
                       <div className={styles.assistantMeta}>
                         <span className={styles.avatar}>
-                          <OneKeyIcon size={16} className={styles.avatarLogo} />
+                          <UnionKeyIcon size={16} className={styles.avatarLogo} />
                         </span>
                         <span className={styles.assistantName}>{copy.assistantLabel}</span>
                       </div>

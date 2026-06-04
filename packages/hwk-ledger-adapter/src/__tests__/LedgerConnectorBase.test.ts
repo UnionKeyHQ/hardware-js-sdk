@@ -1,9 +1,9 @@
-import { HardwareErrorCode } from '@onekeyfe/hwk-adapter-core';
+import { HardwareErrorCode } from '@unionkeyfe/hwk-adapter-core';
 
 import { LedgerConnectorBase } from '../connector/LedgerConnectorBase';
 import { ERROR_TAG } from '../errors';
 
-import type { ConnectionType, DeviceDescriptor } from '@onekeyfe/hwk-adapter-core';
+import type { ConnectionType, DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
 
 class SearchConnector extends LedgerConnectorBase {
   constructor(private readonly descriptors: DeviceDescriptor[], connectionType: ConnectionType) {

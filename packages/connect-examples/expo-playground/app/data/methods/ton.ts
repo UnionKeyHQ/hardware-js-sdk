@@ -88,21 +88,21 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/44'/607'/0'",
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,
               },
               {
                 path: "m/44'/607'/1'",
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,
               },
               {
                 path: "m/44'/607'/2'",
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,
@@ -532,7 +532,7 @@ const api: UnifiedMethodConfig[] = [
             type: 'string',
             required: true,
             label: 'Appdomain',
-            value: 'onekey.so',
+            value: 'unionkey.io',
           },
           {
             name: 'comment',

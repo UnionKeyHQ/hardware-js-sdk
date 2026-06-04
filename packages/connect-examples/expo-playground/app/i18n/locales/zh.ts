@@ -620,7 +620,7 @@ export const zh = {
         logs: '查看操作日志和调试信息',
         deviceMethods: '硬件设备管理和固件更新相关的 API 方法',
         chains: '支持的区块链和相关方法',
-        githubRepo: 'OneKey Hardware JS SDK 源代码仓库',
+        githubRepo: 'UnionKey Hardware JS SDK 源代码仓库',
         githubIssues: '报告问题或查看已知问题',
         githubReleases: '查看版本发布历史和更新日志',
         onekeyDocs: 'OneKey 官方开发文档',

@@ -2,7 +2,7 @@ import type {
   EthereumGetPublicKeyOneKey,
   MessageResponse,
   TypedCall,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 
 export default async function ({
   typedCall,

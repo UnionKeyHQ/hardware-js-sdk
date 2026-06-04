@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { AptosSignMessage as HardwareAptosSignMessage } from '@onekeyfe/hd-transport';
+import type { AptosSignMessage as HardwareAptosSignMessage } from '@unionkeyfe/hd-transport';
 import type { AptosMessageSignature, AptosSignMessageParams } from '../../types';
 
 export default class AptosSignMessage extends BaseMethod<HardwareAptosSignMessage> {

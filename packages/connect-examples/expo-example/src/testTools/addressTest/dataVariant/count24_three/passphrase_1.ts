@@ -4,7 +4,7 @@ export default {
   name: 'three-passphrase24-密语1',
   passphrase: '0987654321QWERtyuioplkjhgfdsamnbvcxz@!###$$$%%%^&*',
   passphraseState: 'msnViVktp8SWFH4hjf5EYmXzTAiD6J89AB',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/432046239',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/432046239',
   data: [
     {
       method: 'btcGetAddress',

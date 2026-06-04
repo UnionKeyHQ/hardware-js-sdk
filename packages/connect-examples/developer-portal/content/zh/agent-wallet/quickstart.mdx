@@ -4,7 +4,7 @@ title: 快速开始
 
 # 快速开始
 
-先在 AI client 里安装 OneKey wallet skills。之后用户直接用自然语言提钱包请求；skills 会在背后处理 CLI preflight、schema discovery 和安全路由。
+先在 AI client 里安装 UnionKey wallet skills。之后用户直接用自然语言提钱包请求；skills 会在背后处理 CLI preflight、schema discovery 和安全路由。
 
 只读请求可以直接返回结果。Quote、build、audit、simulation 只解释将会发生什么，不移动资金。Transfer、swap execute、approval、broadcast、signing 都必须有一次明确确认。
 
@@ -13,8 +13,8 @@ title: 快速开始
 ### Claude Code
 
 ```text
-/plugin marketplace add OneKeyHQ/onekey-wallet-skills
-/plugin install onekey-wallet-skills
+/plugin marketplace add UnionKeyHQ/unionkey-wallet-skills
+/plugin install unionkey-wallet-skills
 ```
 
 ### Codex
@@ -22,7 +22,7 @@ title: 快速开始
 告诉 Codex：
 
 ```text
-Fetch and follow instructions from https://raw.githubusercontent.com/OneKeyHQ/onekey-wallet-skills/main/.codex/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/UnionKeyHQ/unionkey-wallet-skills/main/.codex/INSTALL.md
 ```
 
 ### Cursor
@@ -30,22 +30,22 @@ Fetch and follow instructions from https://raw.githubusercontent.com/OneKeyHQ/on
 克隆 skill pack，并把 Cursor 指向 plugin 目录：
 
 ```bash
-git clone https://github.com/OneKeyHQ/onekey-wallet-skills
+git clone https://github.com/UnionKeyHQ/unionkey-wallet-skills
 ```
 
 ### OpenCode 和 OpenClaw
 
-按 [`onekey-wallet-skills`](https://github.com/OneKeyHQ/onekey-wallet-skills) 仓库里的对应安装说明接入。所有 client 都使用同一组四个 skills：wallet、swap、market、security。
+按 [`unionkey-wallet-skills`](https://github.com/UnionKeyHQ/unionkey-wallet-skills) 仓库里的对应安装说明接入。所有 client 都使用同一组四个 skills：wallet、swap、market、security。
 
 ## 2. 连接 Agent Wallet
 
 在 AI client 里输入：
 
 ```text
-Connect my OneKey Agent Wallet.
+Connect my UnionKey Agent Wallet.
 ```
 
-Skill 会通过 OneKey GUI App Transfer 配对本机会话，并总结当前活动钱包。如果缺少 `onekey` CLI，skill preflight 会先安装再继续；用户不需要手动配置 CLI 命令。
+Skill 会通过 UnionKey GUI App Transfer 配对本机会话，并总结当前活动钱包。如果缺少 `onekey` CLI，skill preflight 会先安装再继续；用户不需要手动配置 CLI 命令。
 
 ## 3. 先试只读 Prompt
 
@@ -76,7 +76,7 @@ Swap skill 应先报价、运行相关安全检查、展示 route 和预计输�
 高风险操作可以输入：
 
 ```text
-Use my OneKey hardware wallet for this transfer.
+Use my UnionKey hardware wallet for this transfer.
 ```
 
 Wallet skill 会切换到硬件会话，涉及资金移动的动作可以升级到设备端 clear signing。硬件登录后，普通 wallet、transfer、swap、signing prompt 会自动使用当前硬件会话。

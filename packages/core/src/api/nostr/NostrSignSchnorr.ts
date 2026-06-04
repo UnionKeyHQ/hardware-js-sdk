@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { NostrSignSchnorr as SignSchnorr } from '@onekeyfe/hd-transport';
+import type { NostrSignSchnorr as SignSchnorr } from '@unionkeyfe/hd-transport';
 
 export default class NostrSignSchnorr extends BaseMethod<SignSchnorr> {
   hasBundle = false;

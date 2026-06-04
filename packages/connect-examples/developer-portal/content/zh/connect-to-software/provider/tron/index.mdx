@@ -1,16 +1,16 @@
 ---
 title: TRON
-description: 通过 OneKey 的 TronLink 兼容 Provider 集成 TRON
+description: 通过 UnionKey 的 TronLink 兼容 Provider 集成 TRON
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # TRON
 
-使用 OneKey 的 TronLink 兼容 Provider 集成 TRON 区块链。通过 `window.$onekey.tron` 或 `window.tronWeb` 访问。
+使用 UnionKey 的 TronLink 兼容 Provider 集成 TRON 区块链。通过 `window.$onekey.tron` 或 `window.tronWeb` 访问。
 
 <Callout type="info">
-OneKey 的 TRON Provider 完全兼容 TronLink，包括 TronWeb 和 SunWeb 实例。
+UnionKey 的 TRON Provider 完全兼容 TronLink，包括 TronWeb 和 SunWeb 实例。
 </Callout>
 
 ---
@@ -27,14 +27,14 @@ OneKey 的 TRON Provider 完全兼容 TronLink，包括 TronWeb 和 SunWeb 实�
 ## Provider 检测
 
 ```typescript
-// OneKey 注入 provider 和 TronWeb 实例
+// UnionKey 注入 provider 和 TronWeb 实例
 const provider = window.$onekey?.tron
 
 // 连接后 TronWeb 全局可用
 const tronWeb = window.tronWeb
 
 if (!provider) {
-  throw new Error('未检测到 OneKey TRON provider')
+  throw new Error('未检测到 UnionKey TRON provider')
 }
 
 // 检查是否兼容 TronLink
@@ -344,13 +344,13 @@ try {
 
 ## 从 TronLink 迁移
 
-OneKey 兼容 TronLink。更新你的检测逻辑：
+UnionKey 兼容 TronLink。更新你的检测逻辑：
 
 ```typescript
 // 之前（仅 TronLink）
 const tronWeb = window.tronWeb
 
-// 之后（OneKey 优先，TronLink 回退）
+// 之后（UnionKey 优先，TronLink 回退）
 const provider = window.$onekey?.tron || window.tronLink
 const tronWeb = window.tronWeb // 两者都会注入这个
 ```

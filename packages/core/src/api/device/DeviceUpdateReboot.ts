@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { DeviceBackToBoot } from '@onekeyfe/hd-transport';
+import type { DeviceBackToBoot } from '@unionkeyfe/hd-transport';
 
 // Upload hint Reboot BootLoader
 export default class DeviceUpdateReboot extends BaseMethod<DeviceBackToBoot> {

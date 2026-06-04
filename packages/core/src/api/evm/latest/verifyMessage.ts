@@ -1,4 +1,4 @@
-import type { EthereumVerifyMessageOneKey, Success, TypedCall } from '@onekeyfe/hd-transport';
+import type { EthereumVerifyMessageOneKey, Success, TypedCall } from '@unionkeyfe/hd-transport';
 
 export default async function ({
   typedCall,

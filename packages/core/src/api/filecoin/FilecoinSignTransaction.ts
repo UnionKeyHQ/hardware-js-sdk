@@ -4,7 +4,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
 import type { FilecoinSignTransactionParams } from '../../types';
-import type { FilecoinSignTx as HardwareFilecoinSignTx } from '@onekeyfe/hd-transport';
+import type { FilecoinSignTx as HardwareFilecoinSignTx } from '@unionkeyfe/hd-transport';
 
 export default class FilecoinSignTransaction extends BaseMethod<HardwareFilecoinSignTx> {
   hasBundle = false;

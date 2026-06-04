@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey Provider 连接 Algorand
+description: 使用 UnionKey Provider 连接 Algorand
 ---
 
 import { Callout } from 'nextra/components'
@@ -10,7 +10,7 @@ import { Callout } from 'nextra/components'
 了解如何检测、连接和与 Algorand 进行交互。
 
 <Callout type="info">
-OneKey 的 Algorand provider 同时支持旧版和 ARC-0001 兼容接口。
+UnionKey 的 Algorand provider 同时支持旧版和 ARC-0001 兼容接口。
 </Callout>
 
 ---
@@ -18,15 +18,15 @@ OneKey 的 Algorand provider 同时支持旧版和 ARC-0001 兼容接口。
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Algorand provider
+// 检测 UnionKey Algorand provider
 const provider = window.$onekey?.algo
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Algorand provider')
+  throw new Error('未检测到 UnionKey Algorand provider')
 }
 
 // 检查兼容性
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---

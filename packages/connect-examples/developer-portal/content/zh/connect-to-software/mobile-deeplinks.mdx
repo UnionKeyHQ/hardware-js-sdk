@@ -1,15 +1,15 @@
 ---
 title: 移动端 & Deeplinks
-description: 使用 deeplinks 在移动端 Web 应用和 WebViews 中集成 OneKey 钱包
+description: 使用 deeplinks 在移动端 Web 应用和 WebViews 中集成 UnionKey 钱包
 ---
 
 # 移动端 & Deeplinks
 
-使用 deeplinks 和 universal links 在移动端 Web 应用和 WebViews 中集成 OneKey 钱包。
+使用 deeplinks 和 universal links 在移动端 Web 应用和 WebViews 中集成 UnionKey 钱包。
 
 ## 概述
 
-在构建移动端 Web 应用或在 WebViews 中集成时，您可以使用 OneKey 的 deeplink 系统直接连接到钱包应用。
+在构建移动端 Web 应用或在 WebViews 中集成时，您可以使用 UnionKey 的 deeplink 系统直接连接到钱包应用。
 
 ## Deeplink 格式
 
@@ -22,7 +22,7 @@ onekey-wallet://wc?uri={encodeURIComponent(wcUri)}
 ### Universal Link（推荐）
 
 ```
-https://app.onekey.so/wc/connect/wc?uri={encodeURIComponent(wcUri)}
+https://app.unionkey.io/wc/connect/wc?uri={encodeURIComponent(wcUri)}
 ```
 
 > **提示：** 推荐使用 Universal links，因为它们在不同移动平台和浏览器中工作更可靠。
@@ -37,7 +37,7 @@ const wcUri = 'wc:a281...' // 您的 WalletConnect URI
 const customSchemeLink = `onekey-wallet://wc?uri=${encodeURIComponent(wcUri)}`
 
 // 选项 2：Universal link（推荐）
-const universalLink = `https://app.onekey.so/wc/connect/wc?uri=${encodeURIComponent(wcUri)}`
+const universalLink = `https://app.unionkey.io/wc/connect/wc?uri=${encodeURIComponent(wcUri)}`
 
 // 打开链接
 window.location.href = universalLink
@@ -47,12 +47,12 @@ window.location.href = universalLink
 
 ### iOS
 
-- 当 OneKey 应用已安装时，Universal links 效果最佳
+- 当 UnionKey 应用已安装时，Universal links 效果最佳
 - 如果应用未安装，universal link 将重定向到 App Store
 
 ### Android
 
-- 自定义 scheme 链接需要已安装 OneKey 应用
+- 自定义 scheme 链接需要已安装 UnionKey 应用
 - 如果应用不存在，Universal links 会优雅地回退到网页
 
 ## 最佳实践

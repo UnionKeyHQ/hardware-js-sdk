@@ -18,7 +18,7 @@ class BridgeProcess extends BaseProcess {
       const resp = await fetch(`http://127.0.0.1:21320/`, {
         method: 'POST',
         headers: {
-          Origin: 'https://electron.onekey.so',
+          Origin: 'https://electron.unionkey.io',
         },
       });
       console.debug(`Checking status (${resp.status})`);
@@ -67,7 +67,7 @@ export const BridgeHeart = {
         const resp = await fetchWithTimeout(localBridgeUrl, {
           method: 'POST',
           headers: {
-            Origin: 'https://electron.onekey.so',
+            Origin: 'https://electron.unionkey.io',
           },
           timeout: 3000,
         });

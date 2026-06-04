@@ -18,8 +18,8 @@ import HardwareSdk, {
   parseMessage,
   setLoggerPostMessage,
   whitelist,
-} from '@onekeyfe/hd-core';
-import { ERRORS, HardwareError, HardwareErrorCode } from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-core';
+import { ERRORS, HardwareError, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import * as iframe from './iframe/builder';
 import JSBridgeConfig from './iframe/bridge-config';
@@ -31,7 +31,7 @@ import type {
   CoreMessage,
   PostMessageEvent,
   UiResponseEvent,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 const eventEmitter = new EventEmitter();
 const Log = getLogger(LoggerNames.Connect);

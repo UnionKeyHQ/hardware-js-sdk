@@ -43,8 +43,8 @@ module.exports = {
   externals: [
     nodeExternals({
       allowlist: [
-        // Include all @onekeyfe packages to handle transitive dependencies
-        /^@onekeyfe\//,
+        // Include all @unionkeyfe packages to handle transitive dependencies
+        /^@unionkeyfe\//,
         ...Object.keys({
           ...pkg.dependencies,
           ...pkg.devDependencies,

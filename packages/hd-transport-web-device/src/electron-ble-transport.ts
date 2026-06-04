@@ -1,16 +1,16 @@
-import transport, { COMMON_HEADER_SIZE, LogBlockCommand } from '@onekeyfe/hd-transport';
+import transport, { COMMON_HEADER_SIZE, LogBlockCommand } from '@unionkeyfe/hd-transport';
 import {
   ERRORS,
   HardwareErrorCode,
   HardwareErrorCodeMessage,
   createDeferred,
   isHeaderChunk,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
-import type { Deferred } from '@onekeyfe/hd-shared';
+import type { Deferred } from '@unionkeyfe/hd-shared';
 import type EventEmitter from 'events';
 // Import DesktopAPI type from hd-transport-electron
-import type { DesktopAPI } from '@onekeyfe/hd-transport-electron';
+import type { DesktopAPI } from '@unionkeyfe/hd-transport-electron';
 
 const { parseConfigure, buildBuffers, receiveOne, check } = transport;
 

@@ -1,4 +1,4 @@
-import type { NervosAddress as HardwareNervosAddress } from '@onekeyfe/hd-transport';
+import type { NervosAddress as HardwareNervosAddress } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type NervosAddress = {

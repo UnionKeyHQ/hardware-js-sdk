@@ -1613,22 +1613,22 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@onekeyfe/hd-ble-sdk@1.1.16":
+"@unionkeyfe/hd-ble-sdk@1.1.16":
   version "1.1.16"
-  resolved "https://registry.npmjs.org/@onekeyfe/hd-ble-sdk/-/hd-ble-sdk-1.1.16.tgz#124c5cb9bb3c0d16b6ca2ea615e1867cbf55ba18"
+  resolved "https://registry.npmjs.org/@unionkeyfe/hd-ble-sdk/-/hd-ble-sdk-1.1.16.tgz#124c5cb9bb3c0d16b6ca2ea615e1867cbf55ba18"
   integrity sha512-8t5mhPS7QQkcQXAqJJ0VVr+7EX5vT327U32cUYwxdf5N/opvNRkNc3k1io8N8YO6XprGk5+vAqWLT95/C30/Bw==
   dependencies:
-    "@onekeyfe/hd-core" "1.1.16"
-    "@onekeyfe/hd-shared" "1.1.16"
-    "@onekeyfe/hd-transport-react-native" "1.1.16"
+    "@unionkeyfe/hd-core" "1.1.16"
+    "@unionkeyfe/hd-shared" "1.1.16"
+    "@unionkeyfe/hd-transport-react-native" "1.1.16"
 
-"@onekeyfe/hd-core@1.1.16":
+"@unionkeyfe/hd-core@1.1.16":
   version "1.1.16"
-  resolved "https://registry.npmjs.org/@onekeyfe/hd-core/-/hd-core-1.1.16.tgz#31df132b7cc7e31275b39fdd0a08f001a7afa9a1"
+  resolved "https://registry.npmjs.org/@unionkeyfe/hd-core/-/hd-core-1.1.16.tgz#31df132b7cc7e31275b39fdd0a08f001a7afa9a1"
   integrity sha512-ViTzwUySTXWB81kVHvZuxaHScfcQUZ1+Tgk9We7UXz8zKwLRsU5GfIbqpS1qSZA65/OCCB/fJoMA0zto84FH0Q==
   dependencies:
-    "@onekeyfe/hd-shared" "1.1.16"
-    "@onekeyfe/hd-transport" "1.1.16"
+    "@unionkeyfe/hd-shared" "1.1.16"
+    "@unionkeyfe/hd-transport" "1.1.16"
     axios "1.12.2"
     bignumber.js "^9.0.2"
     bytebuffer "^5.0.1"
@@ -1636,33 +1636,33 @@
     parse-uri "^1.0.7"
     semver "^7.3.7"
 
-"@onekeyfe/hd-shared@1.1.16":
+"@unionkeyfe/hd-shared@1.1.16":
   version "1.1.16"
-  resolved "https://registry.npmjs.org/@onekeyfe/hd-shared/-/hd-shared-1.1.16.tgz#7fa2b8f1e52348c924a8fc0be18f7d2f0f1b9043"
+  resolved "https://registry.npmjs.org/@unionkeyfe/hd-shared/-/hd-shared-1.1.16.tgz#7fa2b8f1e52348c924a8fc0be18f7d2f0f1b9043"
   integrity sha512-PLIK9yZyT8TpbfN+4EaBKzY4mFXSVNBvOLNKmIxH/GnIy5hDBdGyybbhtCTEXjGr55aFLwR0GBy1I+nYXQmoEw==
 
-"@onekeyfe/hd-transport-react-native@1.1.16":
+"@unionkeyfe/hd-transport-react-native@1.1.16":
   version "1.1.16"
-  resolved "https://registry.npmjs.org/@onekeyfe/hd-transport-react-native/-/hd-transport-react-native-1.1.16.tgz#381e7117e08767bc28c28ab23218a32540a7ea66"
+  resolved "https://registry.npmjs.org/@unionkeyfe/hd-transport-react-native/-/hd-transport-react-native-1.1.16.tgz#381e7117e08767bc28c28ab23218a32540a7ea66"
   integrity sha512-CDlmOWYKgJ2pxelEC4w8dSG44Iz6bSJ1LY65lbFdutZ4ZO84GtUmceZ//K+i88dbULKe4qogcyqKG7P6EZcTqA==
   dependencies:
-    "@onekeyfe/hd-shared" "1.1.16"
-    "@onekeyfe/hd-transport" "1.1.16"
-    "@onekeyfe/react-native-ble-utils" "^0.1.4"
+    "@unionkeyfe/hd-shared" "1.1.16"
+    "@unionkeyfe/hd-transport" "1.1.16"
+    "@unionkeyfe/react-native-ble-utils" "^0.1.4"
     react-native-ble-plx "3.5.0"
 
-"@onekeyfe/hd-transport@1.1.16":
+"@unionkeyfe/hd-transport@1.1.16":
   version "1.1.16"
-  resolved "https://registry.npmjs.org/@onekeyfe/hd-transport/-/hd-transport-1.1.16.tgz#3ec4ee1f786df1a630e79113dc561b33c5d57bd9"
+  resolved "https://registry.npmjs.org/@unionkeyfe/hd-transport/-/hd-transport-1.1.16.tgz#3ec4ee1f786df1a630e79113dc561b33c5d57bd9"
   integrity sha512-z+HKqYkGz+Ub1GV+REFqJqTG+tpZt7296O3qIlwmsURWdWXX4TcpXmCQDcXMt7vru8m9A4MUMkpGr+23MFBluw==
   dependencies:
     bytebuffer "^5.0.1"
     long "^4.0.0"
     protobufjs "^6.11.2"
 
-"@onekeyfe/react-native-ble-utils@^0.1.4":
+"@unionkeyfe/react-native-ble-utils@^0.1.4":
   version "0.1.4"
-  resolved "https://registry.npmjs.org/@onekeyfe/react-native-ble-utils/-/react-native-ble-utils-0.1.4.tgz#4a262d30cd226e94f1c697c08a3a85a44310690c"
+  resolved "https://registry.npmjs.org/@unionkeyfe/react-native-ble-utils/-/react-native-ble-utils-0.1.4.tgz#4a262d30cd226e94f1c697c08a3a85a44310690c"
   integrity "sha1-SiYtMM0ibpTxxpfAijqFpEMQaQw= sha512-DTKjjFKdkGktx/qqdu7STFAjpD6ZI3Rdfcyvv/a1Ho4GBs9F/nOJyxEhqiUNbY4XZoVHSwYy2cxYrdX4zGY6eA=="
 
 "@pkgjs/parseargs@^0.11.0":

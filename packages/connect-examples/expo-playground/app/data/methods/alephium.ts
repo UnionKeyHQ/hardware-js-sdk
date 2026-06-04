@@ -55,18 +55,18 @@ const api: UnifiedMethodConfig[] = [
               {
                 path: "m/44'/1234'/0'/0/0",
                 includePublicKey: true,
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 group: 0,
               },
               {
                 path: "m/44'/1234'/0'/0/1",
                 includePublicKey: true,
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 group: 0,
               },
               {
                 path: "m/44'/1234'/0'/0/2",
-                showOnOneKey: false,
+                showOnUnionKey: false,
                 group: 0,
               },
             ],

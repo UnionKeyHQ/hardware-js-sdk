@@ -2,7 +2,7 @@ import semver from 'semver';
 import {
   createDeviceNotSupportMethodError,
   createNeedUpgradeFirmwareHardwareError,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import { supportInputPinOnSoftware, supportModifyHomescreen } from '../utils/deviceFeaturesUtils';
 import { createDeviceMessage } from '../events/device';

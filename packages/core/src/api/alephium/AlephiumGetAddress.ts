@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { AlephiumGetAddress as HardwareAlephiumGetAddress } from '@onekeyfe/hd-transport';
+import type { AlephiumGetAddress as HardwareAlephiumGetAddress } from '@unionkeyfe/hd-transport';
 import type { AlephiumAddress, AlephiumGetAddressParams } from '../../types';
 
 export default class AlephiumGetAddress extends BaseMethod<HardwareAlephiumGetAddress[]> {

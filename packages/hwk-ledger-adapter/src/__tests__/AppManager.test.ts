@@ -4,7 +4,7 @@ import {
   GetAppAndVersionCommand,
   OpenAppCommand,
 } from '@ledgerhq/device-management-kit';
-import { HardwareErrorCode } from '@onekeyfe/hwk-adapter-core';
+import { HardwareErrorCode } from '@unionkeyfe/hwk-adapter-core';
 
 import { AppManager } from '../app/AppManager';
 

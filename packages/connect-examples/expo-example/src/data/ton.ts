@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get address',
         value: {
           path: "m/44'/607'/0'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
           walletVersion: 3,
           isBounceable: false,
           isTestnetOnly: false,
@@ -19,7 +19,7 @@ const api: PlaygroundProps[] = [
         title: 'Get multiaddress',
         value: {
           path: "m/44'/607'/1'",
-          showOnOneKey: false,
+          showOnUnionKey: false,
           walletVersion: 3,
           isBounceable: false,
           isTestnetOnly: false,
@@ -31,21 +31,21 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/607'/0'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,
             },
             {
               path: "m/44'/607'/1'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,
             },
             {
               path: "m/44'/607'/2'",
-              showOnOneKey: false,
+              showOnUnionKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,
@@ -154,7 +154,7 @@ const api: PlaygroundProps[] = [
         title: 'Sign Proof',
         value: {
           path: "m/44'/607'/0'",
-          appdomain: 'onekey.so',
+          appdomain: 'unionkey.io',
           comment: '48656c6c6f204f6e654b6579',
           expireAt: Date.now() + 1000 * 60 * 60 * 24,
           walletVersion: 3,
@@ -176,7 +176,7 @@ const api: PlaygroundProps[] = [
           type: 0,
           // hex of "Hello OneKey"
           payload: '48656c6c6f204f6e654b6579',
-          appdomain: 'onekey.so',
+          appdomain: 'unionkey.io',
           timestamp: Math.floor(Date.now() / 1000),
           fromAddress: 'UQBYkuShkZzRYAWX_HrK3kFpeAixiRKd-K7QBXYxl9OBXM0_',
           walletVersion: 3,
@@ -192,7 +192,7 @@ const api: PlaygroundProps[] = [
           type: 1,
           // arbitrary binary bytes as hex
           payload: '00112233445566778899aabbccddeeff',
-          appdomain: 'onekey.so',
+          appdomain: 'unionkey.io',
           timestamp: Math.floor(Date.now() / 1000),
           fromAddress: 'UQBYkuShkZzRYAWX_HrK3kFpeAixiRKd-K7QBXYxl9OBXM0_',
           walletVersion: 3,
@@ -210,7 +210,7 @@ const api: PlaygroundProps[] = [
           payload: 'b5ee9c7241010101000e000018000000004f6e654b65792043656c6c3cc87b8a',
           // TL-B schema of the cell payload (required by TON Connect for cell type)
           schema: 'text_comment#00000000 text:string = InternalMsgBody;',
-          appdomain: 'onekey.so',
+          appdomain: 'unionkey.io',
           timestamp: Math.floor(Date.now() / 1000),
           fromAddress: 'UQBYkuShkZzRYAWX_HrK3kFpeAixiRKd-K7QBXYxl9OBXM0_',
           walletVersion: 3,

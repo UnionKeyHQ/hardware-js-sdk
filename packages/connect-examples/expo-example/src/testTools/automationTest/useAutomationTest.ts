@@ -4,7 +4,7 @@
 
 import { useCallback, useContext, useEffect, useRef } from 'react';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 import { getAllAutomationScenarios, getAutomationScenario } from './scenarioCatalog';
 import { convertTestData, getDeviceExpected } from '../securityCheckTest/blindSignature/utils';
@@ -60,7 +60,7 @@ import {
   type TestSuiteType,
 } from '../../services/phonePilotMcp/types';
 
-import type { CoreApi } from '@onekeyfe/hd-core';
+import type { CoreApi } from '@unionkeyfe/hd-core';
 import type { SLIP39MethodData, SLIP39TestCaseData } from '../slip39Test/types';
 
 const SUITE_EXECUTION_ORDER: TestSuiteType[] = [
@@ -447,21 +447,21 @@ function buildSdkParamsForPath(methodCase: AutomationSdkMethodCase, expectedPath
     }
     return {
       ...matchedParams,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
   if (methodCase.params?.addressParameters?.path) {
     return {
       ...methodCase.params,
-      showOnOneKey: false,
+      showOnUnionKey: false,
     };
   }
 
   return {
     ...(methodCase.params || {}),
     path: expectedPath,
-    showOnOneKey: false,
+    showOnUnionKey: false,
   };
 }
 
@@ -1504,7 +1504,7 @@ export function useAutomationTest() {
       const result = await runWithRetry('evmGetAddress:current-wallet', () =>
         sdk.evmGetAddress(connectId, deviceId, {
           path: EVM_ADDRESS_PATH,
-          showOnOneKey: false,
+          showOnUnionKey: false,
           useEmptyPassphrase: true,
         })
       );
@@ -1547,7 +1547,7 @@ export function useAutomationTest() {
         const params: Record<string, unknown> = {
           ...(methodData.params || {}),
           path: expectedPath,
-          showOnOneKey: false,
+          showOnUnionKey: false,
           passphraseState,
           useEmptyPassphrase: !slip39Case.passphrase,
         };
@@ -2019,7 +2019,7 @@ export function useAutomationTest() {
 
                   const sdkParams: Record<string, unknown> = {
                     path: probe.path,
-                    showOnOneKey: false,
+                    showOnUnionKey: false,
                     passphraseState,
                     useEmptyPassphrase: !passphraseLiteral,
                   };
@@ -2269,7 +2269,7 @@ export function useAutomationTest() {
                     const sdkMethodParams: Record<string, unknown> = {
                       ...(methodData.params || {}),
                       path: expectedPath,
-                      showOnOneKey: false,
+                      showOnUnionKey: false,
                       passphraseState,
                       useEmptyPassphrase: !passphraseLiteral,
                     };
@@ -2498,7 +2498,7 @@ export function useAutomationTest() {
                             deviceId,
                             {
                               path: SPECIAL_PASSPHRASE_METHOD_PATHS[method],
-                              showOnOneKey: false,
+                              showOnUnionKey: false,
                               passphraseState,
                               useEmptyPassphrase: false,
                             }

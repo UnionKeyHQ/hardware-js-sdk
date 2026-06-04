@@ -14,7 +14,7 @@ import type {
   KaspaSignTransactionParams,
   KaspaSignature,
 } from '../../types';
-import type { TypedCall } from '@onekeyfe/hd-transport';
+import type { TypedCall } from '@unionkeyfe/hd-transport';
 
 export default class KaspaSignTransaction extends BaseMethod<KaspaSignTransactionParams> {
   hasBundle = false;

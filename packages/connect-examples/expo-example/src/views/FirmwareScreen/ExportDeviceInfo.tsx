@@ -5,7 +5,7 @@ import { downloadFile } from '../../utils/downloadUtils';
 import { useDeviceFieldContext } from './DeviceFieldContext';
 import { getDeviceBasicInfo } from '../../utils/deviceUtils';
 
-import type { Features } from '@onekeyfe/hd-core';
+import type { Features } from '@unionkeyfe/hd-core';
 
 export const deviceInfoKeys = [
   //   ['device_id', 'label'],

@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { SuiSignMessage as HardwareSuiSignMessage } from '@onekeyfe/hd-transport';
+import type { SuiSignMessage as HardwareSuiSignMessage } from '@unionkeyfe/hd-transport';
 
 export default class SuiSignMessage extends BaseMethod<HardwareSuiSignMessage> {
   init() {

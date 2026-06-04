@@ -16,7 +16,7 @@ import enterPinOnMini from '../../assets/animation/enter-pin-on-mini.json';
 import enterPinOnProLight from '../../assets/animation/enter-pin-on-pro-light.json';
 import enterPinOnProDark from '../../assets/animation/enter-pin-on-pro-dark.json';
 import enterPinOnTouch from '../../assets/animation/enter-pin-on-touch.json';
-import { UI_REQUEST, UiEvent } from '@onekeyfe/hd-core';
+import { UI_REQUEST, UiEvent } from '@unionkeyfe/hd-core';
 import { useTranslation } from 'react-i18next';
 
 // 动效类型
@@ -136,7 +136,7 @@ const DeviceActionAnimation: React.FC<DeviceActionAnimationProps> = ({
       case 'touch':
         return 'OneKey Touch';
       default:
-        return 'OneKey Device';
+        return 'UnionKey Device';
     }
   };
 

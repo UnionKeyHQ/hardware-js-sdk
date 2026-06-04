@@ -1,13 +1,13 @@
 ---
 title: dApp Integration
-description: Integrate your dApp with OneKey wallet
+description: Integrate your dApp with UnionKey wallet
 ---
 
 import { Callout } from 'nextra/components'
 
 # dApp Integration
 
-Connect your dApp to OneKey wallet with support for EVM and 20+ non-EVM chains.
+Connect your dApp to UnionKey wallet with support for EVM and 20+ non-EVM chains.
 
 ## Choose Your Method
 
@@ -64,12 +64,12 @@ export default function App() {
 ### Provider API (No Dependencies)
 
 ```typescript
-// Detect OneKey using EIP-6963
+// Detect UnionKey using EIP-6963
 const providers = []
 window.addEventListener('eip6963:announceProvider', (e) => providers.push(e.detail))
 window.dispatchEvent(new Event('eip6963:requestProvider'))
 
-// Find and connect to OneKey
+// Find and connect to UnionKey
 const onekey = providers.find(p => p.info.rdns === 'so.onekey.app.wallet')
 const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' })
 ```
@@ -78,7 +78,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ---
 
-## OneKey Detection
+## UnionKey Detection
 
 | Property | Value |
 |----------|-------|
@@ -99,7 +99,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ## Resources
 
-- **Changelog:** [cross-inpage-provider releases](https://github.com/OneKeyHQ/cross-inpage-provider/releases)
-- **Source Code:** [cross-inpage-provider](https://github.com/OneKeyHQ/cross-inpage-provider)
-- **Issues:** [GitHub Issues](https://github.com/OneKeyHQ/cross-inpage-provider/issues)
-- **Live Demo:** [Provider Example](https://github.com/OneKeyHQ/cross-inpage-provider/tree/master/packages/example)
+- **Changelog:** [cross-inpage-provider releases](https://github.com/UnionKeyHQ/cross-inpage-provider/releases)
+- **Source Code:** [cross-inpage-provider](https://github.com/UnionKeyHQ/cross-inpage-provider)
+- **Issues:** [GitHub Issues](https://github.com/UnionKeyHQ/cross-inpage-provider/issues)
+- **Live Demo:** [Provider Example](https://github.com/UnionKeyHQ/cross-inpage-provider/tree/master/packages/example)

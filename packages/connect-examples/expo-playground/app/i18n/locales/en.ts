@@ -1,6 +1,6 @@
 export const en = {
   translation: {
-    pageTitle: 'OneKey Device Management Tool',
+    pageTitle: 'UnionKey Device Management Tool',
     pageSubtitle: 'Search Devices',
     // 添加头部标题翻译
     header: {
@@ -145,7 +145,7 @@ export const en = {
       timeout: 'Timeout',
     },
     home: {
-      title: 'OneKey Hardware Wallet SDK',
+      title: 'UnionKey Hardware Wallet SDK',
       subtitle: 'Explore and test OneKey hardware wallet SDK functionalities',
       deviceMethods: 'Device Methods',
       deviceMethodsDesc:
@@ -649,7 +649,7 @@ export const en = {
         logs: 'View operation logs and debug information',
         deviceMethods: 'Hardware device management and firmware update related API methods',
         chains: 'Supported blockchains and related methods',
-        githubRepo: 'OneKey Hardware JS SDK source code repository',
+        githubRepo: 'UnionKey Hardware JS SDK source code repository',
         githubIssues: 'Report issues or view known problems',
         githubReleases: 'View release history and changelog',
         onekeyDocs: 'OneKey official development documentation',

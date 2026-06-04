@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -13,7 +13,7 @@ import type {
   ConfluxSignedTx,
   ConfluxTransaction,
 } from '../../types/api/confluxSignTransaction';
-import type { ConfluxSignTx, ConfluxTxRequest } from '@onekeyfe/hd-transport';
+import type { ConfluxSignTx, ConfluxTxRequest } from '@unionkeyfe/hd-transport';
 
 export default class ConfluxSignTransaction extends BaseMethod {
   addressN: number[] = [];

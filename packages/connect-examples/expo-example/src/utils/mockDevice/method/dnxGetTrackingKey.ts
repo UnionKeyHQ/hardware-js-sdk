@@ -3,7 +3,7 @@ import { fastHash, generateKeys } from './menero/crypto-util.js';
 import { getConfig } from './menero/config.js';
 import { encodeVarint } from './menero/helpers';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 export default function dnxGetTrackingKey(
   connectId: string,

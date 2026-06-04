@@ -1,4 +1,4 @@
-import type { StellarSignedTx } from '@onekeyfe/hd-transport';
+import type { StellarSignedTx } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type StellarAsset = {

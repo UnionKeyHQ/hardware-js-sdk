@@ -5,10 +5,10 @@ slug: /hardware/transport/webusb
 # WebUSB 连接指南
 
 > **注意：**
-> 演示：Playground（支持模拟器）→ [hardware-example.onekey.so](https://hardware-example.onekey.so/)
+> 演示：Playground（支持模拟器）→ [hardware-example.unionkey.io](https://hardware-example.unionkey.io/)
 
 
-使用本分步指南在浏览器中通过 `@onekeyfe/hd-common-connect-sdk` 接入 WebUSB。连接后，您可以像快速开始中那样调用任何链 API（BTC/EVM 等）。
+使用本分步指南在浏览器中通过 `@unionkeyfe/hd-common-connect-sdk` 接入 WebUSB。连接后，您可以像快速开始中那样调用任何链 API（BTC/EVM 等）。
 
 重点：仅适用于 WebUSB。
 
@@ -16,12 +16,12 @@ slug: /hardware/transport/webusb
 
 - 通过 HTTPS 提供您的应用（WebUSB 在不安全的源上被阻止）
 - 支持 WebUSB 的浏览器（Chrome/Edge 桌面版）
-- 已连接并解锁的 OneKey 设备
+- 已连接并解锁的 UnionKey 设备
 
 ## 步骤 2. 安装
 
 ```bash
-npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-shared @onekeyfe/hd-core
+npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-shared @unionkeyfe/hd-core
 ```
 
 ## 步骤 3. 初始化并绑定事件
@@ -29,8 +29,8 @@ npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-shared @onekeyfe/hd-core
 在应用启动时初始化 SDK 并绑定 UI/设备事件，以便 PIN/密码短语和确认能够端到端工作。
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@onekeyfe/hd-core';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyfe/hd-core';
 
 export async function setupWebUsb() {
   await HardwareSDK.init({
@@ -51,7 +51,7 @@ function bindHardwareEvents() {
         if (pinResult.mode === 'device') {
           await HardwareSDK.uiResponse({
             type: UI_RESPONSE.RECEIVE_PIN,
-            payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+            payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
           });
         } else {
           await HardwareSDK.uiResponse({
@@ -94,7 +94,7 @@ function bindHardwareEvents() {
 
 ### 注意事项
 - 尽早订阅 `UI_EVENT`，以免请求在等待 PIN/密码短语时停滞。参见 [配置事件](/zh/hardware-sdk/core-api-guide#events-ui)。
-- PIN：优先使用设备端输入（`@@ONEKEY_INPUT_PIN_IN_DEVICE`）。如果提供软件输入，请使用盲键盘映射（`7,8,9,4,5,6,1,2,3`）。
+- PIN：优先使用设备端输入（`@@UNIONKEY_INPUT_PIN_IN_DEVICE`）。如果提供软件输入，请使用盲键盘映射（`7,8,9,4,5,6,1,2,3`）。
 - 密码短语：支持设备端输入或软件输入，可选择 `save` 用于会话缓存。
 - 设备事件有助于在电缆拔出时更新 UI。
 
@@ -103,16 +103,16 @@ function bindHardwareEvents() {
 
 重要：由于 Chrome 安全限制，必须由用户手势触发（例如点击按钮）；在获得权限之前不允许自动设备发现。
 
-使用 ONEKEY_WEBUSB_FILTER 过滤器，使选择器只显示支持的设备。
+使用 UNIONKEY_WEBUSB_FILTER 过滤器，使选择器只显示支持的设备。
 
 ```tsx
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
 
 export function AuthorizeUsbButton() {
   return (
     <button
       onClick={async () => {
-        await navigator.usb.requestDevice({ filters: ONEKEY_WEBUSB_FILTER });
+        await navigator.usb.requestDevice({ filters: UNIONKEY_WEBUSB_FILTER });
         // 授权后，通过 SDK 枚举
       }}
     >
@@ -150,7 +150,7 @@ const resolvedDeviceId = features.payload.device_id;
 const res = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (res.success) {

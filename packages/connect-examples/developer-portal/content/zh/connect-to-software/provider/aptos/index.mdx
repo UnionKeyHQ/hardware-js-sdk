@@ -1,16 +1,16 @@
 ---
 title: Aptos
-description: 通过 OneKey 的 Petra 兼容 Provider 集成 Aptos
+description: 通过 UnionKey 的 Petra 兼容 Provider 集成 Aptos
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Aptos
 
-使用 OneKey 的 Petra 兼容 Provider 集成 Aptos 区块链。通过 `window.$onekey.aptos` 访问。
+使用 UnionKey 的 Petra 兼容 Provider 集成 Aptos 区块链。通过 `window.$onekey.aptos` 访问。
 
 <Callout type="info">
-OneKey 的 Aptos Provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standard。
+UnionKey 的 Aptos Provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standard。
 </Callout>
 
 ---
@@ -27,15 +27,15 @@ OneKey 的 Aptos Provider 完全兼容 Petra 钱包接口和 Aptos Wallet Standa
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Aptos provider
+// 检测 UnionKey Aptos provider
 const provider = window.$onekey?.aptos
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Aptos provider')
+  throw new Error('未检测到 UnionKey Aptos provider')
 }
 
 // 检查 provider 信息
-console.log('Provider:', provider.isOneKey ? 'OneKey' : '未知')
+console.log('Provider:', provider.isUnionKey ? 'UnionKey' : '未知')
 ```
 
 ---
@@ -387,18 +387,18 @@ function App() {
 }
 ```
 
-OneKey 会被 Aptos Wallet Adapter 自动检测到。
+UnionKey 会被 Aptos Wallet Adapter 自动检测到。
 
 ---
 
 ## 从 Petra 迁移
 
-OneKey 的 Aptos provider 兼容 Petra。更新你的 provider 检测代码：
+UnionKey 的 Aptos provider 兼容 Petra。更新你的 provider 检测代码：
 
 ```typescript
 // 之前 (仅 Petra)
 const provider = window.petra
 
-// 之后 (OneKey 优先，Petra 回退)
+// 之后 (UnionKey 优先，Petra 回退)
 const provider = window.$onekey?.aptos || window.petra
 ```

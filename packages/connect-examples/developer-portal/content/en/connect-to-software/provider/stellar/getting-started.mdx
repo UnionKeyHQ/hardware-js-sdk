@@ -1,13 +1,13 @@
 ---
 title: Getting Started
-description: Detect and use OneKey's Stellar provider
+description: Detect and use UnionKey's Stellar provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect OneKey's Stellar provider and request a Stellar address.
+Learn how to detect UnionKey's Stellar provider and request a Stellar address.
 
 <Callout type="warning">
 Stellar signing typically depends on the correct network passphrase (e.g. Public or Testnet). Make sure you pass the right one when signing.
@@ -20,8 +20,8 @@ Stellar signing typically depends on the correct network passphrase (e.g. Public
 ```ts
 const stellar = window.$onekey?.stellar
 
-if (!stellar?.isOneKey) {
-  throw new Error('OneKey Stellar provider not detected')
+if (!stellar?.isUnionKey) {
+  throw new Error('UnionKey Stellar provider not detected')
 }
 ```
 

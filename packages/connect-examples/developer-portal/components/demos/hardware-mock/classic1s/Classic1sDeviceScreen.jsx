@@ -172,7 +172,7 @@ function LockScreen({ locale }) {
       <ScreenContainer>
         <div className="relative flex h-full flex-col px-3 py-2 text-[#9fe3ff]">
           <ScreenStatus locale={locale} />
-          <div className="text-[12px] font-semibold">OneKey Classic</div>
+          <div className="text-[12px] font-semibold">UnionKey Classic</div>
           <div className="mt-4 flex flex-1 flex-col items-center justify-center">
             <IconLock className="h-7 w-7 text-white/85" />
           </div>

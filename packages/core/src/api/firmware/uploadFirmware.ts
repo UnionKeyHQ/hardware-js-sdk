@@ -1,7 +1,7 @@
 import semver from 'semver';
 import { blake2s } from '@noble/hashes/blake2s';
 import JSZip from 'jszip';
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { getDeviceFirmwareVersion } from '../../utils/deviceVersionUtils';
 import {
@@ -21,7 +21,7 @@ import type { KnownDevice } from '../../types';
 import type { TypedCall, TypedResponseMessage } from '../../device/DeviceCommands';
 import type { PROTO } from '../../constants';
 import type { CoreMessage, IFirmwareUpdateProgressType } from '../../events';
-import type { Success } from '@onekeyfe/hd-transport';
+import type { Success } from '@unionkeyfe/hd-transport';
 import type { Device } from '../../device/Device';
 
 const NEW_BOOT_UPRATE_FIRMWARE_VERSION = '2.4.5';

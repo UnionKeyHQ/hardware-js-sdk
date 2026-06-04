@@ -6,7 +6,7 @@ export default {
   name: 'one-passphrase18-empty',
   passphrase: '',
   passphraseState: 'n1xWjoRozJunfJ949rNixAWMCh4Vwj4L9j',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429162750',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429162750',
   data: [
     {
       method: 'cardanoGetPublicKey',

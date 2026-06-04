@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-import transport, { LogBlockCommand } from '@onekeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@onekeyfe/hd-shared';
+import transport, { LogBlockCommand } from '@unionkeyfe/hd-transport';
+import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@unionkeyfe/hd-shared';
 import ByteBuffer from 'bytebuffer';
 
-import type { AcquireInput, OneKeyDeviceInfoBase } from '@onekeyfe/hd-transport';
+import type { AcquireInput, OneKeyDeviceInfoBase } from '@unionkeyfe/hd-transport';
 
 const { parseConfigure, buildEncodeBuffers, decodeProtocol, receiveOne, check } = transport;
 
@@ -114,7 +114,7 @@ export default class WebUsbTransport {
         desc => dev.vendorId === desc.vendorId && dev.productId === desc.productId
       );
       const hasSerialNumber = typeof dev.serialNumber === 'string' && dev.serialNumber.length > 0;
-      return isOneKey && hasSerialNumber;
+      return isUnionKey && hasSerialNumber;
     });
 
     this.deviceList = onekeyDevices.map(device => ({

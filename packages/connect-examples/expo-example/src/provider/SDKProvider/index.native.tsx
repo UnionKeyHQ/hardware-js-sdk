@@ -6,7 +6,7 @@ import { BluetoothSearching } from '@tamagui/lucide-icons';
 import { getHardwareSDKInstance } from '../../utils/hardwareInstance';
 import HardwareSDKContext from '../HardwareSDKContext';
 
-import type { CoreApi } from '@onekeyfe/hd-core';
+import type { CoreApi } from '@unionkeyfe/hd-core';
 
 let isSdkInit = false;
 

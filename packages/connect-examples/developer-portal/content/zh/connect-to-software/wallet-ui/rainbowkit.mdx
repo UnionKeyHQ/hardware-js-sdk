@@ -1,5 +1,5 @@
 ---
-description: 将 OneKey 集成到 RainbowKit (EVM)
+description: 将 UnionKey 集成到 RainbowKit (EVM)
 ---
 
 # RainbowKit
@@ -16,15 +16,15 @@ yarn add @rainbow-me/rainbowkit wagmi viem
 npm install @rainbow-me/rainbowkit wagmi viem
 ```
 
-## 配置 OneKey
+## 配置 UnionKey
 
-将 OneKey 钱包添加到 RainbowKit 配置中。
+将 UnionKey 钱包添加到 RainbowKit 配置中。
 
 ```javascript
-// 导入 OneKey 钱包
+// 导入 UnionKey 钱包
 import { oneKeyWallet } from "@rainbow-me/rainbowkit/wallets";
 
-const appName = "OneKey Demo";
+const appName = "UnionKey Demo";
 const projectId = "12345";
 
 const { wallets } = getDefaultWallets({ appName, projectId, chains });
@@ -32,7 +32,7 @@ const connectors = connectorsForWallets([
   ...wallets,
   {
     groupName: "推荐",
-    // 配置 OneKey 钱包
+    // 配置 UnionKey 钱包
     wallets: [oneKeyWallet({ chains })]
   }
 ]);

@@ -20,7 +20,7 @@ Bitcoin UTXO signing guide. Covers address confirmation and P2PKH / P2SH-P2WPKH 
 
 ## How it works
 
-OneKey BTC signer talks to the device app via `HardwareSDK`, wraps APDUs into UTXO review and signing tasks.
+UnionKey BTC signer talks to the device app via `HardwareSDK`, wraps APDUs into UTXO review and signing tasks.
 
 - Paths must match script purpose (44/49/84/86).
 - Each input needs a full previous transaction (`refTxs`), otherwise the device rejects.
@@ -29,13 +29,13 @@ OneKey BTC signer talks to the device app via `HardwareSDK`, wraps APDUs into UT
 ## Installation
 
 ```bash
-npm i @onekeyfe/hd-core @onekeyfe/hd-common-connect-sdk
+npm i @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
 ```
 
 ## Initialization
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
 const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
@@ -49,7 +49,7 @@ const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
   path: "m/84'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: true,
+  showOnUnionKey: true,
 });
 // res.payload.address, publicKey?, path
 ```
@@ -58,7 +58,7 @@ const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
 
 - `path` / `address_n`: required; must match purpose.
 - `coin`: required; e.g., `btc`, `test`.
-- `showOnOneKey?`: optional; display and confirm on device.
+- `showOnUnionKey?`: optional; display and confirm on device.
 
 **Returns**
 
@@ -105,14 +105,14 @@ Promise<{ success, payload: { serializedTx, signatures?: any } }>
 ## Interaction & Status
 
 - APIs resolve on completion; user prompts arrive via `UI_REQUEST` (unlock device, open BTC app, confirm inputs/outputs/change/fee).
-- Run calls serially per device; use `showOnOneKey` to confirm receive/change paths before signing.
+- Run calls serially per device; use `showOnUnionKey` to confirm receive/change paths before signing.
 
 ## Examples
 
 ### P2SH-P2WPKH transaction
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 
 await HardwareSDK.init({ env: 'webusb', debug: false });
 
@@ -120,7 +120,7 @@ const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 
 const path49 = [(49 | 0x80000000) >>> 0, (0 | 0x80000000) >>> 0, (0 | 0x80000000) >>> 0, 0, 0];
-await HardwareSDK.btcGetAddress(connectId, deviceId, { path: path49, coin: 'btc', showOnOneKey: true });
+await HardwareSDK.btcGetAddress(connectId, deviceId, { path: path49, coin: 'btc', showOnUnionKey: true });
 
 const inputs = [
   {

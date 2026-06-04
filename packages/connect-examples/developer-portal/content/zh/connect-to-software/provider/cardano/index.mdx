@@ -1,16 +1,16 @@
 ---
 title: Cardano
-description: 通过 OneKey 的 CIP-30 兼容 Provider 集成 Cardano
+description: 通过 UnionKey 的 CIP-30 兼容 Provider 集成 Cardano
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Cardano
 
-使用 OneKey 的 CIP-30 兼容 Provider 集成 Cardano 区块链。通过 `window.cardano.onekey` 或 `window.cardano.nami` 访问。
+使用 UnionKey 的 CIP-30 兼容 Provider 集成 Cardano 区块链。通过 `window.cardano.onekey` 或 `window.cardano.nami` 访问。
 
 <Callout type="info">
-OneKey 实现了 CIP-30 (Cardano dApp Connector)，确保与所有 Cardano dApp 兼容。同时提供 Nami 钱包兼容性。
+UnionKey 实现了 CIP-30 (Cardano dApp Connector)，确保与所有 Cardano dApp 兼容。同时提供 Nami 钱包兼容性。
 </Callout>
 
 ---
@@ -27,17 +27,17 @@ OneKey 实现了 CIP-30 (Cardano dApp Connector)，确保与所有 Cardano dApp 
 ## Provider 检测
 
 ```typescript
-// OneKey 提供 onekey 和 nami 两种接口
+// UnionKey 提供 onekey 和 nami 两种接口
 const onekey = window.cardano?.onekey
 const nami = window.cardano?.nami
 
 // 检查可用性
 if (!onekey) {
-  throw new Error('未检测到 OneKey Cardano provider')
+  throw new Error('未检测到 UnionKey Cardano provider')
 }
 
 // 获取钱包信息
-console.log('名称:', onekey.name) // 'OneKey'
+console.log('名称:', onekey.name) // 'UnionKey'
 console.log('API 版本:', onekey.apiVersion) // '0.1.0'
 console.log('图标:', onekey.icon)
 ```
@@ -294,7 +294,7 @@ api.experimental.on('accountChange', (addresses) => {
 
 | 属性/方法 | 说明 |
 |-----------|------|
-| `name` | 钱包名称 ('OneKey') |
+| `name` | 钱包名称 ('UnionKey') |
 | `icon` | 钱包图标 URL |
 | `apiVersion` | API 版本 |
 | `isEnabled()` | 检查是否已启用 |
@@ -386,13 +386,13 @@ npm install lucid-cardano
 ```typescript
 import { Lucid } from 'lucid-cardano'
 
-// 使用 OneKey 初始化 Lucid
+// 使用 UnionKey 初始化 Lucid
 const lucid = await Lucid.new(
   new Blockfrost('https://cardano-mainnet.blockfrost.io/api', 'your-api-key'),
   'Mainnet'
 )
 
-// 连接 OneKey
+// 连接 UnionKey
 const api = await window.cardano.onekey.enable()
 lucid.selectWallet(api)
 
@@ -421,7 +421,7 @@ npm install @meshsdk/core
 ```typescript
 import { BrowserWallet, Transaction } from '@meshsdk/core'
 
-// 连接到 OneKey
+// 连接到 UnionKey
 const wallet = await BrowserWallet.enable('onekey')
 
 // 获取钱包信息
@@ -441,13 +441,13 @@ const txHash = await wallet.submitTx(signedTx)
 
 ## Nami 兼容性
 
-OneKey 提供 Nami 钱包兼容性：
+UnionKey 提供 Nami 钱包兼容性：
 
 ```typescript
 // 通过 Nami 接口访问
 const nami = window.cardano.nami
 const api = await nami.enable()
 
-// 与 OneKey 相同的 API
+// 与 UnionKey 相同的 API
 const balance = await api.getBalance()
 ```

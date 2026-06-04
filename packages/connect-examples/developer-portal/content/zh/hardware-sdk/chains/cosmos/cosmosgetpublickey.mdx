@@ -26,11 +26,11 @@ const result = await HardwareSDK.cosmosGetPublicKey(connectId, deviceId, params)
 
 * `path` - _必需_ `string | Array<number>` 最小长度为 `1`。
 * `curve` - _可选_ `string` 椭圆曲线算法，默认为 `secp256k1`
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 
 #### 导出批量公钥
 
-* `bundle` - 包含 `path`、`showOnOneKey`、`curve` 字段的对象 `Array`
+* `bundle` - 包含 `path`、`showOnUnionKey`、`curve` 字段的对象 `Array`
 
 ### 示例
 
@@ -40,7 +40,7 @@ const result = await HardwareSDK.cosmosGetPublicKey(connectId, deviceId, params)
 HardwareSDK.cosmosGetPublicKey(connectId, deviceId, {
     path: "m/44'/118'/0'/0/0",
     curve: 'secp256k1',
-    showOnOneKey: true
+    showOnUnionKey: true
 });
 ```
 

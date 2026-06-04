@@ -1,10 +1,10 @@
-# OneKey 区块链集成技术详解
+# UnionKey 区块链集成技术详解
 
 ## 0. 核心概念
 
 ### 0.1 支持架构
 
-OneKey硬件钱包通过统一的密码学原语支持80+区块链：
+UnionKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ```
 统一密码学原语 (secp256k1/ed25519)
@@ -28,16 +28,16 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ### 1.1 技术规范
 
-**椭圆曲线：** secp256k1  
-**签名算法：** ECDSA  
-**模型：** UTXO  
-**硬化规则：** 前3级硬化 (m/44'/coin_type'/account'/change/index)  
+**椭圆曲线：** secp256k1
+**签名算法：** ECDSA
+**模型：** UTXO
+**硬化规则：** 前3级硬化 (m/44'/coin_type'/account'/change/index)
 
 ### 1.2 地址类型与变种
 
 **支持的地址类型：**
 - **P2PKH (Legacy):** Base58Check编码，以'1'开头
-- **P2WPKH (SegWit):** Bech32编码，以'bc1q'开头  
+- **P2WPKH (SegWit):** Bech32编码，以'bc1q'开头
 - **P2TR (Taproot):** Bech32m编码，以'bc1p'开头
 - **P2SH-P2WPKH (Nested SegWit):** Base58Check编码，以'3'开头
 
@@ -45,7 +45,7 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 **核心Bitcoin网络：**
 - **BTC (Bitcoin):** SLIP-44: 0, 支持地址类型: Legacy/SegWit/Taproot, HRP: bc
-- **TEST (Bitcoin Testnet):** SLIP-44: 1, 支持地址类型: Legacy/SegWit/Taproot, HRP: tb  
+- **TEST (Bitcoin Testnet):** SLIP-44: 1, 支持地址类型: Legacy/SegWit/Taproot, HRP: tb
 - **REGTEST (Bitcoin Regtest):** SLIP-44: 1, 支持地址类型: Legacy/SegWit/Taproot, HRP: bcrt
 
 **主要分叉币：**
@@ -93,12 +93,12 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ### 2.1 技术规范
 
-**椭圆曲线：** secp256k1  
-**签名算法：** ECDSA  
-**模型：** 账户模型  
-**硬化规则：** 前3级硬化 (m/44'/60'/0'/0/index)  
-**地址格式：** EIP-55混合大小写校验和  
-**签名标准：** EIP-155 (包含chainId防重放)  
+**椭圆曲线：** secp256k1
+**签名算法：** ECDSA
+**模型：** 账户模型
+**硬化规则：** 前3级硬化 (m/44'/60'/0'/0/index)
+**地址格式：** EIP-55混合大小写校验和
+**签名标准：** EIP-155 (包含chainId防重放)
 
 ### 2.2 地址类型与变种
 
@@ -132,10 +132,10 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ### 3.1 技术规范
 
-**椭圆曲线：** edwards25519  
-**签名算法：** EdDSA (确定性签名)  
-**硬化规则：** 全硬化路径 (所有级别都使用硬化推导)  
-**性能特性：** 签名/验证极快，抗侧信道攻击，固定64字节签名长度  
+**椭圆曲线：** edwards25519
+**签名算法：** EdDSA (确定性签名)
+**硬化规则：** 全硬化路径 (所有级别都使用硬化推导)
+**性能特性：** 签名/验证极快，抗侧信道攻击，固定64字节签名长度
 
 ### 3.2 路径与地址变种
 
@@ -169,7 +169,7 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 **新兴Move语言链：**
 - **APT (Aptos):** SLIP-44: 637, 路径: m/44'/637'/0'/0'/0'
-- **SUI (Sui):** SLIP-44: 784, 路径: m/44'/784'/0'/0'/0' 
+- **SUI (Sui):** SLIP-44: 784, 路径: m/44'/784'/0'/0'/0'
 - 地址格式: 0x前缀十六进制, 32字节长度
 - 特性: Move编程语言, 并行执行, 对象模型
 
@@ -182,17 +182,17 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ### 4.1 技术规范
 
-**椭圆曲线：** secp256k1 (OneKey实现使用与Bitcoin相同)  
-**签名算法：** ECDSA  
-**硬化规则：** 全硬化路径 (m/44'/354'/0'/0'/0')  
-**地址格式：** SS58 (Substrate地址格式)  
-**网络区分：** SS58前缀标识不同网络  
+**椭圆曲线：** secp256k1 (UnionKey实现使用与Bitcoin相同)
+**签名算法：** ECDSA
+**硬化规则：** 全硬化路径 (m/44'/354'/0'/0'/0')
+**地址格式：** SS58 (Substrate地址格式)
+**网络区分：** SS58前缀标识不同网络
 
 ### 4.2 地址类型与变种
 
 **SS58地址格式：**
 - **编码方式：** Base58编码
-- **校验机制：** Blake2b哈希校验和  
+- **校验机制：** Blake2b哈希校验和
 - **前缀系统：** 单字节或多字节网络前缀
 - **长度：** 通常35-47字符
 
@@ -200,7 +200,7 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 **主要中继链：**
 - **DOT (Polkadot):** SLIP-44: 354, SS58前缀: 0, 路径: m/44'/354'/0'/0'/0'
-- **KSM (Kusama):** SLIP-44: 354, SS58前缀: 2, 路径: m/44'/354'/0'/0'/0' 
+- **KSM (Kusama):** SLIP-44: 354, SS58前缀: 2, 路径: m/44'/354'/0'/0'/0'
 - **Westend (测试网):** SLIP-44: 354, SS58前缀: 42, 路径: m/44'/354'/0'/0'/0'
 
 **平行链生态：**
@@ -220,12 +220,12 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ### 5.1 技术规范
 
-**椭圆曲线：** secp256k1  
-**签名算法：** ECDSA  
-**硬化规则：** 前3级硬化 (m/44'/118'/0'/0/{index})  
-**地址格式：** Bech32 + HRP (人类可读前缀)  
-**签名标准：** Amino JSON + 标准JSON序列化  
-**共识机制：** Tendermint BFT + IBC跨链协议  
+**椭圆曲线：** secp256k1
+**签名算法：** ECDSA
+**硬化规则：** 前3级硬化 (m/44'/118'/0'/0/{index})
+**地址格式：** Bech32 + HRP (人类可读前缀)
+**签名标准：** Amino JSON + 标准JSON序列化
+**共识机制：** Tendermint BFT + IBC跨链协议
 
 ### 5.2 地址类型与变种
 
@@ -278,14 +278,14 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 - **特性：** Ripple共识算法, 路径查找, 托管功能, 账户储备金要求
 
 **Tron网络:**
-- **椭圆曲线：** secp256k1, **SLIP-44:** 195, **路径:** m/44'/195'/0'/0/{index} 
+- **椭圆曲线：** secp256k1, **SLIP-44:** 195, **路径:** m/44'/195'/0'/0/{index}
 - **硬化规则：** 前3级硬化
 - **地址格式：** Base58Check, 以'T'开头, 前缀: 0x41 (类似Ethereum生成后添加Tron前缀)
 - **特性：** DPoS共识, TRC-20代币标准, 带宽机制, 智能合约
 
 **Filecoin网络:**
 - **椭圆曲线：** secp256k1, **SLIP-44:** 461, **路径:** m/44'/461'/0'/0/{index}
-- **硬化规则：** 前3级硬化  
+- **硬化规则：** 前3级硬化
 - **地址格式：** 自定义编码, 以'f'开头
 - **特性：** 存储证明, 检索市场, Actor模型
 
@@ -321,7 +321,7 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 - **支持功能:** LNURL-Auth认证, 闪电发票签名, 通道管理
 
 **Nostr协议:**
-- **椭圆曲线:** secp256k1, **签名:** Schnorr签名  
+- **椭圆曲线:** secp256k1, **签名:** Schnorr签名
 - **应用:** 去中心化社交, 抗审查通信
 - **支持功能:** 事件签名, 私信加密, 身份验证
 
@@ -331,7 +331,7 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 **前3级硬化 (大多数链):**
 - Bitcoin系列: m/44'/coin_type'/account'/change/index
-- Ethereum系列: m/44'/60'/account'/change/index  
+- Ethereum系列: m/44'/60'/account'/change/index
 - Cosmos系列: m/44'/118'/account'/change/index
 - 特殊链 (XRP, Tron等): m/44'/coin_type'/account'/change/index
 
@@ -362,9 +362,9 @@ OneKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ```typescript
 // 地址获取 (所有链统一)
-HardwareSDK.{chain}GetAddress({ path, showOnOneKey, ...chainSpecific })
+HardwareSDK.{chain}GetAddress({ path, showOnUnionKey, ...chainSpecific })
 
-// 交易签名 (所有链统一)  
+// 交易签名 (所有链统一)
 HardwareSDK.{chain}SignTransaction({ path, transaction, ...chainSpecific })
 ```
 
@@ -372,7 +372,7 @@ HardwareSDK.{chain}SignTransaction({ path, transaction, ...chainSpecific })
 
 ## 🎯 总结
 
-OneKey SDK通过**2种椭圆曲线** (secp256k1 + ed25519) 和**统一API设计**实现对**90+区块链**的全面支持：
+UnionKey SDK通过**2种椭圆曲线** (secp256k1 + ed25519) 和**统一API设计**实现对**90+区块链**的全面支持：
 
 **技术优势：**
 - **密码学统一：** 2种曲线覆盖所有主流区块链
@@ -381,4 +381,4 @@ OneKey SDK通过**2种椭圆曲线** (secp256k1 + ed25519) 和**统一API设计*
 - **硬化策略：** 根据链的安全需求选择合适的硬化级别
 
 **生态覆盖：**
-从早期的Bitcoin到最新的Layer1，从DeFi生态到企业应用，OneKey真正实现了"一次集成，支持全生态"的开发体验。
+从早期的Bitcoin到最新的Layer1，从DeFi生态到企业应用，UnionKey真正实现了"一次集成，支持全生态"的开发体验。

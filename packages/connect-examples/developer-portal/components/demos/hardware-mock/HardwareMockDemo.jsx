@@ -48,13 +48,13 @@ const I18N = {
       commandPanel: '交互面板',
       command: '命令',
       sendCommand: '发送命令',
-      showOnDevice: 'showOnOneKey（在设备上显示并确认）',
+      showOnDevice: 'showOnUnionKey（在设备上显示并确认）',
       deviceScreen: '设备屏幕（Mock）',
       terminal: '终端日志',
       noLogs: '暂无日志。试试先解锁设备并输入 PIN，或发送命令触发交互。',
       demoNotice: 'Mock 演示（不连接真实硬件）',
       pinNote: 'PIN：任意 4 位（Mock 不校验）',
-      openEmulator: '打开 OneKey Emulator',
+      openEmulator: '打开 UnionKey Emulator',
       guide: '导览',
       devViewTitle: '开发者视角',
       tabExample: '示例代码',
@@ -122,13 +122,13 @@ const I18N = {
       commandPanel: 'Command panel',
       command: 'Command',
       sendCommand: 'Send',
-      showOnDevice: 'showOnOneKey (confirm on device)',
+      showOnDevice: 'showOnUnionKey (confirm on device)',
       deviceScreen: 'Device screen (Mock)',
       terminal: 'Terminal logs',
       noLogs: 'No logs yet. Try unlocking the device or send a command to start.',
       demoNotice: 'Mock demo (no real hardware)',
       pinNote: 'PIN: any 4 digits (not validated)',
-      openEmulator: 'Open OneKey Emulator',
+      openEmulator: 'Open UnionKey Emulator',
       guide: 'Guide',
       devViewTitle: 'Developer View',
       tabExample: 'Example',
@@ -315,9 +315,9 @@ function buildTourHintPayload({ locale, dict, stepId, tourEnabled, tourStarted }
   }
 }
 
-function buildExampleCode({ locale, command, btcPath, addressShowOnOneKey, messageHex }) {
+function buildExampleCode({ locale, command, btcPath, addressShowOnUnionKey, messageHex }) {
   const init = [
-    "import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'",
+    "import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'",
     '',
     'await HardwareSDK.init({',
     "  env: 'webusb',",
@@ -355,7 +355,7 @@ function buildExampleCode({ locale, command, btcPath, addressShowOnOneKey, messa
       'const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {',
       `  path: ${JSON.stringify(btcPath)},`,
       "  coin: 'btc',",
-      `  showOnOneKey: ${String(Boolean(addressShowOnOneKey))},`,
+      `  showOnUnionKey: ${String(Boolean(addressShowOnUnionKey))},`,
       '})',
       'if (!res.success) throw new Error(res.payload.error)',
       '',
@@ -424,7 +424,7 @@ export function HardwareMockDemo({ locale = 'zh' }) {
 
   const [command, setCommand] = useState('btcGetAddress')
   const [btcPath, setBtcPath] = useState("m/44'/0'/0'/0/0")
-  const [addressShowOnOneKey, setAddressShowOnOneKey] = useState(true)
+  const [addressShowOnUnionKey, setAddressShowOnUnionKey] = useState(true)
   const [messageHex, setMessageHex] = useState('6578616d706c65206d657373616765')
   const [deviceTypeControl, setDeviceTypeControl] = useState('pro')
   const [classicPinModalOpen, setClassicPinModalOpen] = useState(false)
@@ -481,7 +481,7 @@ export function HardwareMockDemo({ locale = 'zh' }) {
     return buildClassicPinLayout(String(ui?.requestId ?? 'pin'))
   }, [deviceType, ui?.requestId, ui?.type])
 
-  const compactShowOnDeviceLabel = 'showOnOneKey'
+  const compactShowOnDeviceLabel = 'showOnUnionKey'
 
   deviceTypeRef.current = deviceType
   uiTypeRef.current = ui?.type ?? null
@@ -534,10 +534,10 @@ export function HardwareMockDemo({ locale = 'zh' }) {
         locale,
         command,
         btcPath,
-        addressShowOnOneKey,
+        addressShowOnUnionKey,
         messageHex
       }),
-    [addressShowOnOneKey, btcPath, command, locale, messageHex]
+    [addressShowOnUnionKey, btcPath, command, locale, messageHex]
   )
 
   const exampleFilename = useMemo(() => {
@@ -590,23 +590,23 @@ export function HardwareMockDemo({ locale = 'zh' }) {
     const isEn = locale === 'en'
     const isPro = (deviceTypeControl ?? 'pro') !== 'classic1s'
     const extraHint =
-      command === 'btcGetAddress' && !addressShowOnOneKey
+      command === 'btcGetAddress' && !addressShowOnUnionKey
         ? isEn
-          ? `\n// Note: showOnOneKey=false usually skips device confirmation, so REQUEST_BUTTON may not happen.\n`
-          : `\n// 注意：showOnOneKey=false 通常会跳过“设备上确认”，因此可能不会触发 REQUEST_BUTTON。\n`
+          ? `\n// Note: showOnUnionKey=false usually skips device confirmation, so REQUEST_BUTTON may not happen.\n`
+          : `\n// 注意：showOnUnionKey=false 通常会跳过“设备上确认”，因此可能不会触发 REQUEST_BUTTON。\n`
         : ''
 
     if (isEn) {
       if (isPro) {
-        return `import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST } from '@onekeyfe/hd-core'
+        return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST } from '@unionkeyfe/hd-core'
 
 // Pro: PIN is entered on device, so REQUEST_PIN will NOT be emitted.
 // Subscribe once at app startup (subscribe early to avoid blocking).
 HardwareSDK.on(UI_EVENT, (message) => {
   switch (message.type) {
     case UI_REQUEST.REQUEST_BUTTON: {
-      // The device needs user confirmation (e.g. btcGetAddress showOnOneKey=true).
+      // The device needs user confirmation (e.g. btcGetAddress showOnUnionKey=true).
       // This callback happens when the confirm screen is shown (not at the end).
       // Usually you only show a "Confirm on device" hint (no uiResponse needed).
       return
@@ -624,8 +624,8 @@ HardwareSDK.on(UI_EVENT, (message) => {
 ${extraHint}`
       }
 
-      return `import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core'
+      return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
 
 // Classic 1s / Pure: REQUEST_PIN may happen. Pro will NOT emit REQUEST_PIN (PIN is entered on device).
 // Subscribe once at app startup (subscribe early to avoid blocking on PIN).
@@ -635,7 +635,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
       // Option A (recommended): input PIN on device
       HardwareSDK.uiResponse({
         type: UI_RESPONSE.RECEIVE_PIN,
-        payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+        payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
       })
 
       // Option B: blind PIN input in software (Classic 1s / Pure only)
@@ -644,7 +644,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
     }
 
     case UI_REQUEST.REQUEST_BUTTON: {
-      // The device needs user confirmation (e.g. btcGetAddress showOnOneKey=true).
+      // The device needs user confirmation (e.g. btcGetAddress showOnUnionKey=true).
       // This callback happens when the confirm screen is shown (not at the end).
       // Usually you only show a "Confirm on device" hint (no uiResponse needed).
       return
@@ -663,15 +663,15 @@ ${extraHint}`
     }
 
     if (isPro) {
-      return `import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST } from '@onekeyfe/hd-core'
+      return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST } from '@unionkeyfe/hd-core'
 
 // Pro：PIN 在设备上输入，因此不会触发 REQUEST_PIN，也不需要 uiResponse。
 // 建议：应用启动时订阅一次（越早越好），避免交互流程阻塞。
 HardwareSDK.on(UI_EVENT, (message) => {
   switch (message.type) {
     case UI_REQUEST.REQUEST_BUTTON: {
-      // 设备进入需要确认的阶段（例如 btcGetAddress showOnOneKey=true）。
+      // 设备进入需要确认的阶段（例如 btcGetAddress showOnUnionKey=true）。
       // 该回调发生在“确认页面出现时”（不是最后）。
       // 通常你只需要提示“请在设备确认”（一般不需要 uiResponse）。
       return
@@ -689,8 +689,8 @@ HardwareSDK.on(UI_EVENT, (message) => {
 ${extraHint}`
     }
 
-    return `import HardwareSDK from '@onekeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core'
+    return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
 
 // Classic 1s / Pure：可能触发 REQUEST_PIN；Pro 不会（因为 PIN 在设备上输入）。
 // 建议：应用启动时订阅一次（越早越好），避免 PIN 交互导致调用卡住。
@@ -700,7 +700,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
       // 方式 1（推荐）：在设备上输入 PIN
       HardwareSDK.uiResponse({
         type: UI_RESPONSE.RECEIVE_PIN,
-        payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+        payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
       })
 
       // 方式 2：软件盲输 PIN（Classic 1s / Pure 才支持）
@@ -709,7 +709,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
     }
 
     case UI_REQUEST.REQUEST_BUTTON: {
-      // 设备进入需要确认的阶段（例如 btcGetAddress showOnOneKey=true）。
+      // 设备进入需要确认的阶段（例如 btcGetAddress showOnUnionKey=true）。
       // 该回调发生在“确认页面出现时”（不是最后）。
       // 通常你只需要提示“请在设备确认”（一般不需要 uiResponse）。
       return
@@ -725,7 +725,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
   }
 })
 ${extraHint}`
-  }, [addressShowOnOneKey, command, deviceTypeControl, locale])
+  }, [addressShowOnUnionKey, command, deviceTypeControl, locale])
 
   const editorMarks = useMemo(() => {
     const exampleCall =
@@ -820,7 +820,7 @@ ${extraHint}`
             deviceId,
             path: btcPath,
             coin: 'btc',
-            showOnOneKey: addressShowOnOneKey
+            showOnUnionKey: addressShowOnUnionKey
           }
         : command === 'btcSignMessage'
           ? {
@@ -835,7 +835,7 @@ ${extraHint}`
             : undefined
 
     hardwareMockTourBus.emit('code.updated', { command, params, code })
-  }, [tourEnabled, command, btcPath, addressShowOnOneKey, messageHex, code, state.context.device])
+  }, [tourEnabled, command, btcPath, addressShowOnUnionKey, messageHex, code, state.context.device])
 
   useEffect(() => {
     if (!tourEnabled || !tourStarted) return
@@ -925,7 +925,7 @@ ${extraHint}`
             deviceId,
             path: btcPath,
             coin: 'btc',
-            showOnOneKey: addressShowOnOneKey
+            showOnUnionKey: addressShowOnUnionKey
           }
         : command === 'btcSignMessage'
           ? {
@@ -1309,19 +1309,19 @@ ${extraHint}`
                               <button
                                 type="button"
                                 role="switch"
-                                aria-checked={addressShowOnOneKey}
+                                aria-checked={addressShowOnUnionKey}
                                 onClick={() => {
                                   if (controlsDisabled) return
-                                  const next = !addressShowOnOneKey
-                                  setAddressShowOnOneKey(next)
+                                  const next = !addressShowOnUnionKey
+                                  setAddressShowOnUnionKey(next)
                                   if (tourEnabled) {
-                                    hardwareMockTourBus.emit('param.changed', { key: 'showOnOneKey', value: next })
+                                    hardwareMockTourBus.emit('param.changed', { key: 'showOnUnionKey', value: next })
                                   }
                                 }}
                                 disabled={controlsDisabled}
                                 className={[
                                   'relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full transition-colors duration-200 ease-in-out focus:outline-none',
-                                  addressShowOnOneKey
+                                  addressShowOnUnionKey
                                     ? 'bg-[#00B812]'
                                     : 'bg-zinc-300 dark:bg-zinc-600',
                                   controlsDisabled ? 'cursor-not-allowed opacity-60' : ''
@@ -1330,7 +1330,7 @@ ${extraHint}`
                                 <span
                                   className={[
                                     'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out',
-                                    addressShowOnOneKey ? 'translate-x-[22px]' : 'translate-x-[2px]'
+                                    addressShowOnUnionKey ? 'translate-x-[22px]' : 'translate-x-[2px]'
                                   ].join(' ')}
                                 />
                               </button>
@@ -1460,7 +1460,7 @@ ${extraHint}`
                             {dict.labels.mock}
                           </span>
                           <a
-                            href="https://hardware-example.onekey.so/#/emulator"
+                            href="https://hardware-example.unionkey.io/#/emulator"
                             target="_blank"
                             rel="noopener noreferrer"
                             data-tour="emulator-link"

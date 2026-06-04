@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to TON using OneKey's TON Connect compatible provider
+description: Connect to TON using UnionKey's TON Connect compatible provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with TON using OneKey's provider.
+Learn how to detect, connect, and interact with TON using UnionKey's provider.
 
 <Callout type="info">
-OneKey implements the TON Connect 2.0 protocol, ensuring compatibility with all TON dApps.
+UnionKey implements the TON Connect 2.0 protocol, ensuring compatibility with all TON dApps.
 </Callout>
 
 ---
@@ -18,11 +18,11 @@ OneKey implements the TON Connect 2.0 protocol, ensuring compatibility with all 
 ## Provider Detection
 
 ```typescript
-// Detect OneKey TON provider
+// Detect UnionKey TON provider
 const provider = window.$onekey?.tonconnect
 
 if (!provider) {
-  throw new Error('OneKey TON provider not detected')
+  throw new Error('UnionKey TON provider not detected')
 }
 
 // Check device and wallet info
@@ -159,5 +159,5 @@ function App() {
 }
 ```
 
-OneKey is automatically detected by TON Connect SDK.
+UnionKey is automatically detected by TON Connect SDK.
 

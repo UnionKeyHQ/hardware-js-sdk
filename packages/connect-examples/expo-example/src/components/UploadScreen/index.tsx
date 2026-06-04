@@ -3,8 +3,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { bytesToHex } from '@noble/hashes/utils';
 import * as ImagePicker from 'expo-image-picker';
 import { SaveFormat, manipulateAsync } from 'expo-image-manipulator';
-import { getDeviceType, getHomeScreenSize } from '@onekeyfe/hd-core';
-import { ResourceType } from '@onekeyfe/hd-transport';
+import { getDeviceType, getHomeScreenSize } from '@unionkeyfe/hd-core';
+import { ResourceType } from '@unionkeyfe/hd-transport';
 import { Image as ImageView, Label, Stack, View, XStack } from 'tamagui';
 import { Platform } from 'react-native';
 import { useIntl } from 'react-intl';
@@ -23,7 +23,7 @@ import PanelView from '../ui/Panel';
 import { Button } from '../ui/Button';
 import { CommonInput } from '../CommonInput';
 
-import type { DeviceUploadResourceParams } from '@onekeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyfe/hd-core';
 import type { Action } from 'expo-image-manipulator';
 
 interface UploadResourceParams {

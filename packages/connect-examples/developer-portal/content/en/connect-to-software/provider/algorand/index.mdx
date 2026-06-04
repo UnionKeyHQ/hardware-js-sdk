@@ -1,16 +1,16 @@
 ---
 title: Algorand
-description: Algorand integration via OneKey's provider
+description: Algorand integration via UnionKey's provider
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Algorand
 
-Integrate Algorand blockchain using OneKey's provider. Access via `window.$onekey.algo`.
+Integrate Algorand blockchain using UnionKey's provider. Access via `window.$onekey.algo`.
 
 <Callout type="info">
-OneKey's Algorand provider supports both legacy and ARC-0001 compliant interfaces.
+UnionKey's Algorand provider supports both legacy and ARC-0001 compliant interfaces.
 </Callout>
 
 ---
@@ -27,15 +27,15 @@ OneKey's Algorand provider supports both legacy and ARC-0001 compliant interface
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Algorand provider
+// Detect UnionKey Algorand provider
 const provider = window.$onekey?.algo
 
 if (!provider) {
-  throw new Error('OneKey Algorand provider not detected')
+  throw new Error('UnionKey Algorand provider not detected')
 }
 
 // Check compatibility
-console.log('isOneKey:', provider.isOneKey) // true
+console.log('isUnionKey:', provider.isUnionKey) // true
 ```
 
 ---
@@ -334,7 +334,7 @@ interface TransactionResult {
 |----------|------|-------------|
 | `isConnected` | `boolean` | Connection status |
 | `address` | `string \| null` | Connected address |
-| `isOneKey` | `boolean` | OneKey identifier |
+| `isUnionKey` | `boolean` | UnionKey identifier |
 
 ### Events
 

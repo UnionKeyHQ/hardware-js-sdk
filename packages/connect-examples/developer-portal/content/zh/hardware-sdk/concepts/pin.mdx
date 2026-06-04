@@ -4,7 +4,7 @@ title: PIN（核心指南）
 
 # PIN（核心指南）
 
-处理 OneKey 设备 PIN 码的基本规则。
+处理 UnionKey 设备 PIN 码的基本规则。
 
 ## 关键要点
 
@@ -18,12 +18,12 @@ title: PIN（核心指南）
 
 | 设备 | 软件端 PIN 输入 | 仅设备端输入 |
 | --- | --- | --- |
-| OneKey Classic | 支持 | 否 |
-| OneKey Classic 1s | 支持 | 否 |
-| OneKey Classic 1s Pure | 支持 | 否 |
-| OneKey Mini | 支持 | 否 |
-| OneKey Touch | 不支持 | 是 |
-| OneKey Pro | 不支持 | 是 |
+| UnionKey Classic | 支持 | 否 |
+| UnionKey Classic 1s | 支持 | 否 |
+| UnionKey Classic 1s Pure | 支持 | 否 |
+| UnionKey Mini | 支持 | 否 |
+| UnionKey Touch | 不支持 | 是 |
+| UnionKey Pro | 不支持 | 是 |
 
 ## UI 预期
 
@@ -59,14 +59,14 @@ function onSoftwareKey(label: number) {
 ## 事件到响应
 
 ```ts
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 HardwareSDK.on(UI_EVENT, (msg) => {
   if (msg.type === UI_REQUEST.REQUEST_PIN) {
     // 选项 A：在设备上输入
     HardwareSDK.uiResponse({
       type: UI_RESPONSE.RECEIVE_PIN,
-      payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+      payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
     });
 
     // 选项 B：软件端 PIN 输入（Pro/Touch 设备不支持）

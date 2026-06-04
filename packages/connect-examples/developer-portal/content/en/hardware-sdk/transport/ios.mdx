@@ -5,11 +5,11 @@ title: "iOS: Connect via Bluetooth (Native)"
 # iOS: Connect via Bluetooth (Native)
 
 > **Note:**
-> Demo: Native iOS example (WKWebView + CoreBluetooth) → [native-ios-example](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-ios-example)
+> Demo: Native iOS example (WKWebView + CoreBluetooth) → [native-ios-example](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-ios-example)
 > This guide builds on the [Low-Level Transport Plugin](/en/hardware-sdk/concepts/low-level-plugin) and its 64-byte message protocol—read that first.
 
 
-This page shows how to integrate `@onekeyfe/hd-common-connect-sdk` in a native iOS host via a low-level adapter. The JavaScript bundle runs in WKWebView; transport calls are forwarded to native CoreBluetooth and bridged back to JS.
+This page shows how to integrate `@unionkeyfe/hd-common-connect-sdk` in a native iOS host via a low-level adapter. The JavaScript bundle runs in WKWebView; transport calls are forwarded to native CoreBluetooth and bridged back to JS.
 
 Key stack:
 - CoreBluetooth (system)
@@ -19,7 +19,7 @@ Info.plist (permissions):
 - `NSBluetoothAlwaysUsageDescription`
 - (Older iOS) `NSBluetoothPeripheralUsageDescription`
 
-OneKey BLE UUIDs:
+UnionKey BLE UUIDs:
 - Service: `00000001-0000-1000-8000-00805f9b34fb`
 - Write:   `00000002-0000-1000-8000-00805f9b34fb`
 - Notify:  `00000003-0000-1000-8000-00805f9b34fb`

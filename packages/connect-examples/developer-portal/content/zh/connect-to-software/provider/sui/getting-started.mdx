@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey 的 Sui Wallet Standard Provider 连接 Sui
+description: 使用 UnionKey 的 Sui Wallet Standard Provider 连接 Sui
 ---
 
 import { Callout } from 'nextra/components'
@@ -10,7 +10,7 @@ import { Callout } from 'nextra/components'
 了解如何检测、连接和与 Sui 进行交互。
 
 <Callout type="info">
-OneKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
+UnionKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
 </Callout>
 
 ---
@@ -18,11 +18,11 @@ OneKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Sui provider
+// 检测 UnionKey Sui provider
 const provider = window.$onekey?.sui
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Sui provider')
+  throw new Error('未检测到 UnionKey Sui provider')
 }
 ```
 
@@ -154,4 +154,4 @@ function App() {
 }
 ```
 
-OneKey 会通过 Sui Wallet Standard 自动被检测。
+UnionKey 会通过 Sui Wallet Standard 自动被检测。

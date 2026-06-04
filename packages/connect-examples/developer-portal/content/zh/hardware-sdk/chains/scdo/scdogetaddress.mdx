@@ -11,12 +11,12 @@ title: scdoGetAddress
 
 #### SCDO：获取地址
 
-显示指定 BIP32 路径派生的地址，并返回给调用者。用户需要在 OneKey 上确认导出。
+显示指定 BIP32 路径派生的地址，并返回给调用者。用户需要在 UnionKey 上确认导出。
 
 ```typescript
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnOneKey: true
+    showOnUnionKey: true
 });
 ```
 
@@ -27,11 +27,11 @@ const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
 **导出单个地址**
 
 * `path` - _必需_ `string | Array<number>` 最小长度为 3。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 
 **导出批量地址**
 
-* `bundle` - 包含 `path` 和 `showOnOneKey` 字段的对象 `Array`
+* `bundle` - 包含 `path` 和 `showOnUnionKey` 字段的对象 `Array`
 
 **示例**
 
@@ -39,7 +39,7 @@ const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
 // 获取单个地址
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnOneKey: false
+    showOnUnionKey: false
 });
 
 // 获取多个地址
@@ -47,11 +47,11 @@ const bundleResponse = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     bundle: [
         {
             path: "m/44'/541'/0'/0/0",
-            showOnOneKey: false
+            showOnUnionKey: false
         },
         {
             path: "m/44'/541'/1'/0/0",
-            showOnOneKey: false
+            showOnUnionKey: false
         }
     ]
 });

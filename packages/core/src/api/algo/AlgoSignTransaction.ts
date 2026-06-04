@@ -4,7 +4,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
 import type { SolanaSignTransactionParams } from '../../types';
-import type { AlgorandSignTx as HardwareAlgorandSignTx } from '@onekeyfe/hd-transport';
+import type { AlgorandSignTx as HardwareAlgorandSignTx } from '@unionkeyfe/hd-transport';
 
 export default class AlgoSignTransaction extends BaseMethod<HardwareAlgorandSignTx> {
   hasBundle = false;

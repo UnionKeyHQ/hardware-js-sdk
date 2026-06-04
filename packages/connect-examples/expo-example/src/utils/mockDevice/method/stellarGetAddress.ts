@@ -3,7 +3,7 @@ import { base32 } from '@scure/base';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 const STELLAR_VERSION_ACCOUNT = 6 << 3; // 'G' = 0x30
 

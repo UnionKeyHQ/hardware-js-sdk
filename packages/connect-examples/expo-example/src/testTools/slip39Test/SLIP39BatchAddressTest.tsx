@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { Picker } from '@react-native-picker/picker';
 import { Separator, Stack, Text, View, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
@@ -14,7 +14,7 @@ import { type Slip39StateManager, slip39StateInstances } from './slip39StateMana
 import { convertToBundleFormat } from './utils';
 import { batchAddressTests } from './addressData';
 
-import type { CoreMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
 import type { TestCaseDataWithKey } from '../../components/BaseTestRunner/types';
 import type { SLIP39BatchTestCase } from './types';
 

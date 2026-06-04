@@ -19,7 +19,7 @@ const result = await HardwareSDK.evmGetPublicKey(connectId, deviceId, params);
 ### Exporting single public key
 
 * `path` - _required_ `string | Array<number>` minimum length is `3`. [read more](/en/hardware-sdk/core-api-guide#hd-path)
-* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 * `chainId` - _optional_ `number` The ChainId in ETH is a unique identifier for a specific Ethereum network, used to distinguish different versions of the blockchain. [Reference](https://github.com/ethereum-lists/chains/tree/master/\_data/chains).&#x20;
 
 #### Exporting bundle of public keys
@@ -33,7 +33,7 @@ Return public key of first ethereum account:
 ```typescript
 HardwareSDK.evmGetPublicKey(connectId, deviceId, {
     path: "m/44'/60'/0'/0/0",
-    showOnOneKey: true,
+    showOnUnionKey: true,
     chainId: 1
 });
 ```

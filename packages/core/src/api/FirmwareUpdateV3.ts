@@ -1,4 +1,4 @@
-import { EDeviceType, ERRORS, HardwareError, HardwareErrorCode, wait } from '@onekeyfe/hd-shared';
+import { EDeviceType, ERRORS, HardwareError, HardwareErrorCode, wait } from '@unionkeyfe/hd-shared';
 import semver from 'semver';
 import JSZip from 'jszip';
 
@@ -20,7 +20,7 @@ import { DevicePool } from '../device/DevicePool';
 import { DEVICE } from '../events';
 
 import type { FirmwareUpdateV3Params } from '../types/api/firmwareUpdate';
-import type { Deferred, EFirmwareType } from '@onekeyfe/hd-shared';
+import type { Deferred, EFirmwareType } from '@unionkeyfe/hd-shared';
 import type { TypedResponseMessage } from '../device/DeviceCommands';
 
 const Log = getLogger(LoggerNames.Method);

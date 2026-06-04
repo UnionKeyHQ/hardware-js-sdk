@@ -26,7 +26,7 @@ const result = await HardwareSDK.nostrGetPublicKey(connectId, deviceId, params);
 ### Exporting single public key
 
 * `path` - _required_ `string | Array<number>` minimum length is `3`. [read more](/en/hardware-sdk/core-api-guide#hd-path)
-* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 
 
 
@@ -41,7 +41,7 @@ Return public key of first ethereum account:
 ```typescript
 HardwareSDK.nostrGetPublicKey(connectId, deviceId, {
     path: "m/44'/1237'/0'/0/0",
-    showOnOneKey: true,
+    showOnUnionKey: true,
 });
 ```
 

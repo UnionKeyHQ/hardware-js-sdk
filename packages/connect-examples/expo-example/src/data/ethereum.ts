@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get EVM Address',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       },
       {
@@ -18,23 +18,23 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/60'/0'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/1",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/2",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/3",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/4",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
           ],
         },
@@ -49,7 +49,7 @@ const api: PlaygroundProps[] = [
         title: 'Get EVM Public Key',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnOneKey: false,
+          showOnUnionKey: false,
         },
       },
       {
@@ -58,15 +58,15 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/60'/0'/0/0",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/1",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
             {
               path: "m/44'/60'/0'/0/2",
-              showOnOneKey: false,
+              showOnUnionKey: false,
             },
           ],
         },
@@ -81,7 +81,7 @@ const api: PlaygroundProps[] = [
         title: 'Sign Message',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnOneKey: false,
+          showOnUnionKey: false,
           messageHex: '0x6578616d706c65206d657373616765',
           chainId: 1,
         },
@@ -604,7 +604,7 @@ const api: PlaygroundProps[] = [
             },
             primaryType: 'Message',
             domain: {
-              name: 'example.onekey.so',
+              name: 'example.unionkey.io',
             },
             message: {
               Wallet: 'Onekey Touch',

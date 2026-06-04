@@ -5,7 +5,7 @@ import { formatAnyHex } from '../helpers/hexUtils';
 import { getCoinInfo } from './helpers/btcParamsUtils';
 import { getBitcoinForkVersionRange } from './helpers/versionLimit';
 
-import type { VerifyMessage } from '@onekeyfe/hd-transport';
+import type { VerifyMessage } from '@unionkeyfe/hd-transport';
 
 export default class BTCVerifyMessage extends BaseMethod<VerifyMessage> {
   init() {

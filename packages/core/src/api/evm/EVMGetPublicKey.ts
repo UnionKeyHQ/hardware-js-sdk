@@ -9,7 +9,7 @@ import getPublicKeyLegacyV1 from './legacyV1/getPublicKey';
 import { batchGetPublickeys } from '../helpers/batchGetPublickeys';
 
 import type { EVMGetPublicKeyParams, EVMPublicKey } from '../../types';
-import type { EthereumGetPublicKey, EthereumGetPublicKeyOneKey } from '@onekeyfe/hd-transport';
+import type { EthereumGetPublicKey, EthereumGetPublicKeyOneKey } from '@unionkeyfe/hd-transport';
 
 export default class EVMGetPublicKey extends BaseMethod<EthereumGetPublicKeyOneKey[]> {
   hasBundle = false;
@@ -28,7 +28,7 @@ export default class EVMGetPublicKey extends BaseMethod<EthereumGetPublicKeyOneK
       (item: EVMGetPublicKeyParams) => !!item.showOnOneKey
     );
 
-    this.useBatch = !this.confirmShowOnOneKey && this.hasBundle && this.payload.useBatch;
+    this.useBatch = !this.confirmShowOnUnionKey && this.hasBundle && this.payload.useBatch;
 
     const payload = this.hasBundle ? this.payload : { bundle: [this.payload] };
 

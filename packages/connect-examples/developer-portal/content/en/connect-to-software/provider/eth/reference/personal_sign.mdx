@@ -27,7 +27,7 @@ Signs a message with the specified account. The message is prefixed with `"\x19E
 ## Example
 
 ```typescript
-const message = 'Hello, OneKey!'
+const message = 'Hello, UnionKey!'
 const hexMessage = '0x' + Buffer.from(message, 'utf8').toString('hex')
 
 const signature = await window.$onekey.ethereum.request({
@@ -43,7 +43,7 @@ console.log('Signature:', signature)
 ```typescript
 import { hashMessage, recoverAddress } from 'ethers'
 
-const message = 'Hello, OneKey!'
+const message = 'Hello, UnionKey!'
 const hexMessage = '0x' + Buffer.from(message, 'utf8').toString('hex')
 
 const signature = await window.$onekey.ethereum.request({

@@ -299,7 +299,7 @@ export default function IndexPage() {
                     <div className="relative flex-1 flex items-center justify-center">
                       <img
                         src={deviceList}
-                        alt="OneKey Devices"
+                        alt="UnionKey Devices"
                         className="w-full h-auto max-w-2xl mx-auto drop-shadow-lg"
                       />
 

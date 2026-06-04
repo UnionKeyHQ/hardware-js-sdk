@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { TonGetAddress as HardwareTonGetAddress } from '@onekeyfe/hd-transport';
+import type { TonGetAddress as HardwareTonGetAddress } from '@unionkeyfe/hd-transport';
 import type { TonAddress, TonGetAddressParams } from '../../types';
 
 export default class TonGetAddress extends BaseMethod<HardwareTonGetAddress[]> {

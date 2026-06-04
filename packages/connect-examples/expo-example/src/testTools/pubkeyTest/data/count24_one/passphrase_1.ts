@@ -6,7 +6,7 @@ export default {
   name: 'one-passphrase24-密语1',
   passphrase: 'asdfg7890',
   passphraseState: 'n4kk9unKaT8HBt5CgnarZLZSMyhk2SrsQE',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429162869',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/429162869',
   data: [
     {
       method: 'cardanoGetPublicKey',

@@ -33,7 +33,7 @@ const result = await HardwareSDK.polkadotGetAddress(connectId, deviceId, params)
 * `path` - _必需_ `string | Array<number>` 最小长度为 `3`。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
 * `prefix` - _必需_ `string` 地址前缀。默认设置为 `nexatest`
 * `network` - _必需_ `string` 网络名称，默认设置为 `polkadot`
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 
 
 
@@ -48,7 +48,7 @@ const result = await HardwareSDK.polkadotGetAddress(connectId, deviceId, params)
 ```typescript
 HardwareSDK.polkadotGetAddress(connectId, deviceId, {
     path: "m/44'/354'/0'/0'/0'",
-    showOnOneKey: true,
+    showOnUnionKey: true,
     isTestnet: false
 });
 ```

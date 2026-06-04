@@ -5,13 +5,13 @@ description: "Bluetooth Low Energy transport for Android/iOS/Flutter hosts"
 
 # Native BLE
 
-Use `@onekeyfe/hd-common-connect-sdk` in a native mobile context to forward hardware transport calls over BLE. The SDK runs JavaScript in a WebView or JS engine while native Bluetooth communication happens in the host app.
+Use `@unionkeyfe/hd-common-connect-sdk` in a native mobile context to forward hardware transport calls over BLE. The SDK runs JavaScript in a WebView or JS engine while native Bluetooth communication happens in the host app.
 
 ## When to choose native BLE
 
 - You control the entire native app experience (Android, iOS, Flutter) and can host a WebView or JS runtime that forwards `send`/`receive` over BLE.
 - You need fine-grained access to OS-level BLE permissions, pairing workflows, or custom UI that is easier to build in Swift/Kotlin or Flutter than in React Native.
-- You want to reuse the `@onekeyfe/hd-common-connect-sdk` JavaScript API while keeping the native BLE stack in-house.
+- You want to reuse the `@unionkeyfe/hd-common-connect-sdk` JavaScript API while keeping the native BLE stack in-house.
 
 ## Platform guides
 

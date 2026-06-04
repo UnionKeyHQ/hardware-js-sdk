@@ -5,11 +5,11 @@ title: iOS：通过蓝牙连接（原生）
 # iOS：通过蓝牙连接（原生）
 
 > **注意：**
-> 演示：原生 iOS 示例（WKWebView + CoreBluetooth）→ [native-ios-example](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-ios-example)
+> 演示：原生 iOS 示例（WKWebView + CoreBluetooth）→ [native-ios-example](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/native-ios-example)
 > 本页基于《[底层传输插件](/zh/hardware-sdk/concepts/low-level-plugin)》与消息协议，建议先阅读接口与 64 字节帧格式。
 
 
-本页面展示如何通过底层适配器在原生 iOS 宿主中集成 `@onekeyfe/hd-common-connect-sdk`。JavaScript 包在 WKWebView 中运行；传输调用被转发到原生 CoreBluetooth 并桥接回 JS。
+本页面展示如何通过底层适配器在原生 iOS 宿主中集成 `@unionkeyfe/hd-common-connect-sdk`。JavaScript 包在 WKWebView 中运行；传输调用被转发到原生 CoreBluetooth 并桥接回 JS。
 
 关键技术栈：
 - CoreBluetooth（系统）
@@ -19,7 +19,7 @@ Info.plist（权限）：
 - `NSBluetoothAlwaysUsageDescription`
 - （旧版 iOS）`NSBluetoothPeripheralUsageDescription`
 
-OneKey BLE UUID：
+UnionKey BLE UUID：
 - 服务：`00000001-0000-1000-8000-00805f9b34fb`
 - 写入：`00000002-0000-1000-8000-00805f9b34fb`
 - 通知：`00000003-0000-1000-8000-00805f9b34fb`

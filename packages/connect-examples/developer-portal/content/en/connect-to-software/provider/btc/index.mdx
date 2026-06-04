@@ -1,11 +1,11 @@
 ---
-description: Bitcoin integration via OneKey’s injected BTC provider (window.$onekey.btc / window.unisat)
+description: Bitcoin integration via UnionKey’s injected BTC provider (window.$onekey.btc / window.unisat)
 slug: /dapp/chains/btc
 ---
 
 # BTC
 
-Integrate Bitcoin using OneKey’s injected BTC provider. Prefer `window.$onekey.btc`; fall back to `window.unisat` when needed.
+Integrate Bitcoin using UnionKey’s injected BTC provider. Prefer `window.$onekey.btc`; fall back to `window.unisat` when needed.
 
 ## Quick links
 
@@ -17,7 +17,7 @@ Integrate Bitcoin using OneKey’s injected BTC provider. Prefer `window.$onekey
 
 ```js
 const provider = (window as any).$onekey?.btc || (window as any).unisat
-if (!provider) throw new Error('OneKey BTC provider not detected')
+if (!provider) throw new Error('UnionKey BTC provider not detected')
 await provider.requestAccounts()
 ```
 

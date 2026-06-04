@@ -4,7 +4,7 @@ title: Wallet Skills
 
 # Wallet Skills
 
-[`onekey-wallet-skills`](https://github.com/OneKeyHQ/onekey-wallet-skills) gives AI coding assistants a wallet capability layer. Users ask in natural language; the skills choose the safe route, inspect the live schema when needed, and explain results in user-facing language.
+[`unionkey-wallet-skills`](https://github.com/UnionKeyHQ/unionkey-wallet-skills) gives AI coding assistants a wallet capability layer. Users ask in natural language; the skills choose the safe route, inspect the live schema when needed, and explain results in user-facing language.
 
 The user should not need to type CLI commands. CLI is the implementation detail behind the skill pack.
 
@@ -12,9 +12,9 @@ The user should not need to type CLI commands. CLI is the implementation detail 
 
 | Client | Install path |
 | --- | --- |
-| Claude Code | `/plugin marketplace add OneKeyHQ/onekey-wallet-skills`, then `/plugin install onekey-wallet-skills` |
-| Codex | Ask Codex to follow `https://raw.githubusercontent.com/OneKeyHQ/onekey-wallet-skills/main/.codex/INSTALL.md` |
-| Cursor | Clone `https://github.com/OneKeyHQ/onekey-wallet-skills` and point Cursor at the plugin directory |
+| Claude Code | `/plugin marketplace add UnionKeyHQ/unionkey-wallet-skills`, then `/plugin install unionkey-wallet-skills` |
+| Codex | Ask Codex to follow `https://raw.githubusercontent.com/UnionKeyHQ/unionkey-wallet-skills/main/.codex/INSTALL.md` |
+| Cursor | Clone `https://github.com/UnionKeyHQ/unionkey-wallet-skills` and point Cursor at the plugin directory |
 | OpenCode / OpenClaw | Follow the matching install guide in the skills repository |
 
 After installation, start with prompts:
@@ -62,7 +62,7 @@ Use `onekey-wallet` for wallet state, receive addresses, transfers, BTC address 
 
 | Natural language | What the skill should do |
 | --- | --- |
-| `Connect my OneKey Agent Wallet.` | Pair through App Transfer and summarize the active wallet. |
+| `Connect my UnionKey Agent Wallet.` | Pair through App Transfer and summarize the active wallet. |
 | `What wallet am I using?` | Show login method, wallet kind, address, and device state if present. |
 | `Show my balance.` | Use the active wallet automatically; do not ask the user to paste an address. |
 | `Receive BTC.` | Return a BTC receive address; ask only for address type if missing. |

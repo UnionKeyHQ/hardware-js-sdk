@@ -12,7 +12,7 @@ import {
   createNeedUpgradeFirmwareHardwareError,
   createNewFirmwareForceUpdateHardwareError,
   createNewFirmwareUnReleaseHardwareError,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import {
   LoggerNames,
@@ -65,12 +65,12 @@ import type { ConnectSettings, KnownDevice } from '../types';
 import type { CoreMessage, IFrameCallMessage, UiPromise, UiPromiseResponse } from '../events';
 import type { DeviceEvents, InitOptions, RunOptions } from '../device/Device';
 import type { SdkTracingContext } from '../utils/tracing';
-import type { Deferred } from '@onekeyfe/hd-shared';
+import type { Deferred } from '@unionkeyfe/hd-shared';
 import type {
   Features,
   LowlevelTransportSharedPlugin,
   OneKeyDeviceInfo,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 import type { BaseMethod } from '../api/BaseMethod';
 
 const Log = getLogger(LoggerNames.Core);

@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { NeoSignTx } from '@onekeyfe/hd-transport';
+import type { NeoSignTx } from '@unionkeyfe/hd-transport';
 
 export default class NeoSignTransaction extends BaseMethod<NeoSignTx> {
   init() {

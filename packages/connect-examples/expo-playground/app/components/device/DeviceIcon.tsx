@@ -1,5 +1,5 @@
 import React from 'react';
-import { type IDeviceType } from '@onekeyfe/hd-core';
+import { type IDeviceType } from '@unionkeyfe/hd-core';
 import { getDeviceImagePath } from '../../utils/deviceTypeUtils';
 interface DeviceIconProps {
   deviceType: IDeviceType;

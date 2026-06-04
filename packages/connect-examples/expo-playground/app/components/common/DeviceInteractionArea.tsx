@@ -15,7 +15,7 @@ import {
   Zap,
 } from 'lucide-react';
 import type { DeviceModel, ThemeType } from '../ui/DeviceActionAnimation';
-import { UiEvent } from '@onekeyfe/hd-core';
+import { UiEvent } from '@unionkeyfe/hd-core';
 import { getDeviceImagePath } from '../../utils/deviceTypeUtils';
 import type { DeviceInfo } from '../../types/hardware';
 import type { ExecutionStatus } from '~/data/types';

@@ -5,7 +5,7 @@ import { validateParams } from './helpers/paramsValidator';
 import { formatAnyHex } from './helpers/hexUtils';
 
 import type { CipheredKeyValue, CipheredKeyValueParams } from '../types';
-import type { CipherKeyValue as HardwareCipherKeyValue } from '@onekeyfe/hd-transport';
+import type { CipherKeyValue as HardwareCipherKeyValue } from '@unionkeyfe/hd-transport';
 
 export default class CipherKeyValue extends BaseMethod<HardwareCipherKeyValue[]> {
   hasBundle = false;

@@ -7,7 +7,7 @@ import getAddressLegacyV1 from './legacyV1/getAddress';
 import getAddress from './latest/getAddress';
 
 import type { EVMAddress, EVMGetAddressParams } from '../../types';
-import type { EthereumGetAddressOneKey } from '@onekeyfe/hd-transport';
+import type { EthereumGetAddressOneKey } from '@unionkeyfe/hd-transport';
 
 export default class EvmGetAddress extends BaseMethod<EthereumGetAddressOneKey[]> {
   hasBundle = false;
@@ -68,7 +68,7 @@ export default class EvmGetAddress extends BaseMethod<EthereumGetAddressOneKey[]
       const { address } = res.message;
 
       if (!address) {
-        throw new Error('EthereumGetAddressOneKey: address is undefined');
+        throw new Error('EthereumGetAddressUnionKey: address is undefined');
       }
 
       const result = {

@@ -13,7 +13,7 @@ title: nostrDecryptMessage
 
 ## Nostr：解密消息
 
-使用指定 BIP32 路径派生的私钥解密消息。用户需要在 OneKey 上确认操作。
+使用指定 BIP32 路径派生的私钥解密消息。用户需要在 UnionKey 上确认操作。
 
 ```typescript
 const result = await HardwareSDK.nostrDecryptMessage(connectId, deviceId, params);
@@ -26,7 +26,7 @@ const result = await HardwareSDK.nostrDecryptMessage(connectId, deviceId, params
 * `path` - _必需_ `string | Array<number>` 最小长度为 `3`。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
 * `pubkey` - _必需_ `string` 公钥。
 * `ciphertext` - _必需_ `string` 加密的消息。
-* `showOnOneKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`。
+* `showOnUnionKey` - _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`。
 
 
 
@@ -40,7 +40,7 @@ const response = await HardwareSDK.nostrDecryptMessage(
      path: "m/44'/1237'/0'/0/0",
      pubkey: '2118c65161c7d68b4bdbe1374f658532670057ab1bb0c99937d0ff7cff45cb5e',
      ciphertext: 'VpWFJ7JDFv16jL7pBZ1shw==?iv=$1tPpwGD3Ic1RTVXJx1ZG7Q==',
-     showOnOneKey: true,
+     showOnUnionKey: true,
   }
 );
 ```

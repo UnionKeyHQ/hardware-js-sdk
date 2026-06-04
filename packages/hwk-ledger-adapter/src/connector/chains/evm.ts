@@ -1,4 +1,4 @@
-import { HardwareErrorCode, padHex64, stripHex } from '@onekeyfe/hwk-adapter-core';
+import { HardwareErrorCode, padHex64, stripHex } from '@unionkeyfe/hwk-adapter-core';
 
 import { collapseSignerInteraction, normalizePath } from './utils';
 import { debugLog } from '../../utils/debugLog';

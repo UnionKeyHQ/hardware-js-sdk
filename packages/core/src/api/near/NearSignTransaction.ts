@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { NearSignTx as HardwareNearSignTx } from '@onekeyfe/hd-transport';
+import type { NearSignTx as HardwareNearSignTx } from '@unionkeyfe/hd-transport';
 
 export default class NearSignTransaction extends BaseMethod<HardwareNearSignTx> {
   init() {

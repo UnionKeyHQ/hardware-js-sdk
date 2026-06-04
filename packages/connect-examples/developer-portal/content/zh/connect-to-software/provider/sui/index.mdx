@@ -1,16 +1,16 @@
 ---
 title: Sui
-description: 通过 OneKey 的 Sui Wallet Standard Provider 集成 Sui
+description: 通过 UnionKey 的 Sui Wallet Standard Provider 集成 Sui
 ---
 
 import { Callout, Tabs } from 'nextra/components'
 
 # Sui
 
-使用 OneKey 的 Provider 集成 Sui 区块链。通过 `window.$onekey.sui` 访问。
+使用 UnionKey 的 Provider 集成 Sui 区块链。通过 `window.$onekey.sui` 访问。
 
 <Callout type="info">
-OneKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
+UnionKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
 </Callout>
 
 ---
@@ -27,11 +27,11 @@ OneKey 实现了 Sui Wallet Standard，确保与所有 Sui dApp 兼容。
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Sui provider
+// 检测 UnionKey Sui provider
 const provider = window.$onekey?.sui
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Sui provider')
+  throw new Error('未检测到 UnionKey Sui provider')
 }
 ```
 
@@ -444,7 +444,7 @@ function App() {
 }
 ```
 
-OneKey 会通过 Sui Wallet Standard 自动被检测到。
+UnionKey 会通过 Sui Wallet Standard 自动被检测到。
 
 ---
 

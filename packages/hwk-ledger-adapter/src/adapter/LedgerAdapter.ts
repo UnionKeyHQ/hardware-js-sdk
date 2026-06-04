@@ -12,7 +12,7 @@ import {
   failure,
   rehydrateConnectorError,
   success,
-} from '@onekeyfe/hwk-adapter-core';
+} from '@unionkeyfe/hwk-adapter-core';
 
 import {
   ERROR_TAG,
@@ -78,7 +78,7 @@ import type {
   TronSignature,
   TronSignedTx,
   UiResponseEvent,
-} from '@onekeyfe/hwk-adapter-core';
+} from '@unionkeyfe/hwk-adapter-core';
 
 /**
  * Result of `_verifyDeviceFingerprint`.

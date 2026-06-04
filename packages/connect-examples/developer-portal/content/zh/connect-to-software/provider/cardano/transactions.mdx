@@ -1,6 +1,6 @@
 ---
 title: 交易
-description: 使用 OneKey 在 Cardano 上发送交易
+description: 使用 UnionKey 在 Cardano 上发送交易
 ---
 
 import { Callout } from 'nextra/components'
@@ -115,13 +115,13 @@ npm install lucid-cardano
 ```typescript
 import { Lucid } from 'lucid-cardano'
 
-// 使用 OneKey 初始化 Lucid
+// 使用 UnionKey 初始化 Lucid
 const lucid = await Lucid.new(
   new Blockfrost('https://cardano-mainnet.blockfrost.io/api', 'your-api-key'),
   'Mainnet'
 )
 
-// 连接 OneKey
+// 连接 UnionKey
 const api = await window.cardano.onekey.enable()
 lucid.selectWallet(api)
 
@@ -150,7 +150,7 @@ npm install @meshsdk/core
 ```typescript
 import { BrowserWallet, Transaction } from '@meshsdk/core'
 
-// 连接到 OneKey
+// 连接到 UnionKey
 const wallet = await BrowserWallet.enable('onekey')
 
 // 获取钱包信息

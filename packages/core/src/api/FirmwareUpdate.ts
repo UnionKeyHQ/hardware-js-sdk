@@ -4,7 +4,7 @@ import {
   HardwareError,
   HardwareErrorCode,
   createDeferred,
-} from '@onekeyfe/hd-shared';
+} from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../constants/ui-request';
 import { BaseMethod } from './BaseMethod';
@@ -18,7 +18,7 @@ import { LoggerNames, getDeviceType, getDeviceUUID, getLogger, wait } from '../u
 import { DataManager } from '../data-manager';
 import { DevicePool } from '../device/DevicePool';
 
-import type { Deferred } from '@onekeyfe/hd-shared';
+import type { Deferred } from '@unionkeyfe/hd-shared';
 
 type Params = {
   binary?: ArrayBuffer;

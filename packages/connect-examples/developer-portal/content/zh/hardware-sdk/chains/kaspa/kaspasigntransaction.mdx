@@ -12,7 +12,7 @@ title: kaspaSignTransaction
 
 ## Kaspa：签名交易
 
-使用指定 BIP32 路径派生的私钥对交易进行签名。用户需要在 OneKey 上确认所有交易详情。
+使用指定 BIP32 路径派生的私钥对交易进行签名。用户需要在 UnionKey 上确认所有交易详情。
 
 ```typescript
 const result = await HardwareSDK.kaspaSignTransaction(connectId, deviceId, params);
@@ -23,8 +23,8 @@ const result = await HardwareSDK.kaspaSignTransaction(connectId, deviceId, param
 [**可选通用参数**](/zh/hardware-sdk/core-api-guide#common-params)
 
 * `version` - _必需_ `number` 交易版本。
-* `inputs` - _必需_ [KaspaSignInputParams](https://github.com/OneKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L9C1-L19C3) 的 `Array`。
-* `outputs` - _必需_ [KaspaSignOutputParams](https://github.com/OneKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L21C1-L26C1) 的 `Array`。
+* `inputs` - _必需_ [KaspaSignInputParams](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L9C1-L19C3) 的 `Array`。
+* `outputs` - _必需_ [KaspaSignOutputParams](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/269ee367141ae2186a9a63d1d89e9f4c70428623/packages/core/src/types/api/kaspaSignTransaction.ts#L21C1-L26C1) 的 `Array`。
 * `lockTime` - _必需_ `number`
 * `sigHashType` - _必需_ `number`
   * ```

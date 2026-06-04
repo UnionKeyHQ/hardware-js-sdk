@@ -6,19 +6,19 @@ title: Guide
 
 ## Overview
 
-This guide helps users understand how to use the OneKey Provider API to easily build web applications that can interact with BTC.
+This guide helps users understand how to use the UnionKey Provider API to easily build web applications that can interact with BTC.
 
 
 
 ## Install
 
-#### 1. Download OneKey Wallet
+#### 1. Download UnionKey Wallet
 
-Download the [OneKey Wallet](https://onekey.so/download?client=browserExtension). Install the OneKey browser extension.
+Download the [UnionKey Wallet](https://unionkey.io/download?client=browserExtension). Install the UnionKey browser extension.
 
 #### 2. API Injection Explanation
 
-* The OneKey browser extension injects `Provider API` into visited websites.
+* The UnionKey browser extension injects `Provider API` into visited websites.
 * Two types of APIs are provided: `window.unisat` and `window.$onekey.btc`.
 * It is recommended to use `window.$onekey.btc`.
 
@@ -32,11 +32,11 @@ Before you start using Provider Api you need to check for browser support by che
 const provider = (window.$onekey && window.$onekey.btc) || window.unisat;
 
 if (!provider) {
-  alert("OneKey Not installed.");
+  alert("UnionKey Not installed.");
 }
 ```
 
-### Connecting to OneKey
+### Connecting to UnionKey
 
 Before using the following API, you first need to use the `provider.requestAccounts` method to request the user to access the relevant BTC account.&#x20;
 

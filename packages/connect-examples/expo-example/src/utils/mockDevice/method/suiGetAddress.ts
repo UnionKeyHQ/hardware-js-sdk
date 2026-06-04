@@ -4,7 +4,7 @@ import { blake2b } from '@noble/hashes/blake2b';
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 import { addHexPrefix } from '../../hexstring';
 
-import type { Success, Unsuccessful } from '@onekeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
 
 export const SUI_ADDRESS_LENGTH = 32;
 export const PUBLIC_KEY_SIZE = 32;

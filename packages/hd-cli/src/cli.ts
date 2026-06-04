@@ -20,7 +20,7 @@ import type {
   Features,
   IDeviceType,
   SearchDevice,
-} from '@onekeyfe/hd-core';
+} from '@unionkeyfe/hd-core';
 
 /** SearchDevice enriched with features fetched after discovery */
 type EnrichedSearchDevice = SearchDevice & { features?: Features };
@@ -346,7 +346,7 @@ program
         path: opts.path,
         pubkey: opts.pubkey,
         plaintext: opts.plaintext,
-        showOnOneKey: opts.showOnDevice === 'true',
+        showOnUnionKey: opts.showOnDevice === 'true',
         ...params,
       });
       outputResult(globalOpts, result);
@@ -366,7 +366,7 @@ program
         path: opts.path,
         pubkey: opts.pubkey,
         ciphertext: opts.ciphertext,
-        showOnOneKey: opts.showOnDevice === 'true',
+        showOnUnionKey: opts.showOnDevice === 'true',
         ...params,
       });
       outputResult(globalOpts, result);
@@ -495,7 +495,7 @@ program
       success: false,
       payload: {
         error:
-          'Firmware update via CLI is not supported. Please use the OneKey App or https://firmware.onekey.so/ to update firmware.',
+          'Firmware update via CLI is not supported. Please use the OneKey App or https://firmware.unionkey.io/ to update firmware.',
         code: 'FIRMWARE_UPDATE_NOT_SUPPORTED',
       },
     })
@@ -509,7 +509,7 @@ program
       success: false,
       payload: {
         error:
-          'BLE firmware update via CLI is not supported. Please use the OneKey App or https://firmware.onekey.so/ to update firmware.',
+          'BLE firmware update via CLI is not supported. Please use the OneKey App or https://firmware.unionkey.io/ to update firmware.',
         code: 'FIRMWARE_UPDATE_NOT_SUPPORTED',
       },
     })
@@ -692,7 +692,7 @@ sessionCmd
       // 4. Get address to verify + extract deviceId
       const addrResult = await sdk.evmGetAddress(connectId, device.deviceId || '', {
         path: "m/44'/60'/0'/0/0",
-        showOnOneKey: false,
+        showOnUnionKey: false,
         passphraseState,
       });
 
@@ -777,7 +777,7 @@ function getCommonParams(globalOpts: Record<string, any>) {
 }
 
 /**
- * HardwareErrorCode.PinInvalid from @onekeyfe/hd-shared. Duplicated here
+ * HardwareErrorCode.PinInvalid from @unionkeyfe/hd-shared. Duplicated here
  * to avoid pulling the shared package's runtime just for one enum value.
  * (PinCancelled is 802 — we don't retry it, any non-PinInvalid failure
  * falls through to the "bail out" branch below.)
@@ -796,7 +796,7 @@ const HW_ERR_PIN_INVALID = 801;
  * user another chance without forcing a re-run of the whole command.
  */
 async function unlockWithRetry(
-  sdk: typeof import('@onekeyfe/hd-common-connect-sdk').default,
+  sdk: typeof import('@unionkeyfe/hd-common-connect-sdk').default,
   connectId: string,
   maxAttempts = 3
 ): Promise<{
@@ -839,7 +839,7 @@ async function unlockWithRetry(
  * After this, globalOpts.passphraseState is set and getCommonParams will include it.
  */
 async function prepareSession(
-  sdk: typeof import('@onekeyfe/hd-common-connect-sdk').default,
+  sdk: typeof import('@unionkeyfe/hd-common-connect-sdk').default,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   globalOpts: Record<string, any>
 ): Promise<string | undefined> {

@@ -2,16 +2,16 @@
 const pkg = require('../package.json');
 
 export const getSDKVersion = () => pkg.version;
-export const DEFAULT_DOMAIN = `https://jssdk.onekey.so/${getSDKVersion()}/`;
+export const DEFAULT_DOMAIN = `https://jssdk.unionkey.io/${getSDKVersion()}/`;
 
 export const whitelist = [
   // Electron local file
   { origin: 'file://' },
   // OneKey App
   { origin: '1key.so' },
-  { origin: 'onekey.so' },
+  { origin: 'unionkey.io' },
   { origin: 'onekeycn.com' },
-  { origin: 'onekeytest.com' },
+  { origin: 'unionkey.io' },
   { origin: 'localhost' },
 ];
 

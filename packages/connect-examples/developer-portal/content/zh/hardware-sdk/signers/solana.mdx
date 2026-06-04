@@ -31,13 +31,13 @@ Solana 硬件签名全链路指南，覆盖地址确认与交易/消息签名，
 ## 安装
 
 ```bash
-npm i @onekeyfe/hd-core @onekeyfe/hd-common-connect-sdk
+npm i @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
 ```
 
 ## 初始化
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
 const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
@@ -51,7 +51,7 @@ const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 const path = "m/44'/501'/0'/0'";
 const res = await HardwareSDK.solGetAddress(connectId, deviceId, {
   path,
-  showOnOneKey: true,
+  showOnUnionKey: true,
 });
 // res.payload.address, publicKey?, path
 ```
@@ -59,7 +59,7 @@ const res = await HardwareSDK.solGetAddress(connectId, deviceId, {
 **参数**
 
 - `path`: 必填，必须满足 `44'/501'/account'/0'` 的全硬化结构。
-- `showOnOneKey?`: 可选，是否在设备上展示并确认。
+- `showOnUnionKey?`: 可选，是否在设备上展示并确认。
 
 **返回**
 
@@ -104,7 +104,7 @@ Promise<{ success, payload: { signature } }>
 ### 示例：交易签名
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 
 await HardwareSDK.init({ env: 'webusb', debug: false });
 
@@ -112,7 +112,7 @@ const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 
 const path = "m/44'/501'/0'/0'";
-await HardwareSDK.solGetAddress(connectId, deviceId, { path, showOnOneKey: true });
+await HardwareSDK.solGetAddress(connectId, deviceId, { path, showOnUnionKey: true });
 
 // 已有 Transaction / VersionedTransaction 时，需先转为十六进制：
 // const rawTx = Buffer.from(transaction.serialize()).toString('hex');

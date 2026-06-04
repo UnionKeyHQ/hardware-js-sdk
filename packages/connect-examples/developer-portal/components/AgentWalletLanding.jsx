@@ -15,15 +15,15 @@ import {
   WalletCards,
 } from 'lucide-react'
 
-const INSTALL_COMMAND = 'npx skills add OneKeyHQ/onekey-wallet-skills'
-const GITHUB_REPO_URL = 'https://github.com/OneKeyHQ/onekey-wallet-skills'
+const INSTALL_COMMAND = 'npx skills add UnionKeyHQ/unionkey-wallet-skills'
+const GITHUB_REPO_URL = 'https://github.com/UnionKeyHQ/unionkey-wallet-skills'
 
 const copyByLocale = {
   en: {
-    eyebrow: 'OneKey Agent Wallet',
+    eyebrow: 'UnionKey Agent Wallet',
     title: 'Wallets, built for AI agents.',
     subtitle:
-      'Skills let agents read balances, research markets, and prepare transactions. Every fund move ends on a OneKey device the user must approve — with the full transaction shown on screen.',
+      'Skills let agents read balances, research markets, and prepare transactions. Every fund move ends on a UnionKey device the user must approve — with the full transaction shown on screen.',
     primaryCta: 'Install skills',
     secondaryCta: 'Explore capabilities',
 
@@ -90,13 +90,13 @@ const copyByLocale = {
     finalSecondary: 'Browse the GitHub repo',
 
     heroImageAlt:
-      'A OneKey hardware wallet displaying a Gnosis Safe transaction flagged as a high-risk delegatecall, awaiting user approval on device.',
+      'A UnionKey hardware wallet displaying a Gnosis Safe transaction flagged as a high-risk delegatecall, awaiting user approval on device.',
   },
   zh: {
-    eyebrow: 'OneKey Agent Wallet',
+    eyebrow: 'UnionKey Agent Wallet',
     title: '为 AI Agent 打造的钱包。',
     subtitle:
-      'Skills 让 Agent 读余额、研究行情、准备交易。每一笔资金动作都在 OneKey 设备上最后一审——交易内容完整显示在屏幕上，由用户确认。',
+      'Skills 让 Agent 读余额、研究行情、准备交易。每一笔资金动作都在 UnionKey 设备上最后一审——交易内容完整显示在屏幕上，由用户确认。',
     primaryCta: '安装 Skills',
     secondaryCta: '查看能力',
 
@@ -122,7 +122,7 @@ const copyByLocale = {
       {
         title: 'Agent Wallet 会话',
         description:
-          '通过 App Transfer 配对 OneKey GUI 管理的钱包，不要求用户把私钥粘贴进 prompt。',
+          '通过 App Transfer 配对 UnionKey GUI 管理的钱包，不要求用户把私钥粘贴进 prompt。',
         icon: WalletCards,
         href: 'wallet-session',
       },
@@ -162,7 +162,7 @@ const copyByLocale = {
     finalSecondary: '在 GitHub 查看源码',
 
     heroImageAlt:
-      'OneKey 硬件钱包显示一笔被识别为高风险 delegatecall 的 Gnosis Safe 交易，等待用户在设备上确认。',
+      'UnionKey 硬件钱包显示一笔被识别为高风险 delegatecall 的 Gnosis Safe 交易，等待用户在设备上确认。',
   },
 }
 

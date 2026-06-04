@@ -10,8 +10,8 @@ import type { TransportType } from '../../utils/hardwareInstance';
 import { DeviceInfo } from '../../types/hardware';
 import { Button } from '../ui/Button';
 import { Signal, ExternalLink, Info, Usb, Server } from 'lucide-react';
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
-import { UI_RESPONSE } from '@onekeyfe/hd-core';
+import { ONEKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 interface TransportSwitcherProps {
   className?: string;

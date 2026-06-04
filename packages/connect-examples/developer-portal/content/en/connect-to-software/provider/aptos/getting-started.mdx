@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to Aptos using OneKey's Petra-compatible provider
+description: Connect to Aptos using UnionKey's Petra-compatible provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with Aptos using OneKey's provider.
+Learn how to detect, connect, and interact with Aptos using UnionKey's provider.
 
 <Callout type="info">
-OneKey's Aptos provider is fully compatible with the Petra wallet interface and Aptos Wallet Standard.
+UnionKey's Aptos provider is fully compatible with the Petra wallet interface and Aptos Wallet Standard.
 </Callout>
 
 ---
@@ -18,15 +18,15 @@ OneKey's Aptos provider is fully compatible with the Petra wallet interface and 
 ## Provider Detection
 
 ```typescript
-// Detect OneKey Aptos provider
+// Detect UnionKey Aptos provider
 const provider = window.$onekey?.aptos
 
 if (!provider) {
-  throw new Error('OneKey Aptos provider not detected')
+  throw new Error('UnionKey Aptos provider not detected')
 }
 
 // Check provider info
-console.log('Provider:', provider.isOneKey ? 'OneKey' : 'Unknown')
+console.log('Provider:', provider.isUnionKey ? 'UnionKey' : 'Unknown')
 ```
 
 ---
@@ -119,13 +119,13 @@ provider.onNetworkChange((network) => {
 
 ## Migration from Petra
 
-OneKey's Aptos provider is Petra-compatible. Update your provider detection:
+UnionKey's Aptos provider is Petra-compatible. Update your provider detection:
 
 ```typescript
 // Before (Petra only)
 const provider = window.petra
 
-// After (OneKey with Petra fallback)
+// After (UnionKey with Petra fallback)
 const provider = window.$onekey?.aptos || window.petra
 ```
 
@@ -151,5 +151,5 @@ function App() {
 }
 ```
 
-OneKey is automatically detected by the Aptos Wallet Adapter.
+UnionKey is automatically detected by the Aptos Wallet Adapter.
 

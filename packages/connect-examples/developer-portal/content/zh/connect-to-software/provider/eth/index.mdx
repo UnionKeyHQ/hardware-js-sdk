@@ -1,13 +1,13 @@
 ---
 title: Ethereum / EVM
-description: 使用 OneKey 的 EIP-1193 Provider 进行 Ethereum 和 EVM 集成
+description: 使用 UnionKey 的 EIP-1193 Provider 进行 Ethereum 和 EVM 集成
 ---
 
 import { Callout } from 'nextra/components'
 
 # Ethereum / EVM
 
-使用 OneKey 注入的 EIP-1193 Provider 构建 EVM dApp。所有 EVM 兼容链（Ethereum、Polygon、BSC、Arbitrum、Optimism、Base 等）共享同一个 Provider。
+使用 UnionKey 注入的 EIP-1193 Provider 构建 EVM dApp。所有 EVM 兼容链（Ethereum、Polygon、BSC、Arbitrum、Optimism、Base 等）共享同一个 Provider。
 
 ---
 
@@ -25,7 +25,7 @@ window.addEventListener('eip6963:announceProvider', (e: any) => {
 })
 window.dispatchEvent(new Event('eip6963:requestProvider'))
 
-// 通过 rdns 找到 OneKey
+// 通过 rdns 找到 UnionKey
 const onekey = providers.find(p => p.info.rdns === 'so.onekey.app.wallet')
 const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' })
 ```
@@ -34,7 +34,7 @@ const accounts = await onekey.provider.request({ method: 'eth_requestAccounts' }
 
 ```typescript
 const provider = window.$onekey?.ethereum
-if (!provider) throw new Error('未检测到 OneKey')
+if (!provider) throw new Error('未检测到 UnionKey')
 
 const accounts = await provider.request({ method: 'eth_requestAccounts' })
 ```

@@ -4,7 +4,7 @@ title: PIN
 
 # PIN
 
-How to handle PIN entry on OneKey devices with recommended UX.
+How to handle PIN entry on UnionKey devices with recommended UX.
 
 ## Essentials
 
@@ -16,9 +16,9 @@ How to handle PIN entry on OneKey devices with recommended UX.
 
 | Device | Software Blind PIN | Device-only Input |
 | --- | --- | --- |
-| OneKey Classic / 1s / 1s Pure / Mini | Supported | No |
-| OneKey Touch | Not supported | Yes |
-| OneKey Pro | Not supported | Yes |
+| UnionKey Classic / 1s / 1s Pure / Mini | Supported | No |
+| UnionKey Touch | Not supported | Yes |
+| UnionKey Pro | Not supported | Yes |
 
 ## UI design notes
 
@@ -39,13 +39,13 @@ HardwareSDK.uiResponse({
 ## Events to responses
 
 ```ts
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 HardwareSDK.on(UI_EVENT, (msg) => {
   if (msg.type === UI_REQUEST.REQUEST_PIN) {
     HardwareSDK.uiResponse({
       type: UI_RESPONSE.RECEIVE_PIN,
-      payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+      payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
     });
   }
 });

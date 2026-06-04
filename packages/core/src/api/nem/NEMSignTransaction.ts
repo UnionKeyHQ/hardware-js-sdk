@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -15,7 +15,7 @@ import type {
   NEMSignTx,
   NEMTransactionCommon,
   NEMTransfer,
-} from '@onekeyfe/hd-transport';
+} from '@unionkeyfe/hd-transport';
 import type {
   NEMAggregateModificationTransaction,
   NEMImportanceTransaction,

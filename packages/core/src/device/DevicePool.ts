@@ -6,7 +6,7 @@ import { DEVICE } from '../events';
 import { LoggerNames, getDeviceUUID, getLogger } from '../utils';
 
 import type { InitOptions } from './Device';
-import type { OneKeyDeviceInfo as DeviceDescriptor } from '@onekeyfe/hd-transport';
+import type { OneKeyDeviceInfo as DeviceDescriptor } from '@unionkeyfe/hd-transport';
 import type DeviceConnector from './DeviceConnector';
 
 const Log = getLogger(LoggerNames.DevicePool);

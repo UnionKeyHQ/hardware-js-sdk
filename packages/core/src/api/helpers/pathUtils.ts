@@ -1,8 +1,8 @@
 /* eslint-disable no-bitwise */
 
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
-import type { ChangeOutputScriptType, InputScriptType } from '@onekeyfe/hd-transport';
+import type { ChangeOutputScriptType, InputScriptType } from '@unionkeyfe/hd-transport';
 
 const HD_HARDENED = 0x80000000;
 export const toHardened = (n: number): number => (n | HD_HARDENED) >>> 0;

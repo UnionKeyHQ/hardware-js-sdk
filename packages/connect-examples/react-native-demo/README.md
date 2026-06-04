@@ -1,6 +1,6 @@
 # React Native BLE Demo (Expo Dev Client)
 
-This demo shows how to use `@onekeyfe/hd-ble-sdk` in a React Native (Expo Dev Client) app to connect to a OneKey hardware device via BLE, including scanning, fetching features, getting addresses and signing, with realtime logs.
+This demo shows how to use `@unionkeyfe/hd-ble-sdk` in a React Native (Expo Dev Client) app to connect to a UnionKey hardware device via BLE, including scanning, fetching features, getting addresses and signing, with realtime logs.
 
 > Important: You must run a Dev Client built by `expo run:ios|android`. Expo Go does not include required native BLE modules.
 
@@ -12,9 +12,9 @@ yarn
 
 Declared dependencies in `package.json`:
 
-- `@onekeyfe/hd-ble-sdk` (SDK)
-- `@onekeyfe/hd-core` (events & types)
-- `@onekeyfe/react-native-ble-utils`, `react-native-ble-plx` (native BLE infrastructure)
+- `@unionkeyfe/hd-ble-sdk` (SDK)
+- `@unionkeyfe/hd-core` (events & types)
+- `@unionkeyfe/react-native-ble-utils`, `react-native-ble-plx` (native BLE infrastructure)
 - Polyfills: `buffer`, `process`, `react-native-get-random-values`, `react-native-url-polyfill`
 
 ## Metro config
@@ -52,9 +52,9 @@ global.Buffer = global.Buffer || require('buffer').Buffer;
 global.process = global.process || require('process');
 
 // Register RN transport
-import '@onekeyfe/hd-transport-react-native';
+import '@unionkeyfe/hd-transport-react-native';
 
-import HardwareSDK from '@onekeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
 
 await HardwareSDK.init({ env: 'react-native', debug: __DEV__, fetchConfig: true });
 ```

@@ -1,4 +1,4 @@
-import type { ConfluxAddress as HardwareConfluxAddress } from '@onekeyfe/hd-transport';
+import type { ConfluxAddress as HardwareConfluxAddress } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type ConfluxAddress = {

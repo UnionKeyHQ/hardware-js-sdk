@@ -1,4 +1,4 @@
-import { ERRORS, HardwareError, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareError, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import TransportManager from '../data-manager/TransportManager';
 import DataManager from '../data-manager/DataManager';
@@ -12,7 +12,7 @@ import {
 } from '../utils/tracing';
 
 import type { Device } from './Device';
-import type { FailureType, Messages, Transport } from '@onekeyfe/hd-transport';
+import type { FailureType, Messages, Transport } from '@unionkeyfe/hd-transport';
 
 export type PassphrasePromptResponse = {
   passphrase?: string;

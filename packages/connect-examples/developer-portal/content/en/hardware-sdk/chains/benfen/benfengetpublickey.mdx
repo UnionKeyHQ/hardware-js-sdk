@@ -18,7 +18,7 @@ Get public key from device using BIP32 path.
 ```typescript
 const result = await HardwareSDK.benfenGetPublicKey(connectId, deviceId, {
   path: "m/44'/728'/0'/0'/0'",
-  showOnOneKey: false
+  showOnUnionKey: false
 });
 ```
 
@@ -27,7 +27,7 @@ const result = await HardwareSDK.benfenGetPublicKey(connectId, deviceId, {
 **Optional common params**
 
 * `path` - _required_ `string | Array<number>` minimum length is `3`. read more
-* `showOnOneKey` - _optional_ `boolean` whether to display public key on device
+* `showOnUnionKey` - _optional_ `boolean` whether to display public key on device
 
 Returns:
 
@@ -41,7 +41,7 @@ Example:
 ```typescript
 const params = {
   path: "m/44'/728'/0'/0'/0'",
-  showOnOneKey: false
+  showOnUnionKey: false
 };
 
 // Single public key
@@ -52,11 +52,11 @@ const batchParams = {
   bundle: [
     {
       path: "m/44'/728'/0'/0'/0'",
-      showOnOneKey: false
+      showOnUnionKey: false
     },
     {
       path: "m/44'/728'/1'/0'/0'",
-      showOnOneKey: false
+      showOnUnionKey: false
     }
   ]
 };

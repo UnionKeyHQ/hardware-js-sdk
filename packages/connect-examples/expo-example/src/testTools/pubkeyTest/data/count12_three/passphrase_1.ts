@@ -6,7 +6,7 @@ export default {
   name: 'three-passphrase12-密语1',
   passphrase: "qwertyuiopasdfghjklzxcvbnm1234567890-=[];',./12345",
   passphraseState: 'n3igG2n49CvSEt12j1jr4SKkp45oUWWmAT',
-  description: '助记词详见 https://onekeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/427983033',
+  description: '助记词详见 https://unionkeyhq.atlassian.net/wiki/spaces/ONEKEY/pages/427983033',
   data: [
     {
       method: 'cardanoGetPublicKey',

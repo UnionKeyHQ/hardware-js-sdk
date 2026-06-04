@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { validateParams } from '../../helpers/paramsValidator';
 import { validatePath } from '../../helpers/pathUtils';

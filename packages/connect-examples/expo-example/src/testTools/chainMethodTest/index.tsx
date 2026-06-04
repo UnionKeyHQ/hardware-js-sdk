@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Group, H3, ScrollView, Text, View, XStack, YStack } from 'tamagui';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 
 import HardwareSDKContext from '../../provider/HardwareSDKContext';
 import { useDevice } from '../../provider/DeviceProvider';
@@ -10,7 +10,7 @@ import { Button } from '../../components/ui/Button';
 import AutoWrapperTextArea from '../../components/ui/AutoWrapperTextArea';
 import { chainTestData } from './data';
 
-import type { CoreMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
 
 interface TestCase {
   id: string;

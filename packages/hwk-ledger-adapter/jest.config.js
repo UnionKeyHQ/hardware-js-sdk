@@ -3,6 +3,6 @@ module.exports = {
   testEnvironment: 'node',
   modulePathIgnorePatterns: ['node_modules', '<rootDir>/dist'],
   moduleNameMapper: {
-    '^@onekeyfe/hwk-adapter-core$': '<rootDir>/../hwk-adapter-core/src/index.ts',
+    '^@unionkeyfe/hwk-adapter-core$': '<rootDir>/../hwk-adapter-core/src/index.ts',
   },
 };

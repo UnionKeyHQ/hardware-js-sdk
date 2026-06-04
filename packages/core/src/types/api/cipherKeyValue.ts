@@ -1,4 +1,4 @@
-import type { CipheredKeyValue as HardwareCipheredKeyValue } from '@onekeyfe/hd-transport';
+import type { CipheredKeyValue as HardwareCipheredKeyValue } from '@unionkeyfe/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type CipheredKeyValue = {

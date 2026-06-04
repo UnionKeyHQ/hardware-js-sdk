@@ -3,7 +3,7 @@ import { validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { TonSignProof as HardwareTonSignProof } from '@onekeyfe/hd-transport';
+import type { TonSignProof as HardwareTonSignProof } from '@unionkeyfe/hd-transport';
 import type { TonSignProofParams } from '../../types';
 
 export default class TonSignProof extends BaseMethod<HardwareTonSignProof> {

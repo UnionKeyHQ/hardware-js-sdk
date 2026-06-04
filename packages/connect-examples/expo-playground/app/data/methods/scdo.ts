@@ -35,15 +35,15 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/44'/541'/0'/0/0",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/541'/1'/0/0",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
               {
                 path: "m/44'/541'/2'/0/0",
-                showOnOneKey: false,
+                showOnUnionKey: false,
               },
             ],
           },

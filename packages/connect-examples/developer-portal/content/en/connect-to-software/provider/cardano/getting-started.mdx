@@ -1,16 +1,16 @@
 ---
 title: Getting Started
-description: Connect to Cardano using OneKey's CIP-30 compatible provider
+description: Connect to Cardano using UnionKey's CIP-30 compatible provider
 ---
 
 import { Callout } from 'nextra/components'
 
 # Getting Started
 
-Learn how to detect, connect, and interact with Cardano using OneKey's provider.
+Learn how to detect, connect, and interact with Cardano using UnionKey's provider.
 
 <Callout type="info">
-OneKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with all Cardano dApps. It also provides Nami wallet compatibility.
+UnionKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with all Cardano dApps. It also provides Nami wallet compatibility.
 </Callout>
 
 ---
@@ -18,17 +18,17 @@ OneKey implements CIP-30 (Cardano dApp Connector), ensuring compatibility with a
 ## Provider Detection
 
 ```typescript
-// OneKey provides both onekey and nami interfaces
+// UnionKey provides both onekey and nami interfaces
 const onekey = window.cardano?.onekey
 const nami = window.cardano?.nami
 
 // Check availability
 if (!onekey) {
-  throw new Error('OneKey Cardano provider not detected')
+  throw new Error('UnionKey Cardano provider not detected')
 }
 
 // Get wallet info
-console.log('Name:', onekey.name) // 'OneKey'
+console.log('Name:', onekey.name) // 'UnionKey'
 console.log('API Version:', onekey.apiVersion) // '0.1.0'
 console.log('Icon:', onekey.icon)
 ```
@@ -147,14 +147,14 @@ api.experimental.on('accountChange', (addresses) => {
 
 ## Nami Compatibility
 
-OneKey provides Nami wallet compatibility:
+UnionKey provides Nami wallet compatibility:
 
 ```typescript
 // Access via Nami interface
 const nami = window.cardano.nami
 const api = await nami.enable()
 
-// Same API as OneKey
+// Same API as UnionKey
 const balance = await api.getBalance()
 ```
 

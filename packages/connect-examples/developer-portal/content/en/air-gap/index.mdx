@@ -47,7 +47,7 @@ npm install @ngraveio/bc-ur
 
 ## Third-Party Wallet Integration
 
-If you are integrating OneKey Air-Gap into an existing wallet, you need to ensure your QR scanner routes these UR types to a **BC-UR v2 decoder** (fountain-coded), not a legacy v1 decoder.
+If you are integrating UnionKey Air-Gap into an existing wallet, you need to ensure your QR scanner routes these UR types to a **BC-UR v2 decoder** (fountain-coded), not a legacy v1 decoder.
 
 ### UR types your scanner must accept
 
@@ -71,12 +71,12 @@ Some wallets use a **whitelist** to decide which UR types are decoded with the m
 
 ### `onekey-app-call-device` (private protocol)
 
-The `onekey-app-call-device` UR type is a **OneKey-internal protocol** used for device management operations (e.g., `getMultiAccounts`, `verifyAddress`). Third-party wallets **should NOT implement this type** — it may change without notice. Use the standard Keystone SDK methods instead.
+The `onekey-app-call-device` UR type is a **UnionKey-internal protocol** used for device management operations (e.g., `getMultiAccounts`, `verifyAddress`). Third-party wallets **should NOT implement this type** — it may change without notice. Use the standard Keystone SDK methods instead.
 
 ## Demo & Examples
 
-- **React Native Demo**: [GitHub Air-Gap Demo](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo/air-gap)
-  - Scanner: [AirGapScanner.tsx](https://github.com/OneKeyHQ/hardware-js-sdk/blob/onekey/packages/connect-examples/react-native-demo/air-gap/src/components/AirGapScanner.tsx)
-  - Chain helpers: [sdk/](https://github.com/OneKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo/air-gap/sdk)
+- **React Native Demo**: [GitHub Air-Gap Demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo/air-gap)
+  - Scanner: [AirGapScanner.tsx](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/connect-examples/react-native-demo/air-gap/src/components/AirGapScanner.tsx)
+  - Chain helpers: [sdk/](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/connect-examples/react-native-demo/air-gap/sdk)
 
 > **Note**: Air-Gap is offline by design. There is no online browser playground.

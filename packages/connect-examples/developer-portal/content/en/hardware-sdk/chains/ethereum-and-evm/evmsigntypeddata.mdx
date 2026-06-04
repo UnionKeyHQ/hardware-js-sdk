@@ -8,7 +8,7 @@ title: evmSignTypedData
 
 Asks device to sign an [EIP-712](https://eips.ethereum.org/EIPS/eip-712) typed data message using the private key derived by given BIP32 path.
 
-User is asked to confirm all signing details on OneKey device.
+User is asked to confirm all signing details on UnionKey device.
 
 * **Supports EIP-712 (v3 and v4)**
 * **Use `evmSignTypedData` for signing typed structured data**
@@ -69,7 +69,7 @@ const eip712Data = {
         name: 'example.onekey.io',
     },
     message: {
-        "Best Wallet": "OneKey Wallet",
+        "Best Wallet": "UnionKey Wallet",
         // be careful with JavaScript numbers: MAX_SAFE_INTEGER is quite low
         "Number": `${2n ** 55n}`,
     },

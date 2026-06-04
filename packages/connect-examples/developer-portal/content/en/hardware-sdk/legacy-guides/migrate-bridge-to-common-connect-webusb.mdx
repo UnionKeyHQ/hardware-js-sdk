@@ -4,7 +4,7 @@ title: Migrate to common-connect-sdk
 
 # Migrate to common-connect-sdk
 
-Migrate from Bridge to WebUSB and switch SDK entry to `@onekeyfe/hd-common-connect-sdk`.
+Migrate from Bridge to WebUSB and switch SDK entry to `@unionkeyfe/hd-common-connect-sdk`.
 
 ---
 
@@ -17,10 +17,10 @@ Migrate from Bridge to WebUSB and switch SDK entry to `@onekeyfe/hd-common-conne
 
 ## What Changed (At a Glance)
 
-- SDK entry: `@onekeyfe/hd-web-sdk` → `@onekeyfe/hd-common-connect-sdk`
+- SDK entry: `@unionkeyfe/hd-web-sdk` → `@unionkeyfe/hd-common-connect-sdk`
 - Init options: use `env: 'webusb'`; no more `connectSrc` (no iframe)
-- Permission flow: call `navigator.usb.requestDevice()` (must be triggered by a user gesture) with the official filter `ONEKEY_WEBUSB_FILTER`
-- Event system: use `@onekeyfe/hd-core` `UI_EVENT / DEVICE` events for user interaction (PIN/Passphrase, etc.)
+- Permission flow: call `navigator.usb.requestDevice()` (must be triggered by a user gesture) with the official filter `UNIONKEY_WEBUSB_FILTER`
+- Event system: use `@unionkeyfe/hd-core` `UI_EVENT / DEVICE` events for user interaction (PIN/Passphrase, etc.)
 - Bridge-specific logic removed: drop `checkBridgeStatus()` and all Bridge checks/prompts
 - Business APIs mostly unchanged: e.g., `searchDevices / getFeatures / btcGetAddress`
 
@@ -29,7 +29,7 @@ Migrate from Bridge to WebUSB and switch SDK entry to `@onekeyfe/hd-common-conne
 ## Install
 
 ```bash
-npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-core @onekeyfe/hd-shared
+npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-core @unionkeyfe/hd-shared
 ```
 
 ---
@@ -37,7 +37,7 @@ npm i @onekeyfe/hd-common-connect-sdk @onekeyfe/hd-core @onekeyfe/hd-shared
 ## Initialize (hd-common-connect-sdk + WebUSB)
 
 ```ts
-import HardwareSDK from '@onekeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'webusb',
@@ -54,7 +54,7 @@ await HardwareSDK.init({
 ## Bind UI and Device Events (PIN / Passphrase / Plug-Unplug)
 
 ```ts
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyfe/hd-core';
 
 function bindHardwareEvents() {
   HardwareSDK.on(UI_EVENT, async (message: any) => {
@@ -64,7 +64,7 @@ function bindHardwareEvents() {
         await HardwareSDK.uiResponse({
           type: UI_RESPONSE.RECEIVE_PIN,
           // Prefer entering PIN on the device (more secure)
-          payload: '@@ONEKEY_INPUT_PIN_IN_DEVICE',
+          payload: '@@UNIONKEY_INPUT_PIN_IN_DEVICE',
         });
         break;
       }
@@ -102,10 +102,10 @@ bindHardwareEvents();
 ## Authorization (WebUSB Picker + Official Filter)
 
 ```ts
-import { ONEKEY_WEBUSB_FILTER } from '@onekeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
 
 // Important: must be triggered by a user gesture (e.g., button click) or the browser will block it
-await navigator.usb.requestDevice({ filters: ONEKEY_WEBUSB_FILTER });
+await navigator.usb.requestDevice({ filters: UNIONKEY_WEBUSB_FILTER });
 ```
 
 ---
@@ -127,7 +127,7 @@ const resolvedDeviceId = features.payload.device_id ?? deviceId;
 const r = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnOneKey: false,
+  showOnUnionKey: false,
 });
 
 if (r.success) {
@@ -141,9 +141,9 @@ if (r.success) {
 
 ## Cleanup and Checklist
 
-- Dependency swap: remove `@onekeyfe/hd-web-sdk`, use `@onekeyfe/hd-common-connect-sdk` instead
+- Dependency swap: remove `@unionkeyfe/hd-web-sdk`, use `@unionkeyfe/hd-common-connect-sdk` instead
 - Initialization changes:
-  - Old: `env: 'web'` + `connectSrc: 'https://jssdk.onekey.so/.../'`
+  - Old: `env: 'web'` + `connectSrc: 'https://jssdk.unionkey.io/.../'`
   - New: `env: 'webusb'` (no `connectSrc`)
 - Remove Bridge-only logic: e.g., `checkBridgeStatus()`, Bridge install/restart prompts
 - Bind `UI_EVENT / DEVICE`: ensure PIN/Passphrase and device plug/unplug events are handled

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, getDeviceUUID } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, getDeviceUUID } from '@unionkeyfe/hd-core';
 import { Stack, Text, XStack, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
 import { get, isEmpty } from 'lodash';
@@ -11,7 +11,7 @@ import { Button } from '../../../components/ui/Button';
 import TestRunnerOptionButtons from '../../../components/BaseTestRunner/TestRunnerOptionButtons';
 import { useHardwareInputPinDialog } from '../../../provider/HardwareInputPinProvider';
 
-import type { CoreMessage, Features } from '@onekeyfe/hd-core';
+import type { CoreMessage, Features } from '@unionkeyfe/hd-core';
 import type { TestCaseDataWithKey } from '../../../components/BaseTestRunner/types';
 import type { LockDeviceTestCase, ResultViewProps, TestCaseDataType } from './types';
 
@@ -165,9 +165,9 @@ function ExecuteView() {
 
       const payload = res.payload as Features;
 
-      if (payload.vendor !== 'onekey.so') {
+      if (payload.vendor !== 'unionkey.io') {
         return Promise.resolve({
-          error: `actual: ${payload.vendor}, 预期: onekey.so`,
+          error: `actual: ${payload.vendor}, 预期: unionkey.io`,
         });
       }
       if (payload.bootloader_mode !== true) {

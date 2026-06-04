@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@onekeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
 
 import { fromHardened, getScriptType, isMultisigPath } from '../../helpers/pathUtils';
 import bitcoin from '../../../data/coins/bitcoin.json';

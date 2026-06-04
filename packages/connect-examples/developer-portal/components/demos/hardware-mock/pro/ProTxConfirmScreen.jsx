@@ -70,7 +70,7 @@ export function ProTxConfirmScreen({
               width: PRO_LAYOUT.cardWidth,
               borderRadius: PRO_LAYOUT.cardRadius,
               overflow: 'hidden',
-              background: PRO_COLORS.ONEKEY_GRAY_3
+              background: PRO_COLORS.UNIONKEY_GRAY_3
             }}
           >
             {rows.map((row) => (
@@ -78,7 +78,7 @@ export function ProTxConfirmScreen({
                 <div
                   style={{
                     fontSize: 26,
-                    color: PRO_COLORS.ONEKEY_GRAY_4,
+                    color: PRO_COLORS.UNIONKEY_GRAY_4,
                     letterSpacing: -1
                   }}
                 >
@@ -97,7 +97,7 @@ export function ProTxConfirmScreen({
               </div>
             ))}
 
-            <div style={{ height: 12, background: PRO_COLORS.ONEKEY_GRAY_3 }} />
+            <div style={{ height: 12, background: PRO_COLORS.UNIONKEY_GRAY_3 }} />
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ export function ProTxConfirmScreen({
           width: PRO_LAYOUT.buttonHalfWidth,
           height: PRO_LAYOUT.buttonHeight,
           borderRadius: PRO_LAYOUT.buttonRadius,
-          background: PRO_COLORS.ONEKEY_GRAY_3,
+          background: PRO_COLORS.UNIONKEY_GRAY_3,
           border: 0,
           fontSize: 30,
           fontWeight: 600,
@@ -135,7 +135,7 @@ export function ProTxConfirmScreen({
           width: PRO_LAYOUT.buttonHalfWidth,
           height: PRO_LAYOUT.buttonHeight,
           borderRadius: PRO_LAYOUT.buttonRadius,
-          background: PRO_COLORS.ONEKEY_GREEN,
+          background: PRO_COLORS.UNIONKEY_GREEN,
           border: 0,
           fontSize: 30,
           fontWeight: 600,

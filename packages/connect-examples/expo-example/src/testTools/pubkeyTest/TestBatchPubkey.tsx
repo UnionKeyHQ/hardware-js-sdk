@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@onekeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
 import { Picker } from '@react-native-picker/picker';
 import { Text, XStack } from 'tamagui';
 import { useIntl } from 'react-intl';
@@ -15,7 +15,7 @@ import { stripHexPrefix } from '../../utils/hexstring';
 import { useHardwareInputPinDialog } from '../../provider/HardwareInputPinProvider';
 
 import type { TestCaseDataWithKey } from '../../components/BaseTestRunner/types';
-import type { CoreMessage } from '@onekeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyfe/hd-core';
 import type { PubkeyBatchTestCase } from './types';
 
 type TestCaseDataType = PubkeyBatchTestCase['data'][0];

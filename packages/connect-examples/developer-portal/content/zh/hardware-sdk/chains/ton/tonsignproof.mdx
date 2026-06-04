@@ -11,12 +11,12 @@ title: tonSignProof
 
 ### TON：签名证明
 
-使用指定 BIP32 路径派生的私钥为 dApp 身份验证签名证明消息。用户需要在 OneKey 设备上确认操作。
+使用指定 BIP32 路径派生的私钥为 dApp 身份验证签名证明消息。用户需要在 UnionKey 设备上确认操作。
 
 ```typescript
 const result = await HardwareSDK.tonSignProof(connectId, deviceId, {
     path: "m/44'/607'/0'",
-    appdomain: "onekey.so",
+    appdomain: "unionkey.io",
     comment: "48656c6c6f204f6e654b6579",
     expireAt: Date.now() + 1000 * 60 * 60 * 24,
     walletVersion: "V4R2",
@@ -50,7 +50,7 @@ const result = await HardwareSDK.tonSignProof(connectId, deviceId, {
 ```typescript
 const response = await HardwareSDK.tonSignProof(connectId, deviceId, {
     path: "m/44'/607'/0'",
-    appdomain: "onekey.so",
+    appdomain: "unionkey.io",
     comment: "48656c6c6f204f6e654b6579",
     expireAt: Date.now() + 1000 * 60 * 60 * 24,
     walletVersion: 3,

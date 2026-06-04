@@ -9,7 +9,7 @@ import { useFSRoute } from 'nextra/hooks'
 import { ArrowRightIcon, MenuIcon } from 'nextra/icons'
 import { setMenu, useConfig, useMenu } from 'nextra-theme-docs'
 import { DOCS_AI_TAB, emitDocsAIOpen } from './docAIAssistEvents'
-import styles from './OneKeyNavbar.client.module.css'
+import styles from './UnionKeyNavbar.client.module.css'
 
 const classes = {
   link: cn(
@@ -108,7 +108,7 @@ const NavbarMenu = ({ menu, children }) => {
   )
 }
 
-export function OneKeyClientNavbar({ children, className }) {
+export function UnionKeyClientNavbar({ children, className }) {
   const items = useConfig().normalizePagesResult.topLevelNavbarItems
   const pathname = useFSRoute()
   const menu = useMenu()

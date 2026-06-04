@@ -5,7 +5,7 @@ import { format as formatUrl } from 'url';
 import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import { exec } from 'child_process';
-import { initNobleBleSupport } from '@onekeyfe/hd-transport-electron';
+import { initNobleBleSupport } from '@unionkeyfe/hd-transport-electron';
 
 import initProcess, { restartBridge } from './process';
 import { ipcMessageKeys } from './config';
@@ -18,7 +18,7 @@ autoUpdater.logger = log;
 const isMac = process.platform === 'darwin';
 const isWin = process.platform === 'win32';
 
-const APP_NAME = 'OneKey Example';
+const APP_NAME = 'UnionKey Example';
 app.name = APP_NAME;
 let mainWindow: BrowserWindow | null;
 
@@ -142,7 +142,7 @@ function createMainWindow() {
     const { url } = details;
     if (url.startsWith('http://127.0.0.1:21320/') || url.startsWith('http://localhost:21320/')) {
       // resolve onekey bridge CORS error
-      details.requestHeaders.Origin = 'https://jssdk.onekey.so';
+      details.requestHeaders.Origin = 'https://jssdk.unionkey.io';
     }
 
     callback({ cancel: false, requestHeaders: details.requestHeaders });
@@ -353,7 +353,7 @@ ipcMain.handle('bluetooth-open-privacy-settings', () => {
 // 配置 GitHub 发布提供者
 autoUpdater.setFeedURL({
   provider: 'github',
-  owner: 'OneKeyHQ',
+  owner: 'UnionKeyHQ',
   repo: 'hardware-js-sdk',
   private: false,
   releaseType: 'release',

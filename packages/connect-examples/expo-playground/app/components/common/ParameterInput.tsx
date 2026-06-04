@@ -510,7 +510,7 @@ const ParameterInput: React.FC<ParameterInputProps> = ({
                     size="sm"
                     onClick={() =>
                       window.open(
-                        'https://developer.onekey.so/connect-to-hardware/page-1/common-params',
+                        'https://developer.unionkey.io/connect-to-hardware/page-1/common-params',
                         '_blank'
                       )
                     }

@@ -1,6 +1,6 @@
 ---
 title: 快速开始
-description: 使用 OneKey 的 Keplr 兼容 Provider 连接 Cosmos 链
+description: 使用 UnionKey 的 Keplr 兼容 Provider 连接 Cosmos 链
 ---
 
 import { Callout } from 'nextra/components'
@@ -14,15 +14,15 @@ import { Callout } from 'nextra/components'
 ## Provider 检测
 
 ```typescript
-// 检测 OneKey Cosmos provider
+// 检测 UnionKey Cosmos provider
 const provider = window.$onekey?.cosmos
 
 if (!provider) {
-  throw new Error('未检测到 OneKey Cosmos provider')
+  throw new Error('未检测到 UnionKey Cosmos provider')
 }
 
-// 检查是否为 OneKey
-console.log('Provider:', provider.isOneKey ? 'OneKey' : '未知')
+// 检查是否为 UnionKey
+console.log('Provider:', provider.isUnionKey ? 'UnionKey' : '未知')
 ```
 
 ---
@@ -142,13 +142,13 @@ const result = await client.sendTokens(
 
 ## 从 Keplr 迁移
 
-OneKey 的 Cosmos provider 与 Keplr 兼容。只需更改您的 provider 检测方式：
+UnionKey 的 Cosmos provider 与 Keplr 兼容。只需更改您的 provider 检测方式：
 
 ```typescript
 // 之前 (仅 Keplr)
 const provider = window.keplr
 
-// 之后 (OneKey 优先，Keplr 作为备选)
+// 之后 (UnionKey 优先，Keplr 作为备选)
 const provider = window.$onekey?.cosmos || window.keplr
 ```
 

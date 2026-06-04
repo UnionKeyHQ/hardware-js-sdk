@@ -1,8 +1,8 @@
-import { UI_REQUEST, UI_RESPONSE, serializeConnectorError } from '@onekeyfe/hwk-adapter-core';
+import { UI_REQUEST, UI_RESPONSE, serializeConnectorError } from '@unionkeyfe/hwk-adapter-core';
 
 import { LedgerAdapter } from '../adapter/LedgerAdapter';
 
-import type { ConnectorDevice, ConnectorSession, IConnector } from '@onekeyfe/hwk-adapter-core';
+import type { ConnectorDevice, ConnectorSession, IConnector } from '@unionkeyfe/hwk-adapter-core';
 
 function createMockConnector(): IConnector & { callImpl: jest.Mock } {
   const handlers = new Map<string, Set<(...args: unknown[]) => void>>();
