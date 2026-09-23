@@ -1,7 +1,7 @@
 {
   "name": "@unionkeyhq/hardware-cli",
-  "version": "1.1.27-alpha.5",
-  "description": "OneKey hardware wallet CLI for testing device communication",
+  "version": "1.1.27-alpha.6",
+  "description": "UnionKey hardware wallet CLI for testing device communication",
   "author": "UnionKey",
   "license": "Apache-2.0",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
@@ -10,7 +10,7 @@
     "url": "git+https://github.com/UnionKeyHQ/hardware-js-sdk.git"
   },
   "bin": {
-    "onekey-hw": "./dist/cli.js"
+    "unionkey-hw": "./dist/cli.js"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
