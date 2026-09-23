@@ -1,4 +1,4 @@
-import type { EFirmwareType } from '@unionkeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyhq/hd-shared';
 import type { PROTO } from '../../constants';
 import type { Params, Response } from '../params';
 

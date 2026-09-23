@@ -1,4 +1,4 @@
-import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { Deferred } from '@unionkeyhq/hd-shared';
 import type { DEVICE } from './device';
 import type { Device } from '../device/Device';
 import type { UiResponseEvent } from './ui-response';

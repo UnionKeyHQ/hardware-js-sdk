@@ -19,14 +19,14 @@ const result = await HardwareSDK.btcGetAddress(connectId, deviceId, params);
 #### Exporting single address
 
 * `path` - _required_ `string | Array<number>` minimum length is 3. [read more](/en/hardware-sdk/core-api-guide#hd-path)
-* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 * `coin` - _optional_ `string` determines network definition specified in [coins.json](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/core/src/data/coins/bitcoin.json) file. Coin `shortcut`, `name` or `label` can be used. If `coin` is not set API will try to get network definition from `path`.
 * `multisig` - _optional_ MultisigRedeemScriptType, redeem script information (multisig addresses only)
 * `scriptType` - _optional_ InputScriptType, address script type
 
 #### Exporting bundle of addresses
 
-* `bundle` - `Array` of Objects with `path`, `showOnUnionKey`, `coin` fields
+* `bundle` - `Array` of Objects with `path`, `showOnOneKey`, `coin` fields
 
 ### Get different types of addresses
 
@@ -55,9 +55,9 @@ Return a bundle of addresses from first bitcoin account without displaying them 
 ```typescript
 HardwareSDK.btcGetAddress(connectId, deviceId, {
     bundle: [
-        { path: "m/49'/0'/0'/0/0", showOnUnionKey: false }, // address 1
-        { path: "m/49'/0'/0'/0/1", showOnUnionKey: false }, // address 2
-        { path: "m/49'/0'/0'/0/2", showOnUnionKey: false }  // address 3
+        { path: "m/49'/0'/0'/0/0", showOnOneKey: false }, // address 1
+        { path: "m/49'/0'/0'/0/1", showOnOneKey: false }, // address 2
+        { path: "m/49'/0'/0'/0/2", showOnOneKey: false }  // address 3
     ]
 });
 ```

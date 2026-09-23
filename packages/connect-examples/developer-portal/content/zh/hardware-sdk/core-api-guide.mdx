@@ -73,7 +73,7 @@ console.log(res.payload.address);
 标准流程：**初始化** → **搜索设备** → **获取设备信息** → **订阅事件** → **执行操作** → **清理资源**
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-common-connect-sdk';
 
 // 1. 初始化 SDK（应用入口执行一次即可）
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
@@ -263,7 +263,7 @@ SDK 提供三种事件通道：
 **事件处理示例**
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-common-connect-sdk';
 
 const handleUiEvent = (msg: any) => {
   switch (msg.type) {

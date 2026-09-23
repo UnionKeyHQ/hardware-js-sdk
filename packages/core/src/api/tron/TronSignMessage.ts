@@ -1,5 +1,5 @@
-import { TronMessageType } from '@unionkeyfe/hd-transport';
-import { createDeviceNotSupportMethodError } from '@unionkeyfe/hd-shared';
+import { TronMessageType } from '@unionkeyhq/hd-transport';
+import { createDeviceNotSupportMethodError } from '@unionkeyhq/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -8,7 +8,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 import { getFirmwareType } from '../../utils';
 
-import type { TronSignMessage as HardwareTronSignMessage } from '@unionkeyfe/hd-transport';
+import type { TronSignMessage as HardwareTronSignMessage } from '@unionkeyhq/hd-transport';
 
 export default class TronSignMessage extends BaseMethod<HardwareTronSignMessage> {
   init() {

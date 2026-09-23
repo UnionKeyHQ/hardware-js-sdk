@@ -10,13 +10,13 @@
                 <mxCell id="sdkCard" value="Hardware SDK (JS)&#xa;指令编排 · 消息封装 · 错误处理" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#f1ebf7;strokeColor=#9673a6;" parent="1" vertex="1">
                     <mxGeometry x="120" y="120" width="960" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="webusbBox" value="WebUSB&lt;br&gt;包：@unionkeyfe/hd-common-connect-sdk" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                <mxCell id="webusbBox" value="WebUSB&lt;br&gt;包：@unionkeyhq/hd-common-connect-sdk" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
                     <mxGeometry x="120" y="202" width="220" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="rnBox" value="React Native BLE&lt;br&gt;包：@unionkeyfe/hd-ble-sdk" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+                <mxCell id="rnBox" value="React Native BLE&lt;br&gt;包：@unionkeyhq/hd-ble-sdk" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
                     <mxGeometry x="380" y="202" width="220" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="nativeBox" value="底层传输插件 (Native)&#xa;包：@unionkeyfe/hd-transport-lowlevel&#xa;场景：原生 / Flutter" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                <mxCell id="nativeBox" value="底层传输插件 (Native)&#xa;包：@unionkeyhq/hd-transport-lowlevel&#xa;场景：原生 / Flutter" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
                     <mxGeometry x="640" y="202" width="220" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="airgapBox" value="Air-Gap (QR)&#xa;离线扫码签名&#xa;仅 UnionKey Pro" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;align=center;verticalAlign=middle;fillColor=#cce5ff;strokeColor=#5b9bd5;" parent="1" vertex="1">

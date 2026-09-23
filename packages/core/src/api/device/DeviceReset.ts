@@ -1,7 +1,7 @@
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { ResetDevice } from '@unionkeyfe/hd-transport';
+import type { ResetDevice } from '@unionkeyhq/hd-transport';
 
 export default class DeviceReset extends BaseMethod<ResetDevice> {
   init() {

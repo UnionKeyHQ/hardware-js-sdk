@@ -1,5 +1,5 @@
 import semver from 'semver';
-import { EDeviceType, ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { EDeviceType, ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { bytesToHex } from '@noble/hashes/utils';
 import { blake2s } from '@noble/hashes/blake2s';
 import { isEmpty } from 'lodash';
@@ -13,7 +13,7 @@ import { PROTO } from '../../constants';
 
 import type { DeviceUploadResourceParams, DeviceUploadResourceResponse } from '../../types';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
-import type { ResourceUpload } from '@unionkeyfe/hd-transport';
+import type { ResourceUpload } from '@unionkeyhq/hd-transport';
 
 export default class DeviceUploadResource extends BaseMethod<ResourceUpload> {
   paramsData = {

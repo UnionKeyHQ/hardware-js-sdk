@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 import { Stack, Text, XStack, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
 import { get } from 'lodash';
@@ -12,7 +12,7 @@ import TestRunnerOptionButtons from '../../../components/BaseTestRunner/TestRunn
 import { useHardwareInputPinDialog } from '../../../provider/HardwareInputPinProvider';
 import { SwitchInput } from '../../../components/SwitchInput';
 
-import type { CoreMessage, Features } from '@unionkeyfe/hd-core';
+import type { CoreMessage, Features } from '@unionkeyhq/hd-core';
 import type { TestCaseDataWithKey } from '../../../components/BaseTestRunner/types';
 import type { LockDeviceTestCase, ResultViewProps, TestCaseDataType } from './types';
 
@@ -127,7 +127,7 @@ function ExecuteView() {
         method: 'evmGetAddress',
         params: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
         type: 'unlock',
         expect: true,

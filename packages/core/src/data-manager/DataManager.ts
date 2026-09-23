@@ -1,6 +1,6 @@
 import axios from 'axios';
 import semver from 'semver';
-import { EDeviceType, EFirmwareType } from '@unionkeyfe/hd-shared';
+import { EDeviceType, EFirmwareType } from '@unionkeyhq/hd-shared';
 
 import MessagesJSON from '../data/messages/messages.json';
 import MessagesLegacyV1JSON from '../data/messages/messages_legacy_v1.json';

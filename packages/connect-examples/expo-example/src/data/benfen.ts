@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get address',
         value: {
           path: "m/44'/728'/0'/0'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -18,15 +18,15 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/728'/0'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/728'/1'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/728'/2'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
           ],
         },
@@ -40,7 +40,7 @@ const api: PlaygroundProps[] = [
         title: 'Get PublicKey',
         value: {
           path: "m/44'/728'/0'/0'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -49,15 +49,15 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/728'/0'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/728'/1'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/728'/2'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
           ],
         },

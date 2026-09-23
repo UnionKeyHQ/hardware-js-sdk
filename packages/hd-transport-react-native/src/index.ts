@@ -12,9 +12,9 @@ import transport, {
   COMMON_HEADER_SIZE,
   LogBlockCommand,
   type OneKeyDeviceInfoBase,
-} from '@unionkeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode, createDeferred, isOnekeyDevice } from '@unionkeyfe/hd-shared';
-import { LoggerNames, getLogger } from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-transport';
+import { ERRORS, HardwareErrorCode, createDeferred, isOnekeyDevice } from '@unionkeyhq/hd-shared';
+import { LoggerNames, getLogger } from '@unionkeyhq/hd-core';
 
 import { getConnectedDeviceIds, onDeviceBondState, pairDevice } from './BleManager';
 import { subscribeBleOn } from './subscribeBleOn';
@@ -28,7 +28,7 @@ import { isHeaderChunk } from './utils/validateNotify';
 import BleTransport from './BleTransport';
 import timer from './utils/timer';
 
-import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { Deferred } from '@unionkeyhq/hd-shared';
 import type { Characteristic, Device, Subscription } from 'react-native-ble-plx';
 import type EventEmitter from 'events';
 import type { BleAcquireInput, TransportOptions } from './types';

@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { ScdoGetAddress as HardwareScdoGetAddress } from '@unionkeyfe/hd-transport';
+import type { ScdoGetAddress as HardwareScdoGetAddress } from '@unionkeyhq/hd-transport';
 import type { ScdoAddress, ScdoGetAddressParams } from '../../types';
 
 export default class ScdoGetAddress extends BaseMethod<HardwareScdoGetAddress[]> {

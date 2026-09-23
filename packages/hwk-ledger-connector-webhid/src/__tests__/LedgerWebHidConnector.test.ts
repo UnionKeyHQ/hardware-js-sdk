@@ -1,6 +1,6 @@
 import { LedgerWebHidConnector } from '../LedgerWebHidConnector';
 
-import type { DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
+import type { DeviceDescriptor } from '@unionkeyhq/hwk-adapter-core';
 
 describe('LedgerWebHidConnector', () => {
   it('constructs without throwing', () => {

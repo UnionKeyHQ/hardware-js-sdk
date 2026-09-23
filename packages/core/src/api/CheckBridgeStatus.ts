@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { BaseMethod } from './BaseMethod';
 

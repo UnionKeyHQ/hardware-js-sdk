@@ -5,7 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import { Check } from '@tamagui/lucide-icons';
 import { useIntl } from 'react-intl';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
-import { ONEKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { ONEKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 
 import HardwareSDKContext from '../provider/HardwareSDKContext';
 import { Button } from './ui/Button';
@@ -16,7 +16,7 @@ import { deviceActionsAtom, deviceListAtom, selectDeviceAtom } from '../atoms/de
 
 import type { ConnectionType } from '../atoms/deviceConnectAtoms';
 import type { ForwardedRef } from 'react';
-import type { Features } from '@unionkeyfe/hd-transport';
+import type { Features } from '@unionkeyhq/hd-transport';
 
 export type Device = {
   connectId: string;

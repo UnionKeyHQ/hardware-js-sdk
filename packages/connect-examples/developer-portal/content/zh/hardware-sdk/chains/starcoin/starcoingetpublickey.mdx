@@ -19,11 +19,11 @@ const result = await HardwareSDK.starcoinGetPublicKey(connectId, deviceId, param
 ### 导出单个公钥
 
 * `path` — _必需_ `string | Array<number>` 最小长度为 `1`。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
-* `showOnUnionKey` — _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
+* `showOnOneKey` — _可选_ `boolean` 决定是否在设备上显示地址。默认设置为 `true`
 
 #### 导出批量公钥
 
-* `bundle` - 包含 `path`、`showOnUnionKey` 字段的对象 `Array`
+* `bundle` - 包含 `path`、`showOnOneKey` 字段的对象 `Array`
 
 ### 示例
 
@@ -32,7 +32,7 @@ const result = await HardwareSDK.starcoinGetPublicKey(connectId, deviceId, param
 ```typescript
 HardwareSDK.starcoinGetPublicKey(connectId, deviceId, {
     path: "m/101010'/0'/0'",
-    showOnUnionKey: true
+    showOnOneKey: true
 });
 ```
 

@@ -1,5 +1,5 @@
 import { bytesToHex } from '@noble/hashes/utils';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -10,7 +10,7 @@ import type {
   AlephiumSignedTx,
   AlephiumSignTx as HardwareAlephiumSignTx,
   TypedCall,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { AlephiumSignTransactionParams } from '../../types';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 

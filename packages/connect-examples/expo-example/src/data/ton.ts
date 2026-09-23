@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get address',
         value: {
           path: "m/44'/607'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
           walletVersion: 3,
           isBounceable: false,
           isTestnetOnly: false,
@@ -19,7 +19,7 @@ const api: PlaygroundProps[] = [
         title: 'Get multiaddress',
         value: {
           path: "m/44'/607'/1'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
           walletVersion: 3,
           isBounceable: false,
           isTestnetOnly: false,
@@ -31,21 +31,21 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/607'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,
             },
             {
               path: "m/44'/607'/1'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,
             },
             {
               path: "m/44'/607'/2'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               walletVersion: 3,
               isBounceable: false,
               isTestnetOnly: false,

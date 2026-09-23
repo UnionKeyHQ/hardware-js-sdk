@@ -1,2 +1,2 @@
 export { safeThrowError } from './errors';
-export { Messages as PROTO, TonSignDataType } from '@unionkeyfe/hd-transport';
+export { Messages as PROTO, TonSignDataType } from '@unionkeyhq/hd-transport';

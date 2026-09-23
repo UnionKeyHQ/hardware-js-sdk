@@ -1,7 +1,7 @@
 import { ERROR_TAG } from '../errors';
 import { debugError, debugLog } from '../utils/debugLog';
 
-import type { DeviceChangeEvent, DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
+import type { DeviceChangeEvent, DeviceDescriptor } from '@unionkeyhq/hwk-adapter-core';
 import type { DeviceManagementKit } from '@ledgerhq/device-management-kit';
 import type { DmkDiscoveredDevice } from '../types';
 

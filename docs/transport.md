@@ -9,9 +9,9 @@ UnionKey Hardware SDK采用分层架构设计，实现跨平台硬件钱包通�
 ```
 Application Layer (DApps)
     ↓
-SDK Interface (@unionkeyfe/hd-core)
+SDK Interface (@unionkeyhq/hd-core)
     ↓
-Transport Abstraction (@unionkeyfe/hd-transport)
+Transport Abstraction (@unionkeyhq/hd-transport)
     ↓
 Platform Adapters (WebUSB/BLE/HTTP)
     ↓

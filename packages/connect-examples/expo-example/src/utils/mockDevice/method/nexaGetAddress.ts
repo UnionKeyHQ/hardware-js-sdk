@@ -6,7 +6,7 @@ import { OP, encodeDataPush } from '@nexajs/script';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { NexaGetAddressParams, Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { NexaGetAddressParams, Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 enum ENexaAddressType {
   PayToPublicKeyHash = 'P2PKH',

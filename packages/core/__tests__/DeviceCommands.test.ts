@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { DeviceCommands } from '../src/device/DeviceCommands';
 

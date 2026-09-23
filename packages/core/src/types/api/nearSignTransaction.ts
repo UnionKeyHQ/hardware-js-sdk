@@ -1,4 +1,4 @@
-import type { NearSignedTx } from '@unionkeyfe/hd-transport';
+import type { NearSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type NearSignTransactionParams = {

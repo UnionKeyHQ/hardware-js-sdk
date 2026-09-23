@@ -11,16 +11,16 @@ const dotData: ChainMethodEntry[] = [
           path: "m/44'/354'/0'/0'/0'",
           prefix: '0',
           network: 'polkadot',
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
         title: 'Batch Get Address',
         value: {
           bundle: [
-            { path: "m/44'/354'/0'/0'/0'", prefix: '0', network: 'polkadot', showOnUnionKey: false },
-            { path: "m/44'/354'/1'/0'/0'", prefix: '0', network: 'polkadot', showOnUnionKey: false },
-            { path: "m/44'/354'/2'/0'/0'", prefix: '0', network: 'polkadot', showOnUnionKey: false },
+            { path: "m/44'/354'/0'/0'/0'", prefix: '0', network: 'polkadot', showOnOneKey: false },
+            { path: "m/44'/354'/1'/0'/0'", prefix: '0', network: 'polkadot', showOnOneKey: false },
+            { path: "m/44'/354'/2'/0'/0'", prefix: '0', network: 'polkadot', showOnOneKey: false },
           ],
         },
       },
@@ -30,7 +30,7 @@ const dotData: ChainMethodEntry[] = [
           path: "m/44'/354'/0'/0'/0'",
           prefix: '2',
           network: 'kusama',
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -39,7 +39,7 @@ const dotData: ChainMethodEntry[] = [
           path: "m/44'/354'/0'/0'/0'",
           prefix: '5',
           network: 'astar',
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
     ],

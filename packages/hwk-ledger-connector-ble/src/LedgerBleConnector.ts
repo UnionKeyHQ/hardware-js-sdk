@@ -1,8 +1,8 @@
 import { Platform } from 'react-native';
-import { LedgerConnectorBase } from '@unionkeyfe/hwk-ledger-adapter';
+import { LedgerConnectorBase } from '@unionkeyhq/hwk-ledger-adapter';
 
-import type { LedgerDeviceManager } from '@unionkeyfe/hwk-ledger-adapter';
-import type { DeviceDescriptor } from '@unionkeyfe/hwk-adapter-core';
+import type { LedgerDeviceManager } from '@unionkeyhq/hwk-ledger-adapter';
+import type { DeviceDescriptor } from '@unionkeyhq/hwk-adapter-core';
 import type { DeviceManagementKit, TransportFactory } from '@ledgerhq/device-management-kit';
 
 type RnBleRawDevice = {

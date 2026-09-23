@@ -16,7 +16,7 @@ Display requested address derived by given BIP32 path on device and returns it t
 ```typescript
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnUnionKey: true
+    showOnOneKey: true
 });
 ```
 
@@ -27,11 +27,11 @@ Optional common params
 **Exporting single address**
 
 * `path` - _required_ `string | Array<number>` minimum length is 3. read more
-* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 
 **Exporting bundle of addresses**
 
-* `bundle` - `Array` of Objects with `path` and `showOnUnionKey` fields
+* `bundle` - `Array` of Objects with `path` and `showOnOneKey` fields
 
 **Example**
 
@@ -39,7 +39,7 @@ Optional common params
 // Get single address
 const response = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     path: "m/44'/541'/0'/0/0",
-    showOnUnionKey: false
+    showOnOneKey: false
 });
 
 // Get multiple addresses
@@ -47,11 +47,11 @@ const bundleResponse = await HardwareSDK.scdoGetAddress(connectId, deviceId, {
     bundle: [
         {
             path: "m/44'/541'/0'/0/0",
-            showOnUnionKey: false
+            showOnOneKey: false
         },
         {
             path: "m/44'/541'/1'/0/0", 
-            showOnUnionKey: false
+            showOnOneKey: false
         }
     ]
 });

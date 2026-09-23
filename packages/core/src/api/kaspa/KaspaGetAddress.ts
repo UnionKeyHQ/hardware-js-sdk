@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { KaspaGetAddress as HardwareKaspaGetAddress } from '@unionkeyfe/hd-transport';
+import type { KaspaGetAddress as HardwareKaspaGetAddress } from '@unionkeyhq/hd-transport';
 import type { KaspaAddress, KaspaGetAddressParams } from '../../types';
 
 export default class KaspaGetAddress extends BaseMethod<HardwareKaspaGetAddress[]> {

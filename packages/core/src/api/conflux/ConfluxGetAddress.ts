@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { ConfluxGetAddress as HardwareConfluxGetAddress } from '@unionkeyfe/hd-transport';
+import type { ConfluxGetAddress as HardwareConfluxGetAddress } from '@unionkeyhq/hd-transport';
 import type { ConfluxAddress, ConfluxGetAddressParams } from '../../types/api/confluxGetAddress';
 
 export default class ConfluxGetAddress extends BaseMethod<HardwareConfluxGetAddress[]> {

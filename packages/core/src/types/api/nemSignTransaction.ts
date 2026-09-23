@@ -1,4 +1,4 @@
-import type { NEMSignedTx } from '@unionkeyfe/hd-transport';
+import type { NEMSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 type MosaicID = {

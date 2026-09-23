@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { NervosGetAddress as HardwareNervosGetAddress } from '@unionkeyfe/hd-transport';
+import type { NervosGetAddress as HardwareNervosGetAddress } from '@unionkeyhq/hd-transport';
 import type { NervosAddress, NervosGetAddressParams } from '../../types';
 
 export default class NervosGetAddress extends BaseMethod<HardwareNervosGetAddress[]> {

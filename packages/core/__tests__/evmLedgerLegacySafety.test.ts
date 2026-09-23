@@ -107,12 +107,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/2",
-            showOnUnionKey: false,
+            showOnOneKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/2",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               chainName: '1',
             },
           },
@@ -166,12 +166,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/2",
-            showOnUnionKey: false,
+            showOnOneKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/2",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               chainName: '1',
             },
           },
@@ -186,12 +186,12 @@ describe('EVM Ledger legacy path safety checks', () => {
         bundle: [
           {
             path: "m/44'/60'/0'/3",
-            showOnUnionKey: false,
+            showOnOneKey: false,
             chainId: 1,
             _originRequestParams: {
               network: 'evm',
               path: "m/44'/60'/0'/3",
-              showOnUnionKey: false,
+              showOnOneKey: false,
               chainName: '1',
             },
           },

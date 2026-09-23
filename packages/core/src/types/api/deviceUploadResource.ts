@@ -1,4 +1,4 @@
-import type { ResourceType, Success } from '@unionkeyfe/hd-transport';
+import type { ResourceType, Success } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type DeviceUploadResourceParams = {

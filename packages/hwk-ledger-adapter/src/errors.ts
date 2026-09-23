@@ -1,6 +1,6 @@
-import { HardwareErrorCode, enrichErrorMessage } from '@unionkeyfe/hwk-adapter-core';
+import { HardwareErrorCode, enrichErrorMessage } from '@unionkeyhq/hwk-adapter-core';
 
-import type { Failure } from '@unionkeyfe/hwk-adapter-core';
+import type { Failure } from '@unionkeyhq/hwk-adapter-core';
 
 export const MULTIPLE_USB_LEDGER_DEVICES_ERROR_MESSAGE =
   'Multiple Ledger USB devices are connected. Please connect only one Ledger device and try again.';

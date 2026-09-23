@@ -1,11 +1,11 @@
 {
-  "name": "@unionkeyfe/hd-web-sdk",
+  "name": "@unionkeyhq/hd-web-sdk",
   "version": "1.1.27-alpha.5",
   "author": "UnionKey",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
   "license": "ISC",
   "type": "commonjs",
-  "main": "build/onekey-js-sdk.js",
+  "main": "build/unionkey-js-sdk.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
@@ -20,11 +20,11 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unionkeyfe/cross-inpage-provider-core": "2.2.67",
-    "@unionkeyfe/hd-core": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport-http": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport-web-device": "1.1.27-alpha.5"
+    "@unionkeyhq/cross-inpage-provider-core": "2.2.71",
+    "@unionkeyhq/hd-core": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport-http": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport-web-device": "1.1.27-alpha.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.17.12",

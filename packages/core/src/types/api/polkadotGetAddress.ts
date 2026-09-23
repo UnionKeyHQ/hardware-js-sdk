@@ -1,4 +1,4 @@
-import type { PolkadotAddress as HardwarePolkadotAddress } from '@unionkeyfe/hd-transport';
+import type { PolkadotAddress as HardwarePolkadotAddress } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type PolkadotAddress = {

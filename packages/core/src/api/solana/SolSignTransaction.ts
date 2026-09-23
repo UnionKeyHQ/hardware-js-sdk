@@ -5,7 +5,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
 import type { SolanaSignTransactionParams, SolanaSignedTx } from '../../types';
-import type { SolanaSignTx as HardwareSolanaSignTx } from '@unionkeyfe/hd-transport';
+import type { SolanaSignTx as HardwareSolanaSignTx } from '@unionkeyhq/hd-transport';
 
 export default class SolSignTransaction extends BaseMethod<HardwareSolanaSignTx[]> {
   hasBundle = false;

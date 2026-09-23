@@ -1,6 +1,6 @@
-# `@unionkeyfe/hd-transport-react-native`
+# `@unionkeyhq/hd-transport-react-native`
 
-`@unionkeyfe/hd-transport-react-native` is a library that implements transport communication by [react-native-ble-plx](https://github.com/dotintent/react-native-ble-plx).
+`@unionkeyhq/hd-transport-react-native` is a library that implements transport communication by [react-native-ble-plx](https://github.com/dotintent/react-native-ble-plx).
 
 ## What is the purpose
 

@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hwk-ledger-adapter",
+  "name": "@unionkeyhq/hwk-ledger-adapter",
   "version": "1.1.27-alpha.5",
   "description": "Ledger hardware wallet adapter for OneKey",
   "author": "UnionKey",
@@ -50,8 +50,8 @@
     "@ledgerhq/device-signer-kit-solana": "^1.7.0",
     "@ledgerhq/hw-app-trx": "^6.34.1",
     "@ledgerhq/hw-transport": "^6.34.1",
-    "@unionkeyfe/hwk-adapter-core": "1.1.27-alpha.5",
-    "bitcoinjs-lib": "npm:@unionkeyfe/bitcoinjs-lib@7.0.1"
+    "@unionkeyhq/hwk-adapter-core": "1.1.27-alpha.5",
+    "bitcoinjs-lib": "7.0.1"
   },
   "devDependencies": {
     "rimraf": "^5.0.0",

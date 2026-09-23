@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { StellarGetAddress as HardwareStellarGetAddress } from '@unionkeyfe/hd-transport';
+import type { StellarGetAddress as HardwareStellarGetAddress } from '@unionkeyhq/hd-transport';
 import type { StellarAddress, StellarGetAddressParams } from '../../types';
 
 export default class StellarGetAddress extends BaseMethod<HardwareStellarGetAddress[]> {

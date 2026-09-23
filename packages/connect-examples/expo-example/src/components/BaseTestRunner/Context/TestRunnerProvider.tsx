@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from 'react';
 
-import type { Features, OnekeyFeatures } from '@unionkeyfe/hd-transport';
+import type { Features, OnekeyFeatures } from '@unionkeyhq/hd-transport';
 import type { TestCaseDataWithKey } from '../types';
 
 export type RunnerState = 'running' | 'done' | 'stopped' | 'none';

@@ -5,7 +5,7 @@ import { getPublicKey } from '@noble/secp256k1';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 const SCDO_ADDRESS_LENGTH = 20;
 const SHARD_NUM = 4;

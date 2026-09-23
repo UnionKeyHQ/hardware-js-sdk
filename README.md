@@ -6,16 +6,16 @@ Hardware-js-sdk is designed to allow third-party developers to quickly access th
 
 | package                                                                     | description                                                           |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [@unionkeyfe/core](./packages/core)                                           | The core process of hardware wallet connection.                       |
-| [@unionkeyfe/hd-web-sdk](./packages/hd-web-sdk)                               | Using the sdk in the web platform.                                    |
-| [@unionkeyfe/hd-ble-sdk](./packages/hd-ble-sdk)                               | Using the SDK in BLE communication environment. e.g: iOS / Android    |
-| [@unionkeyfe/hd-common-sdk](./packages/hd-common-connect-sdk)                 | Using the SDK in a node or web-usb environment                        |
-| [@unionkeyfe/hd-transport](./packages/hd-transport)                           | Data serialization and deserialization of hardware communication data |
-| [@unionkeyfe/hd-transport-http](./packages/hd-transport-http)                 | communication lib for http                                            |
-| [@unionkeyfe/hd-transport-react-native](./packages/hd-transport-react-native) | communication lib for React Native                                    |
-| [@unionkeyfe/hd-transport-webusb](./packages/hd-transport-webusb)             | communication lib for WebUSB                                          |
-| [@unionkeyfe/hd-shared](./packages/shared)                                    | Tools, error definitions, constants                                   |
-| [@unionkeyfe/hardware-cli](./packages/hd-cli)                                | CLI for AI agent integration (Claude Code, Cursor, etc.)              |
+| [@unionkeyhq/core](./packages/core)                                           | The core process of hardware wallet connection.                       |
+| [@unionkeyhq/hd-web-sdk](./packages/hd-web-sdk)                               | Using the sdk in the web platform.                                    |
+| [@unionkeyhq/hd-ble-sdk](./packages/hd-ble-sdk)                               | Using the SDK in BLE communication environment. e.g: iOS / Android    |
+| [@unionkeyhq/hd-common-sdk](./packages/hd-common-connect-sdk)                 | Using the SDK in a node or web-usb environment                        |
+| [@unionkeyhq/hd-transport](./packages/hd-transport)                           | Data serialization and deserialization of hardware communication data |
+| [@unionkeyhq/hd-transport-http](./packages/hd-transport-http)                 | communication lib for http                                            |
+| [@unionkeyhq/hd-transport-react-native](./packages/hd-transport-react-native) | communication lib for React Native                                    |
+| [@unionkeyhq/hd-transport-webusb](./packages/hd-transport-webusb)             | communication lib for WebUSB                                          |
+| [@unionkeyhq/hd-shared](./packages/shared)                                    | Tools, error definitions, constants                                   |
+| [@unionkeyhq/hardware-cli](./packages/hd-cli)                                | CLI for AI agent integration (Claude Code, Cursor, etc.)              |
 
 ## Documentation
 

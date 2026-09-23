@@ -1,11 +1,11 @@
 import { Image as ImageView } from 'react-native';
 import { SaveFormat, manipulateAsync } from 'expo-image-manipulator';
 import { bytesToHex } from '@noble/hashes/utils';
-import { ResourceType } from '@unionkeyfe/hd-transport';
+import { ResourceType } from '@unionkeyhq/hd-transport';
 import { canvasRGBA as blurCanvasRGBA } from 'stackblur-canvas';
 import axios from 'axios';
 
-import type { DeviceUploadResourceParams } from '@unionkeyfe/hd-core';
+import type { DeviceUploadResourceParams } from '@unionkeyhq/hd-core';
 import type { Action } from 'expo-image-manipulator';
 
 function buildHtmlImage(dataUrl: string): Promise<HTMLImageElement> {

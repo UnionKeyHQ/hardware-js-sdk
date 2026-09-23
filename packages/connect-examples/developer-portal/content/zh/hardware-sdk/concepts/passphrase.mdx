@@ -141,7 +141,7 @@ await HardwareSDK.btcGetAddress(connectId, deviceId, {
 对于短生命周期的进程（CLI 工具、自动化脚本），可以使用 `preloadSessionCache` 持久化并恢复会话。
 
 ```ts
-import { preloadSessionCache } from '@unionkeyfe/hd-core';
+import { preloadSessionCache } from '@unionkeyhq/hd-core';
 
 // 启动时：从持久化存储恢复会话
 const { deviceId, passphraseState, sessionId } = loadFromStorage();

@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { ConfluxSignMessageCIP23 as HardwareConfluxSignMessageCIP23 } from '@unionkeyfe/hd-transport';
+import type { ConfluxSignMessageCIP23 as HardwareConfluxSignMessageCIP23 } from '@unionkeyhq/hd-transport';
 
 export default class ConfluxSignMessageCIP23 extends BaseMethod<HardwareConfluxSignMessageCIP23> {
   init() {

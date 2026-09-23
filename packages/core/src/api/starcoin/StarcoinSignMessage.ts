@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { StarcoinSignMessage as HardwareStarcoinSignMessage } from '@unionkeyfe/hd-transport';
+import type { StarcoinSignMessage as HardwareStarcoinSignMessage } from '@unionkeyhq/hd-transport';
 
 export default class StarcoinSignMessage extends BaseMethod<HardwareStarcoinSignMessage> {
   init() {

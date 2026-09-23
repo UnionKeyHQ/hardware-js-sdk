@@ -1,4 +1,4 @@
-import type { CardanoAddressParametersType } from '@unionkeyfe/hd-transport';
+import type { CardanoAddressParametersType } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 import type { CardanoAddressParameters } from './cardano';
 
@@ -13,7 +13,7 @@ export type CardanoGetAddressMethodParams = {
   derivationType: number;
   address?: string;
   isCheck?: boolean;
-  showOnUnionKey: boolean;
+  showOnOneKey: boolean;
 };
 
 export type CardanoGetAddressParams = {

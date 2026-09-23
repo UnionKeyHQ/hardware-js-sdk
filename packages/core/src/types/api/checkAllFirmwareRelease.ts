@@ -1,6 +1,6 @@
 import type { IBLEFirmwareReleaseInfo } from '../settings';
-import type { EFirmwareType } from '@unionkeyfe/hd-shared';
-import type { Features } from '@unionkeyfe/hd-transport';
+import type { EFirmwareType } from '@unionkeyhq/hd-shared';
+import type { Features } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 import type { IDeviceBLEFirmwareStatus, IDeviceFirmwareStatus } from '../device';
 

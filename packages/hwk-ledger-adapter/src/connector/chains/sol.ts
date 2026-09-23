@@ -1,4 +1,4 @@
-import { bytesToHex, hexToBytes } from '@unionkeyfe/hwk-adapter-core';
+import { bytesToHex, hexToBytes } from '@unionkeyhq/hwk-adapter-core';
 
 import { collapseSignerInteraction, normalizePath } from './utils';
 import { SignerSol } from '../../signer/SignerSol';

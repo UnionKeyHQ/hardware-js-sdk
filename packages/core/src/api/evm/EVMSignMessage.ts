@@ -7,7 +7,7 @@ import TransportManager from '../../data-manager/TransportManager';
 import signMessage from './latest/signMessage';
 import signMessageLegacyV1 from './legacyV1/signMessage';
 
-import type { EthereumSignMessageOneKey } from '@unionkeyfe/hd-transport';
+import type { EthereumSignMessageOneKey } from '@unionkeyhq/hd-transport';
 
 export default class EVMSignMessage extends BaseMethod<EthereumSignMessageOneKey> {
   init() {

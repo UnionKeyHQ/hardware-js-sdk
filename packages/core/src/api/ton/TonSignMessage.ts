@@ -16,7 +16,7 @@ import type {
   TonSignMessage as HardwareTonSignMessage,
   TonSignedMessage,
   TonTxAck,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { TonSignedMessageResponse } from '../../types/api/tonSignMessage';
 
 export default class TonSignMessage extends BaseMethod<HardwareTonSignMessage> {

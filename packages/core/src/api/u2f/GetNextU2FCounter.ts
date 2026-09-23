@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { GetNextU2FCounter as HardwareGetNextU2FCounter } from '@unionkeyfe/hd-transport';
+import type { GetNextU2FCounter as HardwareGetNextU2FCounter } from '@unionkeyhq/hd-transport';
 
 export default class GetNextU2FCounter extends BaseMethod<HardwareGetNextU2FCounter> {
   init() {

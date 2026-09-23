@@ -27,7 +27,7 @@ import {
   Server,
   Info,
 } from 'lucide-react';
-import { getDeviceLabel } from '@unionkeyfe/hd-core';
+import { getDeviceLabel } from '@unionkeyhq/hd-core';
 import packageJson from '../../package.json';
 
 // 导入图片

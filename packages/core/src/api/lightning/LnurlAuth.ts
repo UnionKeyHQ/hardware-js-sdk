@@ -3,7 +3,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 import { bytesToHex } from '../helpers/hexUtils';
 
-import type { LnurlAuth as ILnurlAuth } from '@unionkeyfe/hd-transport';
+import type { LnurlAuth as ILnurlAuth } from '@unionkeyhq/hd-transport';
 
 export default class LnurlAuth1 extends BaseMethod<ILnurlAuth> {
   hasBundle = false;

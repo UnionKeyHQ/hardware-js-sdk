@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 /* eslint-enable react/style-prop-object */
 
 // Use official SDKs and types from @unionkeyfe packages.
-import HardwareBLESDK from '@unionkeyfe/hd-ble-sdk';
+import HardwareBLESDK from '@unionkeyhq/hd-ble-sdk';
 import {
   UI_EVENT,
   UI_REQUEST,
@@ -14,7 +14,7 @@ import {
   type CoreApi,
   type SearchDevice,
   type Features,
-} from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 import { BleManager as BlePlxManager } from 'react-native-ble-plx';
 
 type LogLine = { ts: string; level: 'info' | 'warn' | 'error' | 'debug'; msg: string };
@@ -174,7 +174,7 @@ export const BleDemoScreen = () => {
     if (sdkRef.current || initializing) return;
     try {
       setInitializing(true);
-      appendLog('info', 'Initializing @unionkeyfe/hd-ble-sdk...');
+      appendLog('info', 'Initializing @unionkeyhq/hd-ble-sdk...');
       sdkRef.current = HardwareBLESDK as unknown as CoreApi;
       await sdkRef.current.init({ debug: true, fetchConfig: true });
       setSdkReady(true);
@@ -187,7 +187,7 @@ export const BleDemoScreen = () => {
         appendLog('error', `Create BlePlxManager failed: ${err?.message || err}`);
         appendLog(
           'warn',
-          'This usually means native BLE module is not linked (use expo run:ios/android to build a Dev Client), or @unionkeyfe/react-native-ble-utils / react-native-ble-plx not installed.'
+          'This usually means native BLE module is not linked (use expo run:ios/android to build a Dev Client), or @unionkeyhq/react-native-ble-utils / react-native-ble-plx not installed.'
         );
       }
 
@@ -292,7 +292,7 @@ export const BleDemoScreen = () => {
       setBusy('address');
       const params = {
         path: "m/44'/60'/0'/0/0",
-        showOnUnionKey: false,
+        showOnOneKey: false,
       };
       appendLog('info', { evmGetAddress: params });
 
@@ -325,7 +325,7 @@ export const BleDemoScreen = () => {
       setBusy('sign');
       const params = {
         path: "m/44'/60'/0'/0/0",
-        showOnUnionKey: false,
+        showOnOneKey: false,
         // hex of "example message"
         messageHex: '0x6578616d706c65206d657373616765',
         chainId: 1,

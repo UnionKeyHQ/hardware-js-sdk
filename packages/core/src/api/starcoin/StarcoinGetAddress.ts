@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { StarcoinGetAddress as HardwareStarcoinGetAddress } from '@unionkeyfe/hd-transport';
+import type { StarcoinGetAddress as HardwareStarcoinGetAddress } from '@unionkeyhq/hd-transport';
 import type { StarcoinAddress, StarcoinGetAddressParams } from '../../types/api/starcoinGetAddress';
 
 export default class StarcoinGetAddress extends BaseMethod<HardwareStarcoinGetAddress[]> {

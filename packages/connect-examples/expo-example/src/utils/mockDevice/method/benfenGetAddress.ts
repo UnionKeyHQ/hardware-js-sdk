@@ -5,7 +5,7 @@ import { sha256 } from '@noble/hashes/sha256';
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 import { addHexPrefix } from '../../hexstring';
 
-import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 export const BENFEN_ADDRESS_LENGTH = 32;
 export const PUBLIC_KEY_SIZE = 32;

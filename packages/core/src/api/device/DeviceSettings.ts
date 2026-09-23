@@ -1,10 +1,10 @@
-import { HardwareErrorCode, TypedError } from '@unionkeyfe/hd-shared';
+import { HardwareErrorCode, TypedError } from '@unionkeyhq/hd-shared';
 
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { LANGUAGE_LABELS } from '../../utils/deviceSettings';
 
-import type { ApplySettings } from '@unionkeyfe/hd-transport';
+import type { ApplySettings } from '@unionkeyhq/hd-transport';
 
 export default class DeviceSettings extends BaseMethod<ApplySettings> {
   init() {

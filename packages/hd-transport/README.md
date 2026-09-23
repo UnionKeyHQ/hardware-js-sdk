@@ -1,6 +1,6 @@
-# `@unionkeyfe/hd-transport`
+# `@unionkeyhq/hd-transport`
 
-`@unionkeyfe/hd-transport` is a library for low-level communication with UnionKey Hardware.
+`@unionkeyhq/hd-transport` is a library for low-level communication with UnionKey Hardware.
 
 ## What is the purpose
 

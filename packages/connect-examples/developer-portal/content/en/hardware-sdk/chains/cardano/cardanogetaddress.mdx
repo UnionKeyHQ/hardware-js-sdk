@@ -28,7 +28,7 @@ const response = await HardwareSDK.cardanoGetAddress(connectId, deviceId, params
 * `protocolMagic` - _required_ `Integer` 764824073 for Mainnet, 1 for Preprod Testnet, 2 for Preview Testnet
 * `networkId` - _required_ `Integer` 1 for Mainnet, 0 for Testnet
 * `address` - _optional_ `string` address for validation (read `Handle button request` section below)
-* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 * `derivationType` - _optional_ `CardanoDerivationType` enum. determines used derivation type. Default is set to ICARUS=1
 * `isCheck` - _optional_ `boolean` checks only the base address
 
@@ -220,7 +220,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 764824073,
             networkId: 1,
-            showOnUnionKey: false,
+            showOnOneKey: false,
         },
         // base address with staking key hash, account 1, address 1
         {
@@ -231,7 +231,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 764824073,
             networkId: 1,
-            showOnUnionKey: false,
+            showOnOneKey: false,
         },
         // byron address, account 2, address 3, testnet
         {
@@ -241,7 +241,7 @@ HardwareSDK.cardanoGetAddress(connectId, deviceId, {
             },
             protocolMagic: 1,
             networkId: 0,
-            showOnUnionKey: false,
+            showOnOneKey: false,
         },
     ],
 });

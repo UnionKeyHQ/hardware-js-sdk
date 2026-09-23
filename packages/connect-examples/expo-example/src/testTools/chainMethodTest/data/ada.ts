@@ -20,7 +20,7 @@ const adaData: ChainMethodEntry[] = [
           networkId: 1,
           derivationType: 1,
           address: '',
-          showOnUnionKey: false,
+          showOnOneKey: false,
           isCheck: false,
         },
       },
@@ -38,7 +38,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
             {
@@ -51,7 +51,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
             {
@@ -64,7 +64,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
           ],
@@ -84,7 +84,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
             {
@@ -97,7 +97,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 2,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
             {
@@ -110,7 +110,7 @@ const adaData: ChainMethodEntry[] = [
               networkId: 1,
               derivationType: 1,
               address: '',
-              showOnUnionKey: false,
+              showOnOneKey: false,
               isCheck: false,
             },
           ],
@@ -126,7 +126,7 @@ const adaData: ChainMethodEntry[] = [
         title: 'Get PublicKey',
         value: {
           path: "m/1852'/1815'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
           derivationType: 1,
         },
       },
@@ -134,9 +134,9 @@ const adaData: ChainMethodEntry[] = [
         title: 'Classic Batch Get PublicKey',
         value: {
           bundle: [
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 1 },
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 1 },
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 1 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 1 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 1 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 1 },
           ],
         },
       },
@@ -144,9 +144,9 @@ const adaData: ChainMethodEntry[] = [
         title: 'Touch Batch Get PublicKey',
         value: {
           bundle: [
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 2 },
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 1 },
-            { path: "m/1852'/1815'/0'", showOnUnionKey: false, derivationType: 2 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 2 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 1 },
+            { path: "m/1852'/1815'/0'", showOnOneKey: false, derivationType: 2 },
           ],
         },
       },

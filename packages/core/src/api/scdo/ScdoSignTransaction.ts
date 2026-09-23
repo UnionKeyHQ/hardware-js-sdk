@@ -11,7 +11,7 @@ import type {
   ScdoSignTx as HardwareScdoSignTx,
   ScdoSignedTx,
   TypedCall,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 
 export default class ScdoSignTransaction extends BaseMethod<HardwareScdoSignTx> {

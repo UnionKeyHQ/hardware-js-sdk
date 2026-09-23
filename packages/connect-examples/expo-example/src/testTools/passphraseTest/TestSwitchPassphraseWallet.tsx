@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 import { Picker } from '@react-native-picker/picker';
 import { Stack, Text } from 'tamagui';
 import { useIntl } from 'react-intl';
@@ -18,7 +18,7 @@ import TestRunnerOptionButtons from '../../components/BaseTestRunner/TestRunnerO
 import { useHardwareInputPinDialog } from '../../provider/HardwareInputPinProvider';
 
 import type { TestChain } from './utils';
-import type { CoreMessage } from '@unionkeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyhq/hd-core';
 import type { TestCase, TestCaseDataWithKey } from '../../components/BaseTestRunner/types';
 
 type TestCaseDataType = {

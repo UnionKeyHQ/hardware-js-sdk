@@ -29,13 +29,13 @@ UnionKey BTC signer 通过 `HardwareSDK` 与设备交互，将 APDU 封装为 UT
 ## 安装
 
 ```bash
-npm i @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
+npm i @unionkeyhq/hd-core @unionkeyhq/hd-common-connect-sdk
 ```
 
 ## 初始化
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
 const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
@@ -50,7 +50,7 @@ const path84 = "m/84'/0'/0'/0/0";
 const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
   path: path84,
   coin: 'btc',
-  showOnUnionKey: true,
+  showOnOneKey: true,
 });
 // res.payload.address, publicKey?, path
 ```
@@ -59,7 +59,7 @@ const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
 
 - `path` / `address_n`: 必填，BIP44 路径或数组；需与脚本 purpose 对应。
 - `coin`: 必填，网络标识（如 `btc` / `test`）。
-- `showOnUnionKey?`: 可选，是否在设备上展示并确认。
+- `showOnOneKey?`: 可选，是否在设备上展示并确认。
 
 **返回**
 
@@ -106,14 +106,14 @@ Promise<{ success, payload: { serializedTx, signatures?: string[], txid?: string
 ## 交互与状态
 
 - 接口以 Promise 结束；用户提示通过 `UI_REQUEST` 事件触发（解锁设备、打开 BTC App、确认输入/输出/找零/手续费）。
-- 同一设备请串行调用；签名前用 `showOnUnionKey` 确认收款/找零路径。
+- 同一设备请串行调用；签名前用 `showOnOneKey` 确认收款/找零路径。
 
 ## 示例
 
 ### 示例：P2SH-P2WPKH 交易（嵌套 SegWit）
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 await HardwareSDK.init({ env: 'webusb', debug: false });
 
@@ -121,7 +121,7 @@ const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 
 const path49 = [(49 | 0x80000000) >>> 0, (0 | 0x80000000) >>> 0, (0 | 0x80000000) >>> 0, 0, 0];
-await HardwareSDK.btcGetAddress(connectId, deviceId, { path: path49, coin: 'btc', showOnUnionKey: true });
+await HardwareSDK.btcGetAddress(connectId, deviceId, { path: path49, coin: 'btc', showOnOneKey: true });
 
 const inputs = [
   {

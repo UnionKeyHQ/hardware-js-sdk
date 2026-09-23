@@ -3,7 +3,7 @@ import { base32 } from '@scure/base';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 const ALGORAND_ADDRESS_BYTE_LENGTH = 36;
 const ALGORAND_CHECKSUM_BYTE_LENGTH = 4;

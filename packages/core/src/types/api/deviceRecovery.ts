@@ -1,4 +1,4 @@
-import type { RecoveryDeviceType, Success } from '@unionkeyfe/hd-transport';
+import type { RecoveryDeviceType, Success } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type DeviceRecoveryParams = {

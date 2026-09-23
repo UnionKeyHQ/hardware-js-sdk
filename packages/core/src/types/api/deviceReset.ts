@@ -1,4 +1,4 @@
-import type { Success } from '@unionkeyfe/hd-transport';
+import type { Success } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type DeviceResetParams = {

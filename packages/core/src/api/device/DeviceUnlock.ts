@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { LockDevice } from '@unionkeyfe/hd-transport';
+import type { LockDevice } from '@unionkeyhq/hd-transport';
 
 export default class DeviceUnlock extends BaseMethod<LockDevice> {
   init() {

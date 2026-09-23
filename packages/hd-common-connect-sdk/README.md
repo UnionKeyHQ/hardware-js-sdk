@@ -1,25 +1,25 @@
-# `@unionkeyfe/hd-common-connect-sdk`
+# `@unionkeyhq/hd-common-connect-sdk`
 
-`@unionkeyfe/hd-common-connect-sdk` is a libarary that runs in the node enviroment. And communicates with transport in the normal way.
+`@unionkeyhq/hd-common-connect-sdk` is a libarary that runs in the node enviroment. And communicates with transport in the normal way.
 
 ## Installation
 
 Install library as npm module:
 
 ```javascript
-npm install @unionkeyfe/hd-common-connect-sdk
+npm install @unionkeyhq/hd-common-connect-sdk
 ```
 
 or
 
 ```javascript
-yarn add @unionkeyfe/hd-common-connect-sdk
+yarn add @unionkeyhq/hd-common-connect-sdk
 ```
 
 ## Initialization
 
 ```javascript
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 function init() {
   HardwareSDK.init({

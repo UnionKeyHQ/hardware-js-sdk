@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get address',
         value: {
           path: "m/44'/501'/0'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -18,15 +18,15 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/501'/0'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/501'/1'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/501'/2'/0'",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
           ],
         },

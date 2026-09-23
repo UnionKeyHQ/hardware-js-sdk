@@ -1,6 +1,6 @@
 import axios from 'axios';
 import semver from 'semver';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { DeviceModelToTypes } from '../types';
 import { DataManager } from '../data-manager';

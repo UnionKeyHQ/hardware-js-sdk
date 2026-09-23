@@ -1,11 +1,11 @@
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
-import type { TypedCall } from '@unionkeyfe/hd-transport';
+import type { TypedCall } from '@unionkeyhq/hd-transport';
 import type { NexaSignTransactionParams, NexaSignature } from '../../types';
 
 export default class NexaSignTransaction extends BaseMethod<NexaSignTransactionParams> {

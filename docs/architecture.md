@@ -7,9 +7,9 @@ UnionKey Hardware SDK 采用三层架构设计：
 ```
 应用层 (DApps)
     ↓
-SDK接口层 (@unionkeyfe/core)
+SDK接口层 (@unionkeyhq/core)
     ↓
-传输抽象层 (@unionkeyfe/hd-transport)
+传输抽象层 (@unionkeyhq/hd-transport)
     ↓
 平台适配层 (WebUSB/BLE/HTTP)
     ↓
@@ -19,21 +19,21 @@ SDK接口层 (@unionkeyfe/core)
 ## 🏗️ 核心包结构
 
 ### API层
-- **`@unionkeyfe/hd-core`** - 核心API和业务逻辑
-- **`@unionkeyfe/hd-transport`** - 传输层抽象
+- **`@unionkeyhq/hd-core`** - 核心API和业务逻辑
+- **`@unionkeyhq/hd-transport`** - 传输层抽象
 
 ### 传输层
-- **`@unionkeyfe/hd-transport-webusb`** - WebUSB传输（浏览器）
-- **`@unionkeyfe/hd-transport-usb`** - Node.js USB传输（CLI/服务端，基于 libusb）
-- **`@unionkeyfe/hd-transport-http`** - HTTP Bridge传输
-- **`@unionkeyfe/hd-transport-lowlevel`** - 低层传输（BLE 插件模式）
+- **`@unionkeyhq/hd-transport-webusb`** - WebUSB传输（浏览器）
+- **`@unionkeyhq/hd-transport-usb`** - Node.js USB传输（CLI/服务端，基于 libusb）
+- **`@unionkeyhq/hd-transport-http`** - HTTP Bridge传输
+- **`@unionkeyhq/hd-transport-lowlevel`** - 低层传输（BLE 插件模式）
 
 ### 平台SDK
-- **`@unionkeyfe/hd-web-sdk`** - Web平台SDK
-- **`@unionkeyfe/hd-ble-sdk`** - 移动端BLE SDK
+- **`@unionkeyhq/hd-web-sdk`** - Web平台SDK
+- **`@unionkeyhq/hd-ble-sdk`** - 移动端BLE SDK
 
 ### 示例应用
-- **`@unionkeyfe/connect-examples`** - 集成示例
+- **`@unionkeyhq/connect-examples`** - 集成示例
   - `expo-example` - Web集成示例
   - `expo-playground` - 开发测试平台
 
@@ -99,17 +99,17 @@ switch(env) {
 
 ```
 应用层
-├── @unionkeyfe/hd-web-sdk
-├── @unionkeyfe/hd-ble-sdk
+├── @unionkeyhq/hd-web-sdk
+├── @unionkeyhq/hd-ble-sdk
     │
-    ├── @unionkeyfe/hd-core ←── 核心层
-    │   └── @unionkeyfe/hd-transport
+    ├── @unionkeyhq/hd-core ←── 核心层
+    │   └── @unionkeyhq/hd-transport
     │
     └── 传输层实现
-        ├── @unionkeyfe/hd-transport-webusb      (浏览器)
-        ├── @unionkeyfe/hd-transport-usb          (Node.js CLI)
-        ├── @unionkeyfe/hd-transport-lowlevel     (BLE 插件)
-        └── @unionkeyfe/hd-transport-http         (Bridge)
+        ├── @unionkeyhq/hd-transport-webusb      (浏览器)
+        ├── @unionkeyhq/hd-transport-usb          (Node.js CLI)
+        ├── @unionkeyhq/hd-transport-lowlevel     (BLE 插件)
+        └── @unionkeyhq/hd-transport-http         (Bridge)
 ```
 
 ## 🔧 开发工具
@@ -128,5 +128,5 @@ yarn install
 yarn build
 
 # 启动示例
-yarn workspace @unionkeyfe/connect-examples start
+yarn workspace @unionkeyhq/connect-examples start
 ```

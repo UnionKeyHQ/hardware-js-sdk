@@ -228,7 +228,7 @@ const getWidgetCopy = isZh => {
         },
         {
           text: 'React Native 蓝牙连接',
-          prompt: '如何在 React Native 项目中使用 @unionkeyfe/hd-ble-sdk 通过蓝牙 BLE 连接 UnionKey 硬件设备？请包含安装、权限配置和完整初始化示例。',
+          prompt: '如何在 React Native 项目中使用 @unionkeyhq/hd-ble-sdk 通过蓝牙 BLE 连接 UnionKey 硬件设备？请包含安装、权限配置和完整初始化示例。',
         },
         {
           text: 'EVM 交易签名',
@@ -276,7 +276,7 @@ const getWidgetCopy = isZh => {
       },
       {
         text: 'React Native BLE',
-        prompt: 'How do I establish a BLE connection to a UnionKey hardware device in a React Native app using @unionkeyfe/hd-ble-sdk? Include installation, permission setup, and a full initialization example.',
+        prompt: 'How do I establish a BLE connection to a UnionKey hardware device in a React Native app using @unionkeyhq/hd-ble-sdk? Include installation, permission setup, and a full initialization example.',
       },
       {
         text: 'EVM transaction signing',

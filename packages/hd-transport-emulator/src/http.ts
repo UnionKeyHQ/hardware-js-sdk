@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { HardwareError, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { HardwareError, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import secureJSON from 'secure-json-parse';
 
 import type { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';

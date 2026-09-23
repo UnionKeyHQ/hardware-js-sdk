@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { TonSignData as HardwareTonSignData } from '@unionkeyfe/hd-transport';
+import type { TonSignData as HardwareTonSignData } from '@unionkeyhq/hd-transport';
 import type { TonSignDataParams } from '../../types/api/tonSignData';
 
 export default class TonSignData extends BaseMethod<HardwareTonSignData> {

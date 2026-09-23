@@ -3,7 +3,7 @@ import {
   CreateHardwareErrorByBridgeError,
   HardwareError,
   HardwareErrorCode,
-} from '@unionkeyfe/hd-shared';
+} from '@unionkeyhq/hd-shared';
 import secureJSON from 'secure-json-parse';
 
 import type { AxiosError, AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';

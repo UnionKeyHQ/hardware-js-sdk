@@ -1,4 +1,4 @@
-import { HardwareErrorCode } from '@unionkeyfe/hwk-adapter-core';
+import { HardwareErrorCode } from '@unionkeyhq/hwk-adapter-core';
 import Trx from '@ledgerhq/hw-app-trx';
 
 import { normalizePath } from './utils';

@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { serializedPath, validatePath } from '../helpers/pathUtils';
@@ -7,7 +7,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { validateEvent } from './helper';
 import { bytesToHex, hexToBytes } from '../helpers/hexUtils';
 
-import type { NostrSignEvent as SignEvent } from '@unionkeyfe/hd-transport';
+import type { NostrSignEvent as SignEvent } from '@unionkeyhq/hd-transport';
 
 export default class NostrSignEvent extends BaseMethod<SignEvent> {
   hasBundle = false;

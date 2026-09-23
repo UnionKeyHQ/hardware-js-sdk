@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { SolanaSignOffChainMessage as HardwareSolSignOffChainMessage } from '@unionkeyfe/hd-transport';
+import type { SolanaSignOffChainMessage as HardwareSolSignOffChainMessage } from '@unionkeyhq/hd-transport';
 
 export default class SolSignOffchainMessage extends BaseMethod<HardwareSolSignOffChainMessage> {
   init() {

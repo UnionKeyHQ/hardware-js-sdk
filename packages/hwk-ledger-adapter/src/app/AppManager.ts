@@ -5,7 +5,7 @@ import {
   OpenAppCommand,
   isSuccessCommandResult,
 } from '@ledgerhq/device-management-kit';
-import { HardwareErrorCode } from '@unionkeyfe/hwk-adapter-core';
+import { HardwareErrorCode } from '@unionkeyhq/hwk-adapter-core';
 
 import { ERROR_TAG } from '../errors';
 import { debugLog } from '../utils/debugLog';

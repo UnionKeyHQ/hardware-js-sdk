@@ -1,13 +1,13 @@
 /* eslint-disable prefer-regex-literals */
 
-import { EthereumDataType } from '@unionkeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { EthereumDataType } from '@unionkeyhq/hd-transport';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { intToHex } from './bigNumberUtils';
 import { formatAnyHex } from './hexUtils';
 
 import type { EthereumSignTypedDataTypes } from '../../types/api/evmSignTypedData';
-import type { EthereumFieldType } from '@unionkeyfe/hd-transport';
+import type { EthereumFieldType } from '@unionkeyhq/hd-transport';
 
 // Copied from https://github.com/ethers-io/ethers.js/blob/v5.5.2/packages/abi/src.ts/fragments.ts#L249
 const paramTypeArray = new RegExp(/^(.*)\[([0-9]*)\]$/);

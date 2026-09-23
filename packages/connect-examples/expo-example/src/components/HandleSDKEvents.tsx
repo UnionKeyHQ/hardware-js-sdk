@@ -7,7 +7,7 @@ import {
   UI_REQUEST,
   UI_RESPONSE,
   supportInputPinOnSoftware,
-} from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 import { useFocusEffect } from '@react-navigation/native';
 import { View } from 'tamagui';
 
@@ -17,7 +17,7 @@ import { WebUsbAuthorize } from './WebUsbAuthorize';
 import { BluetoothPermission } from './BluetoothPermission';
 
 import type { BluetoothErrorType } from './BluetoothPermission';
-import type { CoreMessage } from '@unionkeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyhq/hd-core';
 
 // Type declaration for desktopApi matches the one in BluetoothPermission
 declare global {
@@ -221,7 +221,7 @@ export default function HandleSDKEvents() {
   const onTestUnexpectedMessage = useCallback(() => {
     SDK?.btcGetAddress('', '', {
       path: "m/44'/0'/0'/0/0",
-      showOnUnionKey: false,
+      showOnOneKey: false,
       useEmptyPassphrase: true,
       passphraseState: undefined,
     });

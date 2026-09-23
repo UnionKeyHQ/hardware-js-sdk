@@ -6,7 +6,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
-import type { BenfenSignTx, BenfenSignedTx, MessageType, TypedCall } from '@unionkeyfe/hd-transport';
+import type { BenfenSignTx, BenfenSignedTx, MessageType, TypedCall } from '@unionkeyhq/hd-transport';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 
 export default class BenfenSignTransaction extends BaseMethod<BenfenSignTx> {

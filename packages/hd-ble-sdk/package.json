@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hd-ble-sdk",
+  "name": "@unionkeyhq/hd-ble-sdk",
   "version": "1.1.27-alpha.5",
   "author": "UnionKey",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
@@ -20,8 +20,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unionkeyfe/hd-core": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport-react-native": "1.1.27-alpha.5"
+    "@unionkeyhq/hd-core": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport-react-native": "1.1.27-alpha.5"
   }
 }

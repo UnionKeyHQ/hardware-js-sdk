@@ -4,7 +4,7 @@ title: Migrate to web-sdk + WebUSB
 
 # Migrate to web-sdk + WebUSB
 
-Replace Bridge with WebUSB while keeping `@unionkeyfe/hd-web-sdk` as your SDK entry.
+Replace Bridge with WebUSB while keeping `@unionkeyhq/hd-web-sdk` as your SDK entry.
 
 ---
 
@@ -29,7 +29,7 @@ Replace Bridge with WebUSB while keeping `@unionkeyfe/hd-web-sdk` as your SDK en
 ## Initialize (hd-web-sdk + WebUSB)
 
 ```ts
-import HdWebSdk from '@unionkeyfe/hd-web-sdk';
+import HdWebSdk from '@unionkeyhq/hd-web-sdk';
 
 // Same pattern as expo-example: default export → .HardwareWebSdk
 const HardwareSDK = HdWebSdk.HardwareWebSdk;
@@ -48,7 +48,7 @@ await HardwareSDK.init({
 ## Authorization (WebUSB Picker + Official Filter)
 
 ```ts
-import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 
 // Important: must be triggered by a user gesture (e.g., button click)
 // Chrome security policy disallows automatic USB device discovery before permission.
@@ -74,7 +74,7 @@ const resolvedDeviceId = features.payload.device_id ?? deviceId;
 const r = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnUnionKey: false,
+  showOnOneKey: false,
 });
 
 if (r.success) {

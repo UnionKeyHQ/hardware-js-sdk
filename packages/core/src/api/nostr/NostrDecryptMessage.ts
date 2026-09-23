@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { NostrDecryptMessage as DecryptMessage } from '@unionkeyfe/hd-transport';
+import type { NostrDecryptMessage as DecryptMessage } from '@unionkeyhq/hd-transport';
 
 export default class NostrDecryptMessage extends BaseMethod<DecryptMessage> {
   hasBundle = false;

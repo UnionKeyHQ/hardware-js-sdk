@@ -118,7 +118,7 @@ EIP-712 结构化数据签名在 SDK 中通过两条路径实现：
 
 - **关键逻辑:**
   - **批量处理:** 方法内部会自动将单个请求和批量（`bundle`）请求统一为数组进行处理。
-  - **参数验证:** 验证 `path` 的有效性，并处理可选参数 `showOnUnionKey`（默认为 `true`，在设备上显示地址）和 `chainId`。
+  - **参数验证:** 验证 `path` 的有效性，并处理可选参数 `showOnOneKey`（默认为 `true`，在设备上显示地址）和 `chainId`。
   - **协议切换:** 调用 `TransportManager.getMessageVersion()` 来决定使用 `legacyV1` 还是 `latest` 的 `getAddress` 实现。
   - **设备交互:** 循环处理批量请求，对每个请求都向设备发起一次 `typedCall` 调用。
 

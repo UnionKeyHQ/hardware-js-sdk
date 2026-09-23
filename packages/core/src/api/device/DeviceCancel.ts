@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { Cancel } from '@unionkeyfe/hd-transport';
+import type { Cancel } from '@unionkeyhq/hd-transport';
 
 export default class DeviceCancel extends BaseMethod<Cancel> {
   init() {

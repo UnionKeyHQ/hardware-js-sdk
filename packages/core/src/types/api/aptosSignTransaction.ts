@@ -1,4 +1,4 @@
-import type { AptosSignedTx as HardwareAptosSignedTx } from '@unionkeyfe/hd-transport';
+import type { AptosSignedTx as HardwareAptosSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type AptosSignedTx = {

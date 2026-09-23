@@ -12,7 +12,7 @@ import { ExternalLink, Play, Monitor } from 'lucide-react'
 
 ## 选择传输协议
 
-USB 场景一律推荐 `@unionkeyfe/hd-common-connect-sdk`。`@unionkeyfe/hd-web-sdk` 仅用于插件端（iframe 嵌入形式）。
+USB 场景一律推荐 `@unionkeyhq/hd-common-connect-sdk`。`@unionkeyhq/hd-web-sdk` 仅用于插件端（iframe 嵌入形式）。
 
 ### 连接方式
 
@@ -26,11 +26,11 @@ USB 场景一律推荐 `@unionkeyfe/hd-common-connect-sdk`。`@unionkeyfe/hd-web
 
 | 平台（技术栈） | 传输协议 | SDK 包 | 指南 |
 |----------------|----------|--------|------|
-| Web（浏览器） | WebUSB | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [WebUSB 连接指南](/zh/hardware-sdk/transport/web-usb) |
-| React Native | 蓝牙 | [@unionkeyfe/hd-ble-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/hd-ble-sdk) | [React Native 蓝牙](/zh/hardware-sdk/transport/react-native-ble) |
-| Android（原生） | 蓝牙 | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Android 蓝牙](/zh/hardware-sdk/transport/android) |
-| iOS（原生） | 蓝牙 | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [iOS 蓝牙](/zh/hardware-sdk/transport/ios) |
-| Flutter | 蓝牙 | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Flutter 蓝牙](/zh/hardware-sdk/transport/flutter) |
+| Web（浏览器） | WebUSB | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [WebUSB 连接指南](/zh/hardware-sdk/transport/web-usb) |
+| React Native | 蓝牙 | [@unionkeyhq/hd-ble-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/hd-ble-sdk) | [React Native 蓝牙](/zh/hardware-sdk/transport/react-native-ble) |
+| Android（原生） | 蓝牙 | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Android 蓝牙](/zh/hardware-sdk/transport/android) |
+| iOS（原生） | 蓝牙 | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [iOS 蓝牙](/zh/hardware-sdk/transport/ios) |
+| Flutter | 蓝牙 | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Flutter 蓝牙](/zh/hardware-sdk/transport/flutter) |
 
 ![传输架构](https://raw.githubusercontent.com/UnionKeyHQ/hardware-js-sdk/onekey/packages/connect-examples/developer-portal/public/images/transport/transport-architecture-zh.svg)
 
@@ -42,16 +42,16 @@ USB 场景一律推荐 `@unionkeyfe/hd-common-connect-sdk`。`@unionkeyfe/hd-web
 
 ```bash
 # Web / 桌面 WebUSB（推荐）
-npm i @unionkeyfe/hd-common-connect-sdk
+npm i @unionkeyhq/hd-common-connect-sdk
 
 # React Native BLE
-npm i @unionkeyfe/hd-ble-sdk
+npm i @unionkeyhq/hd-ble-sdk
 
 # 原生宿主 + 底层插件（Android/iOS/Flutter 桥接）
-npm i @unionkeyfe/hd-common-connect-sdk
+npm i @unionkeyhq/hd-common-connect-sdk
 
 # 插件端 iframe（仅插件端）
-npm i @unionkeyfe/hd-web-sdk
+npm i @unionkeyhq/hd-web-sdk
 ```
 
 传输细节：
@@ -66,10 +66,10 @@ npm i @unionkeyfe/hd-web-sdk
 
 ### Web / 桌面 WebUSB
 
-使用 `@unionkeyfe/hd-common-connect-sdk`：
+使用 `@unionkeyhq/hd-common-connect-sdk`：
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'webusb',
@@ -80,10 +80,10 @@ await HardwareSDK.init({
 
 ### React Native BLE
 
-使用 `@unionkeyfe/hd-ble-sdk`：
+使用 `@unionkeyhq/hd-ble-sdk`：
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyhq/hd-ble-sdk';
 
 await HardwareSDK.init({
   debug: __DEV__,
@@ -92,10 +92,10 @@ await HardwareSDK.init({
 
 ### 原生桥接 / 低层协议
 
-使用 `@unionkeyfe/hd-common-connect-sdk`：
+使用 `@unionkeyhq/hd-common-connect-sdk`：
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'lowlevel',
@@ -113,10 +113,10 @@ await HardwareSDK.init({
 
 ### 插件端 Iframe
 
-使用 `@unionkeyfe/hd-web-sdk`（仅插件端）：
+使用 `@unionkeyhq/hd-web-sdk`（仅插件端）：
 
 ```ts
-import { HardwareSDK } from '@unionkeyfe/hd-web-sdk';
+import { HardwareSDK } from '@unionkeyhq/hd-web-sdk';
 
 await HardwareSDK.init({
   debug: process.env.NODE_ENV !== 'production',
@@ -146,16 +146,16 @@ import { DeviceCompatibilityTable } from '../../../components/DeviceCompatibilit
 
 | 包名 | 用途 | NPM | 版本 |
 |------|------|-----|------|
-| `@unionkeyfe/hd-common-connect-sdk` | 统一的 Web/原生 SDK 接口；推荐作为传输层入口 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-common-connect-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-common-connect-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-common-connect-sdk) |
-| `@unionkeyfe/hd-ble-sdk` | 纯 React Native 蓝牙协议栈（推荐用于 RN 项目） | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-ble-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-ble-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-ble-sdk) |
-| `@unionkeyfe/hd-transport-react-native` | React Native 传输层副作用/桥接 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-react-native) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-react-native.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-react-native) |
-| `@unionkeyfe/hd-transport-web-device` | Web 环境设备访问传输层 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-web-device) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-web-device.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-web-device) |
-| `@unionkeyfe/hd-transport-emulator` | 模拟器传输层（无需物理设备即可开发和测试） | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-emulator) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-emulator.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-emulator) |
-| `@unionkeyfe/hd-transport-http` | HTTP 桥接传输层 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-http) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-http.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-http) |
-| `@unionkeyfe/hd-transport-lowlevel` | 底层主机适配器协议（用于原生集成） | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-lowlevel) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-lowlevel.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-lowlevel) |
-| `@unionkeyfe/hd-core` | 核心事件、常量、消息处理 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-core) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-core.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-core) |
-| `@unionkeyfe/hd-shared` | 共享工具和类型 | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-shared) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-shared.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-shared) |
-| `@unionkeyfe/hd-web-sdk` | Web SDK 封装（不推荐；建议使用 hd-common-connect-sdk） | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-web-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-web-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-web-sdk) |
+| `@unionkeyhq/hd-common-connect-sdk` | 统一的 Web/原生 SDK 接口；推荐作为传输层入口 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-common-connect-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-common-connect-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-common-connect-sdk) |
+| `@unionkeyhq/hd-ble-sdk` | 纯 React Native 蓝牙协议栈（推荐用于 RN 项目） | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-ble-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-ble-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-ble-sdk) |
+| `@unionkeyhq/hd-transport-react-native` | React Native 传输层副作用/桥接 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-react-native) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-react-native.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-react-native) |
+| `@unionkeyhq/hd-transport-web-device` | Web 环境设备访问传输层 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-web-device) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-web-device.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-web-device) |
+| `@unionkeyhq/hd-transport-emulator` | 模拟器传输层（无需物理设备即可开发和测试） | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-emulator) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-emulator.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-emulator) |
+| `@unionkeyhq/hd-transport-http` | HTTP 桥接传输层 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-http) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-http.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-http) |
+| `@unionkeyhq/hd-transport-lowlevel` | 底层主机适配器协议（用于原生集成） | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-lowlevel) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-lowlevel.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-lowlevel) |
+| `@unionkeyhq/hd-core` | 核心事件、常量、消息处理 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-core) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-core.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-core) |
+| `@unionkeyhq/hd-shared` | 共享工具和类型 | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-shared) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-shared.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-shared) |
+| `@unionkeyhq/hd-web-sdk` | Web SDK 封装（不推荐；建议使用 hd-common-connect-sdk） | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-web-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-web-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-web-sdk) |
 
 - 更新日志：[releases](https://github.com/UnionKeyHQ/hardware-js-sdk/releases)
 

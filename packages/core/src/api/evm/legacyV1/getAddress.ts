@@ -1,4 +1,4 @@
-import type { EthereumGetAddressOneKey, MessageResponse, TypedCall } from '@unionkeyfe/hd-transport';
+import type { EthereumGetAddressOneKey, MessageResponse, TypedCall } from '@unionkeyhq/hd-transport';
 
 export default async function ({
   typedCall,

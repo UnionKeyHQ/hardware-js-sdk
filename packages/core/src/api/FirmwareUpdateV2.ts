@@ -6,7 +6,7 @@ import {
   HardwareError,
   HardwareErrorCode,
   createDeferred,
-} from '@unionkeyfe/hd-shared';
+} from '@unionkeyhq/hd-shared';
 import semver from 'semver';
 
 import { UI_REQUEST } from '../constants/ui-request';

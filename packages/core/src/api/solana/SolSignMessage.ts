@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { SolanaSignUnsafeMessage as HardwareSolSignUnsafeMessage } from '@unionkeyfe/hd-transport';
+import type { SolanaSignUnsafeMessage as HardwareSolSignUnsafeMessage } from '@unionkeyhq/hd-transport';
 
 export default class SolSignMessage extends BaseMethod<HardwareSolSignUnsafeMessage> {
   init() {

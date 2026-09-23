@@ -3,7 +3,7 @@ import { useToast } from './use-toast';
 import { convertFilesToArrayBuffers } from '../store/hardwareStore';
 import { cancelHardwareOperation } from '../services/hardwareService';
 import type { ExecutionStatus } from '~/data/types';
-import type { UiEvent } from '@unionkeyfe/hd-core';
+import type { UiEvent } from '@unionkeyhq/hd-core';
 import { useFirmwareProgressStore } from '../components/providers/SDKProvider';
 
 interface UseMethodExecutionOptions {

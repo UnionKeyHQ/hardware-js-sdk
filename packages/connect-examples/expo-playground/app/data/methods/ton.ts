@@ -88,21 +88,21 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/44'/607'/0'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,
               },
               {
                 path: "m/44'/607'/1'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,
               },
               {
                 path: "m/44'/607'/2'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 walletVersion: 3,
                 isBounceable: false,
                 isTestnetOnly: false,

@@ -1,12 +1,12 @@
 import ByteBuffer from 'bytebuffer';
 import * as usb from 'usb';
-import transport, { LogBlockCommand } from '@unionkeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@unionkeyfe/hd-shared';
+import transport, { LogBlockCommand } from '@unionkeyhq/hd-transport';
+import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@unionkeyhq/hd-shared';
 
 import { HEADER_LENGTH, PACKET_SIZE, PAYLOAD_SIZE, REPORT_ID } from './constants';
 
 import type EventEmitter from 'events';
-import type { AcquireInput, OneKeyDeviceInfo } from '@unionkeyfe/hd-transport';
+import type { AcquireInput, OneKeyDeviceInfo } from '@unionkeyhq/hd-transport';
 
 const { parseConfigure, buildEncodeBuffers, decodeProtocol, receiveOne, check } = transport;
 

@@ -1,4 +1,4 @@
-import type { NearAddress as HardwareNearAddress } from '@unionkeyfe/hd-transport';
+import type { NearAddress as HardwareNearAddress } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type NearAddress = {

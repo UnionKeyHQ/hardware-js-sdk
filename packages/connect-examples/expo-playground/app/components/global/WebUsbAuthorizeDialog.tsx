@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogFooter } from '../ui/Dialog';
 import { Button } from '../ui/Button';
 import { Alert, AlertDescription } from '../ui/Alert';
-import { ONEKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { ONEKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 import { Usb, ShieldCheck, AlertCircle, Loader2 } from 'lucide-react';
 
 export type WebUsbAuthorizeDialogProps = {

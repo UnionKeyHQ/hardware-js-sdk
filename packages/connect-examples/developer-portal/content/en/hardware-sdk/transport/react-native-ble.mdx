@@ -8,15 +8,15 @@ title: React Native BLE (hd-ble-sdk)
 Demo: React Native / Expo example → [react-native-demo](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/develop/packages/connect-examples/react-native-demo)
 
 
-This guide shows how to use the pure React Native BLE stack with `@unionkeyfe/hd-ble-sdk` and `@unionkeyfe/hd-transport-react-native`. No WebView or low-level adapter is required. The chain API usage stays the same as in Quick Start.
+This guide shows how to use the pure React Native BLE stack with `@unionkeyhq/hd-ble-sdk` and `@unionkeyhq/hd-transport-react-native`. No WebView or low-level adapter is required. The chain API usage stays the same as in Quick Start.
 
 ## Install
 
 We recommend installing the RN-native dependencies at the app layer so that autolinking includes the native modules in your Dev Client build:
 
 ```bash
-npm i @unionkeyfe/hd-ble-sdk @unionkeyfe/hd-transport-react-native \
-      @unionkeyfe/react-native-ble-utils react-native-ble-plx \
+npm i @unionkeyhq/hd-ble-sdk @unionkeyhq/hd-transport-react-native \
+      @unionkeyhq/react-native-ble-utils react-native-ble-plx \
       buffer process react-native-get-random-values react-native-url-polyfill
 ```
 
@@ -32,9 +32,9 @@ global.Buffer = global.Buffer || require('buffer').Buffer;
 global.process = global.process || require('process');
 
 // Register RN transport side-effects before SDK init
-import '@unionkeyfe/hd-transport-react-native';
+import '@unionkeyhq/hd-transport-react-native';
 
-import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyhq/hd-ble-sdk';
 ```
 
 ## Android setup
@@ -112,7 +112,7 @@ export async function setupBle() {
   });
 
   // Subscribe to UI events (PIN / Passphrase / confirmations)
-  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
+  // import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core'
   // HardwareSDK.on(UI_EVENT, (msg) => { /* open dialogs and reply via HardwareSDK.uiResponse(...) */ });
 }
 ```
@@ -140,7 +140,7 @@ Persist `connectId` and `deviceId` (most chain APIs require both).
 const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnUnionKey: false,
+  showOnOneKey: false,
 });
 
 if (res.success) {

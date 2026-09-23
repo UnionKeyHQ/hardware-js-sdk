@@ -9,16 +9,16 @@ const solData: ChainMethodEntry[] = [
         title: 'Get address',
         value: {
           path: "m/44'/501'/0'/0'",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
         title: 'Batch Get Address',
         value: {
           bundle: [
-            { path: "m/44'/501'/0'/0'", showOnUnionKey: false },
-            { path: "m/44'/501'/1'/0'", showOnUnionKey: false },
-            { path: "m/44'/501'/2'/0'", showOnUnionKey: false },
+            { path: "m/44'/501'/0'/0'", showOnOneKey: false },
+            { path: "m/44'/501'/1'/0'", showOnOneKey: false },
+            { path: "m/44'/501'/2'/0'", showOnOneKey: false },
           ],
         },
       },

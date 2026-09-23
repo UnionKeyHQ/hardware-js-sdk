@@ -20,7 +20,7 @@ import type {
   Features,
   IDeviceType,
   SearchDevice,
-} from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 
 /** SearchDevice enriched with features fetched after discovery */
 type EnrichedSearchDevice = SearchDevice & { features?: Features };
@@ -346,7 +346,7 @@ program
         path: opts.path,
         pubkey: opts.pubkey,
         plaintext: opts.plaintext,
-        showOnUnionKey: opts.showOnDevice === 'true',
+        showOnOneKey: opts.showOnDevice === 'true',
         ...params,
       });
       outputResult(globalOpts, result);
@@ -366,7 +366,7 @@ program
         path: opts.path,
         pubkey: opts.pubkey,
         ciphertext: opts.ciphertext,
-        showOnUnionKey: opts.showOnDevice === 'true',
+        showOnOneKey: opts.showOnDevice === 'true',
         ...params,
       });
       outputResult(globalOpts, result);
@@ -692,7 +692,7 @@ sessionCmd
       // 4. Get address to verify + extract deviceId
       const addrResult = await sdk.evmGetAddress(connectId, device.deviceId || '', {
         path: "m/44'/60'/0'/0/0",
-        showOnUnionKey: false,
+        showOnOneKey: false,
         passphraseState,
       });
 
@@ -777,7 +777,7 @@ function getCommonParams(globalOpts: Record<string, any>) {
 }
 
 /**
- * HardwareErrorCode.PinInvalid from @unionkeyfe/hd-shared. Duplicated here
+ * HardwareErrorCode.PinInvalid from @unionkeyhq/hd-shared. Duplicated here
  * to avoid pulling the shared package's runtime just for one enum value.
  * (PinCancelled is 802 — we don't retry it, any non-PinInvalid failure
  * falls through to the "bail out" branch below.)
@@ -796,7 +796,7 @@ const HW_ERR_PIN_INVALID = 801;
  * user another chance without forcing a re-run of the whole command.
  */
 async function unlockWithRetry(
-  sdk: typeof import('@unionkeyfe/hd-common-connect-sdk').default,
+  sdk: typeof import('@unionkeyhq/hd-common-connect-sdk').default,
   connectId: string,
   maxAttempts = 3
 ): Promise<{
@@ -839,7 +839,7 @@ async function unlockWithRetry(
  * After this, globalOpts.passphraseState is set and getCommonParams will include it.
  */
 async function prepareSession(
-  sdk: typeof import('@unionkeyfe/hd-common-connect-sdk').default,
+  sdk: typeof import('@unionkeyhq/hd-common-connect-sdk').default,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   globalOpts: Record<string, any>
 ): Promise<string | undefined> {

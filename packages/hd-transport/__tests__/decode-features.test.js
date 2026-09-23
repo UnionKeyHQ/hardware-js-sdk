@@ -4,7 +4,7 @@ const ByteBuffer = require('bytebuffer');
 const { decode } = require('../src/serialization/protobuf/decode');
 const { decode: decodeProtocol } = require('../src/serialization/protocol/decode');
 
-// Reuse the messages.json already committed alongside @unionkeyfe/hd-core
+// Reuse the messages.json already committed alongside @unionkeyhq/hd-core
 // (runtime data for DataManager). hd-transport's own messages.json is
 // generated locally via `./scripts/protobuf-build.sh` and gitignored —
 // pointing the test at core's committed copy avoids a ~300KB duplicate

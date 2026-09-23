@@ -73,7 +73,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 1,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
               {
@@ -86,7 +86,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 1,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
               {
@@ -99,7 +99,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 1,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
             ],
@@ -126,7 +126,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 1,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
               {
@@ -139,7 +139,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 2,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
               {
@@ -152,7 +152,7 @@ const api: UnifiedMethodConfig[] = [
                 networkId: 1,
                 derivationType: 1,
                 address: '',
-                showOnUnionKey: false,
+                showOnOneKey: false,
                 isCheck: false,
               },
             ],
@@ -203,15 +203,15 @@ const api: UnifiedMethodConfig[] = [
             value: [
               {
                 path: "m/1852'/1815'/0'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/1852'/1815'/1'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/1852'/1815'/2'",
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
             ],
           },

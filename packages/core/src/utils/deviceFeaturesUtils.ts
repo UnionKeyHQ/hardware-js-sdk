@@ -1,7 +1,7 @@
 import semver from 'semver';
 import { isNaN } from 'lodash';
-import { EDeviceType, type EFirmwareType, ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
-import { Enum_Capability } from '@unionkeyfe/hd-transport';
+import { EDeviceType, type EFirmwareType, ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
+import { Enum_Capability } from '@unionkeyhq/hd-transport';
 
 import { toHardened } from '../api/helpers/pathUtils';
 import { DeviceModelToTypes, DeviceTypeToModels } from '../types';

@@ -22,7 +22,7 @@ const result = await HardwareSDK.benfenGetAddress(connectId, deviceId, params);
 **Optional common params**
 
 * `path` - _required_ `string | Array<number>` minimum length is `3`. read more
-* `showOnUnionKey` - _optional_ `boolean` whether to display address on device
+* `showOnOneKey` - _optional_ `boolean` whether to display address on device
 
 #### Returns
 
@@ -37,7 +37,7 @@ Example:
 ```typescript
 const params = {
   path: "m/44'/728'/0'/0'/0'",
-  showOnUnionKey: false
+  showOnOneKey: false
 };
 
 // Single address
@@ -48,11 +48,11 @@ const batchParams = {
   bundle: [
     {
       path: "m/44'/728'/0'/0'/0'",
-      showOnUnionKey: false
+      showOnOneKey: false
     },
     {
       path: "m/44'/728'/1'/0'/0'",
-      showOnUnionKey: false
+      showOnOneKey: false
     }
   ]
 };

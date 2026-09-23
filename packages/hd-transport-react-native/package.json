@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hd-transport-react-native",
+  "name": "@unionkeyhq/hd-transport-react-native",
   "version": "1.1.27-alpha.5",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
   "license": "MIT",
@@ -19,10 +19,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unionkeyfe/hd-core": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport": "1.1.27-alpha.5",
-    "@unionkeyfe/react-native-ble-utils": "^0.1.4",
+    "@unionkeyhq/hd-core": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport": "1.1.27-alpha.5",
+    "@unionkeyhq/react-native-ble-utils": "^0.1.4",
     "react-native-ble-plx": "3.5.1"
   }
 }

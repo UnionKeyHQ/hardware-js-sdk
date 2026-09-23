@@ -5,7 +5,7 @@ import { format as formatUrl } from 'url';
 import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 import { exec } from 'child_process';
-import { initNobleBleSupport } from '@unionkeyfe/hd-transport-electron';
+import { initNobleBleSupport } from '@unionkeyhq/hd-transport-electron';
 
 import initProcess, { restartBridge } from './process';
 import { ipcMessageKeys } from './config';

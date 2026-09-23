@@ -1,5 +1,5 @@
-import { StellarMemoType } from '@unionkeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { StellarMemoType } from '@unionkeyhq/hd-transport';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { validatePath } from '../helpers/pathUtils';
@@ -9,7 +9,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import type {
   StellarSignTx as HardwareStellarSignTx,
   StellarSignedTx,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { StellarOperation, StellarSignTransactionParams } from '../../types';
 
 // Firmware accepts up to 1024 bytes per chunk; 1 byte = 2 hex chars

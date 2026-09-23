@@ -1,7 +1,7 @@
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { ApplyFlags } from '@unionkeyfe/hd-transport';
+import type { ApplyFlags } from '@unionkeyhq/hd-transport';
 
 export default class DeviceFlags extends BaseMethod<ApplyFlags> {
   init() {

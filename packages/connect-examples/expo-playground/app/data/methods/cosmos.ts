@@ -43,17 +43,17 @@ const api: UnifiedMethodConfig[] = [
               {
                 path: "m/44'/118'/0'/0/0",
                 hrp: 'cosmos',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/118'/0'/0/1",
                 hrp: 'cosmos',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/118'/0'/0/2",
                 hrp: 'cosmos',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
             ],
           },
@@ -103,17 +103,17 @@ const api: UnifiedMethodConfig[] = [
               {
                 path: "m/44'/118'/0'/0/0",
                 curve: 'secp256k1',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/118'/0'/0/1",
                 curve: 'secp256k1',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/118'/0'/0/2",
                 curve: 'secp256k1',
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
             ],
           },

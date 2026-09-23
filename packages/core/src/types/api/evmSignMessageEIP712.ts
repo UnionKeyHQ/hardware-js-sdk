@@ -1,4 +1,4 @@
-import type { EthereumMessageSignature } from '@unionkeyfe/hd-transport';
+import type { EthereumMessageSignature } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type EVMSignMessageEIP712Params = {

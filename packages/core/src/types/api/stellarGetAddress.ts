@@ -1,4 +1,4 @@
-import type { StellarAddress as HardwareStellarAddress } from '@unionkeyfe/hd-transport';
+import type { StellarAddress as HardwareStellarAddress } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type StellarAddress = {

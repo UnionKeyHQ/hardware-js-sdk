@@ -1,4 +1,4 @@
-import type { NextU2FCounter } from '@unionkeyfe/hd-transport';
+import type { NextU2FCounter } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export declare function getNextU2FCounter(

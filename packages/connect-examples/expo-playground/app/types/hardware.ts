@@ -1,4 +1,4 @@
-import type { IDeviceType, Features, OnekeyFeatures } from '@unionkeyfe/hd-core';
+import type { IDeviceType, Features, OnekeyFeatures } from '@unionkeyhq/hd-core';
 
 export interface DeviceInfo {
   connectId: string;

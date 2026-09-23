@@ -1,4 +1,4 @@
-import type { Enum_Capability } from '@unionkeyfe/hd-transport';
+import type { Enum_Capability } from '@unionkeyhq/hd-transport';
 import type { Features } from '../types/device';
 
 export const existCapability = (features?: Features, capability?: Enum_Capability) =>

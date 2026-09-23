@@ -1,6 +1,6 @@
-# `@unionkeyfe/hd-transport-webusb`
+# `@unionkeyhq/hd-transport-webusb`
 
-`@unionkeyfe/hd-transport-webusb` is a library that implements transport communication by WebUSB.
+`@unionkeyhq/hd-transport-webusb` is a library that implements transport communication by WebUSB.
 
 ## What is the purpose
 

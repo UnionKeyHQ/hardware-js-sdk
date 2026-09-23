@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import type {
   TxInputType,
@@ -6,12 +6,12 @@ import type {
   TxRequest,
   TxRequestSerializedType,
   TypedCall,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type {
   RefTransaction,
   SignedTransaction,
   TransactionOptions,
-} from '@unionkeyfe/hd-core/src/types/api/btcSignTransaction';
+} from '@unionkeyhq/hd-core/src/types/api/btcSignTransaction';
 
 type RefTxs = { [hash: string]: RefTransaction };
 type Props = {

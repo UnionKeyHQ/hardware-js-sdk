@@ -3,9 +3,9 @@ import {
   getDeviceFirmwareVersion,
   getDeviceType,
   getDeviceUUID,
-} from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 
-import type { Features, OnekeyFeatures } from '@unionkeyfe/hd-transport';
+import type { Features, OnekeyFeatures } from '@unionkeyhq/hd-transport';
 
 export const getReleaseUrl = ({ features }: { features?: Features }) => {
   const deviceType = getDeviceType(features)?.toUpperCase() || 'UNKNOWN';

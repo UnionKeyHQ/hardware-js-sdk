@@ -43,12 +43,12 @@
 ### 🤖 AI Agent 集成 / CLI 使用
 **症状**: CLI 命令使用、Agent Skill 配置、链支持查询
 - 📖 **文档**: developer-portal 的 `agent-integration.mdx`
-- 🔧 **`@unionkeyfe/cli`**（`onekey` 命令）— 全功能钱包 CLI：`auth login` 选择登录方式（mnemonic / app-transfer / hardware），`balance` / `transfer` / `swap` / `device ...` 等业务命令登录后自动沿用该模式
-- 🔧 **`@unionkeyfe/hardware-cli`**（`onekey-hw` 命令）— 纯硬件钱包 CLI，AI Agent 直连设备优先选它
+- 🔧 **`@unionkeyhq/cli`**（`onekey` 命令）— 全功能钱包 CLI：`auth login` 选择登录方式（mnemonic / app-transfer / hardware），`balance` / `transfer` / `swap` / `device ...` 等业务命令登录后自动沿用该模式
+- 🔧 **`@unionkeyhq/hardware-cli`**（`onekey-hw` 命令）— 纯硬件钱包 CLI，AI Agent 直连设备优先选它
 
 如果你要**通过 `onekey` CLI 使用硬件钱包**：
 ```bash
-npm install -g @unionkeyfe/cli
+npm install -g @unionkeyhq/cli
 
 # Step 1：登录时选择硬件模式（--hardware 只在 auth login 上有）
 onekey auth login --hardware
@@ -61,7 +61,7 @@ onekey device firmware
 
 如果要**只调硬件操作、不走 onekey 账户体系**（更轻、AI Agent 场景友好）：
 ```bash
-npm install -g @unionkeyfe/hardware-cli
+npm install -g @unionkeyhq/hardware-cli
 onekey-hw search
 onekey-hw get-address --chain evm --use-empty-passphrase
 ```

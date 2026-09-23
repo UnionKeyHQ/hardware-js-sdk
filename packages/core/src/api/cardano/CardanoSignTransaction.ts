@@ -1,5 +1,5 @@
 import semver from 'semver';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { BaseMethod } from '../BaseMethod';
 import { PROTO } from '../../constants';

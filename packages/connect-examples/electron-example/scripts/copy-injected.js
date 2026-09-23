@@ -4,7 +4,7 @@ const path = require('path');
 
 const rootDir = path.join(__dirname, '../../../../');
 
-const sourceDir = path.join(rootDir, 'node_modules/@unionkeyfe/hd-web-sdk/build/');
+const sourceDir = path.join(rootDir, 'node_modules/@unionkeyhq/hd-web-sdk/build/');
 const targetDir = path.join(rootDir, 'packages/connect-examples/electron-example/public/js-sdk/');
 
 async function copyFiles() {
@@ -17,8 +17,8 @@ async function copyFiles() {
       recursive: true,
       overwrite: true,
       filter: (src, dest) => {
-        // Don't copy onekey-js-sdk
-        if (src.endsWith('onekey-js-sdk.min.js') || src.endsWith('onekey-js-sdk.js')) {
+        // Don't copy unionkey-js-sdk
+        if (src.endsWith('unionkey-js-sdk.min.js') || src.endsWith('unionkey-js-sdk.js')) {
           return false;
         }
 

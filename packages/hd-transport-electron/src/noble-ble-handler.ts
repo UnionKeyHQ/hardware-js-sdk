@@ -15,8 +15,8 @@ import {
   isHeaderChunk,
   isOnekeyDevice,
   wait,
-} from '@unionkeyfe/hd-shared';
-import { COMMON_HEADER_SIZE } from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-shared';
+import { COMMON_HEADER_SIZE } from '@unionkeyhq/hd-transport';
 import pRetry from 'p-retry';
 
 import { safeLog } from './types/noble-extended';

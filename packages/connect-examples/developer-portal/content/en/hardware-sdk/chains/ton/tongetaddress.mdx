@@ -16,7 +16,7 @@ Display requested address derived by given BIP32 path on device and returns it t
 ```typescript
 const response = await HardwareSDK.tonGetAddress(connectId, deviceId, {
     path: "m/44'/607'/0'",
-    showOnUnionKey: true,
+    showOnOneKey: true,
     walletVersion: 3,
     isBounceable: false,
     isTestnetOnly: false
@@ -30,14 +30,14 @@ const response = await HardwareSDK.tonGetAddress(connectId, deviceId, {
 **Exporting single address**
 
 * `path` - _required_ `string | Array<number>` minimum length is 3. read more
-* `showOnUnionKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
+* `showOnOneKey` - _optional_ `boolean` determines if address will be displayed on device. Default is set to `true`
 * `walletVersion` - _optional_ `TonWalletVersion` TON wallet version (default: 3)
 * `isBounceable` - _optional_ `boolean` whether address is bounceable (default: false)
 * `isTestnetOnly` - _optional_ `boolean` whether to use testnet (default: false)
 
 **Exporting bundle of addresses**
 
-* `bundle` - `Array` of Objects with `path` and `showOnUnionKey` fields
+* `bundle` - `Array` of Objects with `path` and `showOnOneKey` fields
 
 #### Example
 
@@ -45,7 +45,7 @@ const response = await HardwareSDK.tonGetAddress(connectId, deviceId, {
 // Get single address
 const response = await HardwareSDK.tonGetAddress(connectId, deviceId, {
     path: "m/44'/607'/0'",
-    showOnUnionKey: false,
+    showOnOneKey: false,
     walletVersion: 3,
     isBounceable: false,
     isTestnetOnly: false,
@@ -56,11 +56,11 @@ const batchResponse = await HardwareSDK.tonGetAddress(connectId, deviceId, {
     bundle: [
         {
             path: "m/44'/607'/0'",
-            showOnUnionKey: false
+            showOnOneKey: false
         },
         {
             path: "m/44'/607'/1'",
-            showOnUnionKey: false
+            showOnOneKey: false
         }
     ]
 });

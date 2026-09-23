@@ -1,4 +1,4 @@
-import type { NervosSignedTx as HardwareNervosSignedTx } from '@unionkeyfe/hd-transport';
+import type { NervosSignedTx as HardwareNervosSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type NervosSignedTx = {

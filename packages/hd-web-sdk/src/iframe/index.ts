@@ -1,6 +1,6 @@
-import HttpTransport from '@unionkeyfe/hd-transport-http';
-import EmulatorTransport from '@unionkeyfe/hd-transport-emulator';
-import { WebUsbTransport } from '@unionkeyfe/hd-transport-web-device';
+import HttpTransport from '@unionkeyhq/hd-transport-http';
+import EmulatorTransport from '@unionkeyhq/hd-transport-emulator';
+import { WebUsbTransport } from '@unionkeyhq/hd-transport-web-device';
 import {
   CORE_EVENT,
   DataManager,
@@ -14,7 +14,7 @@ import {
   parseConnectSettings,
   parseMessage,
   switchTransport,
-} from '@unionkeyfe/hd-core';
+} from '@unionkeyhq/hd-core';
 import { get } from 'lodash';
 
 import { getOrigin } from '../utils/urlUtils';
@@ -22,7 +22,7 @@ import { createJsBridge, sendMessage } from '../utils/bridgeUtils';
 import JSBridgeConfig from './bridge-config';
 import { isExtensionWhitelisted, isOriginWhitelisted } from '..';
 
-import type { ConnectSettings, Core, IFrameInit, PostMessageEvent } from '@unionkeyfe/hd-core';
+import type { ConnectSettings, Core, IFrameInit, PostMessageEvent } from '@unionkeyhq/hd-core';
 
 let _core: Core | undefined;
 const Log = getLogger(LoggerNames.Iframe);

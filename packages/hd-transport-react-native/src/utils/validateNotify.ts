@@ -1,4 +1,4 @@
-import { MESSAGE_HEADER_BYTE, MESSAGE_TOP_CHAR } from '@unionkeyfe/hd-transport';
+import { MESSAGE_HEADER_BYTE, MESSAGE_TOP_CHAR } from '@unionkeyhq/hd-transport';
 
 export const isHeaderChunk = (chunk: Buffer): boolean => {
   if (chunk.length < 9) return false;

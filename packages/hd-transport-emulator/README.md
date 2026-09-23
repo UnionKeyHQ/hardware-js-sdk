@@ -12,7 +12,7 @@ This package provides HTTP-based transport for connecting to UnionKey hardware e
 ## Installation
 
 ```bash
-npm install @unionkeyfe/hd-transport-emulator
+npm install @unionkeyhq/hd-transport-emulator
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @unionkeyfe/hd-transport-emulator
 ### Basic Usage
 
 ```javascript
-import EmulatorTransport from '@unionkeyfe/hd-transport-emulator';
+import EmulatorTransport from '@unionkeyhq/hd-transport-emulator';
 
 // Create transport instance
 const transport = new EmulatorTransport();
@@ -37,7 +37,7 @@ await transport.configure(signedData);
 ### With UnionKey Connect SDK
 
 ```javascript
-import HardwareSDK from '@unionkeyfe/hd-web-sdk';
+import HardwareSDK from '@unionkeyhq/hd-web-sdk';
 
 // Initialize with emulator environment
 await HardwareSDK.init({

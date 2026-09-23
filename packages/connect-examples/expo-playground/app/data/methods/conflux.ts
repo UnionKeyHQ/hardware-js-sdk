@@ -42,17 +42,17 @@ const api: UnifiedMethodConfig[] = [
               {
                 path: "m/44'/503'/0'/0/0",
                 chainId: 1029,
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/503'/0'/0/1",
                 chainId: 1029,
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
               {
                 path: "m/44'/503'/0'/0/2",
                 chainId: 1029,
-                showOnUnionKey: false,
+                showOnOneKey: false,
               },
             ],
           },

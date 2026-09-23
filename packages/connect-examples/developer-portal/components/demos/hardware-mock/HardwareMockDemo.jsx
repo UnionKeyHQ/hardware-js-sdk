@@ -48,7 +48,7 @@ const I18N = {
       commandPanel: '交互面板',
       command: '命令',
       sendCommand: '发送命令',
-      showOnDevice: 'showOnUnionKey（在设备上显示并确认）',
+      showOnDevice: 'showOnOneKey（在设备上显示并确认）',
       deviceScreen: '设备屏幕（Mock）',
       terminal: '终端日志',
       noLogs: '暂无日志。试试先解锁设备并输入 PIN，或发送命令触发交互。',
@@ -122,7 +122,7 @@ const I18N = {
       commandPanel: 'Command panel',
       command: 'Command',
       sendCommand: 'Send',
-      showOnDevice: 'showOnUnionKey (confirm on device)',
+      showOnDevice: 'showOnOneKey (confirm on device)',
       deviceScreen: 'Device screen (Mock)',
       terminal: 'Terminal logs',
       noLogs: 'No logs yet. Try unlocking the device or send a command to start.',
@@ -317,7 +317,7 @@ function buildTourHintPayload({ locale, dict, stepId, tourEnabled, tourStarted }
 
 function buildExampleCode({ locale, command, btcPath, addressShowOnUnionKey, messageHex }) {
   const init = [
-    "import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'",
+    "import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk'",
     '',
     'await HardwareSDK.init({',
     "  env: 'webusb',",
@@ -355,7 +355,7 @@ function buildExampleCode({ locale, command, btcPath, addressShowOnUnionKey, mes
       'const res = await HardwareSDK.btcGetAddress(connectId, deviceId, {',
       `  path: ${JSON.stringify(btcPath)},`,
       "  coin: 'btc',",
-      `  showOnUnionKey: ${String(Boolean(addressShowOnUnionKey))},`,
+      `  showOnOneKey: ${String(Boolean(addressShowOnUnionKey))},`,
       '})',
       'if (!res.success) throw new Error(res.payload.error)',
       '',
@@ -481,7 +481,7 @@ export function HardwareMockDemo({ locale = 'zh' }) {
     return buildClassicPinLayout(String(ui?.requestId ?? 'pin'))
   }, [deviceType, ui?.requestId, ui?.type])
 
-  const compactShowOnDeviceLabel = 'showOnUnionKey'
+  const compactShowOnDeviceLabel = 'showOnOneKey'
 
   deviceTypeRef.current = deviceType
   uiTypeRef.current = ui?.type ?? null
@@ -592,21 +592,21 @@ export function HardwareMockDemo({ locale = 'zh' }) {
     const extraHint =
       command === 'btcGetAddress' && !addressShowOnUnionKey
         ? isEn
-          ? `\n// Note: showOnUnionKey=false usually skips device confirmation, so REQUEST_BUTTON may not happen.\n`
-          : `\n// 注意：showOnUnionKey=false 通常会跳过“设备上确认”，因此可能不会触发 REQUEST_BUTTON。\n`
+          ? `\n// Note: showOnOneKey=false usually skips device confirmation, so REQUEST_BUTTON may not happen.\n`
+          : `\n// 注意：showOnOneKey=false 通常会跳过“设备上确认”，因此可能不会触发 REQUEST_BUTTON。\n`
         : ''
 
     if (isEn) {
       if (isPro) {
-        return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST } from '@unionkeyfe/hd-core'
+        return `import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST } from '@unionkeyhq/hd-core'
 
 // Pro: PIN is entered on device, so REQUEST_PIN will NOT be emitted.
 // Subscribe once at app startup (subscribe early to avoid blocking).
 HardwareSDK.on(UI_EVENT, (message) => {
   switch (message.type) {
     case UI_REQUEST.REQUEST_BUTTON: {
-      // The device needs user confirmation (e.g. btcGetAddress showOnUnionKey=true).
+      // The device needs user confirmation (e.g. btcGetAddress showOnOneKey=true).
       // This callback happens when the confirm screen is shown (not at the end).
       // Usually you only show a "Confirm on device" hint (no uiResponse needed).
       return
@@ -624,8 +624,8 @@ HardwareSDK.on(UI_EVENT, (message) => {
 ${extraHint}`
       }
 
-      return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
+      return `import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core'
 
 // Classic 1s / Pure: REQUEST_PIN may happen. Pro will NOT emit REQUEST_PIN (PIN is entered on device).
 // Subscribe once at app startup (subscribe early to avoid blocking on PIN).
@@ -644,7 +644,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
     }
 
     case UI_REQUEST.REQUEST_BUTTON: {
-      // The device needs user confirmation (e.g. btcGetAddress showOnUnionKey=true).
+      // The device needs user confirmation (e.g. btcGetAddress showOnOneKey=true).
       // This callback happens when the confirm screen is shown (not at the end).
       // Usually you only show a "Confirm on device" hint (no uiResponse needed).
       return
@@ -663,15 +663,15 @@ ${extraHint}`
     }
 
     if (isPro) {
-      return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST } from '@unionkeyfe/hd-core'
+      return `import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST } from '@unionkeyhq/hd-core'
 
 // Pro：PIN 在设备上输入，因此不会触发 REQUEST_PIN，也不需要 uiResponse。
 // 建议：应用启动时订阅一次（越早越好），避免交互流程阻塞。
 HardwareSDK.on(UI_EVENT, (message) => {
   switch (message.type) {
     case UI_REQUEST.REQUEST_BUTTON: {
-      // 设备进入需要确认的阶段（例如 btcGetAddress showOnUnionKey=true）。
+      // 设备进入需要确认的阶段（例如 btcGetAddress showOnOneKey=true）。
       // 该回调发生在“确认页面出现时”（不是最后）。
       // 通常你只需要提示“请在设备确认”（一般不需要 uiResponse）。
       return
@@ -689,8 +689,8 @@ HardwareSDK.on(UI_EVENT, (message) => {
 ${extraHint}`
     }
 
-    return `import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk'
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core'
+    return `import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk'
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core'
 
 // Classic 1s / Pure：可能触发 REQUEST_PIN；Pro 不会（因为 PIN 在设备上输入）。
 // 建议：应用启动时订阅一次（越早越好），避免 PIN 交互导致调用卡住。
@@ -709,7 +709,7 @@ HardwareSDK.on(UI_EVENT, (message) => {
     }
 
     case UI_REQUEST.REQUEST_BUTTON: {
-      // 设备进入需要确认的阶段（例如 btcGetAddress showOnUnionKey=true）。
+      // 设备进入需要确认的阶段（例如 btcGetAddress showOnOneKey=true）。
       // 该回调发生在“确认页面出现时”（不是最后）。
       // 通常你只需要提示“请在设备确认”（一般不需要 uiResponse）。
       return
@@ -820,7 +820,7 @@ ${extraHint}`
             deviceId,
             path: btcPath,
             coin: 'btc',
-            showOnUnionKey: addressShowOnUnionKey
+            showOnOneKey: addressShowOnUnionKey
           }
         : command === 'btcSignMessage'
           ? {
@@ -925,7 +925,7 @@ ${extraHint}`
             deviceId,
             path: btcPath,
             coin: 'btc',
-            showOnUnionKey: addressShowOnUnionKey
+            showOnOneKey: addressShowOnUnionKey
           }
         : command === 'btcSignMessage'
           ? {
@@ -1315,7 +1315,7 @@ ${extraHint}`
                                   const next = !addressShowOnUnionKey
                                   setAddressShowOnUnionKey(next)
                                   if (tourEnabled) {
-                                    hardwareMockTourBus.emit('param.changed', { key: 'showOnUnionKey', value: next })
+                                    hardwareMockTourBus.emit('param.changed', { key: 'showOnOneKey', value: next })
                                   }
                                 }}
                                 disabled={controlsDisabled}

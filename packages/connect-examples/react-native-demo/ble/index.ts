@@ -6,7 +6,7 @@ export const bleFeature: FeatureDescriptor = {
   id: 'BLE',
   title: 'BLE Connect Demo',
   description:
-    'Scan devices, fetch device features, get address and sign messages via @unionkeyfe/hd-ble-sdk with live logs.',
+    'Scan devices, fetch device features, get address and sign messages via @unionkeyhq/hd-ble-sdk with live logs.',
   keywords: ['bluetooth', 'ble', 'hardware', 'onekey'],
   Screen: BleDemoScreen,
   getSummary: () => 'BLE scan, select device, get features, address and sign.',

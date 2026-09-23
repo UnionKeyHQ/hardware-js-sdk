@@ -1,4 +1,4 @@
-import { EConnectorInteraction } from '@unionkeyfe/hwk-adapter-core';
+import { EConnectorInteraction } from '@unionkeyhq/hwk-adapter-core';
 
 /**
  * Strip the "m/" prefix from BIP-44 derivation paths.

@@ -1,6 +1,6 @@
 import memoizee from 'memoizee';
-import { ConnectSettings, CoreApi } from '@unionkeyfe/hd-core';
-import HardwareCommonConnectSdk from '@unionkeyfe/hd-common-connect-sdk';
+import { ConnectSettings, CoreApi } from '@unionkeyhq/hd-core';
+import HardwareCommonConnectSdk from '@unionkeyhq/hd-common-connect-sdk';
 import { logInfo, logError } from './logger';
 
 let initialized = false;

@@ -9,18 +9,18 @@ const ethData: ChainMethodEntry[] = [
         title: 'Get EVM Address',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
         title: 'Batch Get Address',
         value: {
           bundle: [
-            { path: "m/44'/60'/0'/0/0", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/1", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/2", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/3", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/4", showOnUnionKey: false },
+            { path: "m/44'/60'/0'/0/0", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/1", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/2", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/3", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/4", showOnOneKey: false },
           ],
         },
       },
@@ -34,16 +34,16 @@ const ethData: ChainMethodEntry[] = [
         title: 'Get EVM Public Key',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
         title: 'Batch Get Public Key',
         value: {
           bundle: [
-            { path: "m/44'/60'/0'/0/0", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/1", showOnUnionKey: false },
-            { path: "m/44'/60'/0'/0/2", showOnUnionKey: false },
+            { path: "m/44'/60'/0'/0/0", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/1", showOnOneKey: false },
+            { path: "m/44'/60'/0'/0/2", showOnOneKey: false },
           ],
         },
       },
@@ -59,7 +59,7 @@ const ethData: ChainMethodEntry[] = [
         title: 'Sign Message',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
           messageHex: '0x6578616d706c65206d657373616765',
           chainId: 1,
         },

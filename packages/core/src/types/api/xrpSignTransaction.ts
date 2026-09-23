@@ -1,4 +1,4 @@
-import type { Messages } from '@unionkeyfe/hd-transport';
+import type { Messages } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type XrpSignTransactionParams = Messages.RippleSignTx;

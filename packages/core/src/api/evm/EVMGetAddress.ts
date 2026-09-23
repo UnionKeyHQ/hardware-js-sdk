@@ -7,7 +7,7 @@ import getAddressLegacyV1 from './legacyV1/getAddress';
 import getAddress from './latest/getAddress';
 
 import type { EVMAddress, EVMGetAddressParams } from '../../types';
-import type { EthereumGetAddressOneKey } from '@unionkeyfe/hd-transport';
+import type { EthereumGetAddressOneKey } from '@unionkeyhq/hd-transport';
 
 export default class EvmGetAddress extends BaseMethod<EthereumGetAddressOneKey[]> {
   hasBundle = false;

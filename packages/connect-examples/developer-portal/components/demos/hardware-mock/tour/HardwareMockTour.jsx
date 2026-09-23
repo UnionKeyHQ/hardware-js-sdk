@@ -290,12 +290,12 @@ function createFlowSteps(locale, startEvent) {
   const command = startEvent?.command ?? null
   const params = startEvent?.params ?? null
   const deviceType = normalizeDeviceType(startEvent?.deviceType)
-  const showOnUnionKey = Boolean(params?.showOnUnionKey)
+  const showOnOneKey = Boolean(params?.showOnOneKey)
   if (command === 'searchDevices') return createSearchDevicesSteps(locale)
 
   if (command === 'btcGetAddress' || command === 'btcSignMessage') {
-    if (deviceType === 'classic1s') return createClassic1sInteractiveSteps(locale, { command, showOnUnionKey })
-    return createProInteractiveSteps(locale, { command, showOnUnionKey })
+    if (deviceType === 'classic1s') return createClassic1sInteractiveSteps(locale, { command, showOnOneKey })
+    return createProInteractiveSteps(locale, { command, showOnOneKey })
   }
 
   return [

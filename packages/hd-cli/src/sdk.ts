@@ -10,12 +10,12 @@
  */
 
 import * as readline from 'node:readline';
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
-import { DEVICE, UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
+import { DEVICE, UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 
 import { promptPassphraseViaPinentry } from './pinentry';
 
-import type { ConnectSettings } from '@unionkeyfe/hd-core';
+import type { ConnectSettings } from '@unionkeyhq/hd-core';
 import type { PinentryResult } from './pinentry';
 
 export interface SDKOptions {

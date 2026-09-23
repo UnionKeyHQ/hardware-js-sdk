@@ -1,4 +1,4 @@
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { BaseMethod } from './BaseMethod';
 import TransportManager from '../data-manager/TransportManager';
@@ -6,7 +6,7 @@ import { DataManager } from '../data-manager';
 import { DevicePool } from '../device/DevicePool';
 import { LoggerNames, getLogger } from '../utils';
 
-import type { OneKeyDeviceInfo } from '@unionkeyfe/hd-transport';
+import type { OneKeyDeviceInfo } from '@unionkeyhq/hd-transport';
 
 const Log = getLogger(LoggerNames.Method);
 

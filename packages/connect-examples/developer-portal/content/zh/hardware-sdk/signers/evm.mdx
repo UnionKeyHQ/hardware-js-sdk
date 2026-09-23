@@ -4,7 +4,7 @@ title: EVM Signer
 
 # EVM Signer
 
-EVM 硬件签名全链路指南，基于 @unionkeyfe/hd-core 的能力，覆盖地址确认、EIP‑1559 / Legacy 交易、personal_sign、EIP‑712 等场景。
+EVM 硬件签名全链路指南，基于 @unionkeyhq/hd-core 的能力，覆盖地址确认、EIP‑1559 / Legacy 交易、personal_sign、EIP‑712 等场景。
 
 ## 目录
 
@@ -36,16 +36,16 @@ EVM 签名的基本链路：
 
 ## 安装
 
-> 本模块依赖 `@unionkeyfe/hd-core` 及连接层（如 `@unionkeyfe/hd-common-connect-sdk`），请先完成基础 SDK 安装。
+> 本模块依赖 `@unionkeyhq/hd-core` 及连接层（如 `@unionkeyhq/hd-common-connect-sdk`），请先完成基础 SDK 安装。
 
 ```bash
-npm install @unionkeyfe/hd-core @unionkeyfe/hd-common-connect-sdk
+npm install @unionkeyhq/hd-core @unionkeyhq/hd-common-connect-sdk
 ```
 
 ## 初始化
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-core';
+import HardwareSDK from '@unionkeyhq/hd-core';
 // 或使用 connect-sdk 封装的 HardwareSDK
 
 await HardwareSDK.init({ env: 'webusb', debug: false, fetchConfig: true });
@@ -54,7 +54,7 @@ const [{ connectId }] = await HardwareSDK.searchDevices();
 const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 ```
 
-> 保持固件为最新版本，确保 WebUSB/BLE 连接稳定；建议在签名前先完成一次 `evmGetAddress(showOnUnionKey: true)` 以确认路径与账户。
+> 保持固件为最新版本，确保 WebUSB/BLE 连接稳定；建议在签名前先完成一次 `evmGetAddress(showOnOneKey: true)` 以确认路径与账户。
 
 ## 适用场景
 
@@ -69,7 +69,7 @@ const deviceId = (await HardwareSDK.getFeatures(connectId)).payload?.device_id;
 ```ts
 const res = await HardwareSDK.evmGetAddress(connectId, deviceId, {
   path: "m/44'/60'/0'/0/0",
-  showOnUnionKey: true,
+  showOnOneKey: true,
   chainId: 1,
 });
 // res.payload.address, publicKey?, chainCode?
@@ -78,7 +78,7 @@ const res = await HardwareSDK.evmGetAddress(connectId, deviceId, {
 **参数**
 
 - `path` (string | number[]): 必填，BIP44 路径，例如 `"44'/60'/0'/0/0"`。
-- `showOnUnionKey?` (boolean): 可选，是否在设备上展示并让用户确认地址。
+- `showOnOneKey?` (boolean): 可选，是否在设备上展示并让用户确认地址。
 - `chainId?` (number): 可选，显示在设备上的链 ID，建议填真实网络。
 
 **返回**
@@ -212,7 +212,7 @@ Promise<{ success, payload: { signature } }>
 ### 示例：EIP-1559 交易签名
 
 ```ts
-import HardwareSDK, { UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+import HardwareSDK, { UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 import { serialize, TransactionTypes } from '@ethersproject/transactions';
 
 const [{ connectId }] = await HardwareSDK.searchDevices();
@@ -223,7 +223,7 @@ HardwareSDK.on(UI_REQUEST.REQUEST_PIN, () => {
 });
 
 const accountPath = "m/44'/60'/0'/0/0";
-await HardwareSDK.evmGetAddress(connectId, deviceId, { path: accountPath, showOnUnionKey: true });
+await HardwareSDK.evmGetAddress(connectId, deviceId, { path: accountPath, showOnOneKey: true });
 
 const tx = {
   to: '0xd0d6d6c5fe4a677d343cc433536bb717bae167dd',

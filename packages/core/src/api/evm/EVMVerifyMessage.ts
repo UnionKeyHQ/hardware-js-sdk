@@ -6,7 +6,7 @@ import TransportManager from '../../data-manager/TransportManager';
 import verifyMessageLegacyV1 from './legacyV1/verifyMessage';
 import verifyMessage from './latest/verifyMessage';
 
-import type { EthereumVerifyMessageOneKey } from '@unionkeyfe/hd-transport';
+import type { EthereumVerifyMessageOneKey } from '@unionkeyhq/hd-transport';
 
 export default class EVMSignMessage extends BaseMethod<EthereumVerifyMessageOneKey> {
   init() {

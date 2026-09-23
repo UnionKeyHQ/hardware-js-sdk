@@ -1,4 +1,4 @@
-import { getHDPath, getScriptType } from '@unionkeyfe/hd-core';
+import { getHDPath, getScriptType } from '@unionkeyhq/hd-core';
 import { logHardware, logError } from '../utils/logger';
 
 // 预览并记录即将传给硬件的关键参数（不改变原始 params）

@@ -1,6 +1,6 @@
 import { BaseMethod } from '../BaseMethod';
 
-import type { WipeDevice } from '@unionkeyfe/hd-transport';
+import type { WipeDevice } from '@unionkeyhq/hd-transport';
 
 export default class DeviceWipe extends BaseMethod<WipeDevice> {
   init() {

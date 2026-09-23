@@ -5,7 +5,7 @@ module.exports = {
   // Resolve workspace packages to their src so tests exercise current source
   // rather than a stale `dist/` build artifact.
   moduleNameMapper: {
-    '^@unionkeyfe/hwk-ledger-adapter$': '<rootDir>/../hwk-ledger-adapter/src/index.ts',
-    '^@unionkeyfe/hwk-adapter-core$': '<rootDir>/../hwk-adapter-core/src/index.ts',
+    '^@unionkeyhq/hwk-ledger-adapter$': '<rootDir>/../hwk-ledger-adapter/src/index.ts',
+    '^@unionkeyhq/hwk-adapter-core$': '<rootDir>/../hwk-adapter-core/src/index.ts',
   },
 };

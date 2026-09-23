@@ -1,5 +1,5 @@
-import type { IDeviceType } from '@unionkeyfe/hd-core';
-import { EDeviceType } from '@unionkeyfe/hd-shared';
+import type { IDeviceType } from '@unionkeyhq/hd-core';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 import classic1s from '../assets/deviceMockup/classic1s.png';
 import mini from '../assets/deviceMockup/mini.png';
 import proBlack from '../assets/deviceMockup/pro-black.png';

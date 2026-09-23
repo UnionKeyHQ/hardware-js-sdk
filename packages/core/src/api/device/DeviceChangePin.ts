@@ -1,7 +1,7 @@
 import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 
-import type { ChangePin } from '@unionkeyfe/hd-transport';
+import type { ChangePin } from '@unionkeyhq/hd-transport';
 
 export default class DeviceChangePin extends BaseMethod<ChangePin> {
   init() {

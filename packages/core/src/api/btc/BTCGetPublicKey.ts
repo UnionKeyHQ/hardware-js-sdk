@@ -1,4 +1,4 @@
-import { HardwareError, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { HardwareError, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { UI_REQUEST } from '../../constants/ui-request';
 import { getScriptType, isTaprootPath, serializedPath, validatePath } from '../helpers/pathUtils';
@@ -11,7 +11,7 @@ import { createExtendedPublicKey, getVersionBytes } from './helpers/xpubUtils';
 
 import type { BTCPublicKey } from '../../types/api/btcGetPublicKey';
 import type { BTCGetAddressParams } from '../../types/api/btcGetAddress';
-import type { GetPublicKey } from '@unionkeyfe/hd-transport';
+import type { GetPublicKey } from '@unionkeyhq/hd-transport';
 
 export default class BTCGetPublicKey extends BaseMethod<GetPublicKey[]> {
   hasBundle = false;

@@ -1,4 +1,4 @@
-import type { SignedPsbt } from '@unionkeyfe/hd-transport';
+import type { SignedPsbt } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type BTCSignPsbtParams = {

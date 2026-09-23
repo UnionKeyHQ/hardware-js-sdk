@@ -1,4 +1,4 @@
-import { EDeviceType } from '@unionkeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 import semver from 'semver';
 
 import { UI_REQUEST } from '../../constants/ui-request';
@@ -9,7 +9,7 @@ import { getDeviceFirmwareVersion, getDeviceType, getFirmwareType } from '../../
 import { createUiMessage } from '../../events/ui-request';
 import { DataManager } from '../../data-manager';
 
-import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { Deferred } from '@unionkeyhq/hd-shared';
 import type { Features, KnownDevice } from '../../types';
 import type { DeviceFullyUploadResourceParams } from '../../types/api/deviceFullyUploadResource';
 

@@ -1,4 +1,4 @@
-import type { FilecoinSignedTx as HardwareFilecoinSignedTx } from '@unionkeyfe/hd-transport';
+import type { FilecoinSignedTx as HardwareFilecoinSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type FilecoinSignedTx = {

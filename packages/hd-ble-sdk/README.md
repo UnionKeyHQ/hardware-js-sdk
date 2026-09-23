@@ -1,25 +1,25 @@
-# `@unionkeyfe/hd-ble-sdk`
+# `@unionkeyhq/hd-ble-sdk`
 
-`@unionkeyfe/hd-ble-sdk` is a library provided for mobild client. Its dependency on `@unionkeyfe/hd-transport-react-native`. We recommend using this libarary in ReactNative applications.
+`@unionkeyhq/hd-ble-sdk` is a library provided for mobild client. Its dependency on `@unionkeyhq/hd-transport-react-native`. We recommend using this libarary in ReactNative applications.
 
 ## Installation
 
 Install library as npm module:
 
 ```javascript
-npm install @unionkeyfe/hd-ble-sdk
+npm install @unionkeyhq/hd-ble-sdk
 ```
 
 or
 
 ```javascript
-yarn add @unionkeyfe/hd-ble-sdk
+yarn add @unionkeyhq/hd-ble-sdk
 ```
 
 ## Initialization
 
 ```javascript
-import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyhq/hd-ble-sdk';
 
 function init() {
   HardwareSDK.init({

@@ -61,7 +61,7 @@ bash build-emu.sh 1s-emu
 ## 🛠️ Basic SDK Usage
 
 ```typescript
-import { CoreApi } from '@unionkeyfe/hd-core';
+import { CoreApi } from '@unionkeyhq/hd-core';
 
 // Initialize SDK
 const sdk = new CoreApi({
@@ -79,7 +79,7 @@ const devices = await sdk.searchDevices();
 // Get address example
 const result = await sdk.evmGetAddress({
   path: "m/44'/60'/0'/0/0",
-  showOnUnionKey: true
+  showOnOneKey: true
 });
 ```
 

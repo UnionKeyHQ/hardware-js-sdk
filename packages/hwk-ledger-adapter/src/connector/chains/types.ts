@@ -1,4 +1,4 @@
-import type { ConnectorEventMap, ConnectorEventType } from '@unionkeyfe/hwk-adapter-core';
+import type { ConnectorEventMap, ConnectorEventType } from '@unionkeyhq/hwk-adapter-core';
 import type { DeviceManagementKit } from '@ledgerhq/device-management-kit';
 import type { DeviceAppsManager } from '../../device-apps/DeviceAppsManager';
 import type { SignerManager } from '../../signer/SignerManager';

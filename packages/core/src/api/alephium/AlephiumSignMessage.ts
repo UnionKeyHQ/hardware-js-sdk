@@ -4,7 +4,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams } from '../helpers/paramsValidator';
 import { stripHexPrefix } from '../helpers/hexUtils';
 
-import type { AlephiumSignMessage as HardwareAlephiumSignMessage } from '@unionkeyfe/hd-transport';
+import type { AlephiumSignMessage as HardwareAlephiumSignMessage } from '@unionkeyhq/hd-transport';
 
 export default class AlephiumSignMessage extends BaseMethod<HardwareAlephiumSignMessage> {
   init() {

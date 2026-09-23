@@ -3,7 +3,7 @@ import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 import { getPolkadotVersionRangeWithBundle, parseNetwork } from './networks';
 
-import type { PolkadotGetAddress as HardwarePolkadotGetAddress } from '@unionkeyfe/hd-transport';
+import type { PolkadotGetAddress as HardwarePolkadotGetAddress } from '@unionkeyhq/hd-transport';
 import type { PolkadotAddress, PolkadotGetAddressParams } from '../../types';
 
 export default class PolkadotGetAddress extends BaseMethod<HardwarePolkadotGetAddress[]> {

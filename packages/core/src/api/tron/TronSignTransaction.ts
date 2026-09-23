@@ -7,7 +7,7 @@ import { validateParams } from '../helpers/paramsValidator';
 import { formatAnyHex } from '../helpers/hexUtils';
 
 import type { TronTransaction } from '../../types/api/tronSignTransaction';
-import type { TronSignTx } from '@unionkeyfe/hd-transport';
+import type { TronSignTx } from '@unionkeyhq/hd-transport';
 import type { DeviceFirmwareRange } from '../../types';
 
 export default class TronSignTransaction extends BaseMethod<TronSignTx> {

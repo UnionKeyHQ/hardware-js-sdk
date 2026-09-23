@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { NearGetAddress as HardwareNearGetAddress } from '@unionkeyfe/hd-transport';
+import type { NearGetAddress as HardwareNearGetAddress } from '@unionkeyhq/hd-transport';
 import type { NearAddress, NearGetAddressParams } from '../../types';
 
 export default class NearGetAddress extends BaseMethod<HardwareNearGetAddress[]> {

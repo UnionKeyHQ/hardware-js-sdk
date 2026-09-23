@@ -1,4 +1,4 @@
-import HardwareSDK from "@unionkeyfe/hd-common-connect-sdk";
+import HardwareSDK from "@unionkeyhq/hd-common-connect-sdk";
 import { createDeferred, isHeaderChunk, COMMON_HEADER_SIZE } from "./utils";
 
 const UI_EVENT = "UI_EVENT";

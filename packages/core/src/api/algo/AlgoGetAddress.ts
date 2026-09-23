@@ -2,7 +2,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { AlgorandGetAddress as HardwareAlgoGetAddress } from '@unionkeyfe/hd-transport';
+import type { AlgorandGetAddress as HardwareAlgoGetAddress } from '@unionkeyhq/hd-transport';
 import type { AlgoAddress, AlgoGetAddressParams } from '../../types';
 
 export default class AlgoGetAddress extends BaseMethod<HardwareAlgoGetAddress[]> {

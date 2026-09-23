@@ -1,4 +1,4 @@
-import type { StarcoinMessageSignature } from '@unionkeyfe/hd-transport';
+import type { StarcoinMessageSignature } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type StarcoinSignMessageParams = {

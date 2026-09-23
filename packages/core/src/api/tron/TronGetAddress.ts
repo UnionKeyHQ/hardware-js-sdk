@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { TronGetAddress as HardwareTronGetAddress } from '@unionkeyfe/hd-transport';
+import type { TronGetAddress as HardwareTronGetAddress } from '@unionkeyhq/hd-transport';
 import type { TronAddress, TronGetAddressParams } from '../../types';
 
 export default class TronGetAddress extends BaseMethod<HardwareTronGetAddress[]> {

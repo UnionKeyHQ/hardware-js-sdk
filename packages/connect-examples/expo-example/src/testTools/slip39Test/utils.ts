@@ -58,7 +58,7 @@ export function convertToBundleFormat(
 
         bundle.push({
           ...resolvedParams,
-          showOnUnionKey: false,
+          showOnOneKey: false,
         });
 
         // 初始化结果对象

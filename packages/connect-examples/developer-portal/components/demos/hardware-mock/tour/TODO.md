@@ -52,6 +52,6 @@
 
 ## 可选的后续优化（非本次必须）
 
-- [ ] 为 `command-select`、`showOnUnionKey` 开关等补充更细粒度锚点，使 Tour 指向更精准。
+- [ ] 为 `command-select`、`showOnOneKey` 开关等补充更细粒度锚点，使 Tour 指向更精准。
 - [ ] 给 `searchDevices` 增加 `wait-result → result` 的事件推进（目前偏讲解型）。
 - [ ] 扩展更多命令的交互导览（目前聚焦 `btcGetAddress` / `btcSignMessage`）。

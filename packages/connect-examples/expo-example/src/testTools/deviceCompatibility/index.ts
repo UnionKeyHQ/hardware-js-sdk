@@ -15,4 +15,4 @@ export {
 } from './DeviceCompatibility';
 
 // 重新导出 EDeviceType 以便外部使用
-export { EDeviceType } from '@unionkeyfe/hd-shared';
+export { EDeviceType } from '@unionkeyhq/hd-shared';

@@ -9,7 +9,7 @@ const api: PlaygroundProps[] = [
         title: 'Get EVM Address',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -18,23 +18,23 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/60'/0'/0/0",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/1",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/2",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/3",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/4",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
           ],
         },
@@ -49,7 +49,7 @@ const api: PlaygroundProps[] = [
         title: 'Get EVM Public Key',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
         },
       },
       {
@@ -58,15 +58,15 @@ const api: PlaygroundProps[] = [
           bundle: [
             {
               path: "m/44'/60'/0'/0/0",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/1",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
             {
               path: "m/44'/60'/0'/0/2",
-              showOnUnionKey: false,
+              showOnOneKey: false,
             },
           ],
         },
@@ -81,7 +81,7 @@ const api: PlaygroundProps[] = [
         title: 'Sign Message',
         value: {
           path: "m/44'/60'/0'/0/0",
-          showOnUnionKey: false,
+          showOnOneKey: false,
           messageHex: '0x6578616d706c65206d657373616765',
           chainId: 1,
         },

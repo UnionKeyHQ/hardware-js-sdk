@@ -362,7 +362,7 @@ UnionKey硬件钱包通过统一的密码学原语支持80+区块链：
 
 ```typescript
 // 地址获取 (所有链统一)
-HardwareSDK.{chain}GetAddress({ path, showOnUnionKey, ...chainSpecific })
+HardwareSDK.{chain}GetAddress({ path, showOnOneKey, ...chainSpecific })
 
 // 交易签名 (所有链统一)
 HardwareSDK.{chain}SignTransaction({ path, transaction, ...chainSpecific })

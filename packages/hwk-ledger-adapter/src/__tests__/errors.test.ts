@@ -1,4 +1,4 @@
-import { HardwareErrorCode, serializeConnectorError } from '@unionkeyfe/hwk-adapter-core';
+import { HardwareErrorCode, serializeConnectorError } from '@unionkeyhq/hwk-adapter-core';
 
 import {
   ERROR_TAG,

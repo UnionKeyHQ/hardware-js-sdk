@@ -1,7 +1,7 @@
 import type {
   SolanaSignedTx as HardwareSolanaSignedTx,
   SolanaTxExtraInfo,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type SolanaSignedTx = {

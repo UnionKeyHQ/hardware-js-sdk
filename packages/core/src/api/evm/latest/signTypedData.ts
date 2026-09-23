@@ -1,4 +1,4 @@
-import type { TypedCall } from '@unionkeyfe/hd-transport';
+import type { TypedCall } from '@unionkeyhq/hd-transport';
 import type { EthereumSignTypedDataMessage, EthereumSignTypedDataTypes } from '../../../types';
 
 export const signTypedData = async ({

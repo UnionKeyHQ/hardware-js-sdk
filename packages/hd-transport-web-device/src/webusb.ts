@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-import transport, { LogBlockCommand } from '@unionkeyfe/hd-transport';
-import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@unionkeyfe/hd-shared';
+import transport, { LogBlockCommand } from '@unionkeyhq/hd-transport';
+import { ERRORS, HardwareErrorCode, ONEKEY_WEBUSB_FILTER, wait } from '@unionkeyhq/hd-shared';
 import ByteBuffer from 'bytebuffer';
 
-import type { AcquireInput, OneKeyDeviceInfoBase } from '@unionkeyfe/hd-transport';
+import type { AcquireInput, OneKeyDeviceInfoBase } from '@unionkeyhq/hd-transport';
 
 const { parseConfigure, buildEncodeBuffers, decodeProtocol, receiveOne, check } = transport;
 
@@ -109,15 +109,15 @@ export default class WebUsbTransport {
     if (!this.usb) return [];
 
     const devices = await this.usb.getDevices();
-    const onekeyDevices = devices.filter(dev => {
-      const isOneKey = ONEKEY_WEBUSB_FILTER.some(
+    const unionKeyDevices = devices.filter(dev => {
+      const isUnionKey = ONEKEY_WEBUSB_FILTER.some(
         desc => dev.vendorId === desc.vendorId && dev.productId === desc.productId
       );
       const hasSerialNumber = typeof dev.serialNumber === 'string' && dev.serialNumber.length > 0;
       return isUnionKey && hasSerialNumber;
     });
 
-    this.deviceList = onekeyDevices.map(device => ({
+    this.deviceList = unionKeyDevices.map(device => ({
       path: device.serialNumber as string,
       device,
       commType: 'webusb',

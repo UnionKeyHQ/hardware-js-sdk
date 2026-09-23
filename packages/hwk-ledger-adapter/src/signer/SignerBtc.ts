@@ -1,4 +1,4 @@
-import { hexToBytes } from '@unionkeyfe/hwk-adapter-core';
+import { hexToBytes } from '@unionkeyhq/hwk-adapter-core';
 
 import { deviceActionToPromise } from './deviceActionToPromise';
 import { debugError, debugLog } from '../utils/debugLog';

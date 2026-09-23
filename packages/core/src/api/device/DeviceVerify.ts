@@ -1,5 +1,5 @@
 import { sha256 } from '@noble/hashes/sha256';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 import { bytesToHex } from '@noble/hashes/utils';
 
 import { formatAnyHex } from '../helpers/hexUtils';
@@ -8,7 +8,7 @@ import { validateParams, validateResult } from '../helpers/paramsValidator';
 import { getDeviceType } from '../../utils';
 import { DeviceModelToTypes } from '../../types';
 
-import type { BixinVerifyDeviceRequest } from '@unionkeyfe/hd-transport';
+import type { BixinVerifyDeviceRequest } from '@unionkeyhq/hd-transport';
 import type { DeviceVerifySignature } from '../../types';
 
 export default class DeviceVerify extends BaseMethod<BixinVerifyDeviceRequest> {

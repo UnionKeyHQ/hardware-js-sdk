@@ -59,7 +59,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     WebUSB
                                     <br/>
-                                    包：@unionkeyfe/hd-common-connect-sdk
+                                    包：@unionkeyhq/hd-common-connect-sdk
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     React Native BLE
                                     <br/>
-                                    包：@unionkeyfe/hd-ble-sdk
+                                    包：@unionkeyhq/hd-ble-sdk
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                 <div style="display: inline-block; font-size: 13px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     底层传输插件 (Native)
                                     <br/>
-                                    包：@unionkeyfe/hd-transport-lowlevel
+                                    包：@unionkeyhq/hd-transport-lowlevel
                                     <br/>
                                     场景：原生 / Flutter
                                 </div>

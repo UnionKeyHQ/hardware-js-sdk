@@ -3,7 +3,7 @@ import { NodeProvider, groupOfAddress } from '@alephium/web3';
 
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { Success, Unsuccessful } from '@unionkeyfe/hd-core';
+import type { Success, Unsuccessful } from '@unionkeyhq/hd-core';
 
 const nodeProvider = new NodeProvider('https://api.mainnet.alephium.org');
 

@@ -3,7 +3,7 @@ import { serializedPath, validatePath } from '../helpers/pathUtils';
 import { BaseMethod } from '../BaseMethod';
 import { validateParams, validateResult } from '../helpers/paramsValidator';
 
-import type { DnxGetAddress as HardwareDnxGetAddress } from '@unionkeyfe/hd-transport';
+import type { DnxGetAddress as HardwareDnxGetAddress } from '@unionkeyhq/hd-transport';
 import type { DnxAddress, DnxGetAddressParams } from '../../types';
 
 export default class DnxGetAddress extends BaseMethod<HardwareDnxGetAddress[]> {

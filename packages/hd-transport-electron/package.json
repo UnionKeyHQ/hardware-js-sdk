@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hd-transport-electron",
+  "name": "@unionkeyhq/hd-transport-electron",
   "version": "1.1.27-alpha.5",
   "author": "UnionKey",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
@@ -25,9 +25,9 @@
     "electron-log": ">=4.0.0"
   },
   "dependencies": {
-    "@unionkeyfe/hd-core": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-core": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport": "1.1.27-alpha.5",
     "@stoprocent/noble": "2.3.16",
     "p-retry": "^4.6.2"
   },

@@ -22,7 +22,7 @@
     "ts:check": "yarn tsc --noEmit"
   },
   "dependencies": {
-    "@unionkeyfe/hd-transport-electron": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport-electron": "1.1.27-alpha.5",
     "@stoprocent/noble": "2.3.16",
     "debug": "4.3.4",
     "electron-is-dev": "^3.0.1",

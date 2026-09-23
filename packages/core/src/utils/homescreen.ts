@@ -1,5 +1,5 @@
 import semver from 'semver';
-import { EDeviceType } from '@unionkeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 
 import { getDeviceType } from './deviceInfoUtils';
 import { getDeviceFirmwareVersion } from './deviceVersionUtils';

@@ -6,7 +6,7 @@ import { formatAnyHex } from '../helpers/hexUtils';
 import { getCoinAndScriptType } from './helpers/btcParamsUtils';
 import { getBitcoinForkVersionRange } from './helpers/versionLimit';
 
-import type { SignMessage } from '@unionkeyfe/hd-transport';
+import type { SignMessage } from '@unionkeyhq/hd-transport';
 
 export default class BTCSignMessage extends BaseMethod<SignMessage> {
   init() {

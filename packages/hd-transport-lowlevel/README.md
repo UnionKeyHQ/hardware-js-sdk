@@ -1,6 +1,6 @@
-# `@unionkeyfe/hd-transport-lowlevel`
+# `@unionkeyhq/hd-transport-lowlevel`
 
-`@unionkeyfe/hd-transport-http` is a library that implements transport communication using http.
+`@unionkeyhq/hd-transport-http` is a library that implements transport communication using http.
 
 ## What is the purpose
 

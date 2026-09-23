@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 import { Stack, Text, XStack, YStack } from 'tamagui';
 import { useIntl } from 'react-intl';
 import { get } from 'lodash';
@@ -15,7 +15,7 @@ import { useHardwareInputPinDialog } from '../../../provider/HardwareInputPinPro
 import { SwitchInput } from '../../../components/SwitchInput';
 import { useDevice } from '../../../provider/DeviceProvider';
 
-import type { CoreMessage } from '@unionkeyfe/hd-core';
+import type { CoreMessage } from '@unionkeyhq/hd-core';
 import type { TestCaseDataWithKey } from '../../../components/BaseTestRunner/types';
 import type {
   BlindSignatureVerifyExt,

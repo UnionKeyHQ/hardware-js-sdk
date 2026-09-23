@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UI_RESPONSE, Success, Unsuccessful, CoreApi } from '@unionkeyfe/hd-core';
+import { UI_RESPONSE, Success, Unsuccessful, CoreApi } from '@unionkeyhq/hd-core';
 import { logError, logRequest, logResponse, logInfo } from '../utils/logger';
-import { ONEKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { ONEKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 import {
   getCurrentSDKInstance,
   clearSDKInstanceCache,
@@ -344,7 +344,7 @@ export async function searchDevices(): Promise<ApiResponse> {
 }
 
 // 导出 hd-core 的标准类型和常量
-export { UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-core';
+export { UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-core';
 
 // 取消当前硬件操作
 export async function cancelHardwareOperation(connectId?: string): Promise<ApiResponse> {

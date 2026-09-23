@@ -1,6 +1,6 @@
 import { deriveKeyPairWithPath, mnemonicToSeed } from '../helper';
 
-import type { SuiGetPublicKeyParams } from '@unionkeyfe/hd-core';
+import type { SuiGetPublicKeyParams } from '@unionkeyhq/hd-core';
 
 /**
  * 抽离的核心逻辑：从 seed 生成 Sui 公钥

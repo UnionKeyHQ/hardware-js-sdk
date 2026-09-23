@@ -9,7 +9,7 @@
  * Type definitions: packages/core/src/types/api/*.ts
  */
 
-import type { CoreApi } from '@unionkeyfe/hd-core';
+import type { CoreApi } from '@unionkeyhq/hd-core';
 
 /**
  * Extract params shared by every SDK method. Forwarded unconditionally:

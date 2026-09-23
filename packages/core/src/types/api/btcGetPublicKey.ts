@@ -1,4 +1,4 @@
-import type { InputScriptType, PublicKey } from '@unionkeyfe/hd-transport';
+import type { InputScriptType, PublicKey } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type BTCPublicKey = {

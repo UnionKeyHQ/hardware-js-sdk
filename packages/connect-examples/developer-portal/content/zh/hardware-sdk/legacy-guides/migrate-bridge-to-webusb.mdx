@@ -4,7 +4,7 @@ title: 迁移到 web-sdk + WebUSB
 
 # 迁移到 web-sdk + WebUSB
 
-将 Bridge 替换为 WebUSB，保持使用 `@unionkeyfe/hd-web-sdk`。
+将 Bridge 替换为 WebUSB，保持使用 `@unionkeyhq/hd-web-sdk`。
 
 ---
 
@@ -29,7 +29,7 @@ title: 迁移到 web-sdk + WebUSB
 ## 初始化（hd-web-sdk + WebUSB）
 
 ```ts
-import HdWebSdk from '@unionkeyfe/hd-web-sdk';
+import HdWebSdk from '@unionkeyhq/hd-web-sdk';
 
 // 与 expo-example 相同的模式：默认导出 → .HardwareWebSdk
 const HardwareSDK = HdWebSdk.HardwareWebSdk;
@@ -48,7 +48,7 @@ await HardwareSDK.init({
 ## 授权（WebUSB 选择器 + 官方过滤器）
 
 ```ts
-import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 
 // 重要：必须由用户手势触发（如按钮点击）
 // Chrome 安全策略不允许在获得权限前自动发现 USB 设备
@@ -74,7 +74,7 @@ const resolvedDeviceId = features.payload.device_id ?? deviceId;
 const r = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnUnionKey: false,
+  showOnOneKey: false,
 });
 
 if (r.success) {

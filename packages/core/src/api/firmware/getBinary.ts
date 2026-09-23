@@ -1,5 +1,5 @@
 import semver from 'semver';
-import { ERRORS, HardwareErrorCode } from '@unionkeyfe/hd-shared';
+import { ERRORS, HardwareErrorCode } from '@unionkeyhq/hd-shared';
 
 import { getDeviceType, httpRequest } from '../../utils';
 import { DataManager } from '../../data-manager';
@@ -7,7 +7,7 @@ import { findLatestRelease } from '../../utils/release';
 import { getFirmwareUpdateField } from '../../utils/deviceFeaturesUtils';
 
 import type { Features } from '../../types';
-import type { EFirmwareType } from '@unionkeyfe/hd-shared';
+import type { EFirmwareType } from '@unionkeyhq/hd-shared';
 import type { IFirmwareField } from '../../data-manager/DataManager';
 
 export interface GetInfoProps {

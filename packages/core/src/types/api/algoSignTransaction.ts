@@ -1,4 +1,4 @@
-import type { AlgorandSignedTx as HardwareAlgorandSignedTx } from '@unionkeyfe/hd-transport';
+import type { AlgorandSignedTx as HardwareAlgorandSignedTx } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type AlgoSignedTx = {

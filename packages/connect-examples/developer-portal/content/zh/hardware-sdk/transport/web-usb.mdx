@@ -8,7 +8,7 @@ slug: /hardware/transport/webusb
 > 演示：Playground（支持模拟器）→ [hardware-example.unionkey.io](https://hardware-example.unionkey.io/)
 
 
-使用本分步指南在浏览器中通过 `@unionkeyfe/hd-common-connect-sdk` 接入 WebUSB。连接后，您可以像快速开始中那样调用任何链 API（BTC/EVM 等）。
+使用本分步指南在浏览器中通过 `@unionkeyhq/hd-common-connect-sdk` 接入 WebUSB。连接后，您可以像快速开始中那样调用任何链 API（BTC/EVM 等）。
 
 重点：仅适用于 WebUSB。
 
@@ -21,7 +21,7 @@ slug: /hardware/transport/webusb
 ## 步骤 2. 安装
 
 ```bash
-npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-shared @unionkeyfe/hd-core
+npm i @unionkeyhq/hd-common-connect-sdk @unionkeyhq/hd-shared @unionkeyhq/hd-core
 ```
 
 ## 步骤 3. 初始化并绑定事件
@@ -29,8 +29,8 @@ npm i @unionkeyfe/hd-common-connect-sdk @unionkeyfe/hd-shared @unionkeyfe/hd-cor
 在应用启动时初始化 SDK 并绑定 UI/设备事件，以便 PIN/密码短语和确认能够端到端工作。
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
-import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyfe/hd-core';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
+import { UI_EVENT, UI_REQUEST, UI_RESPONSE, DEVICE } from '@unionkeyhq/hd-core';
 
 export async function setupWebUsb() {
   await HardwareSDK.init({
@@ -106,7 +106,7 @@ function bindHardwareEvents() {
 使用 UNIONKEY_WEBUSB_FILTER 过滤器，使选择器只显示支持的设备。
 
 ```tsx
-import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyfe/hd-shared';
+import { UNIONKEY_WEBUSB_FILTER } from '@unionkeyhq/hd-shared';
 
 export function AuthorizeUsbButton() {
   return (
@@ -150,7 +150,7 @@ const resolvedDeviceId = features.payload.device_id;
 const res = await HardwareSDK.btcGetAddress(connectId, resolvedDeviceId, {
   path: "m/44'/0'/0'/0/0",
   coin: 'btc',
-  showOnUnionKey: false,
+  showOnOneKey: false,
 });
 
 if (res.success) {

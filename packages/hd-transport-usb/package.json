@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hd-transport-usb",
+  "name": "@unionkeyhq/hd-transport-usb",
   "version": "1.1.27-alpha.5",
   "description": "UnionKey hardware wallet direct USB transport plugin (libusb)",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
@@ -20,8 +20,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport": "1.1.27-alpha.5",
     "bytebuffer": "^5.0.1",
     "usb": "^2.14.0"
   }

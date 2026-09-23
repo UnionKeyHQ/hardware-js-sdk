@@ -1,4 +1,4 @@
-import type { BenfenMessageSignature } from '@unionkeyfe/hd-transport';
+import type { BenfenMessageSignature } from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type BenfenSignMessageParams = {

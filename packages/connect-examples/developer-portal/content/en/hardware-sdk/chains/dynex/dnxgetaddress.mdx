@@ -30,7 +30,7 @@ deviceId: `string`
 params: `object`
 
 * path: `string` - BIP32 path (e.g. "m/44'/29538'/0'/0/0") \[required]
-* showOnUnionKey: `boolean` - Whether to display address on device (default: true)
+* showOnOneKey: `boolean` - Whether to display address on device (default: true)
 
 For batch addressing:
 
@@ -42,14 +42,14 @@ For batch addressing:
 // Get single address
 const response = await HardwareSDK.dnxGetAddress('connect1', 'device1', {
     path: "m/44'/29538'/0'/0/0",
-    showOnUnionKey: true
+    showOnOneKey: true
 });
 
 // Get multiple addresses
 const bundle = await HardwareSDK.dnxGetAddress('connect1', 'device1', {
     bundle: [
-        { path: "m/44'/29538'/0'/0/0", showOnUnionKey: false },
-        { path: "m/44'/29538'/0'/0/1", showOnUnionKey: false }
+        { path: "m/44'/29538'/0'/0/0", showOnOneKey: false },
+        { path: "m/44'/29538'/0'/0/1", showOnOneKey: false }
     ]
 });
 ```

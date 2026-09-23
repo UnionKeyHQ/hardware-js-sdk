@@ -1,6 +1,6 @@
 import { sha256 } from '@noble/hashes/sha256';
 
-import type { HDNodeType, InputScriptType } from '@unionkeyfe/hd-transport';
+import type { HDNodeType, InputScriptType } from '@unionkeyhq/hd-transport';
 
 // 定义版本字节常量
 const VERSION_BYTES = {

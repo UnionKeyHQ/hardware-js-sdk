@@ -2,7 +2,7 @@ import {
   EConnectorInteraction,
   HardwareErrorCode,
   serializeConnectorError,
-} from '@unionkeyfe/hwk-adapter-core';
+} from '@unionkeyhq/hwk-adapter-core';
 
 import { LedgerDeviceManager } from '../device/LedgerDeviceManager';
 import { SignerManager } from '../signer/SignerManager';
@@ -56,7 +56,7 @@ import type {
   IConnector,
   TronSignMsgParams,
   UiResponseEvent,
-} from '@unionkeyfe/hwk-adapter-core';
+} from '@unionkeyhq/hwk-adapter-core';
 import type {
   BtcGetAddressCallParams,
   BtcGetPublicKeyCallParams,

@@ -5,8 +5,8 @@ import { Stack, Text } from 'tamagui';
 import { getHardwareSDKInstance } from '../../utils/hardwareInstance';
 import HardwareSDKContext from '../HardwareSDKContext';
 
-import type { LowLevelCoreApi } from '@unionkeyfe/hd-core/dist/lowLevelInject';
-import type { CoreApi } from '@unionkeyfe/hd-core';
+import type { LowLevelCoreApi } from '@unionkeyhq/hd-core/dist/lowLevelInject';
+import type { CoreApi } from '@unionkeyhq/hd-core';
 
 let isSdkInit = false;
 export default function USB({ children }: { children: React.ReactNode }) {

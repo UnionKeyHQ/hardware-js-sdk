@@ -1,5 +1,5 @@
 {
-  "name": "@unionkeyfe/hd-transport-lowlevel",
+  "name": "@unionkeyhq/hd-transport-lowlevel",
   "version": "1.1.27-alpha.5",
   "homepage": "https://github.com/UnionKeyHQ/hardware-js-sdk#readme",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@unionkeyfe/hd-shared": "1.1.27-alpha.5",
-    "@unionkeyfe/hd-transport": "1.1.27-alpha.5"
+    "@unionkeyhq/hd-shared": "1.1.27-alpha.5",
+    "@unionkeyhq/hd-transport": "1.1.27-alpha.5"
   }
 }

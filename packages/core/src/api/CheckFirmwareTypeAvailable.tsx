@@ -1,4 +1,4 @@
-import { EDeviceType } from '@unionkeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 
 import { BaseMethod } from './BaseMethod';
 import { getLatestFirmwareField } from '../utils/deviceFeaturesUtils';

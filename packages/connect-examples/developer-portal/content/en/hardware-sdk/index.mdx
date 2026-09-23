@@ -12,7 +12,7 @@ This page is the **orientation layer** — pick the right SDK package for your p
 
 ## Choose Your Transport
 
-USB integrations should use `@unionkeyfe/hd-common-connect-sdk`; use `@unionkeyfe/hd-web-sdk` only when the host mandates an iframe/plugin setup.
+USB integrations should use `@unionkeyhq/hd-common-connect-sdk`; use `@unionkeyhq/hd-web-sdk` only when the host mandates an iframe/plugin setup.
 
 ### Connection Methods
 
@@ -26,11 +26,11 @@ USB integrations should use `@unionkeyfe/hd-common-connect-sdk`; use `@unionkeyf
 
 | Platform (Stack) | Transport | SDK Package | Guide |
 |------------------|-----------|-------------|-------|
-| Web (Browser) | WebUSB | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [WebUSB Connection Guide](/en/hardware-sdk/transport/web-usb) |
-| React Native | BLE | [@unionkeyfe/hd-ble-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/hd-ble-sdk) | [React Native BLE](/en/hardware-sdk/transport/react-native-ble) |
-| Android (Native) | BLE | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Android BLE](/en/hardware-sdk/transport/android) |
-| iOS (Native) | BLE | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [iOS BLE](/en/hardware-sdk/transport/ios) |
-| Flutter | BLE | [@unionkeyfe/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Flutter BLE](/en/hardware-sdk/transport/flutter) |
+| Web (Browser) | WebUSB | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [WebUSB Connection Guide](/en/hardware-sdk/transport/web-usb) |
+| React Native | BLE | [@unionkeyhq/hd-ble-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/blob/onekey/packages/hd-ble-sdk) | [React Native BLE](/en/hardware-sdk/transport/react-native-ble) |
+| Android (Native) | BLE | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Android BLE](/en/hardware-sdk/transport/android) |
+| iOS (Native) | BLE | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [iOS BLE](/en/hardware-sdk/transport/ios) |
+| Flutter | BLE | [@unionkeyhq/hd-common-connect-sdk](https://github.com/UnionKeyHQ/hardware-js-sdk/tree/onekey/packages/hd-common-connect-sdk) | [Flutter BLE](/en/hardware-sdk/transport/flutter) |
 
 ![Transport architecture](https://raw.githubusercontent.com/UnionKeyHQ/hardware-js-sdk/onekey/packages/connect-examples/developer-portal/public/images/transport/transport-architecture-en.svg)
 
@@ -42,16 +42,16 @@ Pick one entry by runtime:
 
 ```bash
 # Web / desktop WebUSB (recommended)
-npm i @unionkeyfe/hd-common-connect-sdk
+npm i @unionkeyhq/hd-common-connect-sdk
 
 # React Native BLE
-npm i @unionkeyfe/hd-ble-sdk
+npm i @unionkeyhq/hd-ble-sdk
 
 # Native host with low-level plugin (Android/iOS/Flutter bridge)
-npm i @unionkeyfe/hd-common-connect-sdk
+npm i @unionkeyhq/hd-common-connect-sdk
 
 # Plugin iframe host only (plugin-only)
-npm i @unionkeyfe/hd-web-sdk
+npm i @unionkeyhq/hd-web-sdk
 ```
 
 Transport details:
@@ -66,10 +66,10 @@ Use the initialization method that matches your runtime—avoid mixing SDK entri
 
 ### Web / Desktop WebUSB
 
-Use `@unionkeyfe/hd-common-connect-sdk`:
+Use `@unionkeyhq/hd-common-connect-sdk`:
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'webusb',
@@ -80,10 +80,10 @@ await HardwareSDK.init({
 
 ### React Native BLE
 
-Use `@unionkeyfe/hd-ble-sdk`:
+Use `@unionkeyhq/hd-ble-sdk`:
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-ble-sdk';
+import HardwareSDK from '@unionkeyhq/hd-ble-sdk';
 
 await HardwareSDK.init({
   debug: __DEV__,
@@ -92,10 +92,10 @@ await HardwareSDK.init({
 
 ### Native Bridge / Low-level
 
-Use `@unionkeyfe/hd-common-connect-sdk`:
+Use `@unionkeyhq/hd-common-connect-sdk`:
 
 ```ts
-import HardwareSDK from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK from '@unionkeyhq/hd-common-connect-sdk';
 
 await HardwareSDK.init({
   env: 'lowlevel',
@@ -113,10 +113,10 @@ await HardwareSDK.init({
 
 ### Plugin Iframe Host
 
-Use `@unionkeyfe/hd-web-sdk` (plugin-only):
+Use `@unionkeyhq/hd-web-sdk` (plugin-only):
 
 ```ts
-import { HardwareSDK } from '@unionkeyfe/hd-web-sdk';
+import { HardwareSDK } from '@unionkeyhq/hd-web-sdk';
 
 await HardwareSDK.init({
   debug: process.env.NODE_ENV !== 'production',
@@ -146,16 +146,16 @@ import { DeviceCompatibilityTable } from '../../../components/DeviceCompatibilit
 
 | Package | Purpose | NPM | Version |
 |---------|---------|-----|---------|
-| `@unionkeyfe/hd-common-connect-sdk` | Unified SDK surface for Web/Native; recommended entry for transports | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-common-connect-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-common-connect-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-common-connect-sdk) |
-| `@unionkeyfe/hd-ble-sdk` | Pure React Native BLE stack (recommended for RN projects) | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-ble-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-ble-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-ble-sdk) |
-| `@unionkeyfe/hd-transport-react-native` | React Native transport side-effects/bridge | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-react-native) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-react-native.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-react-native) |
-| `@unionkeyfe/hd-transport-web-device` | Web transport for device access in web contexts | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-web-device) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-web-device.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-web-device) |
-| `@unionkeyfe/hd-transport-emulator` | Emulator transport (develop and test without a physical device) | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-emulator) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-emulator.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-emulator) |
-| `@unionkeyfe/hd-transport-http` | HTTP bridge transport | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-http) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-http.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-http) |
-| `@unionkeyfe/hd-transport-lowlevel` | Low-level host adapter contract (for native integrations) | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-transport-lowlevel) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-lowlevel.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-transport-lowlevel) |
-| `@unionkeyfe/hd-core` | Core events, constants, message wiring | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-core) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-core.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-core) |
-| `@unionkeyfe/hd-shared` | Shared utilities and types | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-shared) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-shared.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-shared) |
-| `@unionkeyfe/hd-web-sdk` | Web SDK wrapper (not recommended; prefer hd-common-connect-sdk) | [npm](https://www.npmjs.com/package/@unionkeyfe/hd-web-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-web-sdk.svg)](https://www.npmjs.com/package/@unionkeyfe/hd-web-sdk) |
+| `@unionkeyhq/hd-common-connect-sdk` | Unified SDK surface for Web/Native; recommended entry for transports | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-common-connect-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-common-connect-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-common-connect-sdk) |
+| `@unionkeyhq/hd-ble-sdk` | Pure React Native BLE stack (recommended for RN projects) | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-ble-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-ble-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-ble-sdk) |
+| `@unionkeyhq/hd-transport-react-native` | React Native transport side-effects/bridge | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-react-native) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-react-native.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-react-native) |
+| `@unionkeyhq/hd-transport-web-device` | Web transport for device access in web contexts | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-web-device) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-web-device.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-web-device) |
+| `@unionkeyhq/hd-transport-emulator` | Emulator transport (develop and test without a physical device) | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-emulator) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-emulator.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-emulator) |
+| `@unionkeyhq/hd-transport-http` | HTTP bridge transport | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-http) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-http.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-http) |
+| `@unionkeyhq/hd-transport-lowlevel` | Low-level host adapter contract (for native integrations) | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-transport-lowlevel) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-transport-lowlevel.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-transport-lowlevel) |
+| `@unionkeyhq/hd-core` | Core events, constants, message wiring | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-core) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-core.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-core) |
+| `@unionkeyhq/hd-shared` | Shared utilities and types | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-shared) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-shared.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-shared) |
+| `@unionkeyhq/hd-web-sdk` | Web SDK wrapper (not recommended; prefer hd-common-connect-sdk) | [npm](https://www.npmjs.com/package/@unionkeyhq/hd-web-sdk) | [![npm](https://img.shields.io/npm/v/%40onekeyfe%2Fhd-web-sdk.svg)](https://www.npmjs.com/package/@unionkeyhq/hd-web-sdk) |
 
 - Changelog: [releases](https://github.com/UnionKeyHQ/hardware-js-sdk/releases)
 

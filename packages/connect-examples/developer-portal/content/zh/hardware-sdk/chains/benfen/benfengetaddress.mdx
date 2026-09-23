@@ -22,7 +22,7 @@ const result = await HardwareSDK.benfenGetAddress(connectId, deviceId, params);
 **可选通用参数**
 
 * `path` - _必需_ `string | Array<number>` 最小长度为 `3`。[更多信息](/zh/hardware-sdk/core-api-guide#hd-path)
-* `showOnUnionKey` - _可选_ `boolean` 是否在设备上显示地址
+* `showOnOneKey` - _可选_ `boolean` 是否在设备上显示地址
 
 #### 返回值
 
@@ -37,7 +37,7 @@ const result = await HardwareSDK.benfenGetAddress(connectId, deviceId, params);
 ```typescript
 const params = {
   path: "m/44'/728'/0'/0'/0'",
-  showOnUnionKey: false
+  showOnOneKey: false
 };
 
 // 单个地址
@@ -48,11 +48,11 @@ const batchParams = {
   bundle: [
     {
       path: "m/44'/728'/0'/0'/0'",
-      showOnUnionKey: false
+      showOnOneKey: false
     },
     {
       path: "m/44'/728'/1'/0'/0'",
-      showOnUnionKey: false
+      showOnOneKey: false
     }
   ]
 };

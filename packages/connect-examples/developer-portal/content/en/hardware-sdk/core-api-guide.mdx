@@ -72,7 +72,7 @@ Two identifiers do the routing in almost every SDK call — `connectId` (which c
 Standard loop: `init → search → getFeatures(connectId) → subscribe UI/DEVICE/FIRMWARE → call + uiResponse → cleanup`
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-common-connect-sdk';
 
 // 1) Idempotent init (do once at app entry)
 await HardwareSDK.init({ env: 'webusb', fetchConfig: true, debug: false });
@@ -269,7 +269,7 @@ HardwareSDK.uiResponse({
 **Wiring template**
 
 ```ts
-import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyfe/hd-common-connect-sdk';
+import HardwareSDK, { UI_EVENT, UI_REQUEST, UI_RESPONSE } from '@unionkeyhq/hd-common-connect-sdk';
 
 const handleUiEvent = (msg: any) => {
   switch (msg.type) {

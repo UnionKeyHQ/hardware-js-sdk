@@ -4,7 +4,7 @@ import {
   HardwareError,
   HardwareErrorCode,
   createDeferred,
-} from '@unionkeyfe/hd-shared';
+} from '@unionkeyhq/hd-shared';
 
 import { FirmwareUpdateTipMessage, UI_REQUEST, createUiMessage } from '../../events/ui-request';
 import { DevicePool } from '../../device/DevicePool';
@@ -19,8 +19,8 @@ import type {
   IFirmwareUpdateTipMessage,
 } from '../../events/ui-request';
 import type { PROTO } from '../../constants';
-import type { RebootType } from '@unionkeyfe/hd-transport';
-import type { Deferred } from '@unionkeyfe/hd-shared';
+import type { RebootType } from '@unionkeyhq/hd-transport';
+import type { Deferred } from '@unionkeyhq/hd-shared';
 import type { KnownDevice } from '../../types';
 import type { TypedResponseMessage } from '../../device/DeviceCommands';
 

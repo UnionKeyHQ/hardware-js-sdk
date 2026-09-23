@@ -1,7 +1,7 @@
 import type {
   SolanaOffChainMessageFormat,
   SolanaOffChainMessageVersion,
-} from '@unionkeyfe/hd-transport';
+} from '@unionkeyhq/hd-transport';
 import type { CommonParams, Response } from '../params';
 
 export type SolSignOffchainMessageResponse = {

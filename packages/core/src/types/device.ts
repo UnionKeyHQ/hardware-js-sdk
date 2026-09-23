@@ -1,8 +1,8 @@
-import { EDeviceType } from '@unionkeyfe/hd-shared';
+import { EDeviceType } from '@unionkeyhq/hd-shared';
 
 import type { IVersionArray } from './settings';
 import type { PROTO } from '../constants';
-import type { OneKeyDeviceCommType } from '@unionkeyfe/hd-transport';
+import type { OneKeyDeviceCommType } from '@unionkeyhq/hd-transport';
 
 export type DeviceStatus = 'available' | 'occupied' | 'used';
 
